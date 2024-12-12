@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-Light.eot');
+    src: local('Lark Light'), local('Lark-Light'),
+        url('Lark-Light.eot?#iefix') format('embedded-opentype'),
+        url('Lark-Light.woff2') format('woff2'),
+        url('Lark-Light.woff') format('woff'),
+        url('Lark-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-Regular.eot');
+    src: local('Lark'), local('Lark-Regular'),
+        url('Lark-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Lark-Regular.woff2') format('woff2'),
+        url('Lark-Regular.woff') format('woff'),
+        url('Lark-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-Bold.eot');
+    src: local('Lark Bold'), local('Lark-Bold'),
+        url('Lark-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Lark-Bold.woff2') format('woff2'),
+        url('Lark-Bold.woff') format('woff'),
+        url('Lark-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-Medium.eot');
+    src: local('Lark Medium'), local('Lark-Medium'),
+        url('Lark-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Lark-Medium.woff2') format('woff2'),
+        url('Lark-Medium.woff') format('woff'),
+        url('Lark-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-LightItalic.eot');
+    src: local('Lark Light Italic'), local('Lark-LightItalic'),
+        url('Lark-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Lark-LightItalic.woff2') format('woff2'),
+        url('Lark-LightItalic.woff') format('woff'),
+        url('Lark-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-BoldItalic.eot');
+    src: local('Lark Bold Italic'), local('Lark-BoldItalic'),
+        url('Lark-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Lark-BoldItalic.woff2') format('woff2'),
+        url('Lark-BoldItalic.woff') format('woff'),
+        url('Lark-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-MediumItalic.eot');
+    src: local('Lark Medium Italic'), local('Lark-MediumItalic'),
+        url('Lark-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('Lark-MediumItalic.woff2') format('woff2'),
+        url('Lark-MediumItalic.woff') format('woff'),
+        url('Lark-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lark';
+    src: url('Lark-RegularItalic.eot');
+    src: local('Lark Italic'), local('Lark-RegularItalic'),
+        url('Lark-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Lark-RegularItalic.woff2') format('woff2'),
+        url('Lark-RegularItalic.woff') format('woff'),
+        url('Lark-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+

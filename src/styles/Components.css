@@ -1,0 +1,109 @@
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* 10% black overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Lark", sans-serif;
+  font-weight: bold;
+}
+
+/* Popup Container */
+.popup-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  min-height: 500px;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Form Styling */
+.popup-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.popup-form input {
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Lark", sans-serif;
+}
+
+.popup-logo{
+    width: 100px;
+}
+
+.popup-form button {
+  padding: 15px;
+  font-size: 18px;
+  background: #022759;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 24px;
+  cursor: pointer;
+  font-family: "Lark", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s ease-in;
+}
+
+.popup-form button:hover {
+  background: linear-gradient(
+    204deg,
+    rgba(2, 39, 89, 1) 0%,
+    rgba(186, 248, 110, 1) 100%
+  );
+}
+
+/* Success Message */
+.popup-success {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  text-align: center;
+}
+
+.popup-success h2 {
+  color: #28a745;
+  width: 100%;
+  text-align: center;
+}
+
+
+.popup-content{
+    color: rgb(96, 96, 96);
+    font-weight: 500;
+}
