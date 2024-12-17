@@ -32,22 +32,56 @@ const SubscriptionPopup = ({ isOpen, onClose }) => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSuccess(true);
-      console.log(email);
-      launchConfetti(); // Trigger confetti on success
-      setTimeout(() => {
-        setEmail("");
-        setSuccess(false);
-        onClose(); // Close popup after 3 seconds
-      }, 5000);
-    }, 1000);
+    if (!email) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    // Mailchimp form action URL
+    const formActionUrl = 'https://ewcdubai.us10.list-manage.com/subscribe/post?u=058998e159fa07b048e1e01f4&id=042fede18a&f_id=003b33e2f0';
+
+    const formData = new FormData();
+    formData.append('EMAIL', email);
+
+    // Send the email to Mailchimp using fetch
+    fetch(formActionUrl, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          setSuccess(true); // Show success message
+          launchConfetti(); // Trigger confetti animation
+          setTimeout(() => {
+            setEmail(''); // Reset email field
+            setSuccess(false); // Hide success message
+            onClose(); // Close popup after 5 seconds
+          }, 5000);
+        } else {
+          setSuccess(true);
+          launchConfetti(); // Trigger confetti animation
+          setTimeout(() => {
+            setEmail(''); // Reset email field
+            setSuccess(false); // Hide success message
+            onClose(); // Close popup after 5 seconds
+          }, 5000);
+        }
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+        setSuccess(true);
+        launchConfetti(); // Trigger confetti animation
+          setTimeout(() => {
+            setEmail(''); // Reset email field
+            setSuccess(false); // Hide success message
+            onClose(); // Close popup after 5 seconds
+          }, 5000);
+      });
   };
 
-  if (!isOpen) return null; // Don't render if not open
+  if (!isOpen) return null; // Don't render if popup is not open
 
   return (
     <div className="popup-overlay">
@@ -57,9 +91,11 @@ const SubscriptionPopup = ({ isOpen, onClose }) => {
         </button>
         {!success ? (
           <form onSubmit={handleSubmit} className="popup-form">
-            <img src={OLWLogo} alt="" className="popup-logo" />
+            <img src={OLWLogo} alt="OLW Logo" className="popup-logo" />
             <h2>Subscribe to Notify</h2>
-            <p className="popup-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad nemo soluta ut explicabo modi</p>
+            <p className="popup-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad nemo soluta ut explicabo modi
+            </p>
             <input
               type="email"
               placeholder="Enter your email"

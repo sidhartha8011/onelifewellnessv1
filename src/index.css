@@ -1,6 +1,11 @@
 @import './styles/ComingSoon.css';
 @import './assets/font/fonts.css';
 @import './styles/Components.css';
+@import './styles//Home.css';
+
+/* inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 * {
   padding: 0;
@@ -8,3 +13,17 @@
   box-sizing: border-box;
 }
 
+.inter-font {
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+:root {
+  --primary-blue: #022759;
+  --primary-green: #BAF86E;
+}
+
+.heading-bold{
+  font-weight: 500;
+}

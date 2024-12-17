@@ -107,3 +107,166 @@
     color: rgb(96, 96, 96);
     font-weight: 500;
 }
+
+
+
+
+/* background image  */
+
+.cs-bg-container {
+  position: absolute; /* Ensures the container is the reference point for absolute positioning */
+  width: 100%;
+  z-index: -1;
+  min-height: 100vh;
+  max-height: 100vh; /* Full viewport size */
+}
+
+
+.top-left {
+  position: absolute; 
+  top: 120px;
+  left: 0px;
+  height: 200px;
+  width: auto;
+}
+
+.top-center {
+  position: absolute; 
+  top: 0px;
+  left: 30%;
+  width: 170px;
+  height: auto;
+}
+
+.top-right {
+  position: absolute; 
+  top: 0px;
+  left: 75%;
+  width: 150px;
+  height: auto;
+}
+
+.bottom-left {
+  position: absolute; 
+  bottom: 0px;
+  left: 0px;
+  height: 160px;
+  width: auto;
+}
+
+.bottom-center {
+  position: absolute; 
+  bottom: 0px;
+  left: 51%;
+  transform: translateX(-50%);
+  height: 100px;
+  width: auto;
+}
+
+.bottom-right {
+  position: absolute; 
+  bottom: 0px;
+  right: 0px;
+  height: 100px;
+  width: auto;
+}
+
+
+/* header menu */
+
+.header-menu-container{
+  display: flex;
+  position: fixed;
+  background: #ffffff;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 70px;
+  box-shadow: 0px 2px 4px 0px #00000033;
+  z-index: 1;
+}
+
+.header-logo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+}
+
+.header-logo{
+  max-height: 66px;
+  width: auto;
+}
+
+.header-menu-items-container{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.header-menu-link{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  text-decoration: none;
+  color: #022759;
+  background: #E7ECF1;
+  padding: 18px 51px;
+  font-weight: 600;
+  border-radius: 50px;
+}
+
+.header-hamburger-menu{
+  background: #022759;
+  color: #ffffff;
+  display: flex;
+  font-size: 3  0px;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+  .top-left {
+    top: 100px;
+    left: 0px;
+    height: 200px;
+    width: auto;
+  }
+  
+  .top-center {
+    left: 30%;
+    width: 100px;
+    height: auto;
+  }
+  
+  .top-right {
+    left: 70%;
+    width: 100px;
+    height: auto;
+  }
+  
+  .bottom-left {
+    left: 0px;
+    height: 100px;
+    width: auto;
+    bottom: 0;
+  }
+  
+  .bottom-center {
+    left: 51%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: auto;
+    bottom: 0;
+  }
+  
+  .bottom-right {
+    right: 0px;
+    height: 90px;
+    width: auto;
+    bottom: 0;
+  }
+}
