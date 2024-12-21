@@ -92,9 +92,9 @@ const SubscriptionPopup = ({ isOpen, onClose }) => {
         {!success ? (
           <form onSubmit={handleSubmit} className="popup-form">
             <img src={OLWLogo} alt="OLW Logo" className="popup-logo" />
-            <h2>Subscribe to Notify</h2>
+            <h2>SStay informed, stay healthy!</h2>
             <p className="popup-content">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ad nemo soluta ut explicabo modi
+              Subscribe to OneLife Wellness and get expert tips on medical insights, healthy lifestyles, and routines—your ultimate life manual. Be the first to know when we go live!
             </p>
             <input
               type="email"
@@ -103,7 +103,7 @@ const SubscriptionPopup = ({ isOpen, onClose }) => {
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Notify Me</button>
           </form>
         ) : (
           <div className="popup-success">
