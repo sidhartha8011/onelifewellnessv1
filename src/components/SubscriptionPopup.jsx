@@ -92,7 +92,7 @@ const SubscriptionPopup = ({ isOpen, onClose }) => {
         {!success ? (
           <form onSubmit={handleSubmit} className="popup-form">
             <img src={OLWLogo} alt="OLW Logo" className="popup-logo" />
-            <h2>SStay informed, stay healthy!</h2>
+            <h2>Stay informed, stay healthy!</h2>
             <p className="popup-content">
               Subscribe to OneLife Wellness and get expert tips on medical insights, healthy lifestyles, and routines—your ultimate life manual. Be the first to know when we go live!
             </p>
