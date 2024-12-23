@@ -12,13 +12,19 @@ const OlwBackground = () => {
   return (
     
         <div className="cs-bg-container">
-                    <img src={TopLeft} alt="Top Left" className="top-left" />
+          <div>
+          <img src={TopLeft} alt="Top Left" className="top-left" />
                     <img src={TopCenter} alt="Top Center" className="top-center" />
                     <img src={TopRight} alt="Top Right" className="top-right" />
-                    <img src={BottomRight} alt="Bottom Right" className="bottom-right" />
+          </div>
+          <div>
+          <img src={BottomRight} alt="Bottom Right" className="bottom-right" />
                     <img src={BottomCenter} alt="Bottom Center" className="bottom-center" />
                     <img src={BottomLeft} alt="Bottom Left" className="bottom-left" />
-        </div>
+        
+
+          </div>
+                    </div>
     
   )
 }

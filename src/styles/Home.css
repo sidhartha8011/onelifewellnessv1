@@ -2,12 +2,233 @@
     display: flex;
     padding-top: 150px;
     flex-direction: column;
+    min-height: 100vh;
     align-items: center;
+    justify-content: space-between;
     font-family: "Lark", sans-serif;
 }
 
-.olw-home-header{
-    font-size: 70px;
+
+.olw-home-header {
+    font-size: clamp(40px, 8vw, 70px); /* Adjusts the font size between 40px and 70px based on viewport width */
     font-weight: 400;
     color: var(--primary-blue);
+}
+
+.olw-home-content-box{
+    gap: 100px;
+    max-width: 90%;
+}
+
+.olw-home-left{
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: start;
+}
+
+.olw-home-left h2 {
+    font-size: clamp(36px, 6vw, 62px); /* Adjusted font size range */
+    font-weight: 500;
+}
+
+.olw-home-left p {
+    font-size: clamp(14px, 3vw, 18px); /* Adjusted font size range */
+    text-align: justify;
+}
+
+.olw-hl-head {
+    font-size: clamp(16px, 3vw, 18px); /* Adjusted font size range */
+    font-weight: 400;
+}
+
+.home-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: var(--primary-blue);
+    color: var(--text-white);
+    font-size: clamp(14px, 3vw, 18px); 
+    padding: 5px;   
+    padding-left: 20px;
+    border-radius: 100px;
+    margin-top: 15px;
+    width: fit-content;
+}
+
+.home-button-icon{
+    background: var(--bg-light-grey1);
+    border-radius: 30px;
+    font-family: 20px;
+    font-size: clamp(20px, 3vw, 30px); 
+    width: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 10px;
+    color: var(--primary-blue);
+}
+
+.olw-home-right{
+    min-height: 50%;
+    width: 90%;
+    min-height: 65vh;
+    position: relative;
+    
+}
+
+
+
+.home-dog {
+    position: absolute; 
+    bottom: 0px;
+    height: 170px;
+    width: auto;
+  }
+
+ 
+  .home-adults{
+    position: absolute;
+    width: auto;
+    max-height: 450px;
+    bottom: 0px;
+    margin-left: 5%;
+  }
+
+  .home-children{
+    position: absolute;
+    width: auto;
+    object-fit: cover;
+    bottom: 0px;
+    height: 190px;
+    margin-left: 7%;
+  }
+
+  .home-grandparents{
+    position: absolute;
+    width: auto;
+    max-height: 480px;
+    bottom: 0px;
+    right: 5%;
+  }
+
+
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .olw-home-page{
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .olw-header0container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .olw-home-content-box {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 50px;
+    }
+
+    .olw-home-header{
+        width: 90%;
+    }
+    .olw-home-left{
+        max-width: 90%;
+    }
+    
+.home-dog {
+    height: 150px;
+    width: auto;
+  }
+
+ 
+  .home-adults{
+    width: auto;
+    max-height: 450px;
+    margin-left: 1%;
+  }
+
+  .home-children{
+    width: auto;
+    height: 230px;
+    margin-left: 17%;
+  }
+
+  .home-grandparents{
+    width: auto;
+    max-height: 400px;
+    bottom: 0px;
+    right: 1%;
+  }
+
+  .olw-home-right{
+    min-height: 500px;
+}
+    
+  }
+  
+@media (max-width: 768px){
+
+    .olw-home-page{
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .olw-header0container{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .olw-home-content-box {
+        flex-direction: column;
+        max-width: 100%;
+        gap: 50px;
+    }
+
+    .olw-home-header{
+        width: 90%;
+    }
+    .olw-home-left{
+        max-width: 90%;
+    }
+    
+.home-dog {
+    height: 100px;
+    width: auto;
+  }
+
+ 
+  .home-adults{
+    width: auto;
+    max-height: 250px;
+    margin-left: -2%;
+  }
+
+  .home-children{
+    width: auto;
+    height: 120px;
+    right: 0;
+    z-index: 3;
+  }
+
+  .home-grandparents{
+    width: auto;
+    max-height: 250px;
+    bottom: 0px;
+    right: 0;
+  }
+
+  .olw-home-right{
+    min-height: 300px;
+}
+
+
 }
