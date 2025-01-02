@@ -12,10 +12,7 @@ const NavigationMenu = () => {
       <ul className="olw-pages-list">
         {/* Main Pages */}
         <li className="olw-pages-list-item">
-          <Link to="/" className="olw-pages-list-link">Coming Soon</Link>
-        </li>
-        <li className="olw-pages-list-item">
-          <Link to="/home" className="olw-pages-list-link">Home</Link>
+          <Link to="/" className="olw-pages-list-link">Home</Link>
         </li>
 
         {/* Nested Pages under /pages */}

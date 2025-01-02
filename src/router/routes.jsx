@@ -15,12 +15,8 @@ import OutcomeSingle from '../pages/OutcomeSingle';
 
 // Define your routes
 const router = createBrowserRouter([
-  {
+    {
     path: '/',
-    element: <ComingSoon />,
-  },
-  {
-    path: '/home',
     element: <Home />,
   },
   {

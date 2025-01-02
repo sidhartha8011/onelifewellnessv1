@@ -26,7 +26,7 @@ const Header = () => {
         <ul className={`header-menu-items-container ${isMobileMenuOpen ? 'open' : ''}`}>
           <li>
             <NavLink
-              to='/home'
+              to='/'
               className='header-menu-link'
               activeClassName='active' // Automatically adds this class to the active route
               onClick={handleMenuItemClick}
