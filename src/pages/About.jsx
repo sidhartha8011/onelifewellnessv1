@@ -6,7 +6,7 @@ import OLWHero from '../components/OLWHero';
 
 const About = () => {
 
-  const videoId = 'W6JxnP48Yg0'; // The video ID extracted from the URL
+  const videoId = 'zpHOIlQbj8Y'; // The video ID extracted from the URL
 
     const opts = {
         playerVars: {
