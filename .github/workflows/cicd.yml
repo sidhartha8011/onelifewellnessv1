@@ -35,7 +35,7 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_IP }} << 'EOF'
             docker pull accenousntegrals/olw-frontend:$GITHUB_SHA
-            docker stop olwfrontend || true
-            docker rm olwfrontend || true
-            docker run -d --name olwfrontend -p 3000:3000 accenousntegrals/olw-frontend:$GITHUB_SHA
+            docker stop olw-frontend || true
+            docker rm olw-frontend || true
+            docker run -d --name olw-frontend -p 3000:3000 accenousntegrals/olw-frontend:$GITHUB_SHA
           EOF
