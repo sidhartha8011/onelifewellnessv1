@@ -23,14 +23,14 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t yourusername/olw-frontend:$GITHUB_SHA .
-          docker push yourusername/olw-frontend:$GITHUB_SHA
+          docker build -t accenousntegrals/olw-frontend:$GITHUB_SHA .
+          docker push accenousntegrals/olw-frontend:$GITHUB_SHA
 
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ec2-user@${{ secrets.EC2_IP }} << 'EOF'
-            docker pull yourusername/frontend:$GITHUB_SHA
-            docker stop frontend || true
-            docker rm frontend || true
-            docker run -d --name frontend -p 3000:3000 yourusername/frontend:$GITHUB_SHA
+            docker pull accenousntegrals/olwfrontend:$GITHUB_SHA
+            docker stop olwfrontend || true
+            docker rm olwfrontend || true
+            docker run -d --name frontend -p 3000:3000 accenousntegrals/olwfrontend:$GITHUB_SHA
           EOF
