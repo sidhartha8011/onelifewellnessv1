@@ -37,5 +37,5 @@ jobs:
             docker pull accenousntegrals/olw-frontend:latest
             docker stop olw-frontend || true
             docker rm olw-frontend || true
-            docker run -d --name olw-frontend -p 8080:8080 accenousntegrals/olw-frontend:latest
+            docker run -d --name olw-frontend -p 8080:4173 accenousntegrals/olw-frontend:latest
           EOF
