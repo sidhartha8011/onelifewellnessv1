@@ -26,11 +26,16 @@ jobs:
           docker build -t accenousntegrals/olw-frontend:$GITHUB_SHA .
           docker push accenousntegrals/olw-frontend:$GITHUB_SHA
 
+      - name: Setup SSH
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY }}" > key.pem
+          chmod 600 key.pem
+
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} ubuntu@${{ secrets.EC2_IP }} << 'EOF'
-            docker pull accenousntegrals/olwfrontend:$GITHUB_SHA
+          ssh -o StrictHostKeyChecking=no -i key.pem ubuntu@${{ secrets.EC2_IP }} << 'EOF'
+            docker pull accenousntegrals/olw-frontend:$GITHUB_SHA
             docker stop olwfrontend || true
             docker rm olwfrontend || true
-            docker run -d --name frontend -p 3000:3000 accenousntegrals/olwfrontend:$GITHUB_SHA
+            docker run -d --name olwfrontend -p 3000:3000 accenousntegrals/olw-frontend:$GITHUB_SHA
           EOF
