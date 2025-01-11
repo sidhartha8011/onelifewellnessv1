@@ -1,21 +1,29 @@
-# Use official node image
-FROM node:18
+# Step 1: Build the app
+FROM node:18-alpine AS build
 
-# Set working directory
+# Set the working directory inside the container
 WORKDIR /app
 
+# Copy package.json and package-lock.json (or yarn.lock) first to install dependencies
+COPY package*.json ./
+
 # Install dependencies
-COPY package.json package-lock.json ./
 RUN npm install
 
-# Copy source code
+# Copy the rest of the application code
 COPY . .
 
-# Build the Vite project
+# Build the Vite app for production
 RUN npm run build
 
-# Expose the port that the Vite app will run on
-EXPOSE 3000
+# Step 2: Serve the app
+FROM nginx:alpine
 
-# Serve the app
-CMD ["npm", "run", "preview"]
+# Copy the build output from the build stage to the nginx html directory
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose the port the app will be running on
+EXPOSE 3030
+
+# Run nginx in the foreground
+CMD ["nginx", "-g", "daemon off;"]
