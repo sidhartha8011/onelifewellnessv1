@@ -1,15 +1,23 @@
-# Step 1: Build React App
-FROM node:alpine3.18 as build
-WORKDIR /app 
-COPY package.json .
-RUN npm install
-COPY . .
-RUN npm run build
+# Use a Node.js base image
+FROM node:18-alpine as build
 
-# Step 2: Server With Nginx
-FROM nginx:1.23-alpine
-WORKDIR /usr/share/nginx/html
-RUN rm -rf *
-COPY --from=build /app/dist .
-EXPOSE 4173
-ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
+# Set working directory
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json yarn.lock ./
+RUN yarn install
+
+# Copy the rest of the app and build
+COPY . .
+RUN yarn build
+
+# Serve the app using a lightweight web server
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
