@@ -37,7 +37,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
-            docker stop react-vite-app || true
-            docker rm react-vite-app || true
-            docker run -d -p 80:80 --name react-vite-app ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
+           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
+            sudo docker stop react-vite-app || true
+            sudo docker rm react-vite-app || true
+            sudo docker run -d -p 80:80 --name react-vite-app ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
