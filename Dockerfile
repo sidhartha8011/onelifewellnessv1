@@ -6,11 +6,11 @@ WORKDIR /app
 
 # Copy package.json and install dependencies
 COPY package.json yarn.lock ./
-RUN yarn install
+RUN npm install
 
 # Copy the rest of the app and build
 COPY . .
-RUN yarn build
+RUN npm run build
 
 # Serve the app using a lightweight web server
 FROM nginx:alpine
