@@ -1,30 +1,14 @@
-# Use the official Node.js runtime as the base image
-# FROM node:18.17.0
-
-# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
-FROM node:18.18.0 as build
-
-
-# Set the working directory inside the container
+# Stage 1: Build the Vite project
+FROM node:18 AS builder
 WORKDIR /app
-
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
-
-# Install project dependencies
-RUN npm install
-
-# Copy the rest of the project files to the working directory
 COPY . .
-
-# Build the Vite React project
+RUN npm install
 RUN npm run build
 
-FROM nginx as prod
+# Stage 2: Serve with Nginx
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 80/tcp
-
-CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
