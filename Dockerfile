@@ -1,23 +1,30 @@
-# Use a Node.js base image
-FROM node:18-alpine as build
+# Use the official Node.js runtime as the base image
+# FROM node:18.17.0
 
-# Set working directory
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+FROM node:18.18.0 as build
+
+
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and install dependencies
-COPY package.json .
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install project dependencies
 RUN npm install
 
-# Copy the rest of the app and build
+# Copy the rest of the project files to the working directory
 COPY . .
+
+# Build the Vite React project
 RUN npm run build
 
-# Serve the app using a lightweight web server
-FROM nginx:alpine
+FROM nginx as prod
+
 COPY --from=build /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Expose port 80
-EXPOSE 80
+EXPOSE 80/tcp
 
-# Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
