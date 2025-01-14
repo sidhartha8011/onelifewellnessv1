@@ -501,13 +501,14 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-top: 70px;
   position: relative;
 }
 
 .olw-hero-heading {
   font-size: clamp(32px, 6vw, 70px);
+  text-align: center;
 }
 
 

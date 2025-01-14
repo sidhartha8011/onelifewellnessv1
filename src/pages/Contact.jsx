@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { LuPhoneCall } from "react-icons/lu";
 import { LiaFaxSolid } from "react-icons/lia";
 import { MdOutlineAttachEmail } from "react-icons/md";
+import PhoneInput from "react-phone-number-input";
+import 'react-phone-number-input/style.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phoneNumber: "",
-    foundUs: "",
+    purpose: "",
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false); // Track form submission
 
@@ -18,6 +21,14 @@ const Contact = () => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
+    }));
+  };
+
+  // Handle phone number change
+  const handlePhoneChange = (value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      phoneNumber: value,
     }));
   };
 
@@ -37,7 +48,7 @@ const Contact = () => {
               Get in <span className="light-blue-color">Touch</span>
             </h1>
             <p>
-              Enim tempor eget pharetra facilisis sed maecenas adipiscing. Eu leo molestie vel, ornare non id blandit netus.
+              Feel free to reach out to us with any inquiries, feedback, or support requests.
             </p>
           </div>
 
@@ -60,28 +71,39 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                 />
-                <input
-                  type="text"
-                  name="phoneNumber"
-                  placeholder="Phone Number"
+                
+                {/* Phone Number Input with Country Code Dropdown */}
+                <PhoneInput
+                  international
+                  defaultCountry="US" // Default country code (can be changed)
                   value={formData.phoneNumber}
-                  onChange={handleInputChange}
+                  onChange={handlePhoneChange}
                   required
                 />
+                
                 <select
-                  name="foundUs"
-                  value={formData.foundUs}
+                  name="purpose"
+                  value={formData.purpose}
                   onChange={handleInputChange}
                   required
                 >
-                  <option value="" disabled>
-                    How did you find us?
+                  <option value="" disabled selected>
+                    Purpose of Contact
                   </option>
-                  <option value="Google">Google</option>
-                  <option value="Social Media">Social Media</option>
-                  <option value="Word of Mouth">Word of Mouth</option>
+                  <option value="General Inquiry">General Inquiry</option>
+                  <option value="Support">Support</option>
+                  <option value="Feedback">Feedback</option>
+                  <option value="Partnership">Partnership</option>
                   <option value="Other">Other</option>
                 </select>
+
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
                 <button type="submit" className="submit-button">
                   SEND
                 </button>
@@ -89,8 +111,8 @@ const Contact = () => {
             </div>
           ) : (
             <div className="thank-you-message">
-              <h2>Thank you for your submission!</h2>
-              <p>We will get back to you shortly.</p>
+              <h2>Thank you for contacting us!</h2>
+              <p>We’ve received your information and will get back to you soon.</p>
             </div>
           )}
 
@@ -99,20 +121,21 @@ const Contact = () => {
               <span className="contact-icon-box"><LuPhoneCall /></span>
               <div>
                 <h3>PHONE</h3>
-                <h4 className="light-green-color">0345678852</h4>
+                <h4 className="light-green-color"></h4>
               </div>
             </div>
             <div className="olw-c-details">
               <span className="contact-icon-box"><LiaFaxSolid /></span>
               <div>
                 <h3>Fax</h3>
+                <h4 className="light-green-color"></h4>
               </div>
             </div>
             <div className="olw-c-details">
               <span className="contact-icon-box"><MdOutlineAttachEmail /></span>
               <div>
                 <h3>Email</h3>
-                <h4 className="light-green-color">0345678852</h4>
+                <h4 className="light-green-color"></h4>
               </div>
             </div>
           </div>

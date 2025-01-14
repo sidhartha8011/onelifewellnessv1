@@ -21,7 +21,8 @@
 }
 
 .olw-home-left{
-    max-width: 30%;
+  min-width: 33%;
+    max-width: 33%;
     display: flex;
     flex-direction: column;
     gap: 15px;

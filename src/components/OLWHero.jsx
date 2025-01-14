@@ -9,7 +9,11 @@ const OLWHero = ({ heading, subHeading, fontSize }) => {
         <h1
           className="olw-hero-heading"
         >
-          <span className="olw-hero-font-weight">{heading}</span> {subHeading}
+          {heading}
+        </h1>
+        <h1
+          className="olw-hero-heading"
+        >{subHeading}
         </h1>
       </div>
       <div className="olw-hero-pulse-image-2"></div>

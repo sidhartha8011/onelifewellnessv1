@@ -53,18 +53,28 @@ const HowWeAreSingle = () => {
           heading=""
           subHeading={selectedPost.title}
         />
-        <p className="hwgt-title-paragraph">
-          {selectedPost.description}
-        </p>
       </div>
 
       <div className='hwgt-single-post-content'>
-        <img src={selectedPost.thumbnail} alt={selectedPost.title} className='hwgt-post-image' />
-        <div className='hwgt-single-post-details-container'>
-          <h3>Post title</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, provident! Laudantium voluptatem beatae similique, aspernatur incidunt accusamus officia, nesciunt provident tenetur voluptates earum ab, ad quam eaque consequuntur rem delectus.</p>
-        </div>
-      </div>
+  <img src={selectedPost.thumbnail} alt={selectedPost.title} className='hwgt-post-image' />
+  
+  <div className='hwgt-single-post-details-container'>
+    <h3>{selectedPost.title}</h3>
+    
+    <p>{selectedPost.description}</p>
+    
+    <h4>Key Benefits:</h4>
+    <p>{selectedPost.keyBenefit}</p>
+    
+    <h4>Highlights:</h4>
+    <ul className="hwgt-bullet-points-list">
+      {selectedPost.bulletPoints.map((point, index) => (
+        <li key={index}>{point}</li>
+      ))}
+    </ul>
+    
+  </div>
+</div>
     </div>
   );
 };

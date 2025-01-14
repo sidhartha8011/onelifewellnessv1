@@ -1,68 +1,77 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ComingSoon from '../pages/ComingSoon';
 import Home from '../pages/Home';
-import OneLifeLayout from '../pages/OneLifeLayout';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import HowWeAreGoingTo from '../pages/HowWeAreGoingTo';
 import OutcomeAll from '../pages/OutcomeAll';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
-import NavigationMenu from '../components/NavigationMenu';
 import WhatWeDo from '../pages/WhatWeDo';
 import HowWeAreSingle from '../pages/HowWeAreSingle';
 import OutcomeSingle from '../pages/OutcomeSingle';
+import OneLifeLayout from '../pages/OneLifeLayout';
+import BodyBasics from '../pages/BodyBasics';
+import Explore from '../pages/Explore';
+import NotFound from '../pages/NotFound'; // Add 404 page component
 
-// Define your routes
 const router = createBrowserRouter([
-    {
+  {
     path: '/',
     element: <Home />,
   },
   {
-    path: '/pages/',
-    element: <OneLifeLayout />,
+    path: '/',
+    element: <OneLifeLayout />, // Use OneLifeLayout for other pages
     children: [
       {
-        path: 'about',
-        element: <About />
+        path: '/welcome',
+        element: <About />,
       },
       {
-        path: 'contact',
-        element: <Contact />
+        path: '/who-we-are',
+        element: <WhatWeDo />,
       },
       {
-        path: 'how-we-are-going-to-achieve-it',
-        element: <HowWeAreGoingTo />
+        path: '/how-we-work',
+        element: <HowWeAreGoingTo />,
       },
       {
-        path: 'how-we-are-going-to-achieve-it/:title',
-        element: <HowWeAreSingle />
+        path: '/how-we-work/:title',
+        element: <HowWeAreSingle />,
       },
       {
-        path: 'outcome-of-one-life-wellness',
-        element: <OutcomeAll />
-      },{
-        path: '/pages/outcome-of-one-life-wellness/:title',
-        element: <OutcomeSingle />
-      },    
-      {
-        path: 'privacy-policy',
-        element: <PrivacyPolicy />
+        path: '/why-it-matters',
+        element: <OutcomeAll />,
       },
       {
-        path: 'what-we-do',
-        element: <WhatWeDo />
-      }
-    ]
+        path: '/why-it-matters/:title',
+        element: <OutcomeSingle />,
+      },
+      {
+        path: '/privacy-policy',
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: '/lets-talk',
+        element: <Contact />,
+      },
+      {
+        path: '/body-basics',
+        element: <BodyBasics />,
+      },
+      {
+        path: '/explore',
+        element: <Explore />,
+      },
+    ],
   },
+  // Catch-all route for 404 page
   {
-    path: '/navigation-menu',
-    element: <NavigationMenu />
-  }
+    path: '*',
+    element: <NotFound />,
+  },
 ]);
 
-// Export the RouterProvider component
 const AppRoutes = () => {
   return <RouterProvider router={router} />;
 };

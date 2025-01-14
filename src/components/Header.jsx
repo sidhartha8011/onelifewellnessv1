@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FiMenu, FiX } from "react-icons/fi"; // Import the close icon FiX
+import { FiMenu, FiX } from "react-icons/fi";
 import logo from '../assets/images/One-life-wellness-logo.svg';
-import { NavLink } from 'react-router-dom'; // Import NavLink
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,68 +20,81 @@ const Header = () => {
     <div className='header-menu-container'>
       {/* Logo Section */}
       <div className='header-logo-container'>
+        <NavLink to='/' className='nav-header-logo'>
         <img src={logo} alt='One Life Wellness' className='header-logo' />
+
+        </NavLink>
 
         {/* Desktop and Mobile Menu */}
         <ul className={`header-menu-items-container ${isMobileMenuOpen ? 'open' : ''}`}>
           <li>
             <NavLink
-              to='/'
-              className='header-menu-link'
-              activeClassName='active' // Automatically adds this class to the active route
-              onClick={handleMenuItemClick}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to='/pages/About'
+              to='/welcome'
               className='header-menu-link'
               activeClassName='active'
               onClick={handleMenuItemClick}
             >
-              About
+              Welcome
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
-              to='/pages/How-we-Are-going-to-Achieve-it'
+              to='/who-we-are'
               className='header-menu-link'
               activeClassName='active'
               onClick={handleMenuItemClick}
             >
-              How We Are
+              Who We Are
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
-              to='/pages/Outcome-of-One-Life-Wellness'
+              to='/how-we-work'
               className='header-menu-link'
               activeClassName='active'
               onClick={handleMenuItemClick}
             >
-              Outcomes
+              How We Work
             </NavLink>
           </li>
           <li>
             <NavLink
-              to='/pages/what-we-do'
+              to='/why-it-matters'
               className='header-menu-link'
               activeClassName='active'
               onClick={handleMenuItemClick}
             >
-              What We Do
+              Why It Matters
             </NavLink>
           </li>
           <li>
             <NavLink
-              to='/pages/Contact'
+              to='/body-basics'
               className='header-menu-link'
               activeClassName='active'
               onClick={handleMenuItemClick}
             >
-              Contact
+              Body Basics
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/explore'
+              className='header-menu-link'
+              activeClassName='active'
+              onClick={handleMenuItemClick}
+            >
+              Explore
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/lets-talk'
+              className='header-menu-link'
+              activeClassName='active'
+              onClick={handleMenuItemClick}
+            >
+              Let’s Talk
             </NavLink>
           </li>
         </ul>

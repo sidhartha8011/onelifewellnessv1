@@ -9,6 +9,7 @@ import grandparents from "../assets/images/cs-images/grandparents.png";
 import dog from "../assets/images/cs-images/dog.png";
 import OlwBackgroundTop from "../components/OlwBackgroundTop";
 import OlwBackgroundBottom from "../components/OlwBackgroundBottom";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -26,22 +27,19 @@ const Home = () => {
 
         <div className="olw-home-content-box flex align-center">
           <div className="olw-home-left">
-            <h4 className="olw-hl-head">
-              Lorem ipsum dolor sit amet consectetur.
-            </h4>
-            <h2>LOREM IPSUMDOLOR</h2>
+            <h2>Empowering You to Live with Purpose</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur. Feugiat fermentum a enim
-              feugiat. Pharetra pretium turpis luctus scelerisque sed. Sem
-              laoreet odio ipsum vestibulum tortor magna purus pharetra.
-              Pulvinar vitae fermentum risus id risus nisi quis nunc.
+            You have only one life—live it well, and let us guide you toward a path of peace, prosperity, and productivity.
             </p>
+            <Link to='/welcome'>
+           
             <button className="home-button">
               Explore more
               <span className="home-button-icon">
                 <CgArrowLongRight className="" />
-              </span>{" "}
+              </span>
             </button>
+            </Link>
           </div>
           <div className="olw-home-right">
             <img src={adults} alt="" className="home-adults" />

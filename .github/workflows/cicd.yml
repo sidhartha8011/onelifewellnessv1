@@ -1,35 +1,43 @@
-name: Deploy Vite React Application
+name: Deploy React Vite App
 
-on: 
+on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Source
-        uses: actions/checkout@v4
-
-      - name: Login to Docker Hub
-        run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}     
-
-      - name: Build Docker Image
-        run: docker build -t accenousntegrals/olw-frontend --build-arg VITE_NODE_ENV='production' --build-arg VITE_SERVER_BASE_URL='${{ secrets.VITE_SERVER_BASE_URL }}' .
-
-      - name: Publish Image to Docker Hub
-        run: docker push accenousntegrals/olw-frontend:latest 
- 
   deploy:
-    needs: build
-    runs-on: self-hosted 
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Pull image from Docker Hub
-        run: docker pull accenousntegrals/olw-frontend:latest 
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Delete Old Container
-        run: docker rm -f reactjs-app-container || true  
+      # Log in to DockerHub (set secrets for DockerHub username and password)
+      - name: Log in to DockerHub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
-      - name: Run Docker Container
-        run: docker run -d -p 80:80 --name reactjs-app-container accenousntegrals/olw-frontend
+      # Build Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t react-vite-app:latest .
+
+      # Push Docker image to DockerHub
+      - name: Push Docker image
+        run: |
+          docker tag react-vite-app:latest ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
+
+      # Deploy to EC2
+      - name: SSH into EC2 and deploy
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.EC2_IP }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
+            sudo docker stop react-vite-app || true
+            sudo docker rm react-vite-app || true
+            sudo docker run -d -p 80:80 --name react-vite-app ${{ secrets.DOCKER_USERNAME }}/react-vite-app:latest
