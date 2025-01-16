@@ -12,17 +12,18 @@ import OutcomeSingle from '../pages/OutcomeSingle';
 import OneLifeLayout from '../pages/OneLifeLayout';
 import BodyBasics from '../pages/BodyBasics';
 import Explore from '../pages/Explore';
-import NotFound from '../pages/NotFound'; // Add 404 page component
+import NotFound from '../pages/NotFound';
+import WhyItMatters from '../pages/WhyItMatters';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/',
-    element: <OneLifeLayout />, // Use OneLifeLayout for other pages
+    element: <OneLifeLayout />,
     children: [
+      {
+        index: true, // Default route
+        element: <Home />,
+      },
       {
         path: '/welcome',
         element: <About />,
@@ -36,16 +37,8 @@ const router = createBrowserRouter([
         element: <HowWeAreGoingTo />,
       },
       {
-        path: '/how-we-work/:title',
-        element: <HowWeAreSingle />,
-      },
-      {
         path: '/why-it-matters',
-        element: <OutcomeAll />,
-      },
-      {
-        path: '/why-it-matters/:title',
-        element: <OutcomeSingle />,
+        element: <WhyItMatters />,
       },
       {
         path: '/privacy-policy',
@@ -65,7 +58,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  // Catch-all route for 404 page
   {
     path: '*',
     element: <NotFound />,

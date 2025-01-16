@@ -15,7 +15,6 @@ const Home = () => {
   return (
     <>
       <OlwBackgroundTop />
-      <Header />
       <div className="olw-home-page">
         <div className="olw-header0container">
           <h1 className="olw-home-header zoomIn">
