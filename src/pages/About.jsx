@@ -37,7 +37,7 @@ const About = () => {
               className='zoomIn vision-mission-image'
             />
           </div>
-          <div className='about-us-vision-mission-content'>
+          <div className='about-us-vision-mission-content about-us-section-content'>
             <h2>Our Story & Vision</h2>
             <h3>Where We Began & Where We’re Headed</h3>
             <p>
@@ -66,7 +66,7 @@ const About = () => {
             <img
               src="https://via.placeholder.com/600x400" // Placeholder image
               alt="Who We Are"
-              className='slideInUp'
+              className='slideInUp  vision-mission-image'
             />
           </div>
         </section>
@@ -77,7 +77,7 @@ const About = () => {
             <img
               src="https://via.placeholder.com/600x400" // Placeholder image
               alt="What Sets Us Apart"
-              className='rotateIn'
+              className='rotateIn  vision-mission-image'
             />
           </div>
           <div className='about-us-section-content'>
@@ -106,7 +106,7 @@ const About = () => {
             <img
               src="https://via.placeholder.com/600x400" // Placeholder image
               alt="Our Core Beliefs"
-              className='bounceIn'
+              className='bounceIn  vision-mission-image'
             />
           </div>
         </section>
@@ -117,7 +117,7 @@ const About = () => {
             <img
               src="https://via.placeholder.com/600x400" // Placeholder image
               alt="Our Promise"
-              className='zoomIn'
+              className='zoomIn  vision-mission-image'
             />
           </div>
           <div className='about-us-section-content'>

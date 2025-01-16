@@ -37,30 +37,30 @@ const WhyItMatters = () => {
     <>
       <SEO seoData={seoData} />
       <OLWHero
-        heading="A Journey"
-        subHeading='Towards Peace, Productivity & Prosperity'
+        heading="A Journey Towards"
+        subHeading='Peace, Productivity & Prosperity'
         fontSize="80px" // Adjust font size dynamically if needed
       />
       <div className='whim-descriptions'>
         <p>
-          Life can sometimes feel like a balancing act—juggling responsibilities, nurturing relationships, and striving for personal growth all at once. At One Life Wellness, we believe that authentic well-being isn’t just about avoiding stress or checking off tasks; it’s about consciously shaping your life so that inner tranquility, meaningful accomplishments, and a sense of fulfillment naturally align.
-
-          Through our holistic approach, we guide you toward tangible results that reflect three core pillars: Peace, Productivity, and Prosperity. Each pillar is integral to a life brimming with purpose, connection, and growth. When these elements come together, you gain more than just a healthier body or a clearer mind—you discover a life-affirming transformation that enriches every aspect of your journey.
-        </p>
+         At One Life Wellness, we believe true well-being comes from aligning peace, productivity, and prosperity, fostering inner tranquility, meaningful accomplishments, and lasting fulfillment. Our holistic approach empowers you to shape a purposeful, connected, and transformative life. </p>
       </div>
       <div className='bottom-100'>
         <section className='whim-main-layout'>
           <div className='whim-image-cotainer'>
-            <p>Quotes</p>
+            <p>“ In the stillness of a peaceful mind, every breath becomes a gentle reminder of our own resilience. ”</p>
           </div>
           <div className='whim-content-container'>
+            <div className='whim-cc-top'>
             <h2>Productivity: Transforming Knowledge into Meaningful Action</h2>
             <p>
               Productivity isn’t just about crossing items off a list; it’s about channeling your energy in ways that serve your deepest values. When you clarify your priorities and use small, deliberate steps, you prevent burnout and stay aligned with what genuinely enriches your life. By weaving together intention, routine, and personal growth, productivity becomes an affirming process rather than a draining one.
             </p>
+            </div>
 
             {/* Tab Section */}
-            <h3>Way to</h3>
+            <div className='whim-tab-container'>
+            <h3>Ways to</h3>
             <div className="whim-tab-buttons">
               {tabs.map((tab) => (
                 <button
@@ -72,13 +72,14 @@ const WhyItMatters = () => {
                 </button>
               ))}
             </div>
+            </div>
 
             <div className="whim-tab-content">
               {tabs.map(
                 (tab) =>
                   tab.name === activeTab && (
                     <div key={tab.name} className="whim-tab-item">
-                      <div>
+                      <div className='whim-tab-item-content'>
                         <span className="whim-benefit-title">Benefits</span>
                         <h4 className="whim-tab-title">{tab.name}</h4>
                         <p className="whim-tab-description">{tab.content}</p>
@@ -96,13 +97,16 @@ const WhyItMatters = () => {
         <section className='whim-main-layout'>
           
           <div className='whim-content-container'>
-            <h2>Productivity: Transforming Knowledge into Meaningful Action</h2>
-            <p>
-              Productivity isn’t just about crossing items off a list; it’s about channeling your energy in ways that serve your deepest values. When you clarify your priorities and use small, deliberate steps, you prevent burnout and stay aligned with what genuinely enriches your life. By weaving together intention, routine, and personal growth, productivity becomes an affirming process rather than a draining one.
-            </p>
+            <div className='whim-cc-top'>
+              <h2>Productivity: Transforming Knowledge into Meaningful Action</h2>
+              <p>
+                Productivity isn’t just about crossing items off a list; it’s about channeling your energy in ways that serve your deepest values. When you clarify your priorities and use small, deliberate steps, you prevent burnout and stay aligned with what genuinely enriches your life. By weaving together intention, routine, and personal growth, productivity becomes an affirming process rather than a draining one.
+              </p>
+            </div>
 
             {/* Tab Section */}
-            <h3>Way to</h3>
+            <div className='whim-tab-container'>
+            <h3>Ways to</h3>
             <div className="whim-tab-buttons">
               {tabs.map((tab) => (
                 <button
@@ -114,13 +118,14 @@ const WhyItMatters = () => {
                 </button>
               ))}
             </div>
+            </div>
 
             <div className="whim-tab-content">
               {tabs.map(
                 (tab) =>
                   tab.name === activeTab && (
                     <div key={tab.name} className="whim-tab-item">
-                      <div>
+                      <div className='whim-tab-item-content'>
                         <span className="whim-benefit-title">Benefits</span>
                         <h4 className="whim-tab-title">{tab.name}</h4>
                         <p className="whim-tab-description">{tab.content}</p>
@@ -135,22 +140,26 @@ const WhyItMatters = () => {
           </div>
 
           <div className='whim-image-cotainer'>
-            <p>Quotes</p>
-          </div>
+            <p>“ Productivity flourishes when every task reflects the greater purpose guiding our day-to-day efforts. ”</p>
+          </div> 
         </section>
 
         <section className='whim-main-layout'>
           <div className='whim-image-cotainer'>
-            <p>Quotes</p>
+            <p>“ Prosperity blossoms when the heart brims with gratitude, and each choice honors the abundance that life can offer. ”</p>
           </div>
           <div className='whim-content-container'>
+          <div className='whim-cc-top'>
             <h2>Productivity: Transforming Knowledge into Meaningful Action</h2>
             <p>
               Productivity isn’t just about crossing items off a list; it’s about channeling your energy in ways that serve your deepest values. When you clarify your priorities and use small, deliberate steps, you prevent burnout and stay aligned with what genuinely enriches your life. By weaving together intention, routine, and personal growth, productivity becomes an affirming process rather than a draining one.
             </p>
+            </div>
 
             {/* Tab Section */}
-            <h3>Way to</h3>
+            <div className='whim-tab-container'>
+              
+            <h3>Ways to</h3>
             <div className="whim-tab-buttons">
               {tabs.map((tab) => (
                 <button
@@ -163,12 +172,13 @@ const WhyItMatters = () => {
               ))}
             </div>
 
+            </div>
             <div className="whim-tab-content">
               {tabs.map(
                 (tab) =>
                   tab.name === activeTab && (
                     <div key={tab.name} className="whim-tab-item">
-                      <div>
+                      <div className='whim-tab-item-content'>
                         <span className="whim-benefit-title">Benefits</span>
                         <h4 className="whim-tab-title">{tab.name}</h4>
                         <p className="whim-tab-description">{tab.content}</p>

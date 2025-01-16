@@ -10,20 +10,7 @@ const Footer = () => {
   return (
     <>
       <div className="olw-footer-container">
-        <div className="olw-footer-cta-container">
-          <div className="olw-footer-cta-content">
-            <h1>Lorem Ipsum Dolor Sit Amet Consectetur.</h1>
-            <p>
-              Lorem Ipsum dolor sit amet consectetur Feugiat fermentum a enim
-              feugiat. Pharetra pretium turpis luctus scelerisque sed. Lorem
-              Ipsum dolor sit amet consectetur Feugiat fermentum a enim feugiat.
-              Pharetra pretium turpis luctus scelerisque sed.{" "}
-            </p>
-          </div>
-          <div>
-            <button className="blue-button">Lorem ipsum</button>
-          </div>
-        </div>
+       
         <div className="olw-footer-menu-container">
           <div className="olw-fmc-left">
             <h1>Lorem Ipsum Dolor</h1>

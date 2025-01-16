@@ -116,7 +116,7 @@ const Contact = () => {
             </div>
           )}
 
-          <div className="olw-contact-details">
+          {/* <div className="olw-contact-details">
             <div className="olw-c-details">
               <span className="contact-icon-box"><LuPhoneCall /></span>
               <div>
@@ -138,7 +138,7 @@ const Contact = () => {
                 <h4 className="light-green-color"></h4>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="google-maps-container">

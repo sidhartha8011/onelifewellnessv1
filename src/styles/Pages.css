@@ -14,21 +14,22 @@
   
   /* Section Layout */
   .about-us-content {
-    padding: 50px 15px;
+    padding: 5%;    
   }
   
   .about-us-section {
     display: flex;
-    border: 1px solid #000;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 50px;
     padding: 20px 0;
+    gap: 100px;
     animation-duration: 1.5s;
   }
   
   .about-us-section.reverse-layout {
     flex-direction: row-reverse;
+    background-color: #000;
   }
   
   .about-us-section-image {
@@ -47,41 +48,19 @@
     border: 1px solid #000;
     min-width: 500px;
     min-height: 500px;
+    border-radius: 20px;
   }
   
-  .about-us-vision-mission-content{
+  /* .about-us-vision-mission-content{
     display: flex;
     flex-direction: column;
     gap: 30px;
-  }
-  /* Typography */
-  .about-us-section-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .about-us-section-content h3 {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 15px;
-  }
-  
-  .about-us-section-content p,
-  .about-us-section-content ul {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #444;
-  }
-  
-  .about-us-section-content ul {
-    padding-left: 20px;
-  }
-  
-  .about-us-section-content ul li {
-    margin-bottom: 10px;
-  }
+  } */
 
+  .about-us-image-layout{
+    min-width: 500px;
+    min-height: 400px;
+  }
 
 
 /* What we do page */
@@ -263,7 +242,6 @@
     scroll-snap-align: center;
     position: relative;
     background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
   }
   
   .hwa-roadmap-section:nth-child(odd) {
@@ -293,18 +271,21 @@
   }
   
   .hwa-section-text h2 {
-    font-size: 28px;
-    color: #222;
+    font-size: 30px;
     margin-bottom: 20px;
   }
   
   .hwa-section-text p {
+    font-size: 18px;
     margin-bottom: 20px;
+    line-height: 1.5;
   }
   
   .hwa-section-text ul {
     margin-left: 20px;
     list-style: disc;
+    font-size: 18px;
+    color: var(--primary-blue);
     margin-bottom: 20px;
   }
   
@@ -803,19 +784,60 @@
 
   .whim-image-cotainer{
     width: 40%;
-    height: 500px;
+    height: 570px;
     border-radius: 20px;
     padding: 30px;
+    display: flex;
+    align-items: flex-end;    
     border: 1px solid #000;
+  }
+
+  .whim-descriptions{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .whim-descriptions p{
+    width: 70%;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 20px;
+    font-size: 20px;
   }
 
   .whim-content-container{
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     border-radius: 20px;
     padding: 30px;
     border: 1px solid #000;
   }
 
+  .whim-image-cotainer p{
+    font-size: 22px;
+  }
+
+
+  .whim-cc-top{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .whim-cc-top h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .whim-tab-container{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+  }
   .whim-tab-buttons {
     display: flex;
     flex-direction: row;
@@ -824,32 +846,50 @@
   }
   
   .whim-tab-button {
-    padding: 10px;
+    padding: 10px 20px;
     border: 1px solid #ccc;
     background-color: transparent;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
+    border-radius: 50px;
   }
   
   .whim-tab-button.whim-active {
-    background-color: lightblue;
+    border: 2px solid var(--primary-blue);
   }
   
   .whim-tab-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-content: center;
+    justify-content: center;
+    border: 1px solid #000;
+    padding: 15px;
+    border-radius: 20px;
   }
   
   .whim-tab-item {
     display: flex;
+    align-items: center;
     gap: 20px;
   }
   
   .whim-benefit-title {
-    font-weight: bold;
+    font-weight: 500;
+    border: 1px solid #000;
+    padding: 5px 15px;
+    border-radius: 30px;
+
   }
   
+  .whim-tab-item-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
   .whim-tab-title {
     font-size: 20px;
     margin-top: 10px;
@@ -860,9 +900,10 @@
   }
   
   .whim-tab-image img {
-    max-width: 300px;
-    height: auto;
-    border-radius: 5px;
+    min-width: 270px;
+    min-height: 150px;
+    border: 1px solid #000;
+    border-radius: 15px;
   }
   
 /* mobile & tablet potrait version */

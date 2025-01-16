@@ -383,6 +383,13 @@
   background: var(--bg-light-grey1);
 }
 
+.olw-call-to-action{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-light-grey1);
+}
 
 .olw-footer-cta-container{
   display: flex;
