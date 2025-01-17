@@ -10,7 +10,7 @@ const Introduction = () => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
-    navigate("/home");
+    navigate("/welcome");
   };
 
   return (

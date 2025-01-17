@@ -4,6 +4,11 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SEO from '../components/SEO';
 import OLWHero from '../components/OLWHero';
 import CallToAction from '../components/CallToAction';
+import roadmapOne from '../assets/images/roadmap-one.jpg';
+import roadmapTwo from '../assets/images/roadmap-two.jpg';
+import roadmapThree from '../assets/images/roadmap-three.jpg';
+import roadmapFour from '../assets/images/roadmap-four.jpg';
+import roadmapFive from '../assets/images/roadmap-five.jpg';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -89,6 +94,7 @@ const HowWeAreGoingTo = () => {
         </div>
       ),
       imageAlt: "Awareness & Education",
+      imageurl: roadmapOne
     },
     {
       title: "2. Personalized Assessments",
@@ -101,6 +107,7 @@ const HowWeAreGoingTo = () => {
         </div>
       ),
       imageAlt: "Personalized Assessments",
+      imageurl: roadmapTwo
     },
     {
       title: "3. Actionable Routines & Tools",
@@ -118,6 +125,7 @@ const HowWeAreGoingTo = () => {
         </div>
       ),
       imageAlt: "Actionable Routines & Tools",
+      imageurl: roadmapThree
     },
     {
       title: "4. Continuous Support & Motivation",
@@ -135,6 +143,7 @@ const HowWeAreGoingTo = () => {
         </div>
       ),
       imageAlt: "Continuous Support & Motivation",
+      imageurl: roadmapFour
     },
     {
       title: "5. Measurable Progress & Adaptation",
@@ -147,6 +156,7 @@ const HowWeAreGoingTo = () => {
         </div>
       ),
       imageAlt: "Measurable Progress & Adaptation",
+      imageurl: roadmapFive
     },
   ];
 
@@ -159,7 +169,7 @@ const HowWeAreGoingTo = () => {
       />
       <div className="horizontal-scroll">
         <div className="hwa-how-we-are-going-to">
-          {roadmapData.map(({ title, content, imageAlt }, index) => (
+          {roadmapData.map(({ title, content, imageAlt, imageurl }, index) => (
             <section 
               className="hwa-roadmap-section" 
               key={index}
@@ -167,7 +177,7 @@ const HowWeAreGoingTo = () => {
               <div className="hwa-section-content">
                 <div className="hwa-section-image">
                   <img 
-                    src="/api/placeholder/600/400"
+                    src={imageurl}
                     alt={imageAlt}
                     className='about-us-image-layout'
                   />

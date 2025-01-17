@@ -92,6 +92,7 @@
     animation-duration: 1.5s;
   }
   
+  
   .about-us-section.reverse-layout {
     flex-direction: row-reverse;
     background-color: #000;
@@ -136,9 +137,13 @@
 
 
 
-  .about-us-image-layout{
-    min-width: 500px;
-    min-height: 400px;
+  .about-us-image-layout {
+    width: 500px;
+    height: 400px;
+    object-fit: cover;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 
   
@@ -334,16 +339,10 @@
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 30px;
     width: 100%;
   }
   
-  .hwa-section-image img {
-    max-width: 600px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
   
   .hwa-section-text {
     max-width: 600px;
