@@ -10,6 +10,12 @@ import OlwBackgroundTop from "../components/OlwBackgroundTop";
 import OlwBackgroundBottom from "../components/OlwBackgroundBottom";
 import { Link } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
+import { GiMeditation } from "react-icons/gi";
+import { AiOutlineLaptop } from "react-icons/ai";
+import { GrGrow } from "react-icons/gr";
+import purpose from '../assets/images/purpose.jpg';
+import doctors from '../assets/images/doctors.jpg';
+import mannual from '../assets/images/mannual.jpg';
 
 const Home = () => {
   return (
@@ -60,7 +66,7 @@ const Home = () => {
           <div class="olw-home-intro-section olw-home-layout-image-left">
             <div class="olw-home-image-container">
               <img
-                src="/path/to/intro-image.jpg"
+                src={mannual}
                 alt="One Life Wellness: A Manual for Life"
                 class="olw-home-image"
               />
@@ -94,7 +100,7 @@ const Home = () => {
           <div class="olw-home-intro-section olw-home-layout-image-right">
             <div class="olw-home-image-container">
               <img
-                src="/path/to/vision-image.jpg"
+                src={purpose}
                 alt="The Soul of Our Purpose, Vision & Essence"
                 class="olw-home-image"
               />
@@ -123,7 +129,7 @@ const Home = () => {
           <div class="olw-home-intro-section olw-home-layout-image-left">
             <div class="olw-home-image-container">
               <img
-                src="/path/to/team-image.jpg"
+                src={doctors}
                 alt="Meet the Hearts Behind Our Mission: Who We Are & Why We Care"
                 class="olw-home-image"
               />
@@ -153,18 +159,21 @@ const Home = () => {
               <h2 class="olw-home-title">Our Triple Path to Thriving</h2>
               <ul class="olw-home-list">
                 <li>
+                <GiMeditation className="home-icons" />
                   <h2>Peace</h2> Build emotional resilience and foster
                   a calm, focused mind to handle life’s demands. By nourishing
                   inner harmony, you create a solid foundation for overall
                   well-being.
                 </li>
                 <li>
+                <AiOutlineLaptop className="home-icons" />
                   <h2>Productivity</h2> Leverage proven routines,
                   effective planning, and preventive care to maintain high
                   energy and accomplish more with less stress. When health and
                   structure align, you flourish in every task.
                 </li>
                 <li>
+                <GrGrow className="home-icons" />
                   <h2>Prosperity</h2> Develop an abundant mindset,
                   aligning physical health and mental clarity to create a
                   fulfilling, successful life—both personally and

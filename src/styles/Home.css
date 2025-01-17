@@ -146,14 +146,7 @@
   .olw-home-image-container {
     flex: 1;
   }
-  
-  .olw-home-image-container img {
-    min-width: 100%;
-    min-height: 500px;
-    border-radius: 20px;
-    object-fit: cover;
-    border: 1px solid #000;
-  }
+
   .olw-home-content-container {
     flex: 2;
     max-width: 60%;
@@ -161,9 +154,17 @@
   
   .olw-home-image {
     width: 100%;
-    border-radius: 8px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 18px;
   }
   
+  .home-icons{
+    display: flex;
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+  }
   .olw-home-title {
     font-size: 36px;
     margin-bottom: 1rem;

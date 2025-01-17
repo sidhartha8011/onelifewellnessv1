@@ -112,8 +112,9 @@
 
   .vision-mission-image{
     border: 1px solid #000;
-    min-width: 500px;
-    min-height: 500px;
+    width: 600px;
+    height: 500px;
+    object-fit: cover;
     border-radius: 20px;
   }
   
@@ -494,6 +495,51 @@
     padding-left: 10px;  /* Extra indentation for bullets */
   } 
 
+  .hwagt-our-approach-container {
+    text-align: center;
+    padding: 5%;
+    margin-bottom: 50px;
+  }
+  
+  .hwagt-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .hwagt-points-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .hwagt-icon-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .hwagt-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+  }
+  
+  .hwagt-point-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .hwagt-point-description {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+
 /* Outcomes page design */
 
 .outcome-overall-container{
@@ -851,6 +897,21 @@
 
   /* why it matters css desigh */
 
+  .productivity-background{
+    background-image: url(../assets/images/productivity.jpg);
+    background-size: cover;
+  }
+
+  .peace-background{
+    background-image: url(../assets/images/peace.jpg);
+    background-size: cover;
+  }
+
+  .prosperity-background{
+    background-image: url(../assets/images/prosperity.jpg);
+    background-size: cover;
+  }
+
   .whim-main-layout{
     display: flex;
     flex-direction: row;
@@ -868,7 +929,15 @@
     padding: 30px;
     display: flex;
     align-items: flex-end;    
-    border: 1px solid #000;
+  }
+
+
+   
+  .whim-image-cotainer p {
+    font-size: 20px;
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 20px;
   }
 
   .whim-descriptions{
@@ -885,18 +954,34 @@
     font-size: 20px;
   }
 
+  .whim-tab-icon{
+    min-width: 100px;
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
   .whim-content-container{
     width: 60%;
+    min-height: 550px;
+    background: var(--bg-light-grey2);
     display: flex;
+    justify-content: center;
     flex-direction: column;
     gap: 20px;
     border-radius: 20px;
     padding: 30px;
-    border: 1px solid #000;
   }
 
   .whim-image-cotainer p{
     font-size: 22px;
+  }
+
+  .ppp-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
   }
 
 
@@ -914,7 +999,8 @@
 
   .whim-tab-container{
     display: flex;
-    gap: 15px;
+    margin: 30px auto;
+    gap: 25px;
     flex-direction: column;
   }
   .whim-tab-buttons {
@@ -940,23 +1026,25 @@
   .whim-tab-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     align-content: center;
     justify-content: center;
-    border: 1px solid #000;
     padding: 15px;
     border-radius: 20px;
+    background: var(--bg-white);
   }
   
   .whim-tab-item {
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 20px;
   }
   
   .whim-benefit-title {
     font-weight: 500;
-    border: 1px solid #000;
+    color: #fff;
+    background: var(--primary-blue);
     padding: 5px 15px;
     border-radius: 30px;
 

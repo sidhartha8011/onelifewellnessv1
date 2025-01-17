@@ -9,7 +9,7 @@ import roadmapTwo from '../assets/images/roadmap-two.jpg';
 import roadmapThree from '../assets/images/roadmap-three.jpg';
 import roadmapFour from '../assets/images/roadmap-four.jpg';
 import roadmapFive from '../assets/images/roadmap-five.jpg';
-
+import { FaHeart, FaLeaf, FaSyncAlt, FaUsers } from 'react-icons/fa';
 gsap.registerPlugin(ScrollTrigger);
 
 const HowWeAreGoingTo = () => {
@@ -25,6 +25,13 @@ const HowWeAreGoingTo = () => {
     ogTitle: "How We Are Going to Achieve Wellness - Our Approach",
     ogDescription: "Explore our step-by-step approach to achieving holistic health and wellness.",
   };
+
+  const points = [
+    { icon: <FaHeart />, title: "Holistic", description: "We address mental, physical, and emotional wellness, ensuring you benefit from a well-rounded strategy." },
+    { icon: <FaLeaf />, title: "Empowering", description: "Instead of imposing complex plans, we provide simple, personalized tools you can adopt at your own pace." },
+    { icon: <FaSyncAlt />, title: "Flexible", description: "Life changes, and so should your wellness plan. Our resources grow with you, adapting to new challenges and goals." },
+    { icon: <FaUsers />, title: "Community-Focused", description: "We believe shared experiences bring deeper understanding and empathy, making your journey more meaningful." },
+  ];
 
   useEffect(() => {
     const container = containerRef.current;
@@ -191,13 +198,23 @@ const HowWeAreGoingTo = () => {
           ))}
         </div>
       </div>
-      <section className="hwa-call-to-action">
+      <div className="hwagt-our-approach-container bottom-100">
+      <h1 className="hwagt-title">Why Our Approach Works</h1>
+      <div className="hwagt-points-grid">
+        {points.map((point, index) => (
+          <div key={index} className="hwagt-icon-box">
+            <div className="hwagt-icon">{point.icon}</div>
+            <h3 className="hwagt-point-title">{point.title}</h3>
+            <p className="hwagt-point-description">{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
         
-      </section>
       <CallToAction
-        title="Join Our Community Today!"
-        description="Become part of a vibrant wellness community that supports your holistic health journey."
-        buttonText="Sign Up"
+        title="Take the Next Step"
+        description="Empower your mind, energize your body, and enrich your spirit—one day at a time."
+        buttonText="Join Our Community"
         buttonLink="/signup"
       />
     </div>

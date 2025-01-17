@@ -2,6 +2,11 @@ import React from 'react';
 import SEO from '../components/SEO';
 import OLWHero from '../components/OLWHero';
 import CallToAction from '../components/CallToAction';
+import AboutCover from '../assets/images/about.jpg';
+import OurPromise from '../assets/images/our-promise.jpg';
+import ourStory from '../assets/images/olw-our-story.jpg';
+import ourCore from '../assets/images/our-core-belifs.png';
+import whoWeAre from '../assets/images/olw-who-we-are.jpg';
 
 const About = () => {
   const seoData = {
@@ -19,7 +24,7 @@ const About = () => {
       <OLWHero heading="About" subHeading="One Life Wellness" fontSize="80px" />
       <div className="about-us-hero-image-container">
         <img
-          src="https://via.placeholder.com/1200x600"
+          src={AboutCover}
           alt="About Us Hero"
           className="about-us-hero-image"
         />
@@ -28,7 +33,7 @@ const About = () => {
         <section className="about-us-section about-us-reverse-layout">
           <div className="about-us-section-image">
             <img
-              src="https://via.placeholder.com/600x400"
+              src={ourStory}
               alt="Our Story & Vision"
               className="vision-mission-image"
             />
@@ -54,7 +59,7 @@ const About = () => {
           </div>
           <div className="about-us-section-image">
             <img
-              src="https://via.placeholder.com/600x400"
+              src={whoWeAre}
               alt="Who We Are"
               className="vision-mission-image"
             />
@@ -64,7 +69,7 @@ const About = () => {
         <section className="about-us-section about-us-reverse-layout">
           <div className="about-us-section-image">
             <img
-              src="https://via.placeholder.com/600x400"
+              src={ourCore}
               alt="What Sets Us Apart"
               className="vision-mission-image"
             />
@@ -92,7 +97,7 @@ const About = () => {
           </div>
           <div className="about-us-section-image">
             <img
-              src="https://via.placeholder.com/600x400"
+              src={ourCore}
               alt="Our Core Beliefs"
               className="vision-mission-image"
             />
@@ -102,7 +107,7 @@ const About = () => {
         <section className="about-us-section about-us-reverse-layout">
           <div className="about-us-section-image">
             <img
-              src="https://via.placeholder.com/600x400"
+              src={OurPromise}
               alt="Our Promise"
               className="vision-mission-image"
             />
