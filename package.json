@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "canvas-confetti": "^1.9.3",
+    "framer-motion": "^11.18.0",
     "gsap": "^3.12.7",
     "icons": "^1.0.0",
+    "intersection-observer": "^0.12.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-fast-marquee": "^1.6.5",

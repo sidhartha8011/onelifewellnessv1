@@ -1,3 +1,68 @@
+/* introduction page design */
+
+
+/* Introduction.css */
+
+.olw-intro-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh; text-align: center;
+}
+
+.olw-intro-content-wrapper {
+  margin: 0 auto;
+}
+
+.olw-intro-main-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.olw-intro-sub-heading {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.olw-intro-quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.olw-intro-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.olw-intro-button:hover {
+  background-color: #0056b3;
+}
+
+.olw-intro-button-icon {
+  display: flex;
+  margin-right: 10px;
+}
+
+.olw-intro-icon {
+  font-size: 1.2rem;
+}
+
+
+
+
 /* About us page */
 
 
@@ -51,17 +116,32 @@
     border-radius: 20px;
   }
   
-  /* .about-us-vision-mission-content{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  } */
+ .about-us-section-content{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+ }
+
+ .about-us-section-content h2{
+  font-size: 30px;
+  font-weight: 500;
+ }
+ 
+ .about-us-section-content p, ul{
+  font-size: 17px;
+  color: #000;
+  font-weight: 500;
+  line-height: 1.7;
+ }
+
+
 
   .about-us-image-layout{
     min-width: 500px;
     min-height: 400px;
   }
 
+  
 
 /* What we do page */
 

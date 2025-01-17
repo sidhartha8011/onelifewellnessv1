@@ -14,6 +14,7 @@ import BodyBasics from '../pages/BodyBasics';
 import Explore from '../pages/Explore';
 import NotFound from '../pages/NotFound';
 import WhyItMatters from '../pages/WhyItMatters';
+import Introduction from '../pages/Introduction';
 
 const router = createBrowserRouter([
   {
@@ -22,15 +23,15 @@ const router = createBrowserRouter([
     children: [
       {
         index: true, // Default route
-        element: <Home />,
+        element: <Introduction />,
       },
       {
         path: '/welcome',
-        element: <About />,
+        element: <Home />,
       },
       {
         path: '/who-we-are',
-        element: <WhatWeDo />,
+        element: <About />,
       },
       {
         path: '/how-we-work',

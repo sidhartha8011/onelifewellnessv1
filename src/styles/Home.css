@@ -3,6 +3,7 @@
     padding-top: 150px;
     flex-direction: column;
     min-height: 100vh;
+    padding: 5%;
     align-items: center;
     justify-content: space-between;
     font-family: "Lark", sans-serif;
@@ -17,26 +18,29 @@
 
 .olw-home-content-box{
     gap: 100px;
-    max-width: 90%;
 }
 
 .olw-home-left{
-  min-width: 33%;
-    max-width: 33%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    align-items: start;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .olw-home-left h2 {
     font-size: clamp(36px, 6vw, 62px); /* Adjusted font size range */
     font-weight: 500;
 }
-
+.olw-home-left h3{
+  font-size: clamp(24px, 4vw, 30px); /* Adjusts the font size between 24px and 30px based on viewport width */
+  font-weight: 500;
+}
 .olw-home-left p {
     font-size: clamp(14px, 3vw, 18px); /* Adjusted font size range */
-    text-align: justify;
+    text-align: center;
+    max-width: 70%;
 }
 
 .olw-hl-head {
@@ -74,10 +78,10 @@
 
 .olw-home-right{
     min-height: 50%;
-    width: 90%;
     min-height: 65vh;
     position: relative;
-    
+    margin-top: 50px;
+    margin-bottom: 100px;
 }
 
 
@@ -85,6 +89,7 @@
 .home-dog {
     position: absolute; 
     bottom: 0px;
+    right: 0;
     height: 170px;
     width: auto;
   }
@@ -95,7 +100,7 @@
     width: auto;
     max-height: 450px;
     bottom: 0px;
-    margin-left: 5%;
+    margin-left: 0%;
   }
 
   .home-children{
@@ -104,7 +109,7 @@
     object-fit: cover;
     bottom: 0px;
     height: 190px;
-    margin-left: 7%;
+    margin-left: 33%;
   }
 
   .home-grandparents{
@@ -112,9 +117,98 @@
     width: auto;
     max-height: 480px;
     bottom: 0px;
-    right: 5%;
+    right: 13%;
   }
 
+
+  .olw-home-intro-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  
+  .olw-home-intro-section {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    justify-content: center;
+    gap: 70px;
+  }
+  
+  .olw-home-layout-image-left {
+    flex-direction: row;
+  }
+  
+  .olw-home-layout-image-right {
+    flex-direction: row-reverse;
+  }
+  
+  .olw-home-image-container {
+    flex: 1;
+  }
+  
+  .olw-home-image-container img {
+    min-width: 100%;
+    min-height: 500px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 1px solid #000;
+  }
+  .olw-home-content-container {
+    flex: 2;
+    max-width: 60%;
+  }
+  
+  .olw-home-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .olw-home-title {
+    font-size: 36px;
+    margin-bottom: 1rem;
+  }
+  
+  .olw-home-description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .olw-home-quote {
+    font-style: italic;
+    margin-top: 1rem;
+  }
+
+  .olw-home-box-container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .olw-home-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .olw-home-list li {
+    display: flex;
+    min-height: 300px;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+  
 
 
   @media (min-width: 768px) and (max-width: 1024px) {

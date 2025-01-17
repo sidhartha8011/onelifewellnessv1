@@ -422,13 +422,34 @@
 .olw-footer-image-container{
   background: var(--text-white);
   padding: 10px;
+  width: fit-content;
   border-radius: 10px;
 }
 
 .olw-footer-logo{
-  height: 40px;
+  min-height: 50px;
+  max-height: 50px;
   width: auto;
 }
+
+
+
+.olw-footer-policy-links{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.footer-copyright p{
+  color: #ffffff;
+}
+
+.footer-copyright{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 
 .olw-social-footer-container{
   background: var(--primary-blue);
@@ -496,8 +517,17 @@
 .footer-menu-links{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin-top: 15px;
+}
+
+.footer-menu-items{
+  color: var(--primary-blue);
+  transition: 0.3s ease-in-out;
+}
+
+.footer-menu-items:hover{
+  text-decoration: underline;
 }
 
 /* Hero Section */
@@ -678,11 +708,10 @@
   .olw-social-footer-container{
     gap: 20px;
     padding: 10px;
-    
   }
 
   .olw-footer-logo{
-    height: 30px;
+    height: 50px;
     width: auto;
   }
 
@@ -693,6 +722,12 @@
     padding: 5px;
   }
 
+  .footer-policy-links{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    border: 1px solid #fff;
+  }
 
   .olw-hero-heading{
     text-align: center;

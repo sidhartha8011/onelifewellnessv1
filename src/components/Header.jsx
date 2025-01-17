@@ -37,7 +37,7 @@ const Header = () => {
               Welcome
             </NavLink>
           </li>
-          {/* <li>
+          <li>
             <NavLink
               to='/who-we-are'
               className='header-menu-link'
@@ -46,7 +46,7 @@ const Header = () => {
             >
               Who We Are
             </NavLink>
-          </li> */}
+          </li>
           <li>
             <NavLink
               to='/how-we-work'
@@ -67,7 +67,7 @@ const Header = () => {
               Why It Matters
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink
               to='/body-basics'
               className='header-menu-link'
@@ -86,7 +86,7 @@ const Header = () => {
             >
               Explore
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to='/lets-talk'

@@ -115,30 +115,6 @@ const Contact = () => {
               <p>We’ve received your information and will get back to you soon.</p>
             </div>
           )}
-
-          {/* <div className="olw-contact-details">
-            <div className="olw-c-details">
-              <span className="contact-icon-box"><LuPhoneCall /></span>
-              <div>
-                <h3>PHONE</h3>
-                <h4 className="light-green-color"></h4>
-              </div>
-            </div>
-            <div className="olw-c-details">
-              <span className="contact-icon-box"><LiaFaxSolid /></span>
-              <div>
-                <h3>Fax</h3>
-                <h4 className="light-green-color"></h4>
-              </div>
-            </div>
-            <div className="olw-c-details">
-              <span className="contact-icon-box"><MdOutlineAttachEmail /></span>
-              <div>
-                <h3>Email</h3>
-                <h4 className="light-green-color"></h4>
-              </div>
-            </div>
-          </div> */}
         </div>
 
         <div className="google-maps-container">
