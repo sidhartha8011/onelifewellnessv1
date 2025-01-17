@@ -7,6 +7,7 @@ import OurPromise from '../assets/images/our-promise.jpg';
 import ourStory from '../assets/images/olw-our-story.jpg';
 import ourCore from '../assets/images/our-core-belifs.png';
 import whoWeAre from '../assets/images/olw-who-we-are.jpg';
+import Preventive from '../assets/images/preventive.png';
 
 const About = () => {
   const seoData = {
@@ -97,9 +98,9 @@ const About = () => {
           </div>
           <div className="about-us-section-image">
             <img
-              src={ourCore}
+              src={Preventive}
               alt="Our Core Beliefs"
-              className="vision-mission-image"
+              className="vision-mission-image about-image-contain"
             />
           </div>
         </section>
