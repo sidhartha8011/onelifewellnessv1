@@ -226,7 +226,7 @@ const Home = () => {
       <CallToAction
         title="Ready to Take the Next Step?"
         description="Stay ahead of health trends, unlock expert tips, and receive actionable guides—right in your inbox. Join our newsletter and begin your journey toward a healthier, happier life today."
-        buttonText="[Subscribe Now"
+        buttonText="Subscribe Now"
         buttonLink="/signup"
       />
       <OlwBackgroundBottom />
