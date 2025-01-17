@@ -91,6 +91,9 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.quotes{
+  font-style: italic !important;
+}
 
 /* Utility Classes for Flex */
 .flex {

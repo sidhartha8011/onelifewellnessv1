@@ -4,6 +4,7 @@ import { LiaFaxSolid } from "react-icons/lia";
 import { MdOutlineAttachEmail } from "react-icons/md";
 import PhoneInput from "react-phone-number-input";
 import 'react-phone-number-input/style.css';
+import axios from 'axios';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +15,8 @@ const Contact = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false); // Track form submission
+  const [errorMessage, setErrorMessage] = useState(""); // To display errors
+  const [loading, setLoading] = useState(false); // To manage loading state
 
   // Handle input changes
   const handleInputChange = (e) => {
@@ -33,10 +36,32 @@ const Contact = () => {
   };
 
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page reload
-    console.log("Form Submitted with data:", formData);
-    setSubmitted(true); // Set submitted to true to show the thank you message
+
+    // Check if any field is empty
+    if (!formData.name || !formData.email || !formData.phoneNumber || !formData.purpose || !formData.message) {
+      setErrorMessage("All fields are required");
+      return;
+    }
+
+    setLoading(true);
+    setErrorMessage(""); // Clear any previous errors
+
+    try {
+      // Send form data to the backend API using axios
+      const response = await axios.post("http://localhost:5000/send-email", formData);
+
+      if (response.status === 200) {
+        setSubmitted(true); // Set submitted to true to show the thank you message
+      }
+    } catch (error) {
+      // Handle errors during the API request
+      setErrorMessage("Failed to send the form. Please try again.");
+      console.error("Form submission error: ", error);
+    } finally {
+      setLoading(false); // Stop loading
+    }
   };
 
   return (
@@ -104,10 +129,12 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                 />
-                <button type="submit" className="submit-button">
-                  SEND
+                <button type="submit" className="submit-button" disabled={loading}>
+                  {loading ? "Sending..." : "SEND"}
                 </button>
               </form>
+
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
           ) : (
             <div className="thank-you-message">
@@ -115,6 +142,8 @@ const Contact = () => {
               <p>We’ve received your information and will get back to you soon.</p>
             </div>
           )}
+
+          
         </div>
 
         <div className="google-maps-container">
@@ -124,6 +153,7 @@ const Contact = () => {
             frameBorder="0"
             scrolling="no"
             marginHeight="0"
+            className="google-maps-preview"
             marginWidth="0"
             src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Dubai+(One%20Life%20Wellness)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>

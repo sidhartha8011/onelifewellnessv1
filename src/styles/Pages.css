@@ -809,6 +809,9 @@
     height: 500px;
 }
 
+.google-maps-preview{
+  border-radius: 20px;
+}
 
 .contact-form-heading{
     display: flex;

@@ -93,7 +93,7 @@ const WhyItMatters = () => {
         {/* Peace Section */}
         <section className="whim-main-layout">
           <div className="whim-image-cotainer peace-background">
-            <p>“ In the stillness of a peaceful mind, every breath becomes a gentle reminder of our own resilience. ”</p>
+            <p className='quotes'>“ In the stillness of a peaceful mind, every breath becomes a gentle reminder of our own resilience. ”</p>
           </div>
           <div className="whim-content-container">
             <h2>Peace: The Foundation of Inner Calm</h2>
@@ -170,14 +170,14 @@ const WhyItMatters = () => {
             </div>
           </div>
           <div className="whim-image-cotainer productivity-background">
-            <p>“ Productivity flourishes when every task reflects the greater purpose guiding our day-to-day efforts. ”</p>
+            <p className='quotes' >“ Productivity flourishes when every task reflects the greater purpose guiding our day-to-day efforts. ”</p>
           </div>
         </section>
 
         {/* Prosperity Section */}
         <section className="whim-main-layout">
           <div className="whim-image-cotainer prosperity-background">
-            <p>“ Prosperity blossoms when the heart brims with gratitude. ”</p>
+            <p className='quotes'>“ Prosperity blossoms when the heart brims with gratitude. ”</p>
           </div>
           <div className="whim-content-container">
             <h2>Prosperity: Inviting Abundance from the Inside Out</h2>

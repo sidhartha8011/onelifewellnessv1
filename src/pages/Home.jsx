@@ -1,7 +1,7 @@
 import React from "react";
 
 import { CgArrowLongRight } from "react-icons/cg";
-
+import { FaArrowCircleRight } from "react-icons/fa";
 import adults from "../assets/images/cs-images/adults.png";
 import children from "../assets/images/cs-images/children.png";
 import grandparents from "../assets/images/cs-images/grandparents.png";
@@ -122,6 +122,21 @@ const Home = () => {
                 clarity, physical vitality, and emotional balance shape everyday
                 life.
               </p>
+              <div className="essence-section">
+                <h3>Essence</h3>
+                <ul>
+                  <li><strong>
+                  Trust & Transparency:</strong> Every article is carefully reviewed by experts, ensuring reliability and accuracy.
+                  </li>
+                  <li>
+                  <strong>
+                  Holistic Focus:  </strong>We cover everything from physical fitness to mental health, nutrition, and lifestyle optimization.
+                  </li>
+                  <li>
+                    <strong>Empowering Simplicity: </strong> No complicated jargon—just straightforward guidance you can apply in daily life.
+                    </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -154,7 +169,7 @@ const Home = () => {
           </div>
 
           {/* <!-- Section 4: Content Left, Image Right --> */}
-          <div class="olw-home-intro-section olw-home-layout-image-right bottom-100">
+          <div class="olw-home-intro-section olw-home-layout-image-right">
             <div class="olw-home-box-container">
               <h2 class="olw-home-title">Our Triple Path to Thriving</h2>
               <ul class="olw-home-list">
@@ -184,6 +199,29 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="olw-welcome-article bottom-100">
+              <div className="article-header">
+              <h1>Stay Informed, Stay Inspired</h1>
+              <p>Dive into our expert-curated articles designed for busy individuals. Learn quick tips, proven strategies, and emerging trends to enhance your lifestyle and well-being.</p>
+              </div>
+
+              <div className="articles-preview">
+                <div className="articles-thumbnail">
+                  <h3>Mastering Stress: 5 Practical Techniques for Busy Schedules</h3>
+                  <div>
+                  <FaArrowCircleRight className="articles-icon" /></div>
+                </div>
+                <div className="articles-thumbnail">
+                  <h3>Heart Health Essentials: Keeping Your Family Safe & Active</h3>
+                  <div> <FaArrowCircleRight className="articles-icon" /></div>
+                </div>
+                <div className="articles-thumbnail">
+                  <h3>Mental Wellness Matters: Simple Steps to Boost Emotional Resilience</h3>
+                  <div>  <FaArrowCircleRight className="articles-icon" /></div>
+                </div>
+              </div>
       </div>
       <CallToAction
         title="Ready to Take the Next Step?"
