@@ -1,20 +1,11 @@
 @import './styles/ComingSoon.css';
 @import './assets/font/fonts.css';
 @import './styles/Components.css';
-@import './styles//Home.css';
-@import './styles//Pages.css';
+@import './styles/Home.css';
+@import './styles/Pages.css';
 
-/* inter font */
+/* Inter Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-
-
-.inter-font {
-  font-family: "Inter", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
 
 /* Root Variables */
 :root {
@@ -30,12 +21,29 @@
   --bg-light-grey2: #F3F4F8;
 
   --input-form-color: #8FC0FF;
-
   --icon-bg-color: #EBF4FF;
 
   --font-primary: 'Lark', sans-serif;
-}
+  --font-secondary: 'Inter', serif;
 
+  /* Golden Ratio Font Sizes */
+  --font-h1: 2.618em;
+  --font-h2: 2.058em;
+  --font-h3: 1.618em;
+  --font-h4: 1.272em;
+  --font-h5: 1em;
+  --font-h6: 0.786em;
+  --font-body: 1em;
+  --font-small: 0.618em;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
 
 * {
   padding: 0;
@@ -53,46 +61,58 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: var(--primary-blue);
   font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-blue);
 }
 
-p {
-  color: var(--primary-blue);
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }
+h4 { font-size: var(--font-h4); }
+h5 { font-size: var(--font-h5); }
+h6 { font-size: var(--font-h6); }
+
+p, span, a {
   font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  color: var(--primary-blue);
+  font-size: var(--font-body);
 }
 
 ul, ol {
   font-family: var(--font-primary);
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   color: var(--primary-black);
-  padding: 0;
   list-style: none;
+  padding: 0;
 }
 
 a {
   text-decoration: none;
   display: flex;
-  font-family: var(--font-primary);
 }
 
 input, textarea {
   font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
   border: none;
   padding: 0.5em;
   border-radius: 4px;
-  font-size: 1em;
+  font-size: var(--font-body);
 }
 
 button {
-  color: var(--primary-black);
   font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-black);
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.quotes{
+.quotes {
   font-style: italic !important;
+  font-weight: var(--font-weight-light);
 }
 
 /* Utility Classes for Flex */
@@ -130,33 +150,7 @@ button {
   align-items: flex-end;
 }
 
-/* Responsive Design Example */
-@media (max-width: 768px) {
-  body {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  input, button {
-    width: 100%;
-    font-size: 1em;
-  }
-}
-
-
-.heading-bold{
-  font-weight: 500;
-}
-
-
-.olw-outlet-container{
-  padding-top: 108px;
-}
-
-
+/* Button Styles */
 .blue-button {
   display: flex;
   align-items: center;
@@ -165,39 +159,117 @@ button {
   color: var(--text-white);
   background: var(--primary-blue);
   border-radius: 11px;
-  font-size: 16px;
+  font-size: var(--font-h5);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Spacing Utilities */
+.olw-outlet-container {
+  padding-top: 108px;
 }
 
 .bottom-100 {
   padding-bottom: 100px;
 }
 
-.pointer{
+.pointer {
   cursor: pointer;
 }
 
-/* Global scrollbar styles */
+/* Global Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 5px; /* Adjust scrollbar width */
-  height: 8px; /* Adjust scrollbar height */
+  width: 5px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #022759; /* Blue color for scrollbar thumb */
-  border-radius: 1px; /* Round the edges */
+  background-color: var(--primary-blue);
+  border-radius: 1px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #031f47; /* Darker blue on hover */
+  background-color: #031f47;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #f3f4f8; /* Light background for the track */
-  border-radius: 4px; /* Match thumb border radius */
+  background-color: var(--bg-light-grey2);
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 1200px) {
+  body {
+    font-size: calc(var(--font-body) * 0.9); /* Scale down body font size */
+  }
+
+  h1 {
+    font-size: calc(var(--font-h1) * 0.9); /* Scale down heading size */
+  }
+
+  h2 {
+    font-size: calc(var(--font-h2) * 0.9); /* Scale down heading size */
+  }
+
+  h3 {
+    font-size: calc(var(--font-h3) * 0.9);
+  }
+
+  h4 {
+    font-size: calc(var(--font-h4) * 0.9);
+  }
+
+  h5, h6 {
+    font-size: calc(var(--font-h5) * 0.9);
+  }
+
+  input, button {
+    width: 100%; /* Make input and button full-width for larger screens */
+    font-size: 1em; /* Ensure readable text size */
+  }
+
+  p, span, a {
+    font-size: calc(var(--font-body) * 0.9); /* Adjust paragraph, span, and link sizes */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: calc(var(--font-body) * 0.8); /* Scale down further for smaller screens */
+  }
+
+  h1 {
+    font-size: calc(var(--font-h1) * 0.8); /* Adjust heading size */
+  }
+
+  h2 {
+    font-size: calc(var(--font-h2) * 0.8);
+  }
+
+  h3 {
+    font-size: calc(var(--font-h3) * 0.8);
+  }
+
+  h4 {
+    font-size: calc(var(--font-h4) * 0.8);
+  }
+
+  h5, h6 {
+    font-size: calc(var(--font-h5) * 0.8);
+  }
+
+  input, button {
+    width: 100%; /* Full-width input and button */
+    font-size: 1em; /* Keep text size readable */
+  }
+
+  p, span, a {
+    font-size: calc(var(--font-body) * 0.8); /* Adjust font size for smaller text */
+  }
 }
 
 
-/* Apply the animations with the classes */
+/* Animations */
 .fadeIn { animation: fadeIn 1s ease-out; }
 .fadeInUp { animation: fadeInUp 1s ease-out; }
 .fadeInDown { animation: fadeInDown 1s ease-out; }
@@ -241,7 +313,6 @@ button {
 .lightSpeedIn { animation: lightSpeedIn 1s ease-in-out; }
 
 .rollIn { animation: rollIn 1s ease-out; }
-
 
 /* Fade Animations */
 @keyframes fadeIn {

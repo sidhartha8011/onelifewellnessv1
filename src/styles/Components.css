@@ -244,6 +244,8 @@
 }
 
 /* Header Menu Styles */
+
+/* Header Menu Styles */
 .header-menu-container {
   display: flex;
   position: fixed;
@@ -254,6 +256,18 @@
   padding: 20px 0;
   box-shadow: 0px 2px 4px 0px #00000033;
   z-index: 100;
+  top: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.header-menu-container.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.header-menu-container.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 /* Logo Section */
@@ -294,11 +308,10 @@
 }
 
 .header-menu-link.active {
-  color: #ffffff; /* White text for active link */
-  background: #022759; /* Highlight background */
+  color: #ffffff;
+  background: #022759;
 }
 
-/* Hover effect for links */
 .header-menu-link:hover {
   background: #022759;
   color: #ffffff;
@@ -306,7 +319,7 @@
 
 /* Hamburger Menu Icon */
 .header-hamburger-container {
-  display: none; /* Hide on desktop */
+  display: none;
   cursor: pointer;
 }
 
@@ -321,10 +334,13 @@
   border-radius: 15px;
 }
 
+
+
 /* Mobile Styles */
 @media (max-width: 968px) {
   .header-menu-container{
     padding: 10px 10px;
+    display: flex;
   }
   .header-menu-items-container {
     display: none; /* Hide menu on mobile */
