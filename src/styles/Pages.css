@@ -56,6 +56,7 @@
 
 .olw-intro-icon {
   font-size: 1.2rem;
+  color: #ffffff;
 }
 
 
@@ -419,6 +420,84 @@
     font-style: italic;
     color: #e6e6e6;
   }
+
+/* General Styling */
+.osv-horizontal-scroll {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-type: x mandatory;
+}
+
+.osv-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.osv-section {
+  flex: 0 0 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  scroll-snap-align: center;
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+.osv-section:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.osv-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  width: 100%;
+}
+
+.osv-section-text {
+  max-width: 600px;
+  margin-left: 30px;
+}
+
+.osv-section-text h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.osv-section-text p,
+.osv-section-text ul {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.osv-section-text ul {
+  margin-left: 20px;
+  list-style: disc;
+  color: var(--primary-blue);
+}
+
+.osv-section-text strong {
+  font-weight: bold;
+  color: var(--primary-blue);
+}
+
+.osv-image {
+  width: 550px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
 
   .why-approach-works-section {
     width: 100%;

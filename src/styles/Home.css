@@ -135,95 +135,105 @@
     right: 13%;
   }
 
-  /* General Layout */
-.olw-welcome-intro-sections {
+  /* Horizontal Scroll Setup */
+.olw-welcome-page-horizontal-scroll {
   display: flex;
-  flex-direction: row;
-  gap: 60px;
-  height: 100vh; 
-  flex-wrap: nowrap;
   overflow-x: hidden;
+  width: 100%;
+  
+  min-height: 100vh; /* Full viewport height */
   scroll-snap-type: x mandatory;
+  margin-bottom: 100px;
 }
 
-.olw-welcome-intro-section {
+.olw-welcome-page-how-we-are-going-to {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh; /* Ensures all content matches the viewport height */
+}
+
+/* Roadmap Section */
+.olw-welcome-page-roadmap-section {
+  flex: 0 0 100vw; /* Each section takes up the full width of the viewport */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  scroll-snap-align: center;
+  position: relative;
+  background-color: #f9f9f9;
+  min-height: 100vh; /* Ensures full viewport height */
+}
+
+.olw-welcome-page-roadmap-section:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.olw-welcome-page-about-us-image-layout{
+  border: 1px solid #000;
+  min-height: 400px;
+  min-width: 500px;
+  border-radius: 20px;
+}
+
+.olw-welcome-page-section-content {
   display: flex;
   align-items: center;
-  min-height: 100vh;
-  padding: 0 5%;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
   width: 100%;
-  justify-content: center;
-  gap: 70px;
+  min-height: 100vh; /* Ensures the content container itself fills the viewport height */
 }
 
-.olw-welcome-layout-image-left {
-  flex-direction: row;
+.olw-welcome-page-section-image {
+  flex: 1; /* Allows the image to occupy available space */
 }
 
-.olw-welcome-layout-image-right {
-  flex-direction: row-reverse;
+.olw-welcome-page-section-text {
+  flex: 1; /* Text occupies remaining space */
+  max-width: 600px;
+  margin-left: 30px;
 }
 
-.olw-welcome-image-container {
-  flex: 1;
-}
-
-.olw-welcome-content-container {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 60%;
-}
-
-/* Images */
-.olw-welcome-image {
-  width: 100%;
-  min-height: 450px;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-/* Icons */
-.olw-welcome-icons {
-  display: flex;
-  font-size: 45px;
+.olw-welcome-page-section-text h2 {
+  font-size: 30px;
   margin-bottom: 20px;
+}
+
+.olw-welcome-page-section-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.olw-welcome-page-section-text ul {
+  margin-left: 20px;
+  list-style: disc;
+  font-size: 18px;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.olw-welcome-page-section-text ul li {
+  margin-bottom: 10px;
+}
+
+.olw-welcome-page-section-text strong {
+  font-weight: bold;
   color: var(--primary-blue);
 }
 
-.olw-welcome-icon {
-  display: flex;
-  font-size: 45px;
-  margin-bottom: 20px;
-  color: var(--primary-blue);
-}
 
-.olw-welcome-article-icon{
-  display: flex;
-  font-size: 45px;
-  margin-bottom: 20px;
-  color: var(--primary-blue);
-
-}
-
-/* Titles and Text */
-.olw-welcome-title {
-  font-size: 36px;
-  margin-bottom: 1rem;
-}
-
-.olw-welcome-description {
-  font-size: clamp(14px, 3vw, 18px);
-  line-height: 1.6;
-}
-
-.olw-welcome-quote {
+blockquote{
+  font-size: 18px;
   font-style: italic;
-  margin-top: 1rem;
+  line-height: 1.6  ;
 }
-
+  
 /* Triple Path Section */
 .olw-welcome-box-container {
   display: flex;
@@ -264,7 +274,7 @@
 /* Articles Section */
 .olw-welcome-articles-section {
   padding: 0 5%;
-  margin-bottom: 100px;
+  margin-bottom: 150px;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -341,7 +351,8 @@
 }
 
 .olw-welcome-triple-path-section{
-  margin: 50px 0;
+  margin: 100px 0;
+  margin-top: 100px;
 }
 
 .olw-welcome-section-quote{
@@ -349,6 +360,11 @@
   margin-top: 1rem;
 }
 
+.olw-welcome-icon{
+  display: flex;
+  font-size: 40px;
+  color: var(--primary-blue);
+}
 
 .olw-welcome-triple-path-list {
   list-style-type: none;
@@ -371,6 +387,9 @@
   text-align: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+
+
 
   @media (min-width: 768px) and (max-width: 1024px) {
     .olw-home-page{
