@@ -567,20 +567,21 @@
 
 .olw-hero-pulse-image, .olw-hero-pulse-image-2 {
   flex-grow: 1;
-  height: 70px; /* Or any desired height */
+  height: 200px; /* Or any desired height */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .olw-hero-pulse-image {
-  background-position: center right;
-  background-image: url('../assets/images/bg-vectors/ecg.svg');
+  background-position: center left;
+  transform: scaleX(-1);
+  background-image: url('../assets/images/bg-vectors/ecg.gif');
 }
 
 .olw-hero-pulse-image-2 {
   background-position: center left;
-  background-image: url('../assets/images/bg-vectors/ecg.svg');
+  background-image: url('../assets/images/bg-vectors/ecg.gif');
 }
 
 .olw-hero-head-container {

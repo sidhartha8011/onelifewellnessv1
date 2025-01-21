@@ -14,10 +14,19 @@ import CallToAction from "../components/CallToAction";
 import { GiMeditation } from "react-icons/gi";
 import { AiOutlineLaptop } from "react-icons/ai";
 import { GrGrow } from "react-icons/gr";
-import purpose from "../assets/images/purpose.jpg";
-import doctors from "../assets/images/doctors.jpg";
-import manual from "../assets/images/mannual.jpg";
+import welcomeOne from '../assets/images/welcome/welcome-one.png'
+import welcomeTwo from '../assets/images/welcome/welcome-two.jpg'
+import welcomeThree from '../assets/images/welcome/welcome-three.jpg'
+import welcomeFour from '../assets/images/welcome/welcome-four.jpg'
 import { FaHeart, FaLeaf, FaSyncAlt, FaUsers } from "react-icons/fa";
+
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+import { fadeInUp, fadeInLeft, fadeInRight, zoomIn, staggerContainer } from "../components/AnimationVariants";
+
+
 gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
   const navSectionRef = useRef(null);
@@ -28,6 +37,17 @@ const Home = () => {
   const scrollToSection = () => {
     navSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [homeRef, homeInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [triplePathRef, triplePathInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [articlesRef, articlesInView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  const [scrollRef, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
+
+  
 
   const sectionsData = [
     {
@@ -53,7 +73,7 @@ const Home = () => {
         </div>
       ),
       imageAlt: "One Life Wellness Manual",
-      imageurl: "https://via.placeholder.com/600x400",
+      imageurl: welcomeOne,
     },
     {
       title: "The Soul of Our Purpose, Vision & Essence",
@@ -75,7 +95,7 @@ const Home = () => {
         </div>
       ),
       imageAlt: "Soul of Our Purpose",
-      imageurl: "https://via.placeholder.com/600x400",
+      imageurl: welcomeTwo,
     },
     {
       title: "Essence",
@@ -98,7 +118,7 @@ const Home = () => {
         </div>
       ),
       imageAlt: "Essence of Our Vision",
-      imageurl: "https://via.placeholder.com/600x400",
+      imageurl: welcomeThree,
     },
     {
       title: "Meet the Hearts Behind Our Mission",
@@ -119,7 +139,7 @@ const Home = () => {
         </div>
       ),
       imageAlt: "Meet the Team",
-      imageurl: "https://via.placeholder.com/600x400",
+      imageurl: welcomeFour,
     },
   ];
 
@@ -177,74 +197,94 @@ const Home = () => {
     <>
       <OlwBackgroundTop />
       <div className="olw-home-page">
-        <div className="olw-home-content-box ">
-          <div className="olw-home-left">
-            <h2 className="fadeInUp">Empower Your Health, Empower Your Life</h2>
-            <h3 className="fadeInUp">
-              A One-Stop Guide to Living Well—Body, Mind, and Spirit
-            </h3>
-            <p className="fadeInUp">
-              Welcome to One Life Wellness, your comprehensive platform for
-              health, lifestyle, and psychological insights. Discover actionable
-              strategies and expert-driven resources to help you and your family
-              thrive at every stage of life.
-            </p>
-
-            <button className="home-button" onClick={scrollToSection}>
-              <span className="home-button-icon">
-                <FaAnglesDown />
-              </span>
-            </button>
-          </div>
-          <div className="olw-home-right">
-            <img src={adults} alt="Adults" className="home-adults" />
-            <img src={children} alt="Children" className="home-children" />
-            <img
-              src={grandparents}
-              alt="Grandparents"
-              className="home-grandparents pointer"
-            />
-            <img src={dog} alt="Dog" className="home-dog" />
-          </div>
-        </div>
+      <motion.div
+        className="olw-home-content-box"
+        ref={homeRef}
+        initial="hidden"
+        animate={homeInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+      >
+        <motion.div className="olw-home-left" variants={fadeInLeft}>
+          <h2>Empower Your Health, Empower Your Life</h2>
+          <h3>A One-Stop Guide to Living Well—Body, Mind, and Spirit</h3>
+          <p>
+            Welcome to One Life Wellness, your comprehensive platform for
+            health, lifestyle, and psychological insights. Discover actionable
+            strategies and expert-driven resources to help you and your family
+            thrive at every stage of life.
+          </p>
+          <motion.button
+            className="home-button"
+            onClick={() => scrollToSection()}
+            variants={zoomIn}
+          >
+            <span className="home-button-icon">
+              <FaAnglesDown />
+            </span>
+          </motion.button>
+        </motion.div>
+        <motion.div className="olw-home-right" variants={fadeInRight}>
+          <motion.img src={adults} alt="Adults" className="home-adults" variants={zoomIn} />
+          <motion.img src={children} alt="Children" className="home-children" variants={zoomIn} />
+          <motion.img src={grandparents} alt="Grandparents" className="home-grandparents pointer" variants={zoomIn} />
+          <motion.img src={dog} alt="Dog" className="home-dog" variants={zoomIn} />
+        </motion.div>
+      </motion.div>
       </div>
 
       {/* Intro Sections */}
       <div ref={containerRef}>
-        <div className="olw-welcome-page-horizontal-scroll"   ref={navSectionRef}>
-          <div className="olw-welcome-page-how-we-are-going-to">
-            {sectionsData.map(
-              ({ title, description, imageAlt, imageurl }, index) => (
-                <section
-                  className="olw-welcome-page-roadmap-section"
-                  key={index}
-                >
-                  <div className="olw-welcome-page-section-content">
-                    <div className="olw-welcome-page-section-image">
-                      <img
-                        src={imageurl}
-                        alt={imageAlt}
-                        className="olw-welcome-page-about-us-image-layout"
-                      />
-                    </div>
-                    <div className="olw-welcome-page-section-text">
-                      <h2>{title}</h2>
-                      {description}
-                    </div>
-                  </div>
-                </section>
-              )
-            )}
-          </div>
-        </div>
+      <motion.div
+      className="olw-welcome-page-horizontal-scroll"
+      ref={scrollRef}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={staggerContainer}
+    >
+      <div className="olw-welcome-page-how-we-are-going-to">
+        {sectionsData.map(({ title, description, imageAlt, imageurl }, index) => (
+          <motion.section
+            className="olw-welcome-page-roadmap-section"
+            key={index}
+            variants={fadeInUp} // Apply fadeInUp for each section
+          >
+            <div className="olw-welcome-page-section-content">
+              <motion.div
+                className="olw-welcome-page-section-image"
+                variants={fadeInLeft} // Fade in left for images
+              >
+                <img
+                  src={imageurl}
+                  alt={imageAlt}
+                  className="olw-welcome-page-about-us-image-layout"
+                />
+              </motion.div>
+              <motion.div
+                className="olw-welcome-page-section-text"
+                variants={fadeInRight} // Fade in right for text
+              >
+                <h2>{title}</h2>
+                <p>{description}</p>
+              </motion.div>
+            </div>
+          </motion.section>
+        ))}
+      </div>
+    </motion.div>
       </div>
 
       {/* Triple Path Section */}
-      <div className="olw-welcome-triple-path-section">
-        <div className="olw-welcome-content-box">
+      <motion.div
+        className="olw-welcome-triple-path-section"
+        ref={triplePathRef}
+        initial="hidden"
+        animate={triplePathInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+      >
+        <motion.div className="olw-welcome-content-box" variants={fadeInUp}>
           <h2>Our Triple Path to Thriving</h2>
           <ul className="olw-welcome-triple-path-list">
-            <li>
+            <motion.li variants={fadeInUp}>
               <GiMeditation className="olw-welcome-icon" />
               <h3>Peace</h3>
               <p>
@@ -252,8 +292,8 @@ const Home = () => {
                 handle life’s demands. By nourishing inner harmony, you create a
                 solid foundation for overall well-being.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={fadeInUp}>
               <AiOutlineLaptop className="olw-welcome-icon" />
               <h3>Productivity</h3>
               <p>
@@ -262,8 +302,8 @@ const Home = () => {
                 stress. When health and structure align, you flourish in every
                 task.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={fadeInUp}>
               <GrGrow className="olw-welcome-icon" />
               <h3>Prosperity</h3>
               <p>
@@ -272,45 +312,45 @@ const Home = () => {
                 and professionally. True prosperity flows from well-rounded
                 wellness.
               </p>
-            </li>
+            </motion.li>
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Articles Section */}
-      <div className="olw-welcome-articles-section">
-        <div className="olw-welcome-section-header">
+      <motion.div
+        className="olw-welcome-articles-section"
+        ref={articlesRef}
+        initial="hidden"
+        animate={articlesInView ? "visible" : "hidden"}
+        variants={staggerContainer}
+      >
+        <motion.div className="olw-welcome-section-header" variants={fadeInUp}>
           <h1>Stay Informed, Stay Inspired</h1>
           <p>
             Dive into our expert-curated articles designed for busy individuals.
             Learn quick tips, proven strategies, and emerging trends to enhance
             your lifestyle and well-being.
           </p>
-        </div>
-        <div className="olw-welcome-articles-list">
-          <div className="olw-welcome-article-card">
+        </motion.div>
+        <motion.div className="olw-welcome-articles-list">
+          <motion.div className="olw-welcome-article-card" variants={fadeInLeft}>
             <h3>Mastering Stress: 5 Practical Techniques for Busy Schedules</h3>
-            <div>
-              <FaArrowCircleRight className="olw-welcome-article-icon" />
-            </div>
-          </div>
-          <div className="olw-welcome-article-card">
+            <FaArrowCircleRight className="olw-welcome-article-icon" />
+          </motion.div>
+          <motion.div className="olw-welcome-article-card" variants={fadeInRight}>
             <h3>Heart Health Essentials: Keeping Your Family Safe & Active</h3>
-            <div>
-              <FaArrowCircleRight className="olw-welcome-article-icon" />
-            </div>
-          </div>
-          <div className="olw-welcome-article-card">
+            <FaArrowCircleRight className="olw-welcome-article-icon" />
+          </motion.div>
+          <motion.div className="olw-welcome-article-card" variants={zoomIn}>
             <h3>
               Mental Wellness Matters: Simple Steps to Boost Emotional
               Resilience
             </h3>
-            <div>
-              <FaArrowCircleRight className="olw-welcome-article-icon" />
-            </div>
-          </div>
-        </div>
-      </div>
+            <FaArrowCircleRight className="olw-welcome-article-icon" />
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
       <CallToAction
         title="Ready to Take the Next Step?"

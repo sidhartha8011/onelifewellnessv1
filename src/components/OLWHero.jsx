@@ -1,21 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+
+// Define the animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeInOut" } },
+};
 
 const OLWHero = ({ heading, subHeading, fontSize }) => {
   return (
     <div className="olw-hero-section">
       <div className="olw-hero-pulse-image"></div>
+
+      {/* Animation Wrapper for Heading and Subheading */}
       <div className="olw-hero-head-container">
-        <h1
+        {/* Animated Heading */}
+        <motion.h1
           className="olw-hero-heading"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          style={{ fontSize }}
         >
           {heading}
-        </h1>
-        <h1
+        </motion.h1>
+
+        {/* Animated Subheading */}
+        <motion.h1
           className="olw-hero-heading"
-        >{subHeading}
-        </h1>
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          style={{ fontSize }}
+        >
+          {subHeading}
+        </motion.h1>
       </div>
+
       <div className="olw-hero-pulse-image-2"></div>
     </div>
   );

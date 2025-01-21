@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
-import AboutCover from "../assets/images/about.jpg";
+import AboutCover from "../assets/images/about.jpeg";
 import OurPromise from "../assets/images/our-promise.jpg";
 import ourStory from "../assets/images/olw-our-story.jpg";
 import ourCore from "../assets/images/our-core-belifs.png";

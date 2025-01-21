@@ -172,10 +172,11 @@
 }
 
 .olw-welcome-page-about-us-image-layout{
-  border: 1px solid #000;
-  min-height: 400px;
-  min-width: 500px;
+  min-height: 500px;
+  max-height: 500px;
+  max-width: 600px;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .olw-welcome-page-section-content {
