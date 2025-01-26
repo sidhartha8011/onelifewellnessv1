@@ -305,120 +305,113 @@
 /* How we are going to achieve it */
 
 /* Hero Section */
-.horizontal-scroll {
-    display: flex;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100vh;
-    scroll-snap-type: x mandatory;
-  }
-  
-  .hwa-how-we-are-going-to {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100%;
-  }
-  
-  /* Roadmap Section */
-  .hwa-roadmap-section {
-    flex: 0 0 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    scroll-snap-align: center;
-    position: relative;
-    background-color: #f9f9f9;
-  }
-  
-  .hwa-roadmap-section:nth-child(odd) {
-    background-color: #ffffff;
-  }
-  
-  .hwa-section-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 30px;
-    width: 100%;
-  }
-  
-  
-  .hwa-section-text {
-    max-width: 600px;
-    margin-left: 30px;
-  }
-  
-  .hwa-section-text h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-  }
-  
-  .hwa-section-text p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    line-height: 1.5;
-  }
-  
-  .hwa-section-text ul {
-    margin-left: 20px;
-    list-style: disc;
-    font-size: 18px;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-  }
-  
-  .hwa-section-text ul li {
-    margin-bottom: 10px;
-  }
-  
-  .hwa-section-text strong {
-    font-weight: bold;
-    color: #007bff;
-  }
-  
-  /* Call to Action Section */
-  .hwa-call-to-action {
-    padding: 50px 20px;
-    text-align: center;
-    color: #fff;
-    margin-bottom: 100px;
-  }
-  
-  .hwa-call-to-action h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  
-  .hwa-call-to-action p {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  
-  .hwa-cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #007bff;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .hwa-cta-button:hover {
-    background-color: #0056b3;
-    color: #fff;
-  }
-  
-  .hwa-call-to-action blockquote {
-    margin-top: 20px;
-    font-style: italic;
-    color: #e6e6e6;
-  }
+
+.hwa-how-we-are-going-to{
+  background: linear-gradient(204deg, rgba(2,39,89,1) 0%, rgba(186,248,110,1) 100%);
+  padding: 5%;
+}
+
+.swiper {
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.hwa-roadmap-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hwa-section-content {
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  height: 400px;
+  gap: 30px;
+  background: #ffffff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 40px;
+  padding: 30px;
+}
+
+.hwa-title-with-icon{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hwa-section-text{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hwa-icon{
+  font-size: 50px;
+}
+
+.hwa-section-text{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.5;
+}
+
+.hwa-section-text div{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hwa-section-text div ul{
+  list-style:disc;
+  padding-left: 30px;
+}
+
+/* Navigation Arrow Customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-blue) !important; /* Use your custom color */
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--primary-blue) !important; /* Keep the same color on hover or adjust if needed */
+  opacity: 0.8; /* Optional: add a hover effect */
+}
+
+/* Optional: Adjust the size of the arrows if needed */
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 24px; /* Adjust the size */
+}
+
+
+/* Change the color of the pagination dots */
+.swiper-pagination-bullet {
+  background-color: var(--primary-blue) !important; /* Custom color for dots */
+}
+
+/* Change the color of the active pagination dot */
+.swiper-pagination-bullet-active {
+  background-color: var(--primary-blue) !important; /* Active dot color */
+  opacity: 1; /* Ensure the active dot is fully visible */
+}
+
+/* Optional: Hover effect for pagination dots */
+.swiper-pagination-bullet:hover {
+  opacity: 0.8; /* Add a subtle hover effect */
+}
+
 
 /* General Styling */
 .osv-horizontal-scroll {

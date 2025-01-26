@@ -1,22 +1,17 @@
-import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/autoplay';
 import SEO from '../components/SEO';
 import OLWHero from '../components/OLWHero';
 import CallToAction from '../components/CallToAction';
-import roadmapOne from '../assets/images/roadmap-one.jpg';
-import roadmapTwo from '../assets/images/roadmap-two.jpg';
-import roadmapThree from '../assets/images/roadmap-three.jpg';
-import roadmapFour from '../assets/images/roadmap-four.jpg';
-import roadmapFive from '../assets/images/roadmap-five.jpg';
 import { FaHeart, FaLeaf, FaSyncAlt, FaUsers } from 'react-icons/fa';
-gsap.registerPlugin(ScrollTrigger);
+import { FaBook, FaUserCheck, FaClipboardList, FaHandsHelping, FaChartLine } from 'react-icons/fa';
 
 const HowWeAreGoingTo = () => {
-  const containerRef = useRef(null);
-  const scrollTriggerRef = useRef(null);
-  const animationsRef = useRef([]);
-
   const seoData = {
     title: "How We Are Going to Achieve Wellness",
     description: "Discover the integrated path to health and happiness at One Life Wellness. Our roadmap helps you achieve lasting well-being.",
@@ -33,60 +28,10 @@ const HowWeAreGoingTo = () => {
     { icon: <FaUsers />, title: "Community-Focused", description: "We believe shared experiences bring deeper understanding and empathy, making your journey more meaningful." },
   ];
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const sections = gsap.utils.toArray('.hwa-roadmap-section');
-    
-    // Create the horizontal scroll animation
-    scrollTriggerRef.current = ScrollTrigger.create({
-      trigger: '.horizontal-scroll',
-      pin: true,
-      scrub: 1,
-      end: () => `+=${sections.length * window.innerWidth}`,
-      animation: gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: 'none',
-      })
-    });
-
-    // Create animations for each section
-    sections.forEach((section) => {
-      const elements = section.querySelectorAll('.hwa-fadeIn, .hwa-fadeInLeft, .hwa-fadeInRight');
-      if (elements.length > 0) {
-        const animation = gsap.from(elements, {
-          opacity: 0,
-          y: 50,
-          stagger: 0.2,
-          duration: 1.5,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top center',
-          },
-        });
-        animationsRef.current.push(animation);
-      }
-    });
-
-    // Cleanup function
-    return () => {
-      if (scrollTriggerRef.current) {
-        scrollTriggerRef.current.kill();
-      }
-      animationsRef.current.forEach(animation => {
-        if (animation.scrollTrigger) {
-          animation.scrollTrigger.kill();
-        }
-        animation.kill();
-      });
-    };
-  }, []);
-
   const roadmapData = [
     {
-      title: "1. Awareness & Education",
+      title: "Awareness & Education",
+      icon: <FaBook />,
       content: (
         <div>
           <p>
@@ -100,11 +45,10 @@ const HowWeAreGoingTo = () => {
           <p>Key Benefit: By educating yourself first, you're already taking a huge step toward lifelong wellness.</p>
         </div>
       ),
-      imageAlt: "Awareness & Education",
-      imageurl: roadmapOne
     },
     {
-      title: "2. Personalized Assessments",
+      title: "Personalized Assessments",
+      icon: <FaUserCheck />,
       content: (
         <div>
           <p>
@@ -113,11 +57,10 @@ const HowWeAreGoingTo = () => {
           <p>Key Benefit: Customizing your journey makes sustainable results far more achievable.</p>
         </div>
       ),
-      imageAlt: "Personalized Assessments",
-      imageurl: roadmapTwo
     },
     {
-      title: "3. Actionable Routines & Tools",
+      title: "Actionable Routines & Tools",
+      icon: <FaClipboardList />,
       content: (
         <div>
           <p>
@@ -131,11 +74,10 @@ const HowWeAreGoingTo = () => {
           <p>Key Benefit: Turn insights into habits without overhauling your entire life.</p>
         </div>
       ),
-      imageAlt: "Actionable Routines & Tools",
-      imageurl: roadmapThree
     },
     {
-      title: "4. Continuous Support & Motivation",
+      title: "Continuous Support & Motivation",
+      icon: <FaHandsHelping />,
       content: (
         <div>
           <p>
@@ -149,11 +91,10 @@ const HowWeAreGoingTo = () => {
           <p>Key Benefit: You'll never feel alone as you navigate life's health challenges and triumphs.</p>
         </div>
       ),
-      imageAlt: "Continuous Support & Motivation",
-      imageurl: roadmapFour
     },
     {
-      title: "5. Measurable Progress & Adaptation",
+      title: "Measurable Progress & Adaptation",
+      icon: <FaChartLine />,
       content: (
         <div>
           <p>
@@ -162,43 +103,47 @@ const HowWeAreGoingTo = () => {
           <p>Key Benefit: Keeping tabs on your progress ensures you continue moving forward in the right direction.</p>
         </div>
       ),
-      imageAlt: "Measurable Progress & Adaptation",
-      imageurl: roadmapFive
     },
   ];
 
   return (
-    <div ref={containerRef}>
+    <div>
       <SEO seoData={seoData} />
       <OLWHero
         heading="A Roadmap to Holistic Wellness"
-        fontSize="80px"
+        fontSize="60px"
       />
-      <div className="horizontal-scroll">
-        <div className="hwa-how-we-are-going-to">
-          {roadmapData.map(({ title, content, imageAlt, imageurl }, index) => (
-            <section 
-              className="hwa-roadmap-section" 
-              key={index}
-            >
-              <div className="hwa-section-content">
-                <div className="hwa-section-image">
-                  <img 
-                    src={imageurl}
-                    alt={imageAlt}
-                    className='about-us-image-layout'
-                  />
+      <div className="hwa-how-we-are-going-to">
+      <Swiper
+  modules={[Navigation, Pagination, Autoplay]}
+  spaceBetween={50}
+  slidesPerView={1}
+  navigation
+  pagination={{ clickable: true }}
+  autoplay={{ delay: 3000, disableOnInteraction: false }}
+  loop
+  speed={600} // Smooth animation speed
+>
+          {roadmapData.map(({ title, icon, content }, index) => (
+            <SwiperSlide key={index}>
+              <section className="hwa-roadmap-section">
+                <div className="hwa-section-content">
+                  <div className="hwa-section-heading">
+                    <div className="hwa-title-with-icon">
+                      <h2>{title}</h2>
+                      <span className="hwa-icon">{icon}</span>
+                    </div>
+                  </div>
+                  <div className="hwa-section-text">{content}</div>
                 </div>
-                <div className="hwa-section-text">
-                  <h2>{title}</h2>
-                  {content}
-                </div>
-              </div>
-            </section>
+              </section>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
-      <div className="hwagt-our-approach-container bottom-100">
+
+      <div className="bottom-100"></div>
+      <div className="hwagt-our-approach-container">
       <h1 className="hwagt-title">Why Our Approach Works</h1>
       <div className="hwagt-points-grid">
         {points.map((point, index) => (
@@ -210,7 +155,7 @@ const HowWeAreGoingTo = () => {
         ))}
       </div>
     </div>
-        
+      <div className="bottom-100"></div>
       <CallToAction
         title="Take the Next Step"
         description="Empower your mind, energize your body, and enrich your spirit—one day at a time."

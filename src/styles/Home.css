@@ -1,9 +1,8 @@
 .olw-home-page{
     display: flex;
-    padding-top: 150px;
     flex-direction: column;
     min-height: 100vh;
-    padding: 5%;
+    padding: 2% 10%;
     align-items: center;
     justify-content: space-between;
     font-family: "Lark", sans-serif;
@@ -16,22 +15,19 @@
     color: var(--primary-blue);
 }
 
-.olw-home-content-box{
-    gap: 100px;
-}
 
 .olw-home-left{
     display: flex;
     flex-direction: column;
     gap: 25px;
-    margin-top: 50px;
+    margin-top: 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
 .olw-home-left h2 {
-    font-size: clamp(36px, 6vw, 62px); /* Adjusted font size range */
+    font-size: clamp(36px, 6vw, 52px); /* Adjusted font size range */
     font-weight: 500;
 }
 .olw-home-left h3{
@@ -61,6 +57,7 @@
     background: var(--primary-blue);
     padding: 3px;   
     border-radius: 100px;
+    z-index: 10;
     width: fit-content;
     animation: moveUpDown 1.5s ease-in-out infinite;
 }
@@ -81,13 +78,21 @@
     color: var(--primary-blue);
 }
 
-.olw-home-right{
-    min-height: 50%;
-    min-height: 65vh;
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 100px;
-}
+
+
+  .olw-home-right{
+      min-height: 50%;
+
+      min-height: 65vh;
+      width: 100vw;
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      background-image: url(../assets/images/bg-vectors/dnabackground.gif);
+      margin-top: -100px;
+      margin-bottom: 100px;
+  }
 
 
 
@@ -106,6 +111,11 @@
     margin-top: 20px;
   }
 
+  .olw-section-text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
   .essence-section ul{
     padding-left: 30px;
   }
@@ -113,7 +123,7 @@
   .home-adults{
     position: absolute;
     width: auto;
-    max-height: 450px;
+    max-height: 400px;
     bottom: 0px;
     margin-left: 0%;
   }
@@ -130,7 +140,7 @@
   .home-grandparents{
     position: absolute;
     width: auto;
-    max-height: 480px;
+    max-height: 400px;
     bottom: 0px;
     right: 13%;
   }
@@ -140,7 +150,6 @@
   display: flex;
   overflow-x: hidden;
   width: 100%;
-  
   min-height: 100vh; /* Full viewport height */
   scroll-snap-type: x mandatory;
   margin-bottom: 100px;
@@ -272,65 +281,119 @@ blockquote{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-/* Articles Section */
-.olw-welcome-articles-section {
-  padding: 0 5%;
-  margin-bottom: 150px;
+
+/* articles section */
+.olw-welcome-articles-section{
   display: flex;
-  flex-direction: column;
-  gap: 50px;
+  gap: 30px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  margin: 5% 10%;
+  margin-bottom: 200px;
+  padding: 50px;
 }
 
-.olw-welcome-section-header {
+.olw-welcome-section-header{
+  max-width: 50%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
   gap: 20px;
 }
 
-.olw-welcome-section-header h1 {
-  font-size: 36px;
-}
-
 .olw-welcome-section-header p {
-  font-size: 18px;
-  max-width: 70%;
+  line-height: 1.4;
 }
 
-.olw-welcome-section-image{
-  width: 500px;
-  border-radius: 10px;
-  height: 400px;
-  object-fit: cover;
-}
-.olw-welcome-articles-list {
+.olw-welcome-articles-list{
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
-  margin-bottom: 50px;
-}
-
-.olw-welcome-article-card {
-  width: 30%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 30px;
-  cursor: pointer;
-  padding: 30px;
-  border-radius: 10px;
-  transition: 0.3s ease-in-out;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.olw-welcome-article-card:hover {
-  background: #f3f3f3;
-}
-
-.olw-welcome-article-icon {
+.olw-welcome-article-card{
   display: flex;
-  font-size: 40px;
-  color: var(--primary-blue);
+  flex-direction: column;
+  gap: 20px;
+  background: #ff0;
+  border-radius: 20px;
+  padding: 20px;
 }
+
+.olw-welcome-article-heading{
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.articles-category{
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 30px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.olw-welcome-article-section{
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+}
+
+.essence-section-home-layout{
+  display: flex;
+  gap: 30px;
+}
+
+.essence-section-home-layout li{
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+  gap: 10px;
+  width: 25%;
+  height: 400px;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.essence-section-button{
+  padding: 10px 20px;
+  background: var(--primary-blue);
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;  
+  width: fit-content;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.olw-welcome-article-card button{
+  padding: 10px 20px;
+  background: var(--primary-blue);
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;  
+  width: fit-content;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.olw-welcome-article-icon{
+  font-size: 20px;
+}
+
 
 .olw-welcome-intro-sections{
   display: flex;
@@ -345,15 +408,13 @@ blockquote{
 
 .olw-welcome-content-box{
   display: flex;
-  padding: 0 5%;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
 }
 
 .olw-welcome-triple-path-section{
-  margin: 100px 0;
-  margin-top: 100px;
+  padding: 0 10%;
+  margin-bottom: 50px;
 }
 
 .olw-welcome-section-quote{
@@ -371,26 +432,97 @@ blockquote{
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  gap: 50px;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .olw-welcome-triple-path-list li {
   display: flex;
-  min-height: 300px;
-  align-items: center;
+  gap: 20px;
   justify-content: center;
-  width: 33%;
+  width: 31%;
   flex-direction: column;
   padding: 20px;
   border-radius: 20px;
-  text-align: center;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.olw-welcome-triple-path-list li p {
+  line-height: 1.4;
+}
 
+.triple-path-heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.olw-section{
+  padding: 2% 10%;
+}
+
+.olw-meet-heart-layout{
+  display: flex;
+  gap: 40px; 
+  background: #f9f9f9;
+  padding: 100px;
+  min-height: 90vh;
+  border-radius: 30px; 
+  justify-content: center;
+  line-height: 1.4;
+  flex-direction: column;
+}
+
+.olw-meet-heart-layout-para{
+  font-size: 22px;
+  line-height: 2;
+}
+
+.quote-icon{
+  font-size: 10px;
+  display: flex;
+  width: fit-content;
+}
+
+.olw-home-manual-layout{
+  display: flex;
+  gap: 30px;
+  background: #f9f9f9;
+  border-radius: 20px;
+  padding: 5px;
+  align-items: center;
+}
+
+.olw-mannual-section-image{
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
+  border-radius: 20px;
+}
+
+.olw-home-manual-section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px;
+}
+
+.home-page-quotes{
+  padding-left: 30px;
+  display: flex;
+  padding-top: 10px;
+  gap: 10px;
+  min-height: 50px;
+  border-left: 2px solid #000;
+}
+
+.olw-section-image-layout{
+  min-width: 55%;
+}
+
+.olw-home-manual-section-para{
+  font-size: 18px;
+  line-height: 1.4;
+}
 
   @media (min-width: 768px) and (max-width: 1024px) {
     .olw-home-page{

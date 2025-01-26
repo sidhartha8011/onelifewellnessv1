@@ -15,6 +15,7 @@ import Explore from '../pages/Explore';
 import NotFound from '../pages/NotFound';
 import WhyItMatters from '../pages/WhyItMatters';
 import Introduction from '../pages/Introduction';
+import WhoWeAre from '../pages/WhoWeAre';
 
 const router = createBrowserRouter([
   {
@@ -28,10 +29,13 @@ const router = createBrowserRouter([
       {
         path: '/welcome',
         element: <Home />,
+      },{
+        path: '/about',
+        element: <About />,
       },
       {
         path: '/who-we-are',
-        element: <About />,
+        element: <WhoWeAre />,
       },
       {
         path: '/how-we-work',

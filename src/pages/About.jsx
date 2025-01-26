@@ -138,7 +138,7 @@ const About = () => {
   return (
     <>
       <SEO seoData={seoData} />
-      <OLWHero heading="About" subHeading="One Life Wellness" fontSize="80px" />
+      <OLWHero heading="About One Life Wellness" subHeading="" fontSize="50px" />
       <div className="about-us-hero-image-container">
         <img
           src={AboutCover}
