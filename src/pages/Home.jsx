@@ -15,6 +15,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
 import OLWLogo from "../assets/images/OLW-logo.png";
 import ourSoul from "../assets/images/home/soul-of-purpose.jpeg";
+import { LinearGradient } from "react-text-gradients";
 
 const Home = () => {
   const sectionRefs = {
@@ -59,8 +60,11 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
           >
-            <h2>Empower Your Health, Empower Your Life</h2>
-            <h3>A One-Stop Guide to Living Well—Body, Mind, and Spirit</h3>
+            <h2>
+            <LinearGradient gradient={['to left', '#AADB71 ,#053090']}  fallbackColor="black"  ><span className='font-weight-bold'>Empower Your Health, Empower Your Life</span>
+            </LinearGradient> 
+            </h2>
+              <h3>A One-Stop Guide to Living Well—Body, Mind, and Spirit</h3>
             <p>
               Welcome to One Life Wellness, your comprehensive platform for
               health, lifestyle, and psychological insights. Discover actionable
@@ -82,7 +86,6 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
           >
-            <img src={backgroundVideo} alt="Welcome One" className="video-bg" />
             <img src={adults} alt="Adults" className="home-adults" />
             <img src={children} alt="Children" className="home-children" />
             <img
@@ -93,6 +96,8 @@ const Home = () => {
             <img src={dog} alt="Dog" className="home-dog" />
           </motion.div>
         </div>
+        <img src={backgroundVideo} alt="Welcome One" className="video-bg" />
+
       </div>
 
       <motion.div

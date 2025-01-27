@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding: 2% 10%;
+    /* padding: 2% 10%; */
     align-items: center;
     justify-content: space-between;
     font-family: "Lark", sans-serif;
@@ -91,8 +91,11 @@
   .video-bg{
     position: absolute;
     z-index: -1;
-    top: -70%;
-    left: -13%;
+    top: 60%;
+    margin: 0;
+    padding: 0;
+    height: 100px;
+    object-fit: cover;
     width: 100vw;
   }
 
@@ -300,7 +303,6 @@ blockquote{
 .olw-welcome-section-header{
   max-width: 50%;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   gap: 20px;
 }
@@ -326,7 +328,7 @@ blockquote{
 
 .scrolling-logo-div{
   bottom: -25%; 
-  left: -10%;
+  left: -7%;
   position: absolute;
   overflow: hidden;
 }
@@ -374,7 +376,7 @@ blockquote{
   padding: 30px;
   border-radius: 20px;
 }
-
+/* 
 .essence-section-button{
   padding: 10px 20px;
   background: var(--primary-blue);
@@ -390,7 +392,33 @@ blockquote{
   cursor: pointer;
   font-size: 16px;
   font-weight: 400;
+  transition: 0.3s ease-in-out;
+} */
+
+
+.essence-section-button {
+  padding: 10px 30px;
+  width: fit-content;
+  border-color: var(--primary-blue);
+  color: #ffffff;
+  border-radius: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  background: var(--primary-blue);
+  font-weight: 400;
+  background-image: -webkit-linear-gradient(45deg, #ffffff 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #ffffff 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 500ms ease-in-out;
 }
+.essence-section-button:hover {
+  background-position: 0;
+  color: var(--primary-blue);
+}
+
+
 
 
 .olw-welcome-article-card button{
@@ -502,6 +530,10 @@ blockquote{
   color: #ffffff;
 }
 
+.olw-home-content-box{
+  margin: 2% 10%;
+}
+
 .olw-meet-heart-layout-para{
   font-size: 22px;
   color: #ffffff;
@@ -510,7 +542,7 @@ blockquote{
 }
 
 .quote-icon{
-  font-size: 10px;
+  font-size: 20px;
   display: flex;
   width: fit-content;
 }
@@ -546,7 +578,7 @@ blockquote{
 .home-page-quotes{
   padding-left: 30px;
   display: flex;
-  border-left: 2px solid var(--primary-blue);
+  border-left: 2px solid #ffffff;
   padding-top: 10px;
   color: #8ae915;
   font-weight: 500;

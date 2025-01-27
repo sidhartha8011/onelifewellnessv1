@@ -3,6 +3,7 @@
 @import './styles/Components.css';
 @import './styles/Home.css';
 @import './styles/Pages.css';
+@import './styles/cards.css';
 @import './styles/whoweare.css';
 
 /* Inter Font */
@@ -235,7 +236,8 @@ button {
 
 /* Global Scrollbar Styles */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
+  position: absolute;
   height: 8px;
 }
 

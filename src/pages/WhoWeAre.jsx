@@ -139,7 +139,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h4 className="your-partners-heading-green">Preventive Care</h4> Address potential health concerns
+                      <h4>Preventive Care</h4> Address potential health concerns
                       before they become overwhelming.
                     </motion.li>
                     <motion.li
@@ -147,7 +147,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <h4 className="your-partners-heading-green">Informed Choices</h4> Offer transparent, accurate
+                      <h4 >Informed Choices</h4> Offer transparent, accurate
                       information that respects your autonomy.
                     </motion.li>
                   </ul>
@@ -157,7 +157,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                      <h4 className="your-partners-heading-green">Sustainable Routines</h4> Encourage small, consistent
+                      <h4 >Sustainable Routines</h4> Encourage small, consistent
                       steps over short-lived, drastic changes.
                     </motion.li>
                     <motion.li
@@ -165,7 +165,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <h4 className="your-partners-heading-green">Community Support</h4> Cultivate a space where
+                      <h4 >Community Support</h4> Cultivate a space where
                       everyone can learn, share, and grow together.
                     </motion.li>
                   </ul>
@@ -250,7 +250,7 @@ const WhoWeAre = () => {
                   a path where you’re in control of your wellness journey—one
                   step at a time.
                 </p>
-                <blockquote className="home-page-quotes">
+                <blockquote className="wwa-page-quotes">
                   <FaQuoteLeft className="quote-icon" /> We’re more than a
                   team—we’re your partners in navigating a healthier, happier
                   life. <FaQuoteRight className="quote-icon" />

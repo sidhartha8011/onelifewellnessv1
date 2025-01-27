@@ -24,7 +24,7 @@ const OLWHero = ({ heading, subHeading, fontSize }) => {
           variants={fadeInUp}
           style={{ fontSize }}
         >
-          <LinearGradient gradient={['to left', '#BDF779 ,#022759']}  fallbackColor="black"  ><span className='font-weight-bold'>  {heading}</span>
+          <LinearGradient gradient={['to left',  '#AADB71 ,#053090']}  fallbackColor="black"  ><span className='font-weight-bold'>  {heading}</span>
   </LinearGradient> 
         
         </motion.h1>

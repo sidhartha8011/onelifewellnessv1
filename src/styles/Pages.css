@@ -992,15 +992,11 @@
     display: flex;
     flex-direction: row;
     gap: 50px;
-    padding: 0 5%;
-    margin: 50px 0;
-    min-height: 300px;
-    align-items: center; 
+    min-height: 300px; 
   }
 
   .whim-image-cotainer{
     width: 40%;
-    height: 570px;
     border-radius: 20px;
     padding: 30px;
     display: flex;
@@ -1039,12 +1035,11 @@
   }
   .whim-content-container{
     width: 60%;
-    min-height: 550px;
     background: var(--bg-light-grey2);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     border-radius: 20px;
     padding: 30px;
   }
@@ -1075,7 +1070,8 @@
 
   .whim-tab-container{
     display: flex;
-    margin: 30px auto;
+    margin: 0px auto;
+    margin-top: 20px;
     gap: 25px;
     flex-direction: column;
   }
@@ -1093,6 +1089,11 @@
     cursor: pointer;
     font-size: 14px;
     border-radius: 50px;
+  }
+
+  .whim-tab-button:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
   }
   
   .whim-tab-button.whim-active {
@@ -1149,6 +1150,18 @@
     border: 1px solid #000;
     border-radius: 15px;
   }
+
+  .wwa-page-quotes{
+    padding-left: 30px;
+    display: flex;
+    border-left: 2px solid var(--primary-blue);
+    padding-top: 10px;
+    color: #8ae915;
+    font-weight: 500;
+    gap: 10px;
+    min-height: 50px;
+  }
+  
   
 /* mobile & tablet potrait version */
 
