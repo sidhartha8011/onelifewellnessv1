@@ -107,6 +107,11 @@ a {
   
 } */
 
+.white-color-text{
+  color: #ffffff !important;
+  z-index: 1;
+}
+
 
 .primary-blue-bg{
   background: #022759;

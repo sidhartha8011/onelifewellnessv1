@@ -36,7 +36,8 @@
 }
 
 .your-partners-heading-green{
-    color: #8ae915;
+    font-size: 24px;
+    color: var(--primary-blue);
 }
 
 .olw-whoweare-content{
@@ -46,7 +47,49 @@
     gap: 100px;
 }
 
+.out-wsua-main-layout{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
 
+.olw-wsua-heading-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.olw-wsua-outer-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 33%;
+}
+
+.olw-wsua-outer-layout-different-height{
+        height: 400px !important;
+        justify-content: flex-end !important;
+}
+.inner-layout-wsua{
+    min-height: 250px;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+
+.olw-wsua-background-image{
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
 
 .olw-whoweare-whatsset-section{
     display: flex;
@@ -58,12 +101,6 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
-
-.olw-whoweare-section-layout div{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 
@@ -97,9 +134,6 @@
     display: flex;
     gap: 30px;
     justify-content: space-between;
-}
-.olw-whoweare-core-layout{
-
 }
 .olw-whoweare-core-layout li{
     background: #fff;
@@ -161,6 +195,44 @@
     max-width: 50%;
 }
 
+.olw-wsua-mediation-layout{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wwa-video-bg{
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
+
+.wwa-video-bg-reverse{
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    transform: scaleX(-1); 
+
+}
+
+.mediation-person {
+    width: 100px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.wwa-page-scrolling{
+    object-fit: contain;
+    width: 350px;
+    height: 100%; /* Set the image height to fit the container */
+    animation: rotate 10s linear infinite; /* Infinite clockwise rotation with a 10s duration */
+  }
+
 .olw-whoweare-section-our-promise-layout{
     display: flex;
     gap: 30px;
@@ -178,4 +250,32 @@
     box-shadow: 50px 50px 0 var(--bg-light-grey1);
     border: 1px solid #000;
     transform: rotate(-15deg);   
+}
+
+
+.eivdence-background{
+    background-image: url(../assets/images/evidence.webp );
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center center;
+    color: #fff;
+}
+
+.overlay-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);  
+  }
+
+.people-over-profit-bg{
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../assets/images/people-over-profit.jpg);
 }

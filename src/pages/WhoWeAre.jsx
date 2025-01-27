@@ -8,10 +8,11 @@ import AboutCover from "../assets/images/about.jpeg";
 import OurPromise from "../assets/images/our-promise.jpg";
 import ourStory from "../assets/images/olw-our-story.jpg";
 
+import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
 import OLWLogo from "../assets/images/OLW-logo.png";
 import whoWeAre from "../assets/images/olw-who-we-are.jpg";
 import Preventive from "../assets/images/preventive.png";
-
+import meditationPerson from "../assets/images/meditation-chakra.png";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 const WhoWeAre = () => {
@@ -34,7 +35,7 @@ const WhoWeAre = () => {
         subHeading=""
         fontSize="60px"
       />
-      
+
       {/* Hero Section */}
       <motion.div
         className="olw-whoweare-herosection"
@@ -74,7 +75,9 @@ const WhoWeAre = () => {
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-section-layout">
                 <div>
-                  <h2 className="your-partners-heading-green">Who We Are: Your Partners in Holistic Wellness</h2>
+                  <h2 className="your-partners-heading-green">
+                    Who We Are: Your Partners in Holistic Wellness
+                  </h2>
                   <p>
                     We are a diverse team of medical professionals, wellness
                     experts, researchers, and tech enthusiasts sharing one
@@ -85,48 +88,132 @@ const WhoWeAre = () => {
                   </p>
                 </div>
 
-                <div>
+                <div className="olw-wsua-heading-layout ">
                   <h3>What Sets Us Apart</h3>
-                  <ul className="olw-whoweare-whatsset-section">
+
+                  <div className="out-wsua-main-layout">
+                    <div className="olw-wsua-outer-layout">
+                      <div className="primary-blue-bg inner-layout-wsua">
+                        <h5 className="your-partners-heading-green white-color-text">
+                          Holistic Approach
+                        </h5>
+
+                        <p>
+                          From mental health to fitness and nutrition, we
+                          consider the whole person.
+                        </p>
+                      </div>
+
+                      <div className="olw-wsua-outer-layout-different-height inner-layout-wsua  eivdence-background">
+                        <h5 className="your-partners-heading-green white-color-text">
+                          Evidence-Based Guidance
+                        </h5>
+
+                        <p className="white-color-text">
+                          Our recommendations are based on reliable data and
+                          peer-reviewed studies.
+                        </p>
+                        <div className="overlay-background"></div>
+                      </div>
+                    </div>
+
+                    <div className="olw-wsua-outer-layout  olw-wsua-mediation-layout olw-wsua-background-image">
+                      <img
+                        src={backgroundVideo}
+                        alt="Welcome One"
+                        className="wwa-video-bg"
+                      />
+
+                      <img
+                        src={meditationPerson}
+                        alt="meditationPerson"
+                        className="mediation-person"
+                      />
+                      <img
+                        src={OLWLogo}
+                        alt="Scrolling Image"
+                        className="wwa-page-scrolling"
+                      />
+                      <img
+                        src={backgroundVideo}
+                        alt="Welcome One"
+                        className="wwa-video-bg-reverse"
+                      />
+                    </div>
+
+                    <div className="olw-wsua-outer-layout">
+                      <div className="olw-wsua-outer-layout-different-height inner-layout-wsua people-over-profit-bg">
+                        <h5 className="your-partners-heading-green white-color-text">
+                          People Over Profit
+                        </h5>
+
+                        <p className="white-color-text">
+                          We focus on empowering and educating rather than
+                          pushing products.
+                        </p>
+                        <div className="overlay-background"></div>
+                      </div>
+                      <div className="primary-green-bg inner-layout-wsua">
+                        <h5 className="your-partners-heading-green  white-color-text">
+                          Empathy & Accessibility
+                        </h5>
+
+                        <p className=" white-color-text">
+                          We communicate in plain language to ensure
+                          accessibility for all.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* <ul className="olw-whoweare-whatsset-section">
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h5 className="your-partners-heading-green">Holistic Approach</h5> From mental health to fitness
-                      and nutrition, we consider the whole person.
+                      <h5 className="your-partners-heading-green">
+                        Holistic Approach
+                      </h5>{" "}
+                      From mental health to fitness and nutrition, we consider
+                      the whole person.
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <h5 className="your-partners-heading-green">Evidence-Based Guidance</h5> Our recommendations stem
-                      from trustworthy data and peer-reviewed studies.
+                      <h5 className="your-partners-heading-green">
+                        Evidence-Based Guidance
+                      </h5>{" "}
+                      Our recommendations stem from trustworthy data and
+                      peer-reviewed studies.
                     </motion.li>
-                    </ul>
-                    <div className="olw-whoweare-whatsset-section">
-                      
-                    </div>
-                    <ul className="olw-whoweare-whatsset-section">
+                  </ul>
+                  <div className="olw-whoweare-whatsset-section"></div>
+                  <ul className="olw-whoweare-whatsset-section">
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                      <h5 className="your-partners-heading-green">People Over Profit</h5> We focus on empowering and
-                      educating rather than pushing products.
+                      <h5 className="your-partners-heading-green">
+                        People Over Profit
+                      </h5>{" "}
+                      We focus on empowering and educating rather than pushing
+                      products.
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <h5 className="your-partners-heading-green">Empathy & Accessibility</h5> We present information in
-                      plain language, making it accessible to individuals and
-                      families.
+                      <h5 className="your-partners-heading-green">
+                        Empathy & Accessibility
+                      </h5>{" "}
+                      We present information in plain language, making it
+                      accessible to individuals and families.
                     </motion.li>
-                  </ul>
+                  </ul> */}
                 </div>
               </div>
             </div>
@@ -136,7 +223,9 @@ const WhoWeAre = () => {
           <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-our-core-layout">
-                <h2>Our Core Beliefs: Building a Sustainable Path to Wellness</h2>
+                <h2>
+                  Our Core Beliefs: Building a Sustainable Path to Wellness
+                </h2>
                 <div className="olw-whoweare-core-section">
                   <ul className="olw-whoweare-core-layout">
                     <motion.li
@@ -152,7 +241,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <h4 >Informed Choices</h4> Offer transparent, accurate
+                      <h4>Informed Choices</h4> Offer transparent, accurate
                       information that respects your autonomy.
                     </motion.li>
                   </ul>
@@ -162,7 +251,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                      <h4 >Sustainable Routines</h4> Encourage small, consistent
+                      <h4>Sustainable Routines</h4> Encourage small, consistent
                       steps over short-lived, drastic changes.
                     </motion.li>
                     <motion.li
@@ -170,7 +259,7 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <h4 >Community Support</h4> Cultivate a space where
+                      <h4>Community Support</h4> Cultivate a space where
                       everyone can learn, share, and grow together.
                     </motion.li>
                   </ul>
@@ -190,7 +279,10 @@ const WhoWeAre = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <img
+                      className="olw-whoweare-meet-minds-image"
+                      src={OLWLogo}
+                    />
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
                       <h4>Preventive Care</h4>
                       We focus on proactive health management, offering
@@ -209,14 +301,20 @@ const WhoWeAre = () => {
                       tools, helping them make educated decisions for their
                       health and wellness.
                     </div>
-                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <img
+                      className="olw-whoweare-meet-minds-image"
+                      src={OLWLogo}
+                    />
                   </motion.li>
                   <motion.li
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <img
+                      className="olw-whoweare-meet-minds-image"
+                      src={OLWLogo}
+                    />
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
                       <h4>Preventive Care</h4>
                       We focus on proactive health management, offering
@@ -235,10 +333,12 @@ const WhoWeAre = () => {
                       tools, helping them make educated decisions for their
                       health and wellness.
                     </div>
-                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <img
+                      className="olw-whoweare-meet-minds-image"
+                      src={OLWLogo}
+                    />
                   </motion.li>
                 </ul>
-                
               </div>
             </div>
           </InViewSection>
@@ -273,9 +373,7 @@ const WhoWeAre = () => {
         </div>
       </motion.div>
 
-      <div className="bottom-100">
-
-      </div>
+      <div className="bottom-100"></div>
 
       <CallToAction
         title="Ready to Grow With Us?"
