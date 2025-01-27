@@ -7,6 +7,7 @@ import { IoMdPeople } from 'react-icons/io';
 import SEO from '../components/SEO'; // Assuming you have SEO component
 import OLWHero from '../components/OLWHero'; // Assuming you have this hero component
 import CallToAction from '../components/CallToAction';
+import { motion } from 'framer-motion';
 
 const WhyItMatters = () => {
   const seoData = {
@@ -80,37 +81,70 @@ const WhyItMatters = () => {
     <>
       <SEO seoData={seoData} />
       <OLWHero
-        heading="A Journey Towards"
-        subHeading="Peace, Productivity & Prosperity"
-        fontSize="80px"
+        heading="A Journey Towards Peace, Productivity & Prosperity"
+        subHeading=""
+        fontSize="50px"
       />
       <div className="whim-descriptions">
-        <p>
+        <motion.p
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           At One Life Wellness, we believe true well-being comes from aligning peace, productivity, and prosperity, fostering inner tranquility, meaningful accomplishments, and lasting fulfillment.
-        </p>
+        </motion.p>
       </div>
       <div className="bottom-100">
         {/* Peace Section */}
         <section className="whim-main-layout">
-          <div className="whim-image-cotainer peace-background">
+          <motion.div 
+            className="whim-image-cotainer peace-background"
+            initial={{ opacity: 0, x: -100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1 }}
+          >
             <p className='quotes'>“ In the stillness of a peaceful mind, every breath becomes a gentle reminder of our own resilience. ”</p>
-          </div>
-          <div className="whim-content-container">
-            <h2>Peace: The Foundation of Inner Calm</h2>
-            <p>
+          </motion.div>
+          <motion.div 
+            className="whim-content-container"
+            initial={{ opacity: 0, x: 100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+            >
+              Peace: The Foundation of Inner Calm
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+            >
               Peace is the cornerstone of well-being. By cultivating a peaceful mind and nurturing calm in our lives, we unlock the ability to navigate challenges with resilience.
-            </p>
+            </motion.p>
             <div className="whim-tab-container">
-              <h3>Ways to Cultivate Peace</h3>
+              <motion.h3
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.1 }}
+              >
+                Ways to Cultivate Peace
+              </motion.h3>
               <div className="whim-tab-buttons">
                 {peace.map((tab) => (
-                  <button
+                  <motion.button
                     key={tab.name}
                     onClick={() => setActivePeaceTab(tab.name)}
                     className={`whim-tab-button ${activePeaceTab === tab.name ? 'whim-active' : ''}`}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.3 }}
                   >
                     {tab.name}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
               <div className="whim-tab-content">
@@ -118,38 +152,67 @@ const WhyItMatters = () => {
                   (tab) =>
                     tab.name === activePeaceTab && (
                       <div key={tab.name} className="whim-tab-item">
-                        <div className="whim-tab-item-content">
+                        <motion.div
+                          className="whim-tab-item-content"
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1, delay: 0.1 }}
+                        >
                           <span className="whim-benefit-title">Benefits</span>
                           <h4 className="whim-tab-title">{tab.name}</h4>
                           <p className="whim-tab-description">{tab.content}</p>
-                        </div>
+                        </motion.div>
                         <div className="whim-tab-icon">{tab.icon}</div>
                       </div>
                     )
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Productivity Section */}
         <section className="whim-main-layout">
-          <div className="whim-content-container">
-            <h2>Productivity: Transforming Knowledge into Meaningful Action</h2>
-            <p>
+          <motion.div 
+            className="whim-content-container primary-light-green-bg"
+            initial={{ opacity: 0, x: 100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+            >
+              Productivity: Transforming Knowledge into Meaningful Action
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+            >
               Productivity isn’t just about crossing items off a list; it’s about channeling your energy in ways that serve your deepest values.
-            </p>
+            </motion.p>
             <div className="whim-tab-container">
-              <h3>Ways to Enhance Productivity</h3>
+              <motion.h3
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.1 }}
+              >
+                Ways to Enhance Productivity
+              </motion.h3>
               <div className="whim-tab-buttons">
                 {productivity.map((tab) => (
-                  <button
+                  <motion.button
                     key={tab.name}
                     onClick={() => setActiveProductivityTab(tab.name)}
                     className={`whim-tab-button ${activeProductivityTab === tab.name ? 'whim-active' : ''}`}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.3 }}
                   >
                     {tab.name}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
               <div className="whim-tab-content">
@@ -157,44 +220,83 @@ const WhyItMatters = () => {
                   (tab) =>
                     tab.name === activeProductivityTab && (
                       <div key={tab.name} className="whim-tab-item">
-                        <div className="whim-tab-item-content">
+                        <motion.div
+                          className="whim-tab-item-content"
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1, delay: 0.1 }}
+                        >
                           <span className="whim-benefit-title">Benefits</span>
                           <h4 className="whim-tab-title">{tab.name}</h4>
                           <p className="whim-tab-description">{tab.content}</p>
-                        </div>
+                        </motion.div>
                         <div className="whim-tab-icon">{tab.icon}</div>
                       </div>
                     )
                 )}
               </div>
             </div>
-          </div>
-          <div className="whim-image-cotainer productivity-background">
-            <p className='quotes' >“ Productivity flourishes when every task reflects the greater purpose guiding our day-to-day efforts. ”</p>
-          </div>
+          </motion.div>
+          <motion.div 
+            className="whim-image-cotainer productivity-background"
+            initial={{ opacity: 0, x: -100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1, delay: 0 }}
+          >
+            <p className='quotes'>“ Productivity flourishes when every task reflects the greater purpose guiding our day-to-day efforts. ”</p>
+          </motion.div>
         </section>
 
         {/* Prosperity Section */}
         <section className="whim-main-layout">
-          <div className="whim-image-cotainer prosperity-background">
+          <motion.div 
+            className="whim-image-cotainer prosperity-background"
+            initial={{ opacity: 0, x: -100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1 }}
+          >
             <p className='quotes'>“ Prosperity blossoms when the heart brims with gratitude. ”</p>
-          </div>
-          <div className="whim-content-container">
-            <h2>Prosperity: Inviting Abundance from the Inside Out</h2>
-            <p>
+          </motion.div>
+          <motion.div 
+            className="whim-content-container"
+            initial={{ opacity: 0, x: 100 }} 
+            animate={{ opacity: 1, x: 0 }} 
+            transition={{ duration: 1, delay: 0.5 }}
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.7 }}
+            >
+              Prosperity: Inviting Abundance from the Inside Out
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.9 }}
+            >
               Prosperity goes beyond material gain. It’s a holistic feeling of gratitude, connection, and inner wealth.
-            </p>
+            </motion.p>
             <div className="whim-tab-container">
-              <h3>Ways to Create Prosperity</h3>
+              <motion.h3
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 1.1 }}
+              >
+                Ways to Create Prosperity
+              </motion.h3>
               <div className="whim-tab-buttons">
                 {prosperity.map((tab) => (
-                  <button
+                  <motion.button
                     key={tab.name}
                     onClick={() => setActiveProsperityTab(tab.name)}
                     className={`whim-tab-button ${activeProsperityTab === tab.name ? 'whim-active' : ''}`}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 1.3 }}
                   >
                     {tab.name}
-                  </button>
+                  </motion.button>
                 ))}
               </div>
               <div className="whim-tab-content">
@@ -202,18 +304,23 @@ const WhyItMatters = () => {
                   (tab) =>
                     tab.name === activeProsperityTab && (
                       <div key={tab.name} className="whim-tab-item">
-                        <div className="whim-tab-item-content">
+                        <motion.div
+                          className="whim-tab-item-content"
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 1, delay: 0.1 }}
+                        >
                           <span className="whim-benefit-title">Benefits</span>
                           <h4 className="whim-tab-title">{tab.name}</h4>
                           <p className="whim-tab-description">{tab.content}</p>
-                        </div>
+                        </motion.div>
                         <div className="whim-tab-icon">{tab.icon}</div>
                       </div>
                     )
                 )}
               </div>
             </div>
-          </div>
+          </motion.div>
         </section>
       </div>
       <CallToAction

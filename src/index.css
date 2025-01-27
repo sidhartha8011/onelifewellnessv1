@@ -7,7 +7,7 @@
 
 /* Inter Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* Root Variables */
 :root {
   --primary-dark-blue: #022759;
@@ -25,7 +25,7 @@
   --icon-bg-color: #EBF4FF;
 
   --font-primary: 'Lark', sans-serif;
-  --font-secondary: 'Inter', serif;
+  --font-secondary: 'Montserrat', serif;
 
   /* Golden Ratio Font Sizes */
   --font-h1: 2.618em;
@@ -74,10 +74,18 @@ h4 { font-size: var(--font-h4); }
 h5 { font-size: var(--font-h5); }
 h6 { font-size: var(--font-h6); }
 
-p, span, a {
+span, a {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
   color: var(--primary-blue);
+  font-size: var(--font-body);
+}
+
+p {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-blue);
+  line-height: 1.5;
   font-size: var(--font-body);
 }
 
@@ -97,6 +105,38 @@ a {
 /* img{box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   
 } */
+
+
+.primary-blue-bg{
+  background: #022759;
+  color: #ffffff;
+}
+
+.primary-blue-bg h4{
+  color: #ffffff;
+}
+.primary-blue-bg p {
+  color: #ffffff;
+}
+.primary-green-bg{
+  background: linear-gradient(to right, #8ae915, #7ade00);
+  color: #ffffff;
+}
+
+.gradient-background{
+  background-size: cover;
+  background-position: center center;
+  background-image: url(./assets/images/bg-vectors/gradient-bg.png);
+}
+
+.primary-light-blue-bg{
+  background: #e4e5ff;
+}
+
+.primary-light-green-bg{
+  background: #e0ffba;
+}
+
 
 input, textarea {
   font-family: var(--font-primary);
@@ -156,6 +196,18 @@ button {
 }
 
 /* Button Styles */
+.green-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 30px;
+  color: var(--primary-blue);
+  background: linear-gradient(to left, #8ae915, #c1ff76);
+  border-radius: 11px;
+  font-size: var(--font-h5);
+  font-weight: var(--font-weight-bold);
+}
+
 .blue-button {
   display: flex;
   align-items: center;
@@ -272,6 +324,8 @@ button {
     font-size: calc(var(--font-body) * 0.8); /* Adjust font size for smaller text */
   }
 }
+
+
 
 
 /* Animations */

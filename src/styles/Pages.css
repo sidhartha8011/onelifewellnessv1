@@ -307,8 +307,7 @@
 /* Hero Section */
 
 .hwa-how-we-are-going-to{
-  background: linear-gradient(204deg, rgba(2,39,89,1) 0%, rgba(186,248,110,1) 100%);
-  padding: 5%;
+   padding: 5%;
 }
 
 .swiper {
@@ -356,6 +355,7 @@
 
 .hwa-icon{
   font-size: 50px;
+  color: #8ae915;
 }
 
 .hwa-section-text{
@@ -895,7 +895,7 @@
 }
 
 .contact-form-heading p{
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -1018,6 +1018,7 @@
 
   .whim-descriptions{
     display: flex;
+    margin-top: -30px;
     align-items: center;
     flex-direction: column;
   }
@@ -1025,8 +1026,7 @@
   .whim-descriptions p{
     width: 70%;
     text-align: center;
-    line-height: 1.4;
-    margin-top: 20px;
+    line-height: 1.4; 
     font-size: 20px;
   }
 
@@ -1140,6 +1140,7 @@
   
   .whim-tab-description {
     font-size: 16px;
+    line-height: 1.4;
   }
   
   .whim-tab-image img {

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
+import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import OLWHero from '../components/OLWHero';
 import CallToAction from '../components/CallToAction';
@@ -12,6 +13,24 @@ import { FaHeart, FaLeaf, FaSyncAlt, FaUsers } from 'react-icons/fa';
 import { FaBook, FaUserCheck, FaClipboardList, FaHandsHelping, FaChartLine } from 'react-icons/fa';
 
 const HowWeAreGoingTo = () => {
+  const [backgroundColor, setBackgroundColor] = useState(
+    'linear-gradient(204deg, rgba(2,39,89,1) 0%, rgba(186,248,110,1) 100%)'
+  );
+
+  const slideBackgrounds = [
+    '#022759', // Background for Slide 1
+    '#8ae915', // Background for Slide 2
+    '#e4e5ff', // Background for Slide 3
+    '#e0ffba', // Background for Slide 4
+    '#7ade00', // Background for Slide 5
+  ];
+
+  const handleSlideChange = (swiper) => {
+    const visibleIndex = swiper.realIndex; // Use `realIndex` for looped slides
+    const newBackground = slideBackgrounds[visibleIndex % slideBackgrounds.length];
+    setBackgroundColor(newBackground);
+  };
+
   const seoData = {
     title: "How We Are Going to Achieve Wellness",
     description: "Discover the integrated path to health and happiness at One Life Wellness. Our roadmap helps you achieve lasting well-being.",
@@ -107,54 +126,93 @@ const HowWeAreGoingTo = () => {
   ];
 
   return (
-    <div>
+    <>
       <SEO seoData={seoData} />
       <OLWHero
         heading="A Roadmap to Holistic Wellness"
         fontSize="60px"
       />
-      <div className="hwa-how-we-are-going-to">
-      <Swiper
-  modules={[Navigation, Pagination, Autoplay]}
-  spaceBetween={50}
-  slidesPerView={1}
-  navigation
-  pagination={{ clickable: true }}
-  autoplay={{ delay: 3000, disableOnInteraction: false }}
-  loop
-  speed={600} // Smooth animation speed
->
+      <div
+        className="hwa-how-we-are-going-to"
+        style={{ background: backgroundColor, padding: '5%' }}
+      >
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop
+          speed={600}
+          onSlideChange={handleSlideChange} // Updated handler
+        >
           {roadmapData.map(({ title, icon, content }, index) => (
             <SwiperSlide key={index}>
-              <section className="hwa-roadmap-section">
-                <div className="hwa-section-content">
-                  <div className="hwa-section-heading">
-                    <div className="hwa-title-with-icon">
-                      <h2>{title}</h2>
-                      <span className="hwa-icon">{icon}</span>
-                    </div>
-                  </div>
-                  <div className="hwa-section-text">{content}</div>
-                </div>
-              </section>
-            </SwiperSlide>
+  <section className="hwa-roadmap-section">
+    <motion.div 
+      className="hwa-section-content"
+      initial={{ opacity: 0, y: 50 }} // Initial state for fade-in-up
+      animate={{ opacity: 1, y: 0 }} // Animate to full opacity and normal position
+      transition={{ duration: 0.6, ease: "easeOut" }} // Smooth transition
+    >
+      <motion.div 
+        className="hwa-section-heading"
+        initial={{ opacity: 0 }} // Initially hidden
+        animate={{ opacity: 1 }} // Fade in the heading
+        transition={{ duration: 0.5 }}
+      >
+        <motion.div 
+          className="hwa-title-with-icon"
+          initial={{ opacity: 0, x: -50 }} // Slide in from the left
+          animate={{ opacity: 1, x: 0 }} // Slide to the normal position
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h2>{title}</h2>
+          <span className="hwa-icon">{icon}</span>
+        </motion.div>
+      </motion.div>
+      
+      <motion.div 
+        className="hwa-section-text"
+        initial={{ opacity: 0 }} // Initially hidden
+        animate={{ opacity: 1 }} // Fade in the content text
+        transition={{ duration: 0.6, delay: 0.3 }} // Delay animation a little for smoother effect
+      >
+        {content}
+      </motion.div>
+    </motion.div>
+  </section>
+</SwiperSlide>
           ))}
         </Swiper>
       </div>
-
       <div className="bottom-100"></div>
       <div className="hwagt-our-approach-container">
-      <h1 className="hwagt-title">Why Our Approach Works</h1>
-      <div className="hwagt-points-grid">
-        {points.map((point, index) => (
-          <div key={index} className="hwagt-icon-box">
-            <div className="hwagt-icon">{point.icon}</div>
-            <h3 className="hwagt-point-title">{point.title}</h3>
-            <p className="hwagt-point-description">{point.description}</p>
-          </div>
-        ))}
+        <motion.h1 
+          className="hwagt-title"
+          initial={{ opacity: 0, y: 50 }} // Initial state
+          animate={{ opacity: 1, y: 0 }} // Final state
+          transition={{ duration: 0.6, ease: "easeOut" }} // Transition properties
+        >
+          Why Our Approach Works
+        </motion.h1>
+        <div className="hwagt-points-grid">
+          {points.map((point, index) => (
+            <motion.div
+              key={index}
+              className="hwagt-icon-box"
+              initial={{ opacity: 0, y: 50 }} // Initial state
+              animate={{ opacity: 1, y: 0 }} // Final state
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.2 }} // Transition with delay
+            >
+              <div className="hwagt-icon">{point.icon}</div>
+              <h3 className="hwagt-point-title">{point.title}</h3>
+              <p className="hwagt-point-description">{point.description}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
       <div className="bottom-100"></div>
       <CallToAction
         title="Take the Next Step"
@@ -162,7 +220,7 @@ const HowWeAreGoingTo = () => {
         buttonText="Join Our Community"
         buttonLink="/signup"
       />
-    </div>
+    </>
   );
 };
 

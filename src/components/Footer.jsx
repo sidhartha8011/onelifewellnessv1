@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/One-life-wellness-logo.svg";
+import logo from "../assets/images/One-life-wellness-logo.png";
 
 const Footer = () => {
   return (

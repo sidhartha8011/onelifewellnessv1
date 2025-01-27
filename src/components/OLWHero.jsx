@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { LinearGradient } from 'react-text-gradients'
 
 // Define the animation variants
 const fadeInUp = {
@@ -23,7 +24,9 @@ const OLWHero = ({ heading, subHeading, fontSize }) => {
           variants={fadeInUp}
           style={{ fontSize }}
         >
-          {heading}
+          <LinearGradient gradient={['to left', '#BDF779 ,#022759']}  fallbackColor="black"  ><span className='font-weight-bold'>  {heading}</span>
+  </LinearGradient> 
+        
         </motion.h1>
 
         {/* Animated Subheading */}

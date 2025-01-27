@@ -1,5 +1,6 @@
 .olw-whoweare-herosection{
-    margin: 5% 10%;
+    margin: 0 10%;
+    margin-bottom: 5%;
     padding: 40px;
     border-radius: 20px;   
     background-position: center center;
@@ -23,15 +24,19 @@
 
 
 .whoweare-button{
-    background-color: var(--primary-blue);
-    color: #fff;
+    background: linear-gradient(to left, #8ae915, #c1ff76);
+    color: var(--primary-blue);
     padding: 10px 20px;
     border: none;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
     letter-spacing: 1px;
     border-radius: 35px;
     cursor: pointer;
+}
+
+.your-partners-heading-green{
+    color: #8ae915;
 }
 
 .olw-whoweare-content{
@@ -67,7 +72,6 @@
     flex-direction: column;
     gap: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    height: 200px;
     width: 25%;
     border-radius: 20px;
     padding: 20px;
@@ -85,19 +89,22 @@
     flex-direction: column;
     padding: 30px;
     border-radius: 30px;
-    background: #000;
+    background: linear-gradient(to left, #8ae915, #c1ff76);
     gap: 30px;
 }
 
 .olw-whoweare-core-layout{
     display: flex;
-    gap: 20px;
-    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
 }
+.olw-whoweare-core-layout{
 
+}
 .olw-whoweare-core-layout li{
     background: #fff;
     padding: 20px;
+    width: 49%;
     border-radius: 15px;
 }
 
@@ -119,7 +126,7 @@
     width: 25%;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 80px;
     justify-content: space-between;
 }
 
@@ -127,19 +134,23 @@
     width: 100%;
     object-fit: contain;
     border-radius: 20px;
-    height: 300px;
+    animation: rotate 10s linear infinite; /* Infinite clockwise rotation with a 10s duration */
+    height: 200px;
 }
 
 .olw-whoweare-section-last{
     margin-bottom: 200px;
 }
 
+.green-heading-text{
+    color: var(--dark-primary-green);
+}
+
 .olw-whoweare-meet-minds-iner-layout{
     display: flex;
     gap: 10px;
-    height: 300px;
     flex-direction: column;
-    padding: 15px;
+    padding: 25px;
     border-radius: 20px;
 }
 
@@ -160,9 +171,10 @@
 }
 
 .olw-whoweare-our-promise-image{
-    min-width: 400px;
+    width: 400px;
     border-radius: 20px;
-    min-height: 400px;
+    height: 400px;
+    object-fit: cover;
     box-shadow: 50px 50px 0 var(--bg-light-grey1);
     border: 1px solid #000;
     transform: rotate(-15deg);   

@@ -10,7 +10,7 @@ const CallToAction = ({ title, description, buttonText, buttonLink }) => {
         </div>
         <div>
           <a href={buttonLink}>
-            <button className="blue-button">{buttonText}</button>
+            <button className="green-button">{buttonText}</button>
           </a>
         </div>
       </div>

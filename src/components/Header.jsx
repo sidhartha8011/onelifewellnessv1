@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from "react-icons/fi";
-import logo from '../assets/images/One-life-wellness-logo.svg';
+import logo from '../assets/images/One-life-wellness-logo.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {

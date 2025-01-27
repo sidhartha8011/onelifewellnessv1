@@ -37,7 +37,7 @@
 .olw-home-left p {
     font-size: clamp(14px, 3vw, 18px); /* Adjusted font size range */
     text-align: center;
-    max-width: 70%;
+    max-width: 90%;
     line-height: 1.5;
 }
 
@@ -82,16 +82,18 @@
 
   .olw-home-right{
       min-height: 50%;
-
       min-height: 65vh;
-      width: 100vw;
       position: relative;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      background-image: url(../assets/images/bg-vectors/dnabackground.gif);
-      margin-top: -100px;
+      margin-top: -50px;
       margin-bottom: 100px;
+  }
+
+  .video-bg{
+    position: absolute;
+    z-index: -1;
+    top: -70%;
+    left: -13%;
+    width: 100vw;
   }
 
 
@@ -289,6 +291,8 @@ blockquote{
   background: #f9f9f9;
   border-radius: 20px;
   margin: 5% 10%;
+  overflow: hidden;
+  position: relative;
   margin-bottom: 200px;
   padding: 50px;
 }
@@ -315,9 +319,24 @@ blockquote{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  background: #ff0;
+  background: linear-gradient(to left, #8ae915, #c1ff76);
   border-radius: 20px;
   padding: 20px;
+}
+
+.scrolling-logo-div{
+  bottom: -25%; 
+  left: -10%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.home-page-scrolling{
+  opacity: 0.4;
+  position: relative;
+  width: 400px;
+ height: 100%; /* Set the image height to fit the container */
+  animation: rotate 10s linear infinite; /* Infinite clockwise rotation with a 10s duration */
 }
 
 .olw-welcome-article-heading{
@@ -334,6 +353,7 @@ blockquote{
 }
 
 .olw-welcome-article-section{
+  position: relative;
   display: flex;
   gap: 30px;
   flex-direction: column;
@@ -344,13 +364,13 @@ blockquote{
   gap: 30px;
 }
 
+
+
 .essence-section-home-layout li{
   display: flex;
   flex-direction: column;
-  background: #f9f9f9;
   gap: 10px;
   width: 25%;
-  height: 400px;
   padding: 30px;
   border-radius: 20px;
 }
@@ -409,6 +429,7 @@ blockquote{
 .olw-welcome-content-box{
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 40px;
 }
 
@@ -425,8 +446,11 @@ blockquote{
 .olw-welcome-icon{
   display: flex;
   font-size: 40px;
-  color: var(--primary-blue);
+  color: var(--dark-primary-green);
 }
+
+
+
 
 .olw-welcome-triple-path-list {
   list-style-type: none;
@@ -452,6 +476,7 @@ blockquote{
 
 .triple-path-heading{
   display: flex;
+  color: var(--primary-green);
   align-items: center;
   justify-content: space-between;
 }
@@ -462,8 +487,9 @@ blockquote{
 
 .olw-meet-heart-layout{
   display: flex;
+  color: #fff;
   gap: 40px; 
-  background: #f9f9f9;
+  overflow: hidden;
   padding: 100px;
   min-height: 90vh;
   border-radius: 30px; 
@@ -472,8 +498,14 @@ blockquote{
   flex-direction: column;
 }
 
+.olw-meet-heart-layout-heading{
+  color: #ffffff;
+}
+
 .olw-meet-heart-layout-para{
   font-size: 22px;
+  color: #ffffff;
+  text-align: justify;
   line-height: 2;
 }
 
@@ -489,13 +521,14 @@ blockquote{
   background: #f9f9f9;
   border-radius: 20px;
   padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.20) 0px 0px 15px 0px;
   align-items: center;
 }
 
 .olw-mannual-section-image{
   width: 100%;
   object-fit: cover;
-  height: 500px;
+  height: 500px;  
   border-radius: 20px;
 }
 
@@ -503,20 +536,29 @@ blockquote{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 50px;
+  padding: 0 50px;
 }
 
+.olw-whoweare-section-our-promise p{
+  font-size: 18px;
+  line-height: 1.4;
+}
 .home-page-quotes{
   padding-left: 30px;
   display: flex;
+  border-left: 2px solid var(--primary-blue);
   padding-top: 10px;
+  color: #8ae915;
+  font-weight: 500;
   gap: 10px;
   min-height: 50px;
-  border-left: 2px solid #000;
 }
 
 .olw-section-image-layout{
   min-width: 55%;
+  height: 500px;
+  padding: 0;
+  margin: 0;
 }
 
 .olw-home-manual-section-para{

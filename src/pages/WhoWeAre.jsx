@@ -1,11 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer"; // Import from react-intersection-observer
 import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
 import AboutCover from "../assets/images/about.jpeg";
 import OurPromise from "../assets/images/our-promise.jpg";
 import ourStory from "../assets/images/olw-our-story.jpg";
-import ourCore from "../assets/images/our-core-belifs.png";
+
+import OLWLogo from "../assets/images/OLW-logo.png";
 import whoWeAre from "../assets/images/olw-who-we-are.jpg";
 import Preventive from "../assets/images/preventive.png";
 
@@ -31,35 +34,47 @@ const WhoWeAre = () => {
         subHeading=""
         fontSize="60px"
       />
-      <div className="olw-whoweare-herosection">
+      
+      {/* Hero Section */}
+      <motion.div
+        className="olw-whoweare-herosection"
+        initial={{ opacity: 0, y: 50 }} // Fade-in-up animation
+        animate={{ opacity: 1, y: 0 }} // Make it fully visible and move to the top
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
         <div className="olw-whoweare-herocontent">
-          <h2>Where We Began & Where We’re Headed</h2>
+          <h2>
+            Where We Began & <br /> Where We’re Headed
+          </h2>
           <p>
-            We started with a simple belief: when people have clear, actionable
-            guidance for their mind and body, they can lead healthier, happier,
-            and more fulfilling lives. From the outset, our vision has been to
-            empower individuals to take charge of their own
-            well-being—physically, mentally, and emotionally.
+            We believe that with clear, actionable guidance for the mind and
+            body, people can lead healthier, happier, and more fulfilling lives.
+            Our vision is to empower individuals to take charge of their
+            physical, mental, and emotional well-being by blending modern
+            research with practical, fact-based strategies that are easy to
+            apply in daily life. Driven by the desire to reach people wherever
+            they are, we aim to make preventive care and holistic self-care
+            essential pillars of a vibrant, thriving community, rather than
+            luxuries.
           </p>
-          <p>
-            Driven by the desire to reach people wherever they are, we blend
-            modern research with practical strategies, ensuring every insight
-            and recommendation is fact-based and easy to apply in daily life. We
-            aim to create a world where preventive care and holistic self-care
-            aren’t luxuries but essential pillars of a vibrant, thriving
-            community.
-          </p>
+
           <button className="whoweare-button">Explore More</button>
         </div>
-      </div>
-      <div className="olw-whoweare-hero-image-container"></div>
-      <div className="olw-whoweare-main-container">
+      </motion.div>
+
+      <motion.div
+        className="olw-whoweare-main-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }} // Fade-in effect
+      >
         <div className="olw-whoweare-content">
-          <section className="olw-whoweare-section">
+          {/* Who We Are Section */}
+          <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-section-layout">
                 <div>
-                  <h2>Who We Are: Your Partners in Holistic Wellness</h2>
+                  <h2 className="your-partners-heading-green">Who We Are: Your Partners in Holistic Wellness</h2>
                   <p>
                     We are a diverse team of medical professionals, wellness
                     experts, researchers, and tech enthusiasts sharing one
@@ -73,117 +88,158 @@ const WhoWeAre = () => {
                 <div>
                   <h3>What Sets Us Apart</h3>
                   <ul className="olw-whoweare-whatsset-section">
-                    <li>
-                      <h5>Holistic Approach:</h5> From mental health to fitness
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <h5 className="your-partners-heading-green">Holistic Approach</h5> From mental health to fitness
                       and nutrition, we consider the whole person.
-                    </li>
-                    <li>
-                      <h5>Evidence-Based Guidance:</h5> Our recommendations stem
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <h5 className="your-partners-heading-green">Evidence-Based Guidance</h5> Our recommendations stem
                       from trustworthy data and peer-reviewed studies.
-                    </li>
-                    <li>
-                      <h5>People Over Profit:</h5> We focus on empowering and
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      <h5 className="your-partners-heading-green">People Over Profit</h5> We focus on empowering and
                       educating rather than pushing products.
-                    </li>
-                    <li>
-                      <h5>Empathy & Accessibility:</h5> We present information
-                      in plain language, making it accessible to individuals and
-                      families alike.
-                    </li>
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
+                      <h5 className="your-partners-heading-green">Empathy & Accessibility</h5> We present information in
+                      plain language, making it accessible to individuals and
+                      families.
+                    </motion.li>
                   </ul>
                 </div>
               </div>
             </div>
-          </section>
+          </InViewSection>
 
-          <section className="olw-whoweare-section">
+          {/* Core Beliefs Section */}
+          <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-our-core-layout">
-                <h2>
-                  Our Core Beliefs: Building a Sustainable Path to Wellness
-                </h2>
+                <h2>Our Core Beliefs: Building a Sustainable Path to Wellness</h2>
                 <div className="olw-whoweare-core-section">
                   <ul className="olw-whoweare-core-layout">
-                    <li>
-                      <h4>Preventive Care</h4> Address potential health concerns
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <h4 className="your-partners-heading-green">Preventive Care</h4> Address potential health concerns
                       before they become overwhelming.
-                    </li>
-                    <li>
-                      <h4>Informed Choices</h4> Offer transparent, accurate
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <h4 className="your-partners-heading-green">Informed Choices</h4> Offer transparent, accurate
                       information that respects your autonomy.
-                    </li>
+                    </motion.li>
                   </ul>
                   <ul className="olw-whoweare-core-layout">
-                    <li>
-                      <h4>Sustainable Routines</h4> Encourage small, consistent
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      <h4 className="your-partners-heading-green">Sustainable Routines</h4> Encourage small, consistent
                       steps over short-lived, drastic changes.
-                    </li>
-                    <li>
-                      <h4>Community Support</h4> Cultivate a space where
+                    </motion.li>
+                    <motion.li
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.6 }}
+                    >
+                      <h4 className="your-partners-heading-green">Community Support</h4> Cultivate a space where
                       everyone can learn, share, and grow together.
-                    </li>
+                    </motion.li>
                   </ul>
                 </div>
               </div>
             </div>
-          </section>
-          <section className="olw-whoweare-section">
+          </InViewSection>
+
+          {/* Meet the Minds Section */}
+          <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-meet-minds-layout">
                 <h2>Meet the Minds: Experts, Enthusiasts & Innovators</h2>
                 <ul className="olw-whoweare-meet-minds-points">
-                  <li>
-                    <img
-                      className="olw-whoweare-meet-minds-image"
-                      src={ourCore}
-                    />
-                    <div className="olw-whoweare-meet-minds-iner-layout">
+                  <motion.li
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
                       <h4>Preventive Care</h4>
                       We focus on proactive health management, offering
                       personalized wellness plans to prevent chronic conditions
                       and promote long-term health.
                     </div>
-                  </li>
-                  <li>
-                    <div className="olw-whoweare-meet-minds-iner-layout">
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    <div className="olw-whoweare-meet-minds-iner-layout primary-light-green-bg">
                       <h4>Informed Choices</h4>
                       We empower individuals with the latest research and tech
                       tools, helping them make educated decisions for their
                       health and wellness.
                     </div>
-                    <img
-                      className="olw-whoweare-meet-minds-image"
-                      src={ourCore}
-                    />
-                  </li>
-                  <li>
-                    <img
-                      className="olw-whoweare-meet-minds-image"
-                      src={ourCore}
-                    />
-                    <div className="olw-whoweare-meet-minds-iner-layout">
-                      <h4> Sustainable Routines</h4>
-                      Our team supports individuals in creating long-lasting,
-                      adaptable habits that fit their unique lifestyle and
-                      wellness goals.
+                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                    <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
+                      <h4>Preventive Care</h4>
+                      We focus on proactive health management, offering
+                      personalized wellness plans to prevent chronic conditions
+                      and promote long-term health.
                     </div>
-                  </li>
-                  <li>
-                    <div className="olw-whoweare-meet-minds-iner-layout">
-                      Community Support: We foster a supportive environment
-                      where individuals can connect, share experiences, and stay
-                      motivated on their health journey.
+                  </motion.li>
+                  <motion.li
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    <div className="olw-whoweare-meet-minds-iner-layout primary-light-green-bg">
+                      <h4>Informed Choices</h4>
+                      We empower individuals with the latest research and tech
+                      tools, helping them make educated decisions for their
+                      health and wellness.
                     </div>
-                    <img
-                      className="olw-whoweare-meet-minds-image"
-                      src={ourCore}
-                    />
-                  </li>
+                    <img className="olw-whoweare-meet-minds-image" src={OLWLogo} />
+                  </motion.li>
                 </ul>
+                
               </div>
             </div>
-          </section>
-          <section className="olw-whoweare-section-last">
+          </InViewSection>
+
+          {/* Our Promise Section */}
+          <InViewSection>
             <div className="olw-whoweare-section-our-promise-layout">
               <div className="olw-whoweare-section-our-promise">
                 <h2>Our Promise: Empowering You, Every Step of the Way</h2>
@@ -202,15 +258,20 @@ const WhoWeAre = () => {
               </div>
               <div className="olw-whoweare-section-image">
                 <img
-                  src=""
+                  src={OurPromise}
                   alt="Our Promise"
                   className="olw-whoweare-our-promise-image"
                 />
               </div>
             </div>
-          </section>
+          </InViewSection>
         </div>
+      </motion.div>
+
+      <div className="bottom-100">
+
       </div>
+
       <CallToAction
         title="Ready to Grow With Us?"
         description="Take the next step in your wellness journey. Dive deeper into our specialized programs, browse our expert articles, or get personal guidance tailored to your needs."
@@ -218,6 +279,25 @@ const WhoWeAre = () => {
         buttonLink="/signup"
       />
     </>
+  );
+};
+
+// Custom InViewSection component
+const InViewSection = ({ children }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger animation only once
+    threshold: 0.2, // Trigger animation when 20% of the section is in view
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 50 }}
+      transition={{ duration: 0.6 }}
+    >
+      {children}
+    </motion.div>
   );
 };
 
