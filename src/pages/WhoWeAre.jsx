@@ -104,6 +104,11 @@ const WhoWeAre = () => {
                       <h5 className="your-partners-heading-green">Evidence-Based Guidance</h5> Our recommendations stem
                       from trustworthy data and peer-reviewed studies.
                     </motion.li>
+                    </ul>
+                    <div className="olw-whoweare-whatsset-section">
+                      
+                    </div>
+                    <ul className="olw-whoweare-whatsset-section">
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
