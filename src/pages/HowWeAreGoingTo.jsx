@@ -9,7 +9,8 @@ import { motion } from "framer-motion";
 import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
-import { FaHeart, FaLeaf, FaSyncAlt, FaUsers } from "react-icons/fa";
+import { FaHeart, FaFistRaised, FaSyncAlt, FaUsers } from "react-icons/fa";
+  
 import {
   FaBook,
   FaUserCheck,
@@ -17,6 +18,7 @@ import {
   FaHandsHelping,
   FaChartLine,
 } from "react-icons/fa";
+import { GrYoga } from "react-icons/gr";
 
 const HowWeAreGoingTo = () => {
   const [backgroundColor, setBackgroundColor] = useState(
@@ -257,7 +259,7 @@ const HowWeAreGoingTo = () => {
               <div className="olw-hww-icon">
                 <motion.button {...zoomIn}>One Life Wellness</motion.button>
                 <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
-                  <FaLeaf className="olw-whyout-top-tcon" />
+                  <FaFistRaised  className="olw-whyout-top-tcon" />
                 </motion.div>
               </div>
               <div>
@@ -311,7 +313,7 @@ const HowWeAreGoingTo = () => {
               <div className="olw-hww-icon">
                 <motion.button {...zoomIn}>One Life Wellness</motion.button>
                 <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
-                  <FaSyncAlt className="olw-whyout-top-tcon" />
+                  <GrYoga  className="olw-whyout-top-tcon" />
                 </motion.div>
               </div>
               <div>
