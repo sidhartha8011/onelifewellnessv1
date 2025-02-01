@@ -16,6 +16,8 @@ import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
 import OLWLogo from "../assets/images/OLW-logo.png";
 import ourSoul from "../assets/images/home/soul-of-purpose.jpeg";
 import { LinearGradient } from "react-text-gradients";
+import { Link, useNavigate } from "react-router-dom";
+import blogPosts from "../data/blogPosts";
 
 const Home = () => {
   const sectionRefs = {
@@ -48,6 +50,18 @@ const Home = () => {
   const fadeInDown = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const navigate = useNavigate();
+
+  // Sort posts by date (most recent first) and get the top 3
+  const latestPosts = [...blogPosts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 3);
+
+  // Function to create a URL slug from the title
+  const createSlug = (title) => title.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+
+  const handleReadMore = (title) => {
+    navigate(`/insights/${createSlug(title)}`);
   };
 
   return (
@@ -211,59 +225,72 @@ const Home = () => {
       <div ref={sectionRefs.essence} className="olw-section">
         <motion.div
           className="olw-section-content"
-          variants={fadeInDown}
           initial="hidden"
           whileInView="visible"
         >
           <div className="olw-section-text">
             <h2>Essence</h2>
             <ul className="essence-section-home-layout">
-              <motion.li
-                className="primary-blue-bg"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <h4>Trust & Transparency</h4>
-                <p>
-                  Every article is carefully reviewed by experts, ensuring
-                  reliability and accuracy.
-                </p>
-              </motion.li>
+            <motion.ul
+  className="essence-section-home-layout"
+  initial="hidden"
+  whileInView="visible"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.3 }, // Delay each card by 0.3s
+    },
+  }}
+>
+  <motion.li
+    className="primary-blue-bg"
+    variants={{
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    }}
+  >
+    <h4>Trust & Transparency</h4>
+    <p>Every article is carefully reviewed by experts, ensuring reliability and accuracy.</p>
+  </motion.li>
 
-              <motion.li
-                className="primary-light-blue-bg"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <h4>Empowering Simplicity</h4>
-                <p>
-                  No complicated jargon— just straightforward guidance you can
-                  apply in daily life.
-                </p>
-              </motion.li>
-              <motion.li
-                className="primary-green-bg"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <h4>Holistic Focus</h4>
-                <p>
-                  We cover everything from physical fitness to mental health,
-                  nutrition, and lifestyle optimization.
-                </p>
-              </motion.li>
-              <motion.li
-                className="justify-between primary-light-green-bg"
-                variants={fadeInUp}
-                initial="hidden"
-                whileInView="visible"
-              >
-                <h4>Learn More About Us</h4>
-                <button className="essence-section-button">Know More</button>
-              </motion.li>
+  <motion.li
+    className="primary-light-blue-bg"
+    variants={{
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    }}
+  >
+    <h4>Empowering Simplicity</h4>
+    <p>No complicated jargon—just straightforward guidance you can apply in daily life.</p>
+  </motion.li>
+
+  <motion.li
+    className="primary-green-bg"
+    variants={{
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    }}
+  >
+    <h4 className="white-color-text">Holistic Focus</h4>
+    <p className="white-color-text">
+      We cover everything from physical fitness to mental health, nutrition, and lifestyle optimization.
+    </p>
+  </motion.li>
+
+  <motion.li
+    className="justify-between primary-light-green-bg"
+    variants={{
+      hidden: { opacity: 0, x: -50 },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
+    }}
+  >
+    <h4>Learn More <br/> About Us</h4>
+    <Link to="/who-we-are">
+    <button className="essence-section-button">Know More</button></Link>
+  </motion.li>
+</motion.ul>
+
             </ul>
           </div>
         </motion.div>
@@ -305,50 +332,57 @@ const Home = () => {
             className="home-page-scrolling"
           />
         </div>
-        <div className="olw-welcome-section-header">
-          <div className="olw-welcome-article-section">
-            <h1>Stay Informed, Stay Inspired</h1>
-            <p>
-              Dive into our expert-curated articles designed for busy
-              individuals. Learn quick tips, proven strategies, and emerging
-              trends to enhance your lifestyle and well-being.
-            </p>
-          </div>
+        <motion.div
+  className="olw-welcome-section-header"
+  initial="hidden"
+  whileInView="visible"
+  variants={{
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  }}
+>
+  <div className="olw-welcome-article-section">
+    <h1>Stay Informed, Stay Inspired</h1>
+    <p>
+      Dive into our expert-curated articles designed for busy individuals. Learn quick tips, proven strategies,
+      and emerging trends to enhance your lifestyle and well-being.
+    </p>
+  </div>
 
-          <div>
-            <button className="articles-category">One Life Wellness</button>
-          </div>
-        </div>
-        <div className="olw-welcome-articles-list">
-          <div className="olw-welcome-article-card">
-            <h3 className="olw-welcome-article-heading">
-              Mastering Stress: 5 Practical Techniques for Busy Schedules
-            </h3>
-            <button>
-              Read more{" "}
-              <FaArrowRightLong className="olw-welcome-article-icon" />
-            </button>
-          </div>
-          <div className="olw-welcome-article-card">
-            <h3 className="olw-welcome-article-heading">
-              Heart Health Essentials: Keeping Your Family Safe & Active
-            </h3>
-            <button>
-              Read more{" "}
-              <FaArrowRightLong className="olw-welcome-article-icon" />
-            </button>
-          </div>
-          <div className="olw-welcome-article-card">
-            <h3 className="olw-welcome-article-heading">
-              Mental Wellness Matters: Simple Steps to Boost Emotional
-              Resilience
-            </h3>
-            <button>
-              Read more{" "}
-              <FaArrowRightLong className="olw-welcome-article-icon" />
-            </button>
-          </div>
-        </div>
+  <div>
+    <button className="articles-category">One Life Wellness</button>
+  </div>
+</motion.div>
+
+{/* Dynamic Latest Blog Posts */}
+<motion.div
+  className="olw-welcome-articles-list"
+  initial="hidden"
+  whileInView="visible"
+  variants={{
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.3 } }, // Staggered animation for cards
+  }}
+>
+  {latestPosts.map((post) => (
+    <motion.div
+      key={post.id}
+      className="olw-welcome-article-card"
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+      }}
+    >
+      <h3 className="olw-welcome-article-heading">{post.title}</h3>
+      <p>{post.description}</p>
+      <button onClick={() => handleReadMore(post.title)}>
+        Read more <FaArrowRightLong className="olw-welcome-article-icon" />
+      </button>
+    </motion.div>
+  ))}
+</motion.div>
+
+
       </div>
 
       <CallToAction

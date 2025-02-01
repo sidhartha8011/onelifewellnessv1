@@ -79,18 +79,23 @@ const Footer = () => {
               replace professional medical advice.
             </p>
           </div>
+          <div className="olw-footer-policy-powered-contianer">
           <div className="olw-footer-policy-links">
             <div>
-              <Link to="/pages/Privacy-Policy" className="olw-pages-list-link">
+              <Link to="/Privacy-Policy" className="olw-pages-list-link">
                 <span className="polocy-link">Privacy Policy</span>
               </Link>
             </div>
             <div>|</div>
             <div>
-              <Link to="/pages/Privacy-Policy" className="olw-pages-list-link">
+              <Link to="/terms-and-conditions" className="olw-pages-list-link">
                 <span className="polocy-link">Terms & Conditions</span>
               </Link>
             </div>
+          </div>
+          <div>
+            <p className="powered-by-text">Powered by <a href="https://www.hashigotechnologies.com/">Hashigo Technologies</a> </p>
+          </div>
           </div>
         </div>
       </div>

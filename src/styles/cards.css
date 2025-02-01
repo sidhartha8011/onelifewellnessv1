@@ -7,13 +7,18 @@
   
   .olw-stack-cares-container {
     width: 80%;
-
+    min-height: 100vh;
     margin: 0 auto;
     margin-top: 50px;
   }
   
+  .olw-stack-container-layout-main{
+    min-height: fit-content;
+  }
+
   .olw-stack-cares-cards {
     list-style: none;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(var(--cards), var(--cardHeight));
@@ -34,8 +39,12 @@
   
   .olw-stack-cares-card {
     position: sticky;
+    background: #ffffff;
     top: 0;
-    padding-top: calc(var(--index) * var(--cardTopPadding));
+    padding: 30px;
+    border-radius: 20px;
+    min-height: 100vh;
+    height: fit-content;
   }
 
   

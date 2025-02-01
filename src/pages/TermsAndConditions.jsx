@@ -1,7 +1,7 @@
 import React from "react";
 import { LinearGradient } from "react-text-gradients";
 
-const PrivacyPolicy = () => {
+const TermsAndConditions = () => {
   return (
     <div className="flex-col align-center">
       <div className="privacy-policy-container">
@@ -10,8 +10,8 @@ const PrivacyPolicy = () => {
             gradient={["to left", "#AADB71 ,#053090"]}
             fallbackColor="black"
           >
-            <span className="font-weight-bold">Privacy Policy</span>
-          </LinearGradient>
+            <span className="font-weight-bold">Terms and Conditions</span>
+          </LinearGradient>{" "}
         </h1>
 
         <div className="policy-content-container">
@@ -121,4 +121,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default TermsAndConditions;

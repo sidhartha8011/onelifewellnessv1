@@ -103,6 +103,36 @@
     gap: 30px;
 }
 
+.www-section-heading-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.www-section-heading-container h1{
+    font-size: 40px;
+}
+
+.www-section-heading-container h3{
+    font-size: 20px;
+    border-bottom: 1px solid var(--primary-blue);
+    padding-bottom: 5px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.olw-whoweare-core-layout li h4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.www-core-layout-icon{
+    font-size: 40px;
+}
 
 .olw-whoweare-whatsset-section li{
     display: flex;
@@ -250,6 +280,26 @@
     box-shadow: 50px 50px 0 var(--bg-light-grey1);
     border: 1px solid #000;
     transform: rotate(-15deg);   
+}
+
+.rotated-container {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 50px 50px 0 var(--bg-light-grey1);
+    transform: rotate(-15deg); /* Rotate the container */
+    overflow: hidden; /* Keep content within rounded edges */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.olw-whoweare-our-promise-image {
+    min-width: 600px;
+    min-height: 600px;
+    transform: rotate(15deg);
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    /* transform: rotate(15deg); Rotate the image back to straighten it */
 }
 
 

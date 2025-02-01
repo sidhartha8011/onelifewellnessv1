@@ -23,12 +23,20 @@ const HowWeAreGoingTo = () => {
     "linear-gradient(204deg, rgba(2,39,89,1) 0%, rgba(186,248,110,1) 100%)"
   );
 
+  // const slideBackgrounds = [
+  //   "#022759", // Background for Slide 1
+  //   "#8ae915", // Background for Slide 2
+  //   "#e4e5ff", // Background for Slide 3
+  //   "#e0ffba", // Background for Slide 4
+  //   "#7ade00", // Background for Slide 5
+  // ];
+
   const slideBackgrounds = [
-    "#022759", // Background for Slide 1
-    "#8ae915", // Background for Slide 2
-    "#e4e5ff", // Background for Slide 3
-    "#e0ffba", // Background for Slide 4
-    "#7ade00", // Background for Slide 5
+    "#e4e5ff",
+    "#b0e84d",
+    "#f1f2ff",
+    "#d2f9a5",
+    "#a4e632",
   ];
 
   const handleSlideChange = (swiper) => {
@@ -49,32 +57,29 @@ const HowWeAreGoingTo = () => {
       "Explore our step-by-step approach to achieving holistic health and wellness.",
   };
 
-  const points = [
-    {
-      icon: <FaHeart />,
-      title: "Holistic",
-      description:
-        "We address mental, physical, and emotional wellness, ensuring you benefit from a well-rounded strategy.",
-    },
-    {
-      icon: <FaLeaf />,
-      title: "Empowering",
-      description:
-        "Instead of imposing complex plans, we provide simple, personalized tools you can adopt at your own pace.",
-    },
-    {
-      icon: <FaSyncAlt />,
-      title: "Flexible",
-      description:
-        "Life changes, and so should your wellness plan. Our resources grow with you, adapting to new challenges and goals.",
-    },
-    {
-      icon: <FaUsers />,
-      title: "Community-Focused",
-      description:
-        "We believe shared experiences bring deeper understanding and empathy, making your journey more meaningful.",
-    },
-  ];
+  const fadeInUp = {
+    initial: { opacity: 0, y: 50 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, delay: 1.5 },
+  };
+
+  const zoomIn = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { opacity: 1, scale: 1 },
+    transition: { duration: 0.6, delay: 1.5 },
+  };
+
+  const fadeInRight = (delay = 0) => ({
+    initial: { opacity: 0, x: 50 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, delay },
+  });
+
+  const fadeInLeft = (delay = 0) => ({
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.6, delay },
+  });
 
   const roadmapData = [
     {
@@ -204,6 +209,150 @@ const HowWeAreGoingTo = () => {
     <>
       <SEO seoData={seoData} />
       <OLWHero heading="A Roadmap to Holistic Wellness" fontSize="60px" />
+      
+      <motion.h1
+        className="hwagt-title"
+        initial={{ opacity: 0, y: 50 }} // Initial state
+        animate={{ opacity: 1, y: 0 }} // Final state
+        transition={{ duration: 0.6, ease: "easeOut" }} // Transition properties
+      >
+        Why Our Approach Works
+      </motion.h1>
+      <div className="olw-whyour-approach-container">
+        <div className="olw-whyout-inner-layout">
+          <div className="olw-whyout-inner-layout-top">
+            {/* First Card */}
+            <motion.div
+              className="olw-whyout-top-innner-container primary-blue-bg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <div className="olw-hww-icon">
+                <motion.button {...zoomIn}>One Life Wellness</motion.button>
+                <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
+                  <FaHeart className="olw-whyout-top-tcon" />
+                </motion.div>
+              </div>
+              <div>
+                <motion.h3 className="olw-hww-point-title" {...fadeInUp}>
+                  Holistic
+                </motion.h3>
+                <motion.p className="olw-hww-point-description" {...fadeInUp}>
+                  We address mental, physical, and emotional wellness, ensuring
+                  you benefit from a well-rounded strategy.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Second Card */}
+            <motion.div
+              className="olw-whyout-top-innner-container primary-light-blue-bg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="olw-hww-icon">
+                <motion.button {...zoomIn}>One Life Wellness</motion.button>
+                <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
+                  <FaLeaf className="olw-whyout-top-tcon" />
+                </motion.div>
+              </div>
+              <div>
+                <motion.h3 className="olw-hww-point-title" {...fadeInUp}>
+                  Empowering
+                </motion.h3>
+                <motion.p className="olw-hww-point-description" {...fadeInUp}>
+                  Instead of imposing complex plans, we provide simple,
+                  personalized tools you can adopt at your own pace.
+                </motion.p>
+              </div>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="olw-whyout-bottom-inner-container"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="brain-background-wwa"
+              {...zoomIn}
+            ></motion.div>
+          </motion.div>
+        </div>
+
+        <div className="olw-whyout-inner-layout">
+          <motion.div
+            className="olw-whyout-bottom-inner-container "
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.div
+              className="falls-background-wwa"
+              {...zoomIn}
+            ></motion.div>
+          </motion.div>
+          <div className="olw-whyout-inner-layout-top">
+            {/* Third Card */}
+            <motion.div
+              className="olw-whyout-top-innner-container primary-green-bg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="olw-hww-icon">
+                <motion.button {...zoomIn}>One Life Wellness</motion.button>
+                <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
+                  <FaSyncAlt className="olw-whyout-top-tcon" />
+                </motion.div>
+              </div>
+              <div>
+                <motion.h3 className="olw-hww-point-title" {...fadeInUp}>
+                  Flexible
+                </motion.h3>
+                <motion.p className="olw-hww-point-description" {...fadeInUp}>
+                  Life changes, and so should your wellness plan. Our resources
+                  grow with you, adapting to new challenges and goals.
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Fourth Card */}
+            <motion.div
+              className="olw-whyout-top-innner-container primary-light-green-bg"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="olw-hww-icon">
+                <motion.button {...zoomIn}>One Life Wellness</motion.button>
+                <motion.div className="olw-whyout-top-tcon-layout" {...zoomIn}>
+                  <FaUsers className="olw-whyout-top-tcon" />
+                </motion.div>
+              </div>
+              <div>
+                <motion.h3 className="olw-hww-point-title" {...fadeInUp}>
+                  Community-Focused
+                </motion.h3>
+                <motion.p className="olw-hww-point-description" {...fadeInUp}>
+                  We believe shared experiences bring deeper understanding and
+                  empathy, making your journey more meaningful.
+                </motion.p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
       <div
         className="hwa-how-we-are-going-to"
         style={{ background: backgroundColor, padding: "5%" }}
@@ -259,91 +408,8 @@ const HowWeAreGoingTo = () => {
           ))}
         </Swiper>
       </div>
+
       <div className="bottom-100"></div>
-        <motion.h1
-          className="hwagt-title"
-          initial={{ opacity: 0, y: 50 }} // Initial state
-          animate={{ opacity: 1, y: 0 }} // Final state
-          transition={{ duration: 0.6, ease: "easeOut" }} // Transition properties
-        >
-          Why Our Approach Works
-        </motion.h1>
-        
-
-      <div className="olw-whyour-approach-container">
-        <div className="olw-whyout-inner-layout">
-          <div className="olw-whyout-inner-layout-top">
-            <div className="olw-whyout-top-innner-container primary-blue-bg">
-            <div className="olw-hww-icon">
-            <button>One Life Wellness</button>
-            <div className="olw-whyout-top-tcon-layout ">
-            <FaHeart className="olw-whyout-top-tcon" />
-
-            </div>
-               
-              </div>
-              <div>
-                
-              <h3 className="olw-hww-point-title">Holistic</h3>
-              <p className="olw-hww-point-description">
-                We address mental, physical, and emotional wellness, ensuring
-                you benefit from a well-rounded strategy.
-              </p>
-              </div>
-            </div>
-            <div className="olw-whyout-top-innner-container primary-light-blue-bg">
-            <div className="olw-hww-icon">
-            <button>One Life Wellness</button>
-            <div className="olw-whyout-top-tcon-layout">
-                <FaLeaf className="olw-whyout-top-tcon" />
-                </div>
-              </div>
-              <div>
-              <h3 className="olw-hww-point-title">Empowering</h3>
-              <p className="olw-hww-point-description">
-                Instead of imposing complex plans, we provide simple,
-                personalized tools you can adopt at your own pace.
-              </p>
-              </div>
-            </div>
-          </div>
-          <div className="olw-whyout-bottom-inner-container brain-background-wwa"></div>
-        </div>
-        <div className="olw-whyout-inner-layout">
-          <div className="olw-whyout-bottom-inner-container falls-background-wwa"></div>
-          <div className="olw-whyout-inner-layout-top">
-            <div className="olw-whyout-top-innner-container primary-green-bg">
-            <div className="olw-hww-icon">
-            <button>One Life Wellness</button>
-            
-            <div className="olw-whyout-top-tcon-layout ">
-                <FaSyncAlt className="olw-whyout-top-tcon" /></div>
-              </div>
-              <div>
-              <h3 className="olw-hww-point-title">Flexible</h3>
-              <p className="olw-hww-point-description">
-                Life changes, and so should your wellness plan. Our resources
-                grow with you, adapting to new challenges and goals.
-              </p></div>
-            </div>
-            <div className="olw-whyout-top-innner-container primary-light-green-bg">
-            <div className="olw-hww-icon">
-              
-            <button>One Life Wellness</button>
-            
-            <div className="olw-whyout-top-tcon-layout ">
-                <FaUsers className="olw-whyout-top-tcon" /></div>
-              </div>
-              <div>
-              <h3 className="olw-hww-point-title">Community-Focused</h3>
-              <p className="olw-hww-point-description">
-                We believe shared experiences bring deeper understanding and
-                empathy, making your journey more meaningful.
-              </p></div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className="bottom-100"></div>
       <CallToAction
         title="Take the Next Step"

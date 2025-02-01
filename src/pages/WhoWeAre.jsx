@@ -5,7 +5,7 @@ import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
 import AboutCover from "../assets/images/about.jpeg";
-import OurPromise from "../assets/images/our-promise.jpg";
+import OurPromise from "../assets/images/empowering.jpg"; //
 import ourStory from "../assets/images/olw-our-story.jpg";
 
 import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
@@ -14,7 +14,11 @@ import whoWeAre from "../assets/images/olw-who-we-are.jpg";
 import Preventive from "../assets/images/preventive.png";
 import meditationPerson from "../assets/images/meditation-chakra.png";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-
+import { FaHandsHoldingChild } from "react-icons/fa6";
+import { FaRegClock } from "react-icons/fa";
+import { GiInfo } from "react-icons/gi";
+import { RiUserCommunityLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 const WhoWeAre = () => {
   const seoData = {
     title: "About Us",
@@ -59,7 +63,9 @@ const WhoWeAre = () => {
             luxuries.
           </p>
 
+          <Link to="/how-we-work">
           <button className="whoweare-button">Explore More</button>
+          </Link>
         </div>
       </motion.div>
 
@@ -74,10 +80,11 @@ const WhoWeAre = () => {
           <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-section-layout">
-                <div>
-                  <h2 className="your-partners-heading-green">
-                    Who We Are: Your Partners in Holistic Wellness
-                  </h2>
+                <div className="www-section-heading-container">
+                  <h3> Who We Are</h3>
+                  <h1 className="your-partners-heading-green">
+                    Your Partners in Holistic Wellness
+                  </h1>
                   <p>
                     We are a diverse team of medical professionals, wellness
                     experts, researchers, and tech enthusiasts sharing one
@@ -223,9 +230,12 @@ const WhoWeAre = () => {
           <InViewSection>
             <div className="olw-whoweare-section-content">
               <div className="olw-whoweare-our-core-layout">
-                <h2>
-                  Our Core Beliefs: Building a Sustainable Path to Wellness
-                </h2>
+                <div className="www-section-heading-container">
+                  <h3>Our Core Beliefs</h3>
+                  <h1 className="your-partners-heading-green">
+                    Building a Sustainable Path to Wellness
+                  </h1>
+                </div>
                 <div className="olw-whoweare-core-section">
                   <ul className="olw-whoweare-core-layout">
                     <motion.li
@@ -233,16 +243,24 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      <h4>Preventive Care</h4> Address potential health concerns
-                      before they become overwhelming.
+                      <h4>
+                        Preventive Care
+                        <FaHandsHoldingChild className="www-core-layout-icon" />
+                      </h4>{" "}
+                      Address potential health concerns before they become
+                      overwhelming.
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                      <h4>Informed Choices</h4> Offer transparent, accurate
-                      information that respects your autonomy.
+                      <h4>
+                        Informed Choices{" "}
+                        <GiInfo className="www-core-layout-icon" />
+                      </h4>{" "}
+                      Offer transparent, accurate information that respects your
+                      autonomy.
                     </motion.li>
                   </ul>
                   <ul className="olw-whoweare-core-layout">
@@ -251,16 +269,24 @@ const WhoWeAre = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                      <h4>Sustainable Routines</h4> Encourage small, consistent
-                      steps over short-lived, drastic changes.
+                      <h4>
+                        Sustainable Routines{" "}
+                        <FaRegClock className="www-core-layout-icon" />
+                      </h4>{" "}
+                      Encourage small, consistent steps over short-lived,
+                      drastic changes.
                     </motion.li>
                     <motion.li
                       initial={{ opacity: 0, x: -50 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5, delay: 0.6 }}
                     >
-                      <h4>Community Support</h4> Cultivate a space where
-                      everyone can learn, share, and grow together.
+                      <h4>
+                        Community Support{" "}
+                        <RiUserCommunityLine className="www-core-layout-icon" />
+                      </h4>{" "}
+                      Cultivate a space where everyone can learn, share, and
+                      grow together.
                     </motion.li>
                   </ul>
                 </div>
@@ -271,8 +297,13 @@ const WhoWeAre = () => {
           {/* Meet the Minds Section */}
           <InViewSection>
             <div className="olw-whoweare-section-content">
-              <div className="olw-whoweare-meet-minds-layout">
-                <h2>Meet the Minds: Experts, Enthusiasts & Innovators</h2>
+              <div className="olw-whoweare-section-layout">
+                <div className="www-section-heading-container">
+                  <h3>Meet the Minds</h3>
+                  <h1 className="your-partners-heading-green">
+                    Experts, Enthusiasts & Innovators
+                  </h1>
+                </div>
                 <ul className="olw-whoweare-meet-minds-points">
                   <motion.li
                     initial={{ opacity: 0, x: -50 }}
@@ -284,10 +315,10 @@ const WhoWeAre = () => {
                       src={OLWLogo}
                     />
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
-                      <h4>Preventive Care</h4>
-                      We focus on proactive health management, offering
-                      personalized wellness plans to prevent chronic conditions
-                      and promote long-term health.
+                      <h4>The Collective Team</h4>
+                      We are a diverse group of health and fitness experts,
+                      enthusiasts, and innovators. Our team blends healthcare
+                      professionals, fitness lovers, and patient experience.
                     </div>
                   </motion.li>
                   <motion.li
@@ -296,10 +327,10 @@ const WhoWeAre = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-green-bg">
-                      <h4>Informed Choices</h4>
-                      We empower individuals with the latest research and tech
-                      tools, helping them make educated decisions for their
-                      health and wellness.
+                      <h4>The Innovators</h4>
+                      We’re technology geeks using modern tools to simplify
+                      health management. Our logistics specialists ensure
+                      seamless support to enhance every aspect.
                     </div>
                     <img
                       className="olw-whoweare-meet-minds-image"
@@ -316,10 +347,10 @@ const WhoWeAre = () => {
                       src={OLWLogo}
                     />
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-blue-bg">
-                      <h4>Preventive Care</h4>
-                      We focus on proactive health management, offering
-                      personalized wellness plans to prevent chronic conditions
-                      and promote long-term health.
+                      <h4>Uniting Science</h4>We
+                      combine science, compassion, and innovation to create
+                      sustainable change. We offer personalized wellness plans
+                      and explore the latest health tech.
                     </div>
                   </motion.li>
                   <motion.li
@@ -328,10 +359,10 @@ const WhoWeAre = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
                     <div className="olw-whoweare-meet-minds-iner-layout primary-light-green-bg">
-                      <h4>Informed Choices</h4>
-                      We empower individuals with the latest research and tech
-                      tools, helping them make educated decisions for their
-                      health and wellness.
+                      <h4>Empowering Health </h4>
+                      Together, we’re building a community that inspires and
+                      empowers individuals. We help people take charge of their
+                      health and live life to its fullest potential.
                     </div>
                     <img
                       className="olw-whoweare-meet-minds-image"
@@ -362,11 +393,13 @@ const WhoWeAre = () => {
                 </blockquote>
               </div>
               <div className="olw-whoweare-section-image">
-                <img
-                  src={OurPromise}
-                  alt="Our Promise"
-                  className="olw-whoweare-our-promise-image"
-                />
+                <div className="rotated-container">
+                  <img
+                    src={OurPromise}
+                    alt="Our Promise"
+                    className="olw-whoweare-our-promise-image"
+                  />
+                </div>
               </div>
             </div>
           </InViewSection>
@@ -378,8 +411,8 @@ const WhoWeAre = () => {
       <CallToAction
         title="Ready to Grow With Us?"
         description="Take the next step in your wellness journey. Dive deeper into our specialized programs, browse our expert articles, or get personal guidance tailored to your needs."
-        buttonText="Read Our Latest Insights"
-        buttonLink="/signup"
+        buttonText="Explore Insights"
+        buttonLink="/insights"
       />
     </>
   );

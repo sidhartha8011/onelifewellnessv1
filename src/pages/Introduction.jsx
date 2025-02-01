@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import OlwBackgroundTop from "../components/OlwBackgroundTop";
 import OlwBackgroundBottom from "../components/OlwBackgroundBottom";
-
+import OLWIntroimage from '../assets/images/welcome/olw-intro-image.png';
 
 const Introduction = () => {
   const navigate = useNavigate();
@@ -24,16 +24,19 @@ const Introduction = () => {
           <h2 className="olw-intro-sub-heading fadeInUp">
             Empowering You to Live with Purpose
           </h2>
-          <p className="olw-intro-quote zoomIn">
+          <p className="olw-intro-quote ">
             “You have only one life—live it well, and let us guide you toward a
             path of peace, prosperity, and productivity.”
           </p>
           <button className="olw-intro-button fadeInUp" onClick={handleNavigate}>
             <span className="olw-intro-button-icon">
-              <CgArrowLongRight className="olw-intro-icon" />
+              <CgArrowLongRight className="olw-intro-icon zoomIn" />
             </span>
             Welcome
           </button>
+        </div>
+        <div>
+          <img src={OLWIntroimage} alt="" className="olw-intro-image zoomIn" />
         </div>
       </div>
       <OlwBackgroundBottom />

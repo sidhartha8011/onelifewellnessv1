@@ -112,7 +112,7 @@ const WhyItMatters = () => {
           meaningful accomplishments, and lasting fulfillment.
         </motion.p>
       </div>
-      <div className="bottom-100">
+      <div className="bottom-100 olw-stack-container-layout-main">
         <div className="olw-stack-cares-container">
           <ul className="olw-stack-cares-cards">
             <li className="olw-stack-cares-card" id="card1">

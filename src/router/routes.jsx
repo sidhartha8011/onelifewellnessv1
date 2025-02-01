@@ -16,6 +16,9 @@ import NotFound from '../pages/NotFound';
 import WhyItMatters from '../pages/WhyItMatters';
 import Introduction from '../pages/Introduction';
 import WhoWeAre from '../pages/WhoWeAre';
+import TermsAndConditions from '../pages/TermsAndConditions';
+import Insights from '../pages/Insights';
+import BlogPost from '../pages/BlogPost';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,12 @@ const router = createBrowserRouter([
       },{
         path: '/about',
         element: <About />,
+      },{
+        path: '/insights',
+        element: <Insights />,
+      },{
+        path: '/insights/:title',
+        element: <BlogPost />,
       },
       {
         path: '/who-we-are',
@@ -48,6 +57,9 @@ const router = createBrowserRouter([
       {
         path: '/privacy-policy',
         element: <PrivacyPolicy />,
+      },{
+        path: '/terms-and-conditions',
+        element: <TermsAndConditions />,
       },
       {
         path: '/lets-talk',
