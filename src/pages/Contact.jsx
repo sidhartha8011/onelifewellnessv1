@@ -40,7 +40,7 @@ const Contact = () => {
     setLoading(true);
     setErrorMessage("");
     try {
-      const response = await axios.post("http://51.112.95.57:5000/send-email", formData);
+      const response = await axios.post("http://51.112.95.57:4000/send-email", formData);
       if (response.status === 200) {
         setSubmitted(true);
       }

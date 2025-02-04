@@ -34,11 +34,11 @@ const HowWeAreGoingTo = () => {
   // ];
 
   const slideBackgrounds = [
-    "#e4e5ff",
-    "#b0e84d",
+    "#e0ffba",
     "#f1f2ff",
     "#d2f9a5",
-    "#a4e632",
+    "#e4e5ff",
+    "#8ae915",
   ];
 
   const handleSlideChange = (swiper) => {
