@@ -1,77 +1,187 @@
 
-/* Introduction.css */
-
+/* PARENT PAGE */
 .olw-intro-page {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10%;
+  overflow: hidden;
+  transition: all 1.5s ease-in-out;
+}
+
+/* TEXT SECTION */
+.olw-intro-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+/* Move left when width < 70% */
+.animate-content {
+  opacity: 0;
+  width: 40%;
+}
+
+.normal-content{
+  opacity: 1;
+  width: 40%;
+  align-items: flex-start;
+  text-align: left;  
+  transition: 0.3s ease-in-out;
+}
+
+.animate-content:not(:hover) {
+  align-items: center;
+  text-align: left;
+}
+
+/* IMAGE SECTION */
+.olw-intro-image-wrapper {
+  width: 0%;
+  opacity: 0;
+  display: none;
+  transition: width 1.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+/* Reveal Image with Zoom */
+.show-image {
+  width: 50%;
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
-  padding: 5% 10%;
+  animation: zoomIn 1s ease-in-out forwards;
 }
 
-.olw-intro-image{
-  min-width: 700px;
-  max-width: 700px;
+.olw-intro-button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  font-size: 18px
+}
+
+/* IMAGE STYLING */
+.olw-intro-image {
+  width: 700px;
+  max-width: 100%;
   border-radius: 25px;
 }
 
-.olw-intro-content-wrapper {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 20px;
-  width: 500px;
+.olw-intro-button-wrapper{
+  width: 100%;
+  display: none;
   align-items: flex-start;
+  text-align: left;
 }
 
-.olw-intro-main-heading {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.animate-content:hover {
+  align-items: flex-start;
+  text-align: left;
 }
 
-.olw-intro-sub-heading {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.olw-intro-quote {
-  font-size: 1.2rem;
-  font-style: italic;
-  line-height: 1.6;
-  margin-bottom: 30px;
-}
-
-.olw-intro-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: var(--primary-blue);
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: background-color 0.3s ease;
-}
-
-.olw-intro-button:hover {
-  background-color: #0056b3;
-}
-
-.olw-intro-button-icon {
+.show-button{
   display: flex;
-  margin-right: 10px;
 }
 
-.olw-intro-icon {
-  font-size: 1.2rem;
-  color: #ffffff;
+.olw-intro-main-heading{
+  font-size: 50px
 }
 
+/* ZOOM-IN ANIMATION */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .olw-intro-page {
+    flex-direction: column;
+    align-items: center;
+    padding: 10% 5%;
+  }
+
+  .olw-intro-content-wrapper {
+    width: 100%;
+  }
+
+  .animate-content {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .olw-intro-image-wrapper {
+    width: 100%;
+  }
+
+  .show-image {
+    width: 100%;
+  }
+
+  .olw-intro-image {
+    max-width: 90%;
+  }
+}
+
+/* Initial State: Hide all elements */
+.olw-intro-main-heading,
+.olw-intro-sub-heading,
+.olw-intro-quote {
+  opacity: 0;
+  transform: translateY(20px); /* Move text slightly down */
+}
+
+/* Fade-in & move-up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Zoom-in animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Apply animations with delay */
+.olw-intro-main-heading {
+  animation: fadeInUp 1s ease-in-out 0.5s forwards;
+}
+
+ .olw-intro-sub-heading {
+  animation: fadeInUp 1s ease-in-out 1s forwards;
+}
+
+ .olw-intro-quote {
+  animation: fadeInUp 1s ease-in-out 1.5s forwards;
+}
+/* 
+ .olw-intro-button {
+  animation: zoomIn 0.8s ease-in-out 2s forwards;
+} */
 
 
 /* About us page */
