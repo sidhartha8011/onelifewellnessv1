@@ -11,41 +11,22 @@
   transition: all 1.5s ease-in-out;
 }
 
-/* TEXT SECTION */
-.olw-intro-content-wrapper {
+
+
+.olw-intro-image-wrapper {
+  width: 50%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.olw-intro-content-wrapper{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  align-items: center;
-  text-align: center;
-}
-
-/* Move left when width < 70% */
-.animate-content {
-  opacity: 0;
-  width: 40%;
-}
-
-.normal-content{
-  opacity: 1;
-  width: 40%;
-  align-items: flex-start;
-  text-align: left;  
-  transition: 0.3s ease-in-out;
-}
-
-.animate-content:not(:hover) {
-  align-items: center;
-  text-align: left;
-}
-
-/* IMAGE SECTION */
-.olw-intro-image-wrapper {
-  width: 0%;
-  opacity: 0;
-  display: none;
-  transition: width 1.5s ease-in-out, opacity 1.5s ease-in-out;
+  gap: 30px;
+  width: 50%;
 }
 
 /* Reveal Image with Zoom */
@@ -55,7 +36,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: zoomIn 1s ease-in-out forwards;
+  animation: fadeInnewRight 1.5s ease-in-out forwards;
 }
 
 .olw-intro-button{
@@ -63,7 +44,8 @@
   flex-direction: row;
   align-items: center;
   gap: 14px;
-  font-size: 18px
+  font-size: 18px;
+  transition: width 1.5s ease-in-out, opacity 1.5s ease-in-out;
 }
 
 /* IMAGE STYLING */
@@ -75,18 +57,8 @@
 
 .olw-intro-button-wrapper{
   width: 100%;
-  display: none;
   align-items: flex-start;
   text-align: left;
-}
-
-.animate-content:hover {
-  align-items: flex-start;
-  text-align: left;
-}
-
-.show-button{
-  display: flex;
 }
 
 .olw-intro-main-heading{
@@ -100,6 +72,17 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+@keyframes fadeInnewRight {
+  from {
+    opacity: 0;
+    transform: translateX(150px); /* Move image slightly to the right */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -137,7 +120,8 @@
 /* Initial State: Hide all elements */
 .olw-intro-main-heading,
 .olw-intro-sub-heading,
-.olw-intro-quote {
+.olw-intro-quote, 
+.olw-intro-button {
   opacity: 0;
   transform: translateY(20px); /* Move text slightly down */
 }
@@ -178,10 +162,10 @@
  .olw-intro-quote {
   animation: fadeInUp 1s ease-in-out 1.5s forwards;
 }
-/* 
+
  .olw-intro-button {
   animation: zoomIn 0.8s ease-in-out 2s forwards;
-} */
+}
 
 
 /* About us page */
@@ -1398,11 +1382,14 @@
   }
 
   .wwa-page-quotes{
-    padding-left: 30px;
     display: flex;
     border-left: 2px solid var(--primary-blue);
     padding-top: 10px;
+    background: #ffffff;
     color: #8ae915;
+    padding: 20px 30px;
+    text-align: center;
+    font-size: 20px;
     font-weight: 500;
     gap: 10px;
     min-height: 50px;

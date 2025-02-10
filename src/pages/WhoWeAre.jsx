@@ -21,7 +21,7 @@ import { RiUserCommunityLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 const WhoWeAre = () => {
   const seoData = {
-    title: "About Us",
+    title: "Who We Are",
     description:
       "Learn more about One Life Wellness, our mission, and our team. Discover how we aim to promote health and mindfulness.",
     keywords: "about us, one life wellness, health, mindfulness",
@@ -62,10 +62,6 @@ const WhoWeAre = () => {
             essential pillars of a vibrant, thriving community, rather than
             luxuries.
           </p>
-
-          <Link to="/how-we-work">
-          <button className="whoweare-button">Explore More</button>
-          </Link>
         </div>
       </motion.div>
 
@@ -96,7 +92,7 @@ const WhoWeAre = () => {
                 </div>
 
                 <div className="olw-wsua-heading-layout ">
-                  <h3>What Sets Us Apart</h3>
+                  <h1>What Sets Us Apart ?</h1>
 
                   <div className="out-wsua-main-layout">
                     <div className="olw-wsua-outer-layout">
@@ -387,9 +383,9 @@ const WhoWeAre = () => {
                   step at a time.
                 </p>
                 <blockquote className="wwa-page-quotes">
-                  <FaQuoteLeft className="quote-icon" /> We’re more than a
+                  <FaQuoteLeft className="quote-icon" />We’re more than a
                   team—we’re your partners in navigating a healthier, happier
-                  life. <FaQuoteRight className="quote-icon" />
+                  life.<FaQuoteRight className="quote-icon" />
                 </blockquote>
               </div>
               <div className="olw-whoweare-section-image">

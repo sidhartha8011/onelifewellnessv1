@@ -79,7 +79,6 @@ h6 { font-size: var(--font-h6); }
 span, a {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-normal);
-  color: var(--primary-blue);
   font-size: var(--font-body);
 }
 

@@ -91,10 +91,10 @@
   .video-bg{
     position: absolute;
     z-index: -1;
+    opacity: 0.3;
     top: 60%;
     margin: 0; transform:
     rotate(-30deg);
-
     padding: 0;
     height: 130px;
     object-fit: cover;
@@ -245,6 +245,8 @@
 }
 
 
+.olw-welcome-triple-path-section
+
 blockquote{
   font-size: 18px;
   font-style: italic;
@@ -325,10 +327,23 @@ blockquote{
   width: 100%;
   flex-direction: column;
   gap: 20px;
-  background: linear-gradient(to left, #8ae915, #c1ff76);
   border-radius: 20px;
   padding: 20px;
 }
+
+.article-card-green-bg{
+  background: linear-gradient(to left, #8ae915, #c1ff76);
+  
+}
+
+.article-card-blue-bg{
+  background: #e4e5ff;
+}
+
+.article-card-light-blue-bg{
+  background: #e0ffba;
+}
+
 
 .scrolling-logo-div{
   bottom: -25%; 
@@ -361,7 +376,7 @@ blockquote{
 .olw-welcome-article-section{
   position: relative;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   flex-direction: column;
 }
 
@@ -467,7 +482,7 @@ blockquote{
 
 .olw-welcome-triple-path-section{
   padding: 0 10%;
-  margin-bottom: 50px;
+  margin: 50px 0;
 }
 
 .olw-welcome-section-quote{

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import logo from "../assets/images/One-life-wellness-logo.png";
 import { NavLink } from "react-router-dom";
@@ -6,11 +6,12 @@ import { NavLink } from "react-router-dom";
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
+  const menuRef = useRef(null);
 
   // Toggle mobile menu visibility
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen((prevState) => !prevState);
+    setIsMobileMenuOpen((prev) => !prev);
   };
 
   // Close the menu when a link is clicked
@@ -18,104 +19,62 @@ const Header = () => {
     setIsMobileMenuOpen(false);
   };
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling down, hide header
-        setIsVisible(false);
-      } else {
-        // Scrolling up, show header
-        setIsVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      setIsVisible(currentScrollY < lastScrollY.current || currentScrollY < 50);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollY]);
+  }, []);
 
   return (
-    <div
-      className={`header-menu-container ${isVisible ? "visible" : "hidden"}`}
-    >
-      {/* Logo Section */}
+    <div className={`header-menu-container ${isVisible ? "visible" : "hidden"}`}>
+      {/* Logo & Hamburger Container */}
       <div className="header-logo-container">
         <NavLink to="/" className="nav-header-logo">
           <img src={logo} alt="One Life Wellness" className="header-logo" />
         </NavLink>
 
-        {/* Desktop and Mobile Menu */}
-        <ul
-          className={`header-menu-items-container ${
-            isMobileMenuOpen ? "mobile-open" : ""
-          }`}
-        >
-          <li>
-            <NavLink
-              to="/welcome"
-              className="header-menu-link"
-              activeClassName="active"
-              onClick={handleMenuItemClick}
-            >
-              Welcome
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/who-we-are"
-              className="header-menu-link"
-              activeClassName="active"
-              onClick={handleMenuItemClick}
-            >
-              Who We Are
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/how-we-work"
-              className="header-menu-link"
-              activeClassName="active"
-              onClick={handleMenuItemClick}
-            >
-              How We Work
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/why-it-matters"
-              className="header-menu-link"
-              activeClassName="active"
-              onClick={handleMenuItemClick}
-            >
-              Why It Matters
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/lets-talk"
-              className="header-menu-link"
-              activeClassName="active"
-              onClick={handleMenuItemClick}
-            >
-              Let’s Talk
-            </NavLink>
-          </li>
-        </ul>
+        {/* Hamburger Menu (Mobile) */}
+        <div className="header-hamburger-container" onClick={toggleMobileMenu} aria-label="Toggle menu">
+          {isMobileMenuOpen ? <FiX className="menu-icon" /> : <FiMenu className="menu-icon" />}
+        </div>
       </div>
 
-      {/* Hamburger or Close Icon (Mobile) */}
-      <div className="header-hamburger-container" onClick={toggleMobileMenu}>
-        <span className="header-hamburger-menu">
-          {isMobileMenuOpen ? <FiX /> : <FiMenu />}
-        </span>
-      </div>
+      {/* Navigation Menu */}
+      <ul ref={menuRef} className={`header-menu-items-container ${isMobileMenuOpen ? "open" : ""}`}>
+        {["welcome", "who-we-are", "how-we-work", "why-it-matters", "lets-talk"].map((path) => (
+          <li key={path}>
+            <NavLink
+              to={`/${path}`}
+              className={({ isActive }) => (isActive ? "header-menu-link active" : "header-menu-link")}
+              onClick={handleMenuItemClick}
+            >
+              {path.replace("-", " ").replace(/\b\w/g, (char) => char.toUpperCase())}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
