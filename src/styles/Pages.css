@@ -1,5 +1,5 @@
 
-/* PARENT PAGE */
+/* Intro PAGE */
 .olw-intro-page {
   display: flex;
   align-items: center;
@@ -62,7 +62,15 @@
 }
 
 .olw-intro-main-heading{
-  font-size: 50px
+  font-size: 64px;
+}
+
+.olw-intro-sub-heading{
+  font-size: 28px;
+}
+
+.olw-intro-quote{
+  font-size: 18px;
 }
 
 /* ZOOM-IN ANIMATION */
@@ -87,15 +95,22 @@
 }
 
 /* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
+@media (max-width:858px) {
   .olw-intro-page {
     flex-direction: column;
     align-items: center;
     padding: 10% 5%;
   }
 
+  .olw-intro-main-heading{
+    line-height: 2.7rem;
+  }
   .olw-intro-content-wrapper {
     width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .animate-content {
@@ -1215,6 +1230,9 @@
     background-image: url(../assets/images/prosperity.jpg);
     background-size: cover;
   }
+
+
+  /* Why it matters */
 
   .whim-main-layout{
     display: flex;

@@ -19,7 +19,7 @@ const Introduction = () => {
           <h1 className="olw-intro-main-heading">
             <LinearGradient gradient={["to left", "#AADB71 ,#053090"]} fallbackColor="black">
               <span className="font-weight-bold">
-                One Life Wellness, A Manual for Life
+                One Life Wellness, <br/> A Manual for Life
               </span>
             </LinearGradient>
           </h1>

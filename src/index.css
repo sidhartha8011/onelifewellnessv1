@@ -228,7 +228,7 @@ button {
 
 /* Spacing Utilities */
 .olw-outlet-container {
-  padding-top: 108px;
+  padding-top: 100p;
 }
 
 .bottom-100 {
@@ -295,6 +295,11 @@ button {
   p, span, a {
     font-size: calc(var(--font-body) * 0.9); /* Adjust paragraph, span, and link sizes */
   }
+
+  /* Spacing Utilities */
+.olw-outlet-container {
+  padding-top: 50px;
+}
 }
 
 @media (max-width: 768px) {

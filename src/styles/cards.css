@@ -1,62 +1,68 @@
 :root {
-    --cards: 3;
-    --cardHeight: 87vh;
-    --cardTopPadding: 1.5em;
-    --cardMargin: 4vw;
-  }
-  
-  .olw-stack-cares-container {
-    width: 80%;
-    min-height: 100vh;
-    margin: 0 auto;
-    margin-top: 50px;
-  }
-  
-  .olw-stack-container-layout-main{
-    min-height: fit-content;
-  }
+  --cards: 3;
+  --cardHeight: 87vh;
+  --cardTopPadding: 1.5em;
+  --cardMargin: 4vw;
+}
 
+.olw-stack-cares-container {
+  width: 84%;
+  min-height: 100vh;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.olw-stack-container-layout-main {
+  min-height: fit-content;
+}
+
+.olw-stack-cares-cards {
+  list-style: none;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#card1 {
+  --index: 1;
+}
+#card2 {
+  --index: 2;
+}
+#card3 {
+  --index: 3;
+}
+
+.olw-stack-cares-card {
+  position: relative; /* Changed from sticky to relative */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  min-height: auto; /* Adjusts to content */
+  height: fit-content;
+}
+
+.olw-stack-cares-card-body {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 50px;
+  height: fit-content;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+
+/* Responsive Fixes */
+@media (max-width: 1024px) {
   .olw-stack-cares-cards {
-    list-style: none;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(var(--cards), var(--cardHeight));
-    gap: var(--cardMargin);
-    padding-bottom: calc(var(--cards) * var(--cardTopPadding));
-    margin-bottom: var(--cardMargin);
+      grid-template-columns: repeat(2, 1fr); /* Two cards per row */
   }
-  
-  #card1 {
-    --index: 1;
-  }
-  #card2 {
-    --index: 2;
-  }
-  #card3 {
-    --index: 3;
-  }
-  
-  .olw-stack-cares-card {
-    position: sticky;
-    background: #ffffff;
-    top: 0;
-    padding: 30px;
-    border-radius: 20px;
-    min-height: 100vh;
-    height: fit-content;
-  }
+}
 
-  
-  .olw-stack-cares-card-body {
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 50px;
-    height: fit-content;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
+@media (max-width: 768px) {
+  .olw-stack-cares-cards {
+      grid-template-columns: 1fr; /* Stacks on small screens */
   }
-  
+}
