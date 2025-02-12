@@ -116,6 +116,10 @@ a {
   z-index: 1;
 }
 
+.error-message{
+  color: #ff0000;
+  font-size: 13px;
+}
 
 .primary-blue-bg{
   background: #022759;
