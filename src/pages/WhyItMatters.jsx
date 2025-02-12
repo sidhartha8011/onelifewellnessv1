@@ -96,6 +96,7 @@ const WhyItMatters = () => {
   return (
     <>
       <SEO seoData={seoData} />
+      <div className="bottom-50"></div>
       <OLWHero
         heading="A Journey Towards Peace, Productivity & Prosperity"
         subHeading=""
@@ -114,9 +115,7 @@ const WhyItMatters = () => {
       </div>
       <div className="bottom-100 olw-stack-container-layout-main">
         <div className="olw-stack-cares-container">
-          <ul className="olw-stack-cares-cards">
-            <li className="olw-stack-cares-card" id="card1">
-              <div className="olw-stack-cares-card-body">
+              
                 <section className="whim-main-layout">
                   <motion.div
                     className="whim-image-cotainer peace-background"
@@ -202,10 +201,7 @@ const WhyItMatters = () => {
                     </div>
                   </motion.div>
                 </section>
-              </div>
-            </li>
-            <li className="olw-stack-cares-card" id="card2">
-              <div className="olw-stack-cares-card-body">
+              
                 <section className="whim-main-layout">
                   <motion.div
                     className="whim-content-container primary-light-green-bg"
@@ -294,10 +290,7 @@ const WhyItMatters = () => {
                     </p>
                   </motion.div>
                 </section>
-              </div>
-            </li>
-            <li className="olw-stack-cares-card" id="card3">
-              <div className="olw-stack-cares-card-body">
+              
                 <section className="whim-main-layout">
                   <motion.div
                     className="whim-image-cotainer prosperity-background"
@@ -383,10 +376,7 @@ const WhyItMatters = () => {
                       </div>
                     </div>
                   </motion.div>
-                </section>
-              </div>
-            </li>
-          </ul>
+                </section> 
         </div>  
       </div>
       <CallToAction

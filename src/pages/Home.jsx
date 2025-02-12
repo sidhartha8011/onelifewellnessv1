@@ -9,8 +9,6 @@ import children from "../assets/images/cs-images/children.png";
 import grandparents from "../assets/images/cs-images/grandparents.png";
 import dog from "../assets/images/cs-images/dog.png";
 import welcomeOne from "../assets/images/welcome/welcome-one.png";
-import welcomeTwo from "../assets/images/welcome/welcome-two.jpg";
-import CallToAction from "../components/CallToAction";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
 import OLWLogo from "../assets/images/OLW-logo.png";
@@ -71,17 +69,14 @@ const Home = () => {
     navigate(`/insights/${createSlug(title)}`);
   };
 
-
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  
-      const handleOpenPopup = () =>
-          {
-              console.log('clicked')
-              setIsPopupOpen(true);
-  
-          } 
-      const handleClosePopup = () => setIsPopupOpen(false);
-  
+
+  const handleOpenPopup = () => {
+    console.log("clicked");
+    setIsPopupOpen(true);
+  };
+  const handleClosePopup = () => setIsPopupOpen(false);
+
   return (
     <>
       <div className="olw-home-page">
@@ -92,7 +87,7 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
           >
-            <h2>
+            <h2 className="olw-home-heading-text">
               <LinearGradient
                 gradient={["to left", "#AADB71 ,#053090"]}
                 fallbackColor="black"
@@ -185,10 +180,11 @@ const Home = () => {
           <div className="olw-home-manual-section">
             <h2>The Soul of Our Purpose, Vision & Essence</h2>
             <p className="olw-home-manual-section-para">
-            We believe preventing illness starts with understanding the body-mind connection.
-By simplifying medical knowledge, we empower proactive well-being.
-Our vision is a world where self-care is instinctive, and communities thrive.
-Mental clarity, physical vitality, and emotional balance shape daily life.
+              We believe preventing illness starts with understanding the
+              body-mind connection. By simplifying medical knowledge, we empower
+              proactive well-being. Our vision is a world where self-care is
+              instinctive, and communities thrive. Mental clarity, physical
+              vitality, and emotional balance shape daily life.
             </p>
           </div>
         </motion.div>
@@ -304,7 +300,11 @@ Mental clarity, physical vitality, and emotional balance shape daily life.
         <div className="olw-welcome-content-box">
           <h2>Our Triple Path to Thriving</h2>
           <ul className="olw-welcome-triple-path-list">
-            <motion.li variants={fadeInUp} initial="hidden" whileInView="visible">
+            <motion.li
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div className="triple-path-heading">
                 <h3 className="gradient-heading">Peace</h3>
                 <GiMeditation className="olw-welcome-icon" />
@@ -314,7 +314,11 @@ Mental clarity, physical vitality, and emotional balance shape daily life.
                 focused mind and overall well-being.
               </p>
             </motion.li>
-            <motion.li variants={fadeInUp} initial="hidden" whileInView="visible">
+            <motion.li
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div className="triple-path-heading">
                 <h3 className="gradient-heading">Productivity</h3>
                 <AiOutlineLaptop className="olw-welcome-icon" />
@@ -325,7 +329,11 @@ Mental clarity, physical vitality, and emotional balance shape daily life.
                 planning, and balanced energy.
               </p>
             </motion.li>
-            <motion.li variants={fadeInUp} initial="hidden" whileInView="visible">
+            <motion.li
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="visible"
+            >
               <div className="triple-path-heading">
                 <h3 className="gradient-heading">Prosperity</h3>
                 <GrGrow className="olw-welcome-icon" />
@@ -384,69 +392,76 @@ Mental clarity, physical vitality, and emotional balance shape daily life.
             visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
           }}
         >
-          <div className="olw-welcome-article-section">   
-            <div>
-              <button className="articles-category">One Life Wellness</button>
-            </div>
-              <h1>Stay Informed, Stay Inspired</h1>
-              <p>
-                Dive into our expert-curated articles designed for busy
-                individuals. Learn quick tips, proven strategies, and emerging
-                trends to enhance your lifestyle and well-being.
-              </p>
+          <div className="olw-welcome-article-section">
+                          <button className="articles-category">One Life Wellness</button>
+            
+            <h1>Stay Informed, Stay Inspired</h1>
+            <p>
+              Dive into our expert-curated articles designed for busy
+              individuals. Learn quick tips, proven strategies, and emerging
+              trends to enhance your lifestyle and well-being.
+            </p>
           </div>
-
         </motion.div>
 
         {/* Dynamic Latest Blog Posts */}
         <motion.div
-  className="olw-welcome-articles-list"
-  initial="hidden"
-  whileInView="visible"
-  variants={{
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
-  }}
->
-  {latestPosts.map((post, index) => {
-    // Define background colors for each card based on index
-    const backgroundColors = ["article-card-green-bg", "article-card-blue-bg", "article-card-light-blue-bg"];
-    return (
-      <motion.div
-        key={post.id}
-        className={`olw-welcome-article-card ${backgroundColors[index % backgroundColors.length]}`}
-        variants={{
-          hidden: { opacity: 0, y: 50 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }, 
-        }}
-      >
-        <h3 className="olw-welcome-article-heading">{post.title}</h3>
-        <p>{post.description}</p>
-        <button onClick={() => handleReadMore(post.title)}>
-          Read more <FaArrowRightLong className="olw-welcome-article-icon" />
-        </button>
-      </motion.div>
-    );
-  })}
-</motion.div>
-
+          className="olw-welcome-articles-list"
+          initial="hidden"
+          whileInView="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.3 } },
+          }}
+        >
+          {latestPosts.map((post, index) => {
+            // Define background colors for each card based on index
+            const backgroundColors = [
+              "article-card-green-bg",
+              "article-card-blue-bg",
+              "article-card-light-blue-bg",
+            ];
+            return (
+              <motion.div
+                key={post.id}
+                className={`olw-welcome-article-card ${
+                  backgroundColors[index % backgroundColors.length]
+                }`}
+                variants={{
+                  hidden: { opacity: 0, y: 50 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+                }}
+              >
+                <h3 className="olw-welcome-article-heading">{post.title}</h3>
+                <p className="olw-welcome-article-para">{post.description}</p>
+                <button onClick={() => handleReadMore(post.title)}>
+                  Read more{" "}
+                  <FaArrowRightLong className="olw-welcome-article-icon" />
+                </button>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
 
-      
       <div className="olw-call-to-action">
-      <div className="olw-footer-cta-container">
-        <div className="olw-footer-cta-content">
-          <h1>Ready to Take the Next Step?</h1>
-          <p>Stay ahead of health trends, unlock expert tips, and receive actionable guides—right in your inbox. Join our newsletter and begin your journey toward a healthier, happier life today.</p>
-        </div>
-        <div>
-            <button className="green-button" onClick={handleOpenPopup}>Subscribe Now</button>
-          
+        <div className="olw-footer-cta-container">
+          <div className="olw-footer-cta-content">
+            <h1>Ready to Take the Next Step?</h1>
+            <p>
+              Stay ahead of health trends, unlock expert tips, and receive
+              actionable guides—right in your inbox. Join our newsletter and
+              begin your journey toward a healthier, happier life today.
+            </p>
+          </div>
+          <div>
+            <button className="green-button" onClick={handleOpenPopup}>
+              Subscribe Now
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <SubscriptionPopup isOpen={isPopupOpen} onClose={handleClosePopup} />
-
+      <SubscriptionPopup isOpen={isPopupOpen} onClose={handleClosePopup} />
     </>
   );
 };

@@ -54,6 +54,7 @@ const Contact = () => {
 
   return (
     <div className="olw-contact bottom-100 flex-col align-center">
+      <div className="bottom-50"></div>
       <div className="contact-us-form-container">
         <div className="olw-form-container">
           {/* Heading with fade-in-up animation */}

@@ -210,8 +210,8 @@ const HowWeAreGoingTo = () => {
   return (
     <>
       <SEO seoData={seoData} />
-      <OLWHero heading="A Roadmap to Holistic Wellness" fontSize="60px" />
-      
+      <OLWHero heading="A Roadmap to Holistic Wellness"  />
+      <div className="bottom-50"></div>
       <motion.h1
         className="hwagt-title"
         initial={{ opacity: 0, y: 50 }} // Initial state
@@ -357,7 +357,7 @@ const HowWeAreGoingTo = () => {
 
       <div
         className="hwa-how-we-are-going-to"
-        style={{ background: backgroundColor, padding: "5%" }}
+        style={{ background: backgroundColor }}
       >
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}

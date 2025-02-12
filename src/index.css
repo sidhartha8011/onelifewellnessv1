@@ -6,6 +6,10 @@
 @import './styles/cards.css';
 @import './styles/whoweare.css';
 @import './styles/insights.css';
+@import './styles/howwework.css';
+@import './styles/whyitmatters.css';
+
+@import './styles/contact.css';
 
 /* Inter Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
@@ -87,7 +91,7 @@ p {
   font-weight: var(--font-weight-medium);
   color: var(--primary-blue);
   line-height: 1.5;
-  font-size: var(--font-body);
+  font-size: 16px;
 }
 
 ul, ol {
@@ -228,11 +232,15 @@ button {
 
 /* Spacing Utilities */
 .olw-outlet-container {
-  padding-top: 100p;
+  padding-top: 100px;
 }
 
 .bottom-100 {
   padding-bottom: 100px;
+}
+
+.bottom-50{
+  padding-bottom: 50px;
 }
 
 .pointer {
@@ -292,9 +300,9 @@ button {
     font-size: 1em; /* Ensure readable text size */
   }
 
-  p, span, a {
-    font-size: calc(var(--font-body) * 0.9); /* Adjust paragraph, span, and link sizes */
-  }
+  p, a {
+    
+  font-size: 16px;}
 
   /* Spacing Utilities */
 .olw-outlet-container {
@@ -332,9 +340,9 @@ button {
     font-size: 1em; /* Keep text size readable */
   }
 
-  p, span, a {
-    font-size: calc(var(--font-body) * 0.8); /* Adjust font size for smaller text */
-  }
+  p {
+    
+  font-size: 16px;  }
 }
 
 

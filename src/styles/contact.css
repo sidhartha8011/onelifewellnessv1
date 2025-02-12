@@ -1,0 +1,149 @@
+
+
+/* contact us page */
+
+.contact-us-form-container{
+    padding: 7% 0;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 80%;
+}
+
+.contact-us-form{
+    display: flex;
+    max-width: 100vw;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.olw-form-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 50%;
+}
+
+.submit-button{
+    color: #ffffff;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, #8ae915, #7ade00); 
+}
+
+.submit-button:hover{
+  background: var(--primary-blue);
+}
+
+.contact-us-form input, .contact-us-form textarea,
+.contact-us-form select {
+  border: 1px solid rgba(224, 224, 224, 1);
+  padding: 13px 20px;
+  border-radius: 10px;
+  outline: none; /* Remove the default browser outline */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for focus effect */
+}
+
+.contact-us-form input:focus,
+.contact-us-form textarea:focus,
+.contact-us-form select:focus {
+  outline: 2px solid var(--primary-blue); /* Highlight border with primary blue */
+}
+
+
+.olw-contact-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.olw-c-details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-icon-box{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+}
+
+
+.google-maps-container{
+    width: 50%;
+    height: 500px;
+}
+
+.google-maps-preview{
+  border-radius: 20px;
+}
+
+.contact-form-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.contact-form-heading h1{
+    font-size: clamp(30px, 4vw, 45px);
+
+}
+
+.contact-form-heading p{
+    font-size: 16px;
+}
+
+
+.light-green-color{ 
+    color: #76de00;
+}
+
+.olw-c-details div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.olw-c-details h3, h4{
+    font-size: 16px;
+}
+
+
+.thank-you-message{
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 968px) {
+
+    /* contact us page */
+    .contact-us-form-container{
+        flex-direction: column;
+        width: 90%;
+    }
+    .olw-form-container{
+        width: 100%;
+    }
+
+    .olw-contact-details{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: space-between;
+    }
+
+    .google-maps-container{
+        width: 100%;
+        height: 500px;
+    }
+}

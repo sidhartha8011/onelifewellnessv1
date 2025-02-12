@@ -4,12 +4,7 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import HowWeAreGoingTo from '../pages/HowWeAreGoingTo';
-import OutcomeAll from '../pages/OutcomeAll';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
-import WhatWeDo from '../pages/WhatWeDo';
-import HowWeAreSingle from '../pages/HowWeAreSingle';
-import OutcomeSingle from '../pages/OutcomeSingle';
-import OneLifeLayout from '../pages/OneLifeLayout';
 import BodyBasics from '../pages/BodyBasics';
 import Explore from '../pages/Explore';
 import NotFound from '../pages/NotFound';
@@ -19,6 +14,7 @@ import WhoWeAre from '../pages/WhoWeAre';
 import TermsAndConditions from '../pages/TermsAndConditions';
 import Insights from '../pages/Insights';
 import BlogPost from '../pages/BlogPost';
+import OneLifeLayout from '../layouts/OneLifeLayout';
 
 const router = createBrowserRouter([
   {

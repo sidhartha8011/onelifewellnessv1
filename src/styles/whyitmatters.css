@@ -1,0 +1,223 @@
+
+  /* Why it matters */
+
+  .olw-stack-cares-container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .whim-main-layout{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    min-height: 300px; 
+  }
+
+  .whim-image-cotainer{
+    width: 40%;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-end;    
+  }
+
+
+   
+  .whim-image-cotainer p {
+    font-size: 20px;
+    background: var(--bg-white);
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .whim-descriptions{
+    display: flex;
+    margin-top: -30px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .whim-descriptions p{
+    width: 70%;
+    text-align: center;
+    line-height: 1.4; 
+    font-size: 20px;
+  }
+
+  .whim-tab-icon{
+    min-width: 100px;
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    justify-content: center;
+  }
+  .whim-content-container{
+    width: 60%;
+    background: var(--bg-light-grey2);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 30px;
+  }
+
+  .whim-content-container h2{
+    line-height: 1.4  ;
+  }
+  .whim-image-cotainer p{
+    font-size: 22px;
+  }
+
+  .ppp-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-blue);
+  }
+
+
+  .whim-cc-top{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .whim-cc-top h2{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .whim-tab-container{
+    display: flex;
+    margin: 0px auto;
+    margin-top: 20px;
+    gap: 25px;
+    flex-direction: column;
+  }
+  .whim-tab-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .whim-tab-button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 50px;
+  }
+
+  .whim-tab-button:hover {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+  }
+  
+  .whim-tab-button.whim-active {
+    border: 2px solid var(--primary-blue);
+  }
+  
+  .whim-tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 250px;
+    align-content: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: var(--bg-white);
+  }
+  
+  .whim-tab-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 5%;
+  }
+  
+  .whim-benefit-title {
+    font-weight: 500;
+    color: #fff;
+    background: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 30px;
+
+  }
+  
+  .whim-tab-item-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .whim-tab-title {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  
+  .whim-tab-description {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  
+  .whim-tab-image img {
+    min-width: 270px;
+    min-height: 150px;
+    border-radius: 15px;
+  }
+
+
+  @media (max-width: 968px) {
+
+    .olw-stack-cares-container{
+        width: 90%;
+    }
+    .whim-descriptions p{
+        font-size: 15px;
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .whim-main-layout{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .whim-image-cotainer{
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .whim-content-container{
+        width: 100%;
+    }
+
+    
+.quotes {
+    font-size: 16px !important;
+  }
+  .whim-tab-buttons{
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .whim-tab-button{
+    width: fit-content;
+  }
+  .whim-tab-container{
+    width: 100%;
+  }
+  .whim-tab-item{
+    flex-direction: column;
+  }
+  }

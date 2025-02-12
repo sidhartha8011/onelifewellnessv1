@@ -4,14 +4,10 @@ import { useInView } from "react-intersection-observer"; // Import from react-in
 import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
-import AboutCover from "../assets/images/about.jpeg";
 import OurPromise from "../assets/images/empowering.jpg"; //
-import ourStory from "../assets/images/olw-our-story.jpg";
 
 import backgroundVideo from "../assets/images/bg-vectors/dna-background.gif";
 import OLWLogo from "../assets/images/OLW-logo.png";
-import whoWeAre from "../assets/images/olw-who-we-are.jpg";
-import Preventive from "../assets/images/preventive.png";
 import meditationPerson from "../assets/images/meditation-chakra.png";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 import { FaHandsHoldingChild } from "react-icons/fa6";
@@ -34,10 +30,11 @@ const WhoWeAre = () => {
   return (
     <>
       <SEO seoData={seoData} />
+      <div className="bottom-50"></div>
       <OLWHero
         heading="About One Life Wellness"
         subHeading=""
-        fontSize="60px"
+        fontSize="50px"
       />
 
       {/* Hero Section */}
@@ -78,7 +75,7 @@ const WhoWeAre = () => {
               <div className="olw-whoweare-section-layout">
                 <div className="www-section-heading-container">
                   <h3> Who We Are</h3>
-                  <h1 className="your-partners-heading-green">
+                  <h1 className="your-partners-heading-blue">
                     Your Partners in Holistic Wellness
                   </h1>
                   <p>
@@ -388,6 +385,7 @@ const WhoWeAre = () => {
                   life.<FaQuoteRight className="quote-icon" />
                 </blockquote>
               </div>
+              
               <div className="olw-whoweare-section-image">
                 <div className="rotated-container">
                   <img
