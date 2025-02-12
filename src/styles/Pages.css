@@ -61,8 +61,8 @@
   text-align: left;
 }
 
-.olw-intro-main-heading{
-  font-size: 64px;
+.olw-intro-main-heading, .olw-home-heading-text{
+  font-size: clamp(40px, 5vw, 64px);
 }
 
 .olw-intro-sub-heading{
@@ -102,9 +102,7 @@
     padding: 10% 5%;
   }
 
-  .olw-intro-main-heading{
-    line-height: 2.7rem;
-  }
+  
   .olw-intro-content-wrapper {
     width: 100%;
     min-height: 60vh;
