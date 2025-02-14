@@ -1,11 +1,55 @@
 @import './styles/ComingSoon.css';
 @import './assets/font/fonts.css';
 @import './styles/Components.css';
-@import './styles//Home.css';
+@import './styles/Home.css';
+@import './styles/Pages.css';
+@import './styles/whoweare.css';
+@import './styles/insights.css';
+@import './styles/howwework.css';
+@import './styles/whyitmatters.css';
 
-/* inter font */
+@import './styles/contact.css';
+
+/* Inter Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Root Variables */
+:root {
+  --primary-dark-blue: #022759;
+  --primary-green: #BDF779;
+  --dark-primary-green: #76de00;
+  --primary-black: #000000;
+  --primary-blue: #022759; /* For headings */
+  --text-white: #FFFFFF;
 
+  --bg-white: #FFFFFF;
+  --bg-light-grey1: #E7ECF1;
+  --bg-light-grey2: #F3F4F8;
+
+  --input-form-color: #8FC0FF;
+  --icon-bg-color: #EBF4FF;
+
+  --font-primary: 'Lark', sans-serif;
+  --font-secondary: 'Montserrat', serif;
+
+  /* Golden Ratio Font Sizes */
+  --font-h1: 2.618em;
+  --font-h2: 2.058em;
+  --font-h3: 1.618em;
+  --font-h4: 1.272em;
+  --font-h5: 1em;
+  --font-h6: 0.786em;
+  --font-body: 1em;
+  --font-small: 0.618em;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+}
 
 * {
   padding: 0;
@@ -13,17 +57,552 @@
   box-sizing: border-box;
 }
 
-.inter-font {
-  font-family: "Inter", serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  color: var(--primary-black);
+  background-color: var(--bg-white);
 }
 
-:root {
-  --primary-blue: #022759;
-  --primary-green: #BAF86E;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-blue);
 }
 
-.heading-bold{
-  font-weight: 500;
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); }
+h3 { font-size: var(--font-h3); }
+h4 { font-size: var(--font-h4); }
+h5 { font-size: var(--font-h5); }
+h6 { font-size: var(--font-h6); }
+
+span, a {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-body);
+}
+
+p {
+  font-family: var(--font-secondary);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-blue);
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+ul, ol {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  color: var(--primary-black);
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  display: flex;
+}
+
+/* img{box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  
+} */
+
+.white-color-text{
+  color: #ffffff !important;
+  z-index: 1;
+}
+
+.error-message{
+  color: #ff0000;
+  font-size: 13px;
+}
+
+.primary-blue-bg{
+  background: #022759;
+  color: #ffffff;
+}
+
+.primary-blue-bg h4{
+  color: #ffffff;
+}
+.primary-blue-bg p {
+  color: #ffffff;
+}
+.primary-green-bg{
+  background: linear-gradient(to right, #8ae915, #7ade00);
+  color: #ffffff;
+}
+
+.gradient-background{
+  background-size: cover;
+  background-position: center center;
+  background-image: url(./assets/images/bg-vectors/gradient-bg.png);
+}
+
+.primary-light-blue-bg{
+  background: #e4e5ff;
+}
+
+.primary-light-green-bg{
+  background: #e0ffba;
+}
+
+
+input, textarea {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  border: none;
+  padding: 0.5em;
+  border-radius: 4px;
+  font-size: var(--font-body);
+}
+
+button {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-black);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.quotes {
+  font-style: italic !important;
+  font-weight: var(--font-weight-light);
+}
+
+/* Utility Classes for Flex */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+/* Button Styles */
+.green-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 30px;
+  color: var(--primary-blue);
+  background: linear-gradient(to left, #8ae915, #c1ff76);
+  border-radius: 11px;
+  font-size: var(--font-h5);
+  font-weight: var(--font-weight-bold);
+}
+
+.blue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 30px;
+  color: var(--text-white);
+  background: var(--primary-blue);
+  border-radius: 11px;
+  font-size: var(--font-h5);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Spacing Utilities */
+.olw-outlet-container {
+  padding-top: 100px;
+}
+
+.bottom-100 {
+  padding-bottom: 100px;
+}
+
+.bottom-50{
+  padding-bottom: 50px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/* Global Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 0px;
+  position: absolute;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-blue);
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #031f47;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-light-grey2);
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+/* Responsive Design */
+@media (max-width: 1200px) {
+  body {
+    font-size: calc(var(--font-body) * 0.9); /* Scale down body font size */
+  }
+
+  h1 {
+    font-size: calc(var(--font-h1) * 0.9); /* Scale down heading size */
+  }
+
+  h2 {
+    font-size: calc(var(--font-h2) * 0.9); /* Scale down heading size */
+  }
+
+  h3 {
+    font-size: calc(var(--font-h3) * 0.9);
+  }
+
+  h4 {
+    font-size: calc(var(--font-h4) * 0.9);
+  }
+
+  h5, h6 {
+    font-size: calc(var(--font-h5) * 0.9);
+  }
+
+  input, button {
+    width: 100%; /* Make input and button full-width for larger screens */
+    font-size: 1em; /* Ensure readable text size */
+  }
+
+  p, a {
+    
+  font-size: 16px;}
+
+  /* Spacing Utilities */
+.olw-outlet-container {
+  padding-top: 50px;
+}
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: calc(var(--font-body) * 0.8); /* Scale down further for smaller screens */
+  }
+
+  h1 {
+    font-size: calc(var(--font-h1) * 0.8); /* Adjust heading size */
+  }
+
+  h2 {
+    font-size: calc(var(--font-h2) * 0.8);
+  }
+
+  h3 {
+    font-size: calc(var(--font-h3) * 0.8);
+  }
+
+  h4 {
+    font-size: calc(var(--font-h4) * 0.8);
+  }
+
+  h5, h6 {
+    font-size: calc(var(--font-h5) * 0.8);
+  }
+
+  input, button {
+    width: 100%; /* Full-width input and button */
+    font-size: 1em; /* Keep text size readable */
+  }
+
+  p {
+    
+  font-size: 16px;  }
+}
+
+
+
+
+/* Animations */
+.fadeIn { animation: fadeIn 1s ease-out; }
+.fadeInUp { animation: fadeInUp 1s ease-out; }
+.fadeInDown { animation: fadeInDown 1s ease-out; }
+.fadeInLeft { animation: fadeInLeft 1s ease-out; }
+.fadeInRight { animation: fadeInRight 1s ease-out; }
+
+.zoomIn { animation: zoomIn 1s ease-out; }
+.zoomInUp { animation: zoomInUp 1s ease-out; }
+.zoomInDown { animation: zoomInDown 1s ease-out; }
+.zoomInLeft { animation: zoomInLeft 1s ease-out; }
+.zoomInRight { animation: zoomInRight 1s ease-out; }
+
+.bounceIn { animation: bounceIn 1s ease-out; }
+.bounceInUp { animation: bounceInUp 1s ease-out; }
+.bounceInDown { animation: bounceInDown 1s ease-out; }
+.bounceInLeft { animation: bounceInLeft 1s ease-out; }
+.bounceInRight { animation: bounceInRight 1s ease-out; }
+
+.slideInUp { animation: slideInUp 1s ease-out; }
+.slideInDown { animation: slideInDown 1s ease-out; }
+.slideInLeft { animation: slideInLeft 1s ease-out; }
+.slideInRight { animation: slideInRight 1s ease-out; }
+
+.rotateIn { animation: rotateIn 1s ease-out; }
+.rotateInDownLeft { animation: rotateInDownLeft 1s ease-out; }
+.rotateInDownRight { animation: rotateInDownRight 1s ease-out; }
+.rotateInUpLeft { animation: rotateInUpLeft 1s ease-out; }
+.rotateInUpRight { animation: rotateInUpRight 1s ease-out; }
+
+.bounce { animation: bounce 1s infinite; }
+.flash { animation: flash 1s infinite; }
+.pulse { animation: pulse 1s infinite; }
+.rubberBand { animation: rubberBand 1s ease-in-out; }
+.shake { animation: shake 1s ease-in-out; }
+.headShake { animation: headShake 1s ease-in-out; }
+.swing { animation: swing 1s ease-in-out; }
+.tada { animation: tada 1s ease-in-out; }
+.wobble { animation: wobble 1s ease-in-out; }
+.jello { animation: jello 1s ease-in-out; }
+
+.lightSpeedIn { animation: lightSpeedIn 1s ease-in-out; }
+
+.rollIn { animation: rollIn 1s ease-out; }
+
+/* Fade Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Zoom Animations */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes zoomInUp {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes zoomInDown {
+  from { opacity: 0; transform: scale(0.5) translateY(-20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes zoomInLeft {
+  from { opacity: 0; transform: scale(0.5) translateX(-20px); }
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+@keyframes zoomInRight {
+  from { opacity: 0; transform: scale(0.5) translateX(20px); }
+  to { opacity: 1; transform: scale(1) translateX(0); }
+}
+
+/* Bounce Animations */
+@keyframes bounceIn {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+@keyframes bounceInUp {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-50px); }
+  60% { transform: translateY(-25px); }
+}
+
+@keyframes bounceInDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(50px); }
+  60% { transform: translateY(25px); }
+}
+
+@keyframes bounceInLeft {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
+  40% { transform: translateX(-30px); }
+  60% { transform: translateX(-15px); }
+}
+
+@keyframes bounceInRight {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
+  40% { transform: translateX(30px); }
+  60% { transform: translateX(15px); }
+}
+
+/* Slide Animations */
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Rotate Animations */
+@keyframes rotateIn {
+  from { opacity: 0; transform: rotate(90deg); }
+  to { opacity: 1; transform: rotate(0); }
+}
+
+@keyframes rotateInDownLeft {
+  from { opacity: 0; transform: rotate(-45deg) translateY(-200px) translateX(-200px); }
+  to { opacity: 1; transform: rotate(0) translateY(0) translateX(0); }
+}
+
+@keyframes rotateInDownRight {
+  from { opacity: 0; transform: rotate(45deg) translateY(-200px) translateX(200px); }
+  to { opacity: 1; transform: rotate(0) translateY(0) translateX(0); }
+}
+
+@keyframes rotateInUpLeft {
+  from { opacity: 0; transform: rotate(-45deg) translateY(200px) translateX(-200px); }
+  to { opacity: 1; transform: rotate(0) translateY(0) translateX(0); }
+}
+
+@keyframes rotateInUpRight {
+  from { opacity: 0; transform: rotate(45deg) translateY(200px) translateX(200px); }
+  to { opacity: 1; transform: rotate(0) translateY(0) translateX(0); }
+}
+
+/* Attention Seekers */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes flash {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes rubberBand {
+  0%, 100% { transform: scale(1); }
+  30% { transform: scale(1.25) rotate(-10deg); }
+  50% { transform: scale(0.75) rotate(10deg); }
+  70% { transform: scale(1.15) rotate(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+}
+
+@keyframes headShake {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(-15deg); }
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(-15deg); }
+  30% { transform: rotate(10deg); }
+  45% { transform: rotate(-5deg); }
+  60% { transform: rotate(5deg); }
+  75% { transform: rotate(0); }
+}
+
+@keyframes tada {
+  0%, 100% { transform: scale(1); }
+  10%, 20% { transform: scale(0.9) rotate(-3deg); }
+  30%, 50%, 70% { transform: scale(1.1) rotate(3deg); }
+  40%, 60%, 80% { transform: scale(0.9) rotate(-3deg); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-25px); }
+  30% { transform: translateX(20px); }
+  45% { transform: translateX(-15px); }
+  60% { transform: translateX(10px); }
+  75% { transform: translateX(-5px); }
+}
+
+@keyframes jello {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1) skewX(-10deg); }
+  50% { transform: scale(0.9) skewX(10deg); }
+  75% { transform: scale(1.1) skewX(-10deg); }
+}
+
+/* Light Speed In */
+@keyframes lightSpeedIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Specials */
+@keyframes rollIn {
+  from { transform: rotate(120deg); opacity: 0; }
+  to { transform: rotate(0); opacity: 1; }
 }

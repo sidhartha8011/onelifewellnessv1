@@ -1,0 +1,428 @@
+.olw-whoweare-herosection{
+    margin: 0 10%;
+    margin-bottom: 5%;
+    padding: 40px;
+    border-radius: 20px;   
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../assets/images/bg-vectors/whowearecover.jpg);
+}
+
+.olw-whoweare-herocontent{
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    line-height: 1.5;
+}
+
+.olw-whoweare-herocontent h2{
+    font-size: 2.4rem;
+}
+
+
+.whoweare-button{
+    background: linear-gradient(to left, #8ae915, #c1ff76);
+    color: var(--primary-blue);
+    padding: 10px 20px;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.your-partners-heading-blue{
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+
+.olw-whoweare-content{
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.out-wsua-main-layout{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.olw-wsua-heading-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+}
+
+.olw-wsua-outer-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 33%;
+}
+
+.olw-wsua-outer-layout-different-height{
+        height: 400px !important;
+        justify-content: flex-end !important;
+}
+.inner-layout-wsua{
+    min-height: 250px;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+
+.olw-wsua-background-image{
+    border-radius: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.olw-whoweare-whatsset-section{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.olw-whoweare-section-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.www-section-heading-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.www-section-heading-container h1{
+    font-size: 40px;
+}
+
+.www-section-heading-container h3{
+    font-size: 20px;
+    border-bottom: 1px solid var(--primary-blue);
+    padding-bottom: 5px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.olw-whoweare-core-layout li h4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.www-core-layout-icon{
+    font-size: 30px;
+}
+
+.olw-whoweare-whatsset-section li{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    width: 25%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.olw-whoweare-our-core-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.olw-whoweare-core-section{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 30px;
+    background: linear-gradient(to left, #8ae915, #c1ff76);
+    gap: 30px;
+}
+
+.olw-whoweare-core-layout{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+.olw-whoweare-core-layout li{
+    background: #fff;
+    padding: 20px;
+    width: 49%;
+    border-radius: 15px;
+}
+
+
+.olw-whoweare-meet-minds-layout{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+.olw-whoweare-meet-minds-points{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.olw-whoweare-meet-minds-points li{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    justify-content: space-between;
+}
+
+.olw-whoweare-meet-minds-image{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+    animation: rotate 10s linear infinite; /* Infinite clockwise rotation with a 10s duration */
+    height: 200px;
+}
+
+.olw-whoweare-section-last{
+    margin-bottom: 200px;
+}
+
+.green-heading-text{
+    color: var(--dark-primary-green);
+}
+
+.olw-whoweare-meet-minds-iner-layout{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.olw-whoweare-section-our-promise{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 50%;
+}
+
+.olw-wsua-mediation-layout{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wwa-video-bg{
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+}
+
+.wwa-video-bg-reverse{
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    transform: scaleX(-1); 
+
+}
+
+.mediation-person {
+    width: 100px;
+    padding-bottom: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+.wwa-page-scrolling{
+    object-fit: contain;
+    width: 350px;
+    height: 100%; /* Set the image height to fit the container */
+    animation: rotate 10s linear infinite; /* Infinite clockwise rotation with a 10s duration */
+  }
+
+.olw-whoweare-section-our-promise-layout{
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.olw-whoweare-our-promise-image{
+    width: 400px;
+    border-radius: 20px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 50px 50px 0 var(--bg-light-grey1);
+    border: 1px solid #000;
+    transform: rotate(-15deg);
+       
+}
+.rotated-container {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 50px 50px 0 var(--bg-light-grey1);
+    transform: rotate(-15deg); /* Keep the initial rotation fixed */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: floatEffect 3s ease-in-out infinite; /* Smooth floating animation */
+}
+
+@keyframes floatEffect {
+    0% {
+        transform: rotate(-15deg) translateY(0px);
+    }
+    50% {
+        transform: rotate(-15deg) translateY(-15px); /* Moves up */
+    }
+    100% {
+        transform: rotate(-15deg) translateY(0px); /* Back to start */
+    }
+}
+
+
+.olw-whoweare-our-promise-image {
+    min-width: 600px;
+    min-height: 600px;
+    transform: rotate(15deg);
+    object-fit: cover; /* Ensures the image fills the container without distortion */
+    /* transform: rotate(15deg); Rotate the image back to straighten it */
+}
+
+
+.eivdence-background{
+    background-image: url(../assets/images/evidence.webp );
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center center;
+    color: #fff;
+}
+
+.overlay-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);  
+  }
+
+.people-over-profit-bg{
+    background-size: cover;
+    position: relative;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url(../assets/images/people-over-profit.jpg);
+}
+
+
+
+@media (max-width: 768px) {
+ 
+    .olw-whoweare-herocontent{
+        max-width: 100%;
+    }
+
+    .olw-whoweare-herosection{
+        padding: 20px;
+        background-position: left center;
+    }
+    
+    .www-section-heading-container h1{
+        font-size: 24px;
+    }
+    
+    .out-wsua-main-layout{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .olw-wsua-outer-layout{
+        width: 100%;
+    }
+
+    .olw-whoweare-herocontent h2{
+        font-size: 27px;
+    }
+
+    .inner-layout-wsua h5{
+        font-size: 24px;
+    }
+
+    .olw-whoweare-core-layout{
+        flex-direction: column;
+    }
+    .olw-whoweare-core-layout li{
+        width: 100%;
+    }
+
+    .olw-whoweare-meet-minds-points{
+        flex-direction: column;
+    }
+
+    .olw-whoweare-meet-minds-points li{
+        width: 100%;
+    }
+
+    .olw-whoweare-meet-minds-image{
+        display: none;
+    }
+
+    .olw-whoweare-section-our-promise-layout{
+        flex-direction: column;
+    }
+
+    .olw-whoweare-section-our-promise{
+        max-width: 100%;
+    }
+
+    .olw-whoweare-section-our-promise h2{
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .olw-whoweare-section-our-promise p{
+        font-size: 15px;
+    }
+
+    .wwa-page-quotes{
+        font-size: 14px;
+    }
+
+
+    .rotated-container {
+        width: 300px;
+        height: 300px;
+        margin-top: 50px;
+        box-shadow: 20px 20px 0 var(--bg-light-grey1);
+    }
+}

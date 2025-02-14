@@ -1,21 +1,77 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ComingSoon from '../pages/ComingSoon';
-import Home from '../pages/Home';
+import Contact from '../pages/Contact';
+import HowWeAreGoingTo from '../pages/HowWeAreGoingTo';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
+import BodyBasics from '../pages/BodyBasics';
+import NotFound from '../pages/NotFound';
+import WhyItMatters from '../pages/WhyItMatters';
+import Introduction from '../pages/Introduction';
+import WhoWeAre from '../pages/WhoWeAre';
+import TermsAndConditions from '../pages/TermsAndConditions';
+import Insights from '../pages/Insights';
+import BlogPost from '../pages/BlogPost';
+import OneLifeLayout from '../layouts/OneLifeLayout';
+import Coming from '../pages/Coming';
+import Welcome from '../pages/Welcome';
 
-// Define your routes
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <ComingSoon />,
+    element: <OneLifeLayout />,
+    children: [
+      {
+        index: true, // Default route
+        element: <Introduction />,
+      },
+      {
+        path: '/welcome',
+        element: <Welcome />,
+      },{
+        path: '/insights',
+        element: <Insights />,
+      },{
+        path: '/insights/:title',
+        element: <BlogPost />,
+      },
+      {
+        path: '/who-we-are',
+        element: <WhoWeAre />,
+      },
+      {
+        path: '/how-we-work',
+        element: <HowWeAreGoingTo />,
+      },
+      {
+        path: '/why-it-matters',
+        element: <WhyItMatters />,
+      },
+      {
+        path: '/privacy-policy',
+        element: <PrivacyPolicy />,
+      },{
+        path: '/terms-and-conditions',
+        element: <TermsAndConditions />,
+      },
+      {
+        path: '/lets-talk',
+        element: <Contact />,
+      },
+      {
+        path: '/body-basics',
+        element: <BodyBasics />,
+      },
+    ],
+  },
+  {
+    path: '/coming-soon',
+    element: <Coming />,
   },{
-    path: '/home',
-    element: <Home />,
-  }
-  // You can add other routes here as you build your app
+    path: '*',
+    element: <NotFound />,
+  },
 ]);
 
-// Export the RouterProvider component
 const AppRoutes = () => {
   return <RouterProvider router={router} />;
 };
