@@ -32,7 +32,7 @@ const WhoWeAre = () => {
       <SEO seoData={seoData} />
       <div className="bottom-50"></div>
       <OLWHero
-        heading="About One Life Wellness"
+        heading="About the One Life Wellness"
         subHeading=""
         fontSize="50px"
       />

@@ -18,7 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 import blogPosts from "../data/blogPosts";
 import SubscriptionPopup from "../components/SubscriptionPopup";
 
-const Home = () => {
+const Welcome = () => {
   const sectionRefs = {
     about: useRef(null),
     purpose: useRef(null),
@@ -466,4 +466,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Welcome;

@@ -73,6 +73,10 @@
   font-size: 18px;
 }
 
+
+.coming-soon-title{
+  font-size: 86px;
+}
 /* ZOOM-IN ANIMATION */
 @keyframes zoomIn {
   from {
@@ -761,7 +765,7 @@
     flex-direction: column;
     padding: 5% 0 10% 0;
     gap: 25px;
-    width: 85%;
+    width: 80%;
 }
 
 .policy-content-container{

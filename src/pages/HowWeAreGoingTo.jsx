@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import SEO from "../components/SEO";
 import OLWHero from "../components/OLWHero";
 import CallToAction from "../components/CallToAction";
-import { FaHeart, FaFistRaised, FaSyncAlt, FaUsers } from "react-icons/fa";
+import { FaHeart, FaFistRaised, FaUsers } from "react-icons/fa";
   
 import {
   FaBook,
@@ -417,7 +417,7 @@ const HowWeAreGoingTo = () => {
         title="Take the Next Step"
         description="Empower your mind, energize your body, and enrich your spirit—one day at a time."
         buttonText="Join Our Community"
-        buttonLink="/signup"
+        buttonLink="/coming-soon"
       />
     </>
   );

@@ -1,12 +1,9 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from '../pages/Home';
-import About from '../pages/About';
 import Contact from '../pages/Contact';
 import HowWeAreGoingTo from '../pages/HowWeAreGoingTo';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import BodyBasics from '../pages/BodyBasics';
-import Explore from '../pages/Explore';
 import NotFound from '../pages/NotFound';
 import WhyItMatters from '../pages/WhyItMatters';
 import Introduction from '../pages/Introduction';
@@ -15,6 +12,8 @@ import TermsAndConditions from '../pages/TermsAndConditions';
 import Insights from '../pages/Insights';
 import BlogPost from '../pages/BlogPost';
 import OneLifeLayout from '../layouts/OneLifeLayout';
+import Coming from '../pages/Coming';
+import Welcome from '../pages/Welcome';
 
 const router = createBrowserRouter([
   {
@@ -27,10 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/welcome',
-        element: <Home />,
-      },{
-        path: '/about',
-        element: <About />,
+        element: <Welcome />,
       },{
         path: '/insights',
         element: <Insights />,
@@ -65,13 +61,12 @@ const router = createBrowserRouter([
         path: '/body-basics',
         element: <BodyBasics />,
       },
-      {
-        path: '/explore',
-        element: <Explore />,
-      },
     ],
   },
   {
+    path: '/coming-soon',
+    element: <Coming />,
+  },{
     path: '*',
     element: <NotFound />,
   },

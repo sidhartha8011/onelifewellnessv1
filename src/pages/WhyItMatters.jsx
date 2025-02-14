@@ -6,9 +6,8 @@ import { AiOutlineSchedule, AiOutlineGift } from "react-icons/ai";
 import { IoMdPeople } from "react-icons/io";
 import SEO from "../components/SEO"; // Assuming you have SEO component
 import OLWHero from "../components/OLWHero"; // Assuming you have this hero component
-import CallToAction from "../components/CallToAction";
 import { motion } from "framer-motion";
-import Cards from "../components/Cards";
+import SubscriptionPopup from "../components/SubscriptionPopup";
 
 const WhyItMatters = () => {
   const seoData = {
@@ -92,6 +91,14 @@ const WhyItMatters = () => {
   const [activeProsperityTab, setActiveProsperityTab] = useState(
     "Cultivate Gratitude"
   );
+
+   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  
+    const handleOpenPopup = () => {
+      console.log("clicked");
+      setIsPopupOpen(true);
+    };
+    const handleClosePopup = () => setIsPopupOpen(false);
 
   return (
     <>
@@ -379,12 +386,25 @@ const WhyItMatters = () => {
                 </section> 
         </div>  
       </div>
-      <CallToAction
-        title="Ready to Take the Next Step?"
-        description="Stay ahead of health trends, unlock expert tips, and receive actionable guides."
-        buttonText="Subscribe Now"
-        buttonLink="/signup"
-      />
+      <div className="olw-call-to-action">
+        <div className="olw-footer-cta-container">
+          <div className="olw-footer-cta-content">
+            <h1>Ready to Take the Next Step?</h1>
+            <p>
+              Stay ahead of health trends, unlock expert tips, and receive
+              actionable guides—right in your inbox. Join our newsletter and
+              begin your journey toward a healthier, happier life today.
+            </p>
+          </div>
+          <div>
+            <button className="green-button" onClick={handleOpenPopup}>
+              Subscribe Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <SubscriptionPopup isOpen={isPopupOpen} onClose={handleClosePopup} />
+   
     </>
   );
 };
