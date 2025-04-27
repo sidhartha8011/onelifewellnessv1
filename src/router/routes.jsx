@@ -1,23 +1,27 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Contact from '../pages/Contact';
-import HowWeAreGoingTo from '../pages/HowWeAreGoingTo';
-import PrivacyPolicy from '../pages/PrivacyPolicy';
-import BodyBasics from '../pages/BodyBasics';
-import NotFound from '../pages/NotFound';
-import WhyItMatters from '../pages/WhyItMatters';
-import Introduction from '../pages/Introduction';
-import WhoWeAre from '../pages/WhoWeAre';
-import TermsAndConditions from '../pages/TermsAndConditions';
-import Insights from '../pages/Insights';
-import BlogPost from '../pages/BlogPost';
-import OneLifeLayout from '../layouts/OneLifeLayout';
-import Coming from '../pages/Coming';
-import Welcome from '../pages/Welcome';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Contact from "../pages/Contact";
+import HowWeAreGoingTo from "../pages/HowWeAreGoingTo";
+// import PrivacyPolicy from "../pages/PrivacyPolicy";
+import BodyBasics from "../pages/BodyBasics";
+import NotFound from "../pages/NotFound";
+import WhyItMatters from "../pages/WhyItMatters";
+import Introduction from "../pages/Introduction";
+import WhoWeAre from "../pages/WhoWeAre";
+import TermsAndConditions from "../pages/TermsAndConditions";
+import Insights from "../pages/Insights";
+import BlogPost from "../pages/BlogPost";
+import OneLifeLayout from "../layouts/OneLifeLayout";
+import Coming from "../pages/Coming";
+import Welcome from "../pages/Welcome";
+import HumanAnatomy from "../pages/HumanAnatomy";
+import OrganExpanPage from "../pages/OrganExpanPage";
+import BlogPage from "../pages/BlogPage";
+import BlogDetail from "../pages/BlogDetail";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <OneLifeLayout />,
     children: [
       {
@@ -25,49 +29,66 @@ const router = createBrowserRouter([
         element: <Introduction />,
       },
       {
-        path: '/welcome',
+        path: "/welcome",
         element: <Welcome />,
-      },{
-        path: '/insights',
+      },
+      {
+        path: "/insights",
         element: <Insights />,
-      },{
-        path: '/insights/:title',
+      },
+      {
+        path: "/insights/:title",
         element: <BlogPost />,
       },
       {
-        path: '/who-we-are',
+        path: "/who-we-are",
         element: <WhoWeAre />,
       },
       {
-        path: '/how-we-work',
+        path: "/how-we-work",
         element: <HowWeAreGoingTo />,
       },
       {
-        path: '/why-it-matters',
+        path: "/why-it-matters",
         element: <WhyItMatters />,
       },
+
       {
-        path: '/privacy-policy',
-        element: <PrivacyPolicy />,
-      },{
-        path: '/terms-and-conditions',
+        path: "/terms-and-conditions",
         element: <TermsAndConditions />,
       },
       {
-        path: '/lets-talk',
+        path: "/lets-talk",
         element: <Contact />,
       },
       {
-        path: '/body-basics',
+        path: "/body-basics",
         element: <BodyBasics />,
+      },
+      {
+        path: "/human-anatomy",
+        element: <HumanAnatomy />,
+      },
+      {
+        path: "/organ-expand/:type",
+        element: <OrganExpanPage />,
+      },
+      {
+        path: "/blog-page",
+        element: <BlogPage />,
+      },
+      {
+        path: "/blog-detail/:id",
+        element: <BlogDetail />,
       },
     ],
   },
   {
-    path: '/coming-soon',
+    path: "/coming-soon",
     element: <Coming />,
-  },{
-    path: '*',
+  },
+  {
+    path: "*",
     element: <NotFound />,
   },
 ]);

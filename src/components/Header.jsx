@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../assets/images/One-life-wellness-logo.png";
 import { NavLink } from "react-router-dom";
 
@@ -47,34 +48,117 @@ const Header = () => {
     };
   }, []);
 
+  // All routes from the router configuration
+  const menuItems = [
+    { path: "/welcome", label: "Welcome" },
+    { path: "/who-we-are", label: "Who We Are" },
+    { path: "/how-we-work", label: "How We Work" },
+    { path: "/why-it-matters", label: "Why It Matters" },
+    { path: "/lets-talk", label: "Let's Talk" },
+    { path: "/body-basics", label: "Body Basics" },
+    { path: "/human-anatomy", label: "Human Anatomy" },
+    { path: "/insights", label: "Insights" },
+    { path: "/blog-page", label: "Blog" },
+  ];
+
+  // Animation variants for dropdown effect
+  const dropdownVariants = {
+    closed: {
+      opacity: 0,
+      y: -20,
+      transition: {
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+        when: "afterChildren",
+      },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
   return (
-    <div className={`header-menu-container ${isVisible ? "visible" : "hidden"}`}>
-      {/* Logo & Hamburger Container */}
-      <div className="header-logo-container">
+    <div
+      className={`header-menu-container ${
+        isVisible ? "visible" : "hidden"
+      } !w-full `}
+    >
+      <div className="header-logo-container flex justify-between items-center !px-4 !w-full">
         <NavLink to="/" className="nav-header-logo">
           <img src={logo} alt="One Life Wellness" className="header-logo" />
         </NavLink>
-
-        {/* Hamburger Menu (Mobile) */}
-        <div className="header-hamburger-container" onClick={toggleMobileMenu} aria-label="Toggle menu">
-          {isMobileMenuOpen ? <FiX className="menu-icon" /> : <FiMenu className="menu-icon" />}
-        </div>
       </div>
 
-      {/* Navigation Menu */}
-      <ul ref={menuRef} className={`header-menu-items-container ${isMobileMenuOpen ? "open" : ""}`}>
-        {["welcome", "who-we-are", "how-we-work", "why-it-matters", "lets-talk"].map((path) => (
-          <li key={path}>
-            <NavLink
-              to={`/${path}`}
-              className={({ isActive }) => (isActive ? "header-menu-link active" : "header-menu-link")}
-              onClick={handleMenuItemClick}
+      {/* Dropdown Menu with Framer Motion */}
+      <div className="relative w-full">
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              ref={menuRef}
+              className="absolute !top-full !right-0 !w-64 bg-white shadow-lg !rounded-lg !mt-2 !z-50 overflow-hidden"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={dropdownVariants}
             >
-              {path.replace("-", " ").replace(/\b\w/g, (char) => char.toUpperCase())}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+              <motion.ul className="py-2">
+                {menuItems.map((item) => (
+                  <motion.li
+                    key={item.path}
+                    variants={itemVariants}
+                    className="!px-4 !py-2 hover:bg-gray-100"
+                  >
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) =>
+                        isActive
+                          ? "header-menu-link active"
+                          : "header-menu-link"
+                      }
+                      onClick={handleMenuItemClick}
+                    >
+                      {item.label}
+                    </NavLink>
+                  </motion.li>
+                ))}
+              </motion.ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <div
+        className="header-hamburger-container cursor-pointer flex items-center bg-blue-900 !p-2 rounded-xl"
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+        style={{ display: "flex" }}
+      >
+        {isMobileMenuOpen ? (
+          <div className="text-white">
+            {" "}
+            <X size={24} />
+          </div>
+        ) : (
+          <div className="!right-0 text-white">
+            <Menu size={24} />
+          </div>
+        )}
+      </div>
     </div>
   );
 };
