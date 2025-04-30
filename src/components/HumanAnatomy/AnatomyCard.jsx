@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import heart from "../../assets/images/human-anatomy/heart-organ.png";
 import brain from "../../assets/images/human-anatomy/brain-organ.png";
-import muscle from "../../assets/images/human-anatomy/humanbody.png";
+import muscle from "../../assets/images/human-anatomy/muscle.png";
 import stomach from "../../assets/images/human-anatomy/stomach-organ.png";
 import bladder from "../../assets/images/human-anatomy/bladder-organ.png";
 
@@ -46,7 +46,7 @@ function AnatomyCard({ organType }) {
       ],
       cardClass: "absolute z-10 right-[8.8%] top-[10%]",
     },
-    muscle: {
+    "muscle-arm": {
       image: muscle,
       title: "Skeletal Muscles",
       shortDesc: "Tissues that enable body movement and maintain posture.",
@@ -72,19 +72,6 @@ function AnatomyCard({ organType }) {
         <HeartPulse size={28} key="stomach3" />,
       ],
       cardClass: "absolute z-10 right-[8.8%] top-[40%]",
-    },
-    bladder: {
-      image: bladder,
-      title: "The Bladder",
-      shortDesc: "Hollow organ that stores urine before excretion.",
-      longDesc:
-        "The bladder is a hollow, muscular organ that stores urine before it leaves the body. It can expand to hold about 16-24 ounces of urine and contracts when you urinate to release waste from the body.",
-      icons: [
-        <Droplets size={28} key="bladder1" />,
-        <Activity size={28} key="bladder2" />,
-        <HeartPulse size={28} key="bladder3" />,
-      ],
-      cardClass: "absolute z-10 right-[7.5%] top-[35%]",
     },
   };
 

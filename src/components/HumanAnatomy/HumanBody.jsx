@@ -37,10 +37,6 @@ function HumanBody({ organType }) {
         src: bladderLine,
         className: "absolute top-[29%] left-[47.7%] w-[250px] ", // Adjust these values manually
       },
-      bladder: {
-        src: bladderLine,
-        className: "absolute top-[36%] left-[47.2%] w-[250px]", // Adjust these values manually
-      },
     };
 
     return lineDetails[pointName] || null;
@@ -114,12 +110,6 @@ function HumanBody({ organType }) {
       />
 
       {/* Bladder */}
-      <AnatomyPoint
-        top="top-[36.6%]"
-        left="left-[46.5%]"
-        name="bladder"
-        label="Bladder"
-      />
 
       {/* Muscles */}
       <AnatomyPoint

@@ -25,6 +25,129 @@ import Testimonials from "../components/OrganExpan/Testimonials";
 function OrganExpanPage() {
   const { type } = useParams();
   const [openIndex, setOpenIndex] = useState(null);
+  const [currentTabIndex, setCurrentTabIndex] = useState(0);
+
+  const overviewData = {
+    brain: {
+      title: "Your Brain: The Key to Your Health and Well-Being",
+      description:
+        "The brain is the command center of your body, controlling everything from your thoughts and emotions to movement and memory. Whether you're seeking answers about brain health, aging, or neurological conditions, this guide will help you understand how your brain works and what you can do to keep it healthy.",
+    },
+    tabs: [
+      {
+        title: "How Your Brain Works",
+        description: `Imagine your brain as a bustling city, where specialized, "districts" handle different tasks:`,
+        points: [
+          {
+            name: "Cerebrum",
+            description: "Thinking, memory & voluntary movement",
+          },
+          {
+            name: "Cerebellum",
+            description: "Balance & coordination",
+          },
+          {
+            name: "Brainstem",
+            description: "Autopilot for breathing, heart rate & digestion",
+          },
+          {
+            name: "Limbic System",
+            description: "Emotions & motivation",
+          },
+          {
+            name: "Thalamus & Hypothalamus",
+            description:
+              "Sensory relay plus regulation of hunger, sleep & body temperature",
+          },
+        ],
+        conclusion:
+          "All these regions communicate constantly to let you move, think and feel—without you even realizing it.",
+      },
+      {
+        title: "How Your Brain Changes with Age",
+        points: [
+          {
+            ageRange: "Childhood (0–10 years)",
+            description:
+              "Rapid neural-network growth fuels effortless learning, though impulse control is still in development.",
+          },
+          {
+            ageRange: "Teenage Years (10–20 years)",
+            description:
+              "The emotional limbic system outpaces the still-maturing prefrontal cortex, leading to intense feelings and risk-taking.",
+          },
+          {
+            ageRange: "Adulthood (20–40 years)",
+            description:
+              "Peak problem-solving and memory—yet stress and lifestyle can introduce fatigue and early burnout.",
+          },
+          {
+            ageRange: "Middle Age (40–65 years)",
+            description:
+              "Slight shrinkage may slow recall, but experience boosts decision-making; common challenges include brain fog and forgetfulness.",
+          },
+          {
+            ageRange: "Senior Years (65+ years)",
+            description:
+              "Neuroplasticity remains, but risks for dementia and stroke rise—an active lifestyle can slow cognitive decline.",
+          },
+        ],
+      },
+      {
+        title: "Common Myths About the Brain",
+        myths: [
+          {
+            myth: "We Only Use 10% of Our Brain",
+            reality: "False: nearly every region is active, even during sleep.",
+          },
+          {
+            myth: "Left-Brained vs. Right-Brained People",
+            reality:
+              "Myth: both hemispheres collaborate on virtually all tasks.",
+          },
+          {
+            myth: "Brain Damage Is Always Permanent",
+            reality:
+              "Neuroplasticity enables rewiring and functional recovery after injury.",
+          },
+          {
+            myth: "Classical Music Makes You Smarter",
+            reality:
+              "While it can enhance focus and mood, it doesn't directly boost intelligence.",
+          },
+        ],
+      },
+      {
+        title: "How to Keep Your Brain Healthy",
+        strategies: [
+          {
+            category: "Nutrition",
+            description:
+              "Omega-3s (salmon, walnuts), antioxidants (berries, dark chocolate), leafy greens & whole grains nourish neurons.",
+          },
+          {
+            category: "Exercise",
+            description:
+              "Boosts blood flow, improves memory & lowers neurodegenerative risk.",
+          },
+          {
+            category: "Sleep",
+            description: "7–9 hours clears toxins and consolidates memories.",
+          },
+          {
+            category: "Mental Stimulation",
+            description:
+              "Reading, learning new skills or strategic games builds new neural connections.",
+          },
+          {
+            category: "Stress Management",
+            description:
+              "Mindfulness, meditation & deep-breathing protect key memory centers and regulate emotions.",
+          },
+        ],
+      },
+    ],
+  };
 
   // Define organ data similar to AnatomyCard
   const organData = {
@@ -32,13 +155,13 @@ function OrganExpanPage() {
       image: brain,
       title: "The Brain",
       structure:
-        "Finally, acting as a relay station, the thalamus and hypothalamus regulate sensory signals, hunger, sleep, and body temperature. These components work together, constantly communicating to help you move, think, and feel—without you even realizing it.",
+        "Your brain comprises five primary regions: the cerebrum (the largest section, handling thinking, memory & voluntary movement), the cerebellum (balance & coordination), the brainstem (automatic life-support functions like breathing, heart rate & digestion), the limbic system (emotions & motivation), and the thalamus & hypothalamus (sensory relay plus regulation of hunger, sleep & body temperature)",
       function:
-        "At the core is the cerebrum, the largest part of the brain, which handles thinking, memory, and voluntary movements. Whether you're solving a puzzle, recalling a childhood memory, or lifting a coffee cup, your cerebrum is in charge. Right behind it sits the cerebellum, responsible for balance and coordination, ensuring you stay steady while walking or reaching for something.",
+        "Each region plays a distinct role: the cerebrum drives problem-solving and intentional actions; the cerebellum fine-tunes motor control; the brainstem governs vital processes on autopilot; the limbic system orchestrates emotional responses; and the thalamus/hypothalamus integrate sensory signals and maintain homeostasis",
       importance:
-        "The brain is the command center of your body, controlling everything from your thoughts and emotions to movement and memory. Whether you're searching for answers about brain health, aging, or neurological conditions, this guide will help you understand how your brain works and what you can do to keep it healthy.",
+        "As your body’s command center, the brain controls everything from thoughts and emotions to movement and memory. Grasping how it operates is essential for protecting cognitive health, optimizing performance, and making lifestyle choices that support long-term wellness",
       facts:
-        "The adult brain weighs about 3 pounds (1.4 kg) and uses 20% of the body's oxygen supply despite making up only 2% of body weight.",
+        "Your brain exhibits remarkable neuroplasticity—reorganizing and forming new connections throughout life and even after injury. It processes and consolidates memories during sleep, often unlocking insights overnight, and contrary to the “10%” myth, brain scans reveal nearly every region remains active, even at rest .",
       icons: [
         {
           icon: <BrainCircuit size={24} />,
@@ -141,35 +264,6 @@ function OrganExpanPage() {
           icon: <HeartPulse size={24} />,
           value: "20-30%",
           label: "of protein digestion",
-        },
-      ],
-    },
-    bladder: {
-      image: bladder,
-      title: "The Bladder",
-      structure:
-        "The bladder is a hollow, muscular organ with a flexible, accordion-like wall that allows it to expand. It's lined with specialized transitional epithelium that prevents urine reabsorption.",
-      function:
-        "The bladder is a hollow, muscular organ that stores urine before it leaves the body. It contracts when you urinate to release waste.",
-      importance:
-        "The bladder is essential for the urinary system, which filters waste products from the blood and maintains fluid and electrolyte balance.",
-      facts:
-        "The bladder can expand to hold about 16-24 ounces of urine, though you typically feel the urge to urinate when it's only a quarter full.",
-      icons: [
-        {
-          icon: <Droplets size={24} />,
-          value: "400-600",
-          label: "ml average capacity",
-        },
-        {
-          icon: <Activity size={24} />,
-          value: "4-8",
-          label: "bathroom trips per day",
-        },
-        {
-          icon: <HeartPulse size={24} />,
-          value: "1-2",
-          label: "liters urine produced daily",
         },
       ],
     },
@@ -329,13 +423,13 @@ function OrganExpanPage() {
               {currentOrgan.icons.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white !p-3 rounded-xl flex flex-col items-center w-full"
+                  className="bg-white !p-3 rounded-xl flex flex-col items-center justify-center w-full"
                 >
                   <div className="mb-2 text-[#002B5B]">{item.icon}</div>
                   <p className="!text-lg !font-bold text-[#002B5B]">
                     {item.value}
                   </p>
-                  <p className="!text-xs text-[#002B5B]">{item.label}</p>
+                  <p className="!text-[10px] text-[#002B5B]">{item.label}</p>
                 </div>
               ))}
             </motion.div>
@@ -351,11 +445,9 @@ function OrganExpanPage() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <h1 className="!text-4xl !font-bold">
-            Overview of {currentOrgan.title}
-          </h1>
-          <p className="!font-medium !text-sm w-1/2 text-center">
-            {currentOrgan.importance}
+          <h1 className="!text-4xl !font-bold">{overviewData.brain.title}</h1>
+          <p className="!font-medium !text-sm w-[58%] text-center">
+            {overviewData.brain.description}
           </p>
         </motion.div>
 
@@ -380,32 +472,20 @@ function OrganExpanPage() {
             variants={fadeInUp}
           >
             <div className="space-x-2 !mb-4 flex flex-wrap gap-2">
-              <button className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white cursor-pointer !font-bold text-[#022759] transition rounded-lg">
-                {currentOrgan.title}
-              </button>
-              <button className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white cursor-pointer !font-bold text-[#022759] transition rounded-lg">
-                {currentOrgan.title}
-              </button>
-              <button className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white cursor-pointer !font-bold text-[#022759] transition rounded-lg">
-                {currentOrgan.title}
-              </button>
-              <button className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white cursor-pointer !font-bold text-[#022759] transition rounded-lg">
-                {currentOrgan.title}
-              </button>
+              {overviewData.tabs.map((tab, index) => (
+                <button
+                  key={index}
+                  className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white !text-xs  cursor-pointer !font-bold text-[#022759] transition rounded-lg"
+                >
+                  {tab.title}
+                </button>
+              ))}
             </div>
             <div className="bg-white !p-4 rounded-xl max-w-xl shadow-md">
               <p className="!font-bold !text-lg text-[#022759]">
                 Overview of {currentOrgan.title}
               </p>
               <p className="text-gray-700 !mt-2">{currentOrgan.structure}</p>
-              <div className="mt-4 !p-3">
-                <p className="!font-medium text-[#ADFB49]">
-                  Overview of {currentOrgan.title}
-                </p>
-                <p className="!text-sm text-[#ADFB49] !mt-1">
-                  {currentOrgan.structure}
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
