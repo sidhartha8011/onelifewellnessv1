@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import humanbody from "../../assets/images/human-anatomy/humanbody.png";
 import heartLine from "../../assets/images/human-anatomy/heart-line.png";
-import stomachLine from "../../assets/images/human-anatomy/stomach-line.png";
 import muscleLine from "../../assets/images/human-anatomy/muscle-line.png";
 import brainLine from "../../assets/images/human-anatomy/brain-line.png";
 import bladderLine from "../../assets/images/human-anatomy/bladder-line.png";
-import AnatomyCard from "./AnatomyCard";
 
 function HumanBody({ organType }) {
   const [activePoint, setActivePoint] = useState(null);

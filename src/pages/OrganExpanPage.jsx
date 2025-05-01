@@ -5,9 +5,8 @@ import { motion } from "framer-motion";
 import spiral from "../assets/images/organexpandpage/spiral.png";
 import heart from "../assets/images/organexpandpage/heart-organ.png";
 import brain from "../assets/images/organexpandpage/brain-organ.png";
-import muscle from "../assets/images/human-anatomy/humanbody.png";
+import muscle from "../assets/images/human-anatomy/muscle.png";
 import stomach from "../assets/images/organexpandpage/stomach-organ.png";
-import bladder from "../assets/images/organexpandpage/bladder-organ.png";
 import owl from "../assets/images/organexpandpage/owl.png";
 import humanbody from "../assets//images/human-anatomy/humanbody.png";
 import { Plus } from "lucide-react";
@@ -18,136 +17,221 @@ import {
   BrainCircuit,
   Dumbbell,
   Utensils,
-  Droplets,
 } from "lucide-react";
 import Testimonials from "../components/OrganExpan/Testimonials";
+import CallToAction from "../components/CallToAction";
 
 function OrganExpanPage() {
   const { type } = useParams();
   const [openIndex, setOpenIndex] = useState(null);
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
 
+  const faqData = {
+    brain: {
+      title: "Your Brain: The Key to Your Health and Well-Being",
+      description:
+        "The brain is your body's central control hub—regulating thoughts, emotions, movement, memory, and more. Here's everything you need to know about how it works and how to keep it sharp.",
+      faqs: [
+        {
+          question: "How does my brain work?",
+          answer:
+            "Different parts of your brain manage tasks like movement, breathing, emotions, and memory. These regions work together to run everything from thinking to heartbeat—all in sync.",
+        },
+        {
+          question: "How does my brain change with age?",
+          answer:
+            "As you grow, your brain builds and prunes connections. It sharpens in adulthood and may slow a bit with age, but staying active keeps it strong longer.",
+        },
+        {
+          question: "What are common myths about the brain?",
+          answer: `You use more than 10% of your brain—almost all areas are active. And “left- or right-brained” thinking is a myth. Your whole brain works together.`,
+        },
+        {
+          question: "How does my brain rewire itself?",
+          answer:
+            "Your brain can adapt and learn by forming new connections. This ability, called neuroplasticity, helps you grow, build skills, and recover after injury.",
+        },
+        {
+          question: "What happens in my brain while I sleep?",
+          answer:
+            "While you sleep, your brain clears waste, stores memories, and resets for the next day. It’s one of the most important times for brain recovery.",
+        },
+        {
+          question: "How can I keep my brain healthy?",
+          answer:
+            "Eat well, stay active, keep learning, sleep enough, and manage stress. These simple habits protect your memory and boost brainpower long-term.",
+        },
+      ],
+    },
+
+    heart: {
+      title: "",
+      description: "",
+      faqs: [
+        {
+          question: "What does the heart do exactly?",
+          answer:
+            "Your heart pumps oxygen-rich blood through your body—about 2,000 gallons a day—to keep your organs nourished and remove waste.",
+        },
+        {
+          question: "Does the heart ever rest?",
+          description:
+            "Nope—it works nonstop, day and night. Its pace adjusts automatically based on your activity, sleep, and emotional state.",
+        },
+        {
+          question: "What happens to my heart as I age?",
+          description:
+            "With age, the heart muscle can thicken and arteries may stiffen, making it harder to circulate blood as efficiently as before.",
+        },
+        {
+          question: "Can emotions really affect my heart?",
+          description:
+            "Yes. Strong emotions like stress, fear, or joy can raise your heart rate and blood pressure—sometimes dramatically.",
+        },
+        {
+          question: "Is heart disease preventable?",
+          description:
+            "Mostly, yes. Healthy eating, regular exercise, good sleep, and stress management go a long way in protecting your heart.",
+        },
+        {
+          question: "When should I get my heart checked?",
+          description:
+            "Start in your 20s—especially if you have a family history. Keep track of your blood pressure, cholesterol, and blood sugar regularly.",
+        },
+      ],
+    },
+  };
+
+  const currentFaq = faqData[type];
+
   const overviewData = {
     brain: {
       title: "Your Brain: The Key to Your Health and Well-Being",
       description:
         "The brain is the command center of your body, controlling everything from your thoughts and emotions to movement and memory. Whether you're seeking answers about brain health, aging, or neurological conditions, this guide will help you understand how your brain works and what you can do to keep it healthy.",
+      tabs: [
+        {
+          title: "Cerebrum",
+          description: `This is the largest part of your brain. It helps you think, remember, speak, and make decisions. It also controls movement and receives messages from your senses—like touch, sight, and sound—so you can understand the world around you.`,
+
+          conclusion:
+            "All these regions communicate constantly to let you move, think and feel—without you even realizing it.",
+        },
+        {
+          title: "Cerebellum",
+          description:
+            "Located at the back of your brain, the cerebellum helps you stay balanced and move smoothly. It fine-tunes your movements, so you can walk, run, or even hold a pen steadily without thinking about it.",
+        },
+        {
+          title: "Brainstem",
+          description:
+            "The brainstem controls basic life functions that happen without you thinking—like breathing, heart rate, and digestion. It acts like an autopilot system, keeping you alive and functioning every second of the day.",
+        },
+        {
+          title: "Limbic System",
+          description:
+            "This part of your brain processes your emotions. It helps you feel happy, scared, excited, or motivated. It also plays a big role in forming memories and shaping your emotional reactions.",
+        },
+        {
+          title: "Thalamus & Hypothalamus",
+          description:
+            "These small parts are like your brain’s control room. They manage hunger, sleep, body temperature, and hormones. They also relay messages between different areas of the brain and your body, helping everything stay in sync.",
+        },
+      ],
     },
-    tabs: [
-      {
-        title: "How Your Brain Works",
-        description: `Imagine your brain as a bustling city, where specialized, "districts" handle different tasks:`,
-        points: [
-          {
-            name: "Cerebrum",
-            description: "Thinking, memory & voluntary movement",
-          },
-          {
-            name: "Cerebellum",
-            description: "Balance & coordination",
-          },
-          {
-            name: "Brainstem",
-            description: "Autopilot for breathing, heart rate & digestion",
-          },
-          {
-            name: "Limbic System",
-            description: "Emotions & motivation",
-          },
-          {
-            name: "Thalamus & Hypothalamus",
-            description:
-              "Sensory relay plus regulation of hunger, sleep & body temperature",
-          },
-        ],
-        conclusion:
-          "All these regions communicate constantly to let you move, think and feel—without you even realizing it.",
-      },
-      {
-        title: "How Your Brain Changes with Age",
-        points: [
-          {
-            ageRange: "Childhood (0–10 years)",
-            description:
-              "Rapid neural-network growth fuels effortless learning, though impulse control is still in development.",
-          },
-          {
-            ageRange: "Teenage Years (10–20 years)",
-            description:
-              "The emotional limbic system outpaces the still-maturing prefrontal cortex, leading to intense feelings and risk-taking.",
-          },
-          {
-            ageRange: "Adulthood (20–40 years)",
-            description:
-              "Peak problem-solving and memory—yet stress and lifestyle can introduce fatigue and early burnout.",
-          },
-          {
-            ageRange: "Middle Age (40–65 years)",
-            description:
-              "Slight shrinkage may slow recall, but experience boosts decision-making; common challenges include brain fog and forgetfulness.",
-          },
-          {
-            ageRange: "Senior Years (65+ years)",
-            description:
-              "Neuroplasticity remains, but risks for dementia and stroke rise—an active lifestyle can slow cognitive decline.",
-          },
-        ],
-      },
-      {
-        title: "Common Myths About the Brain",
-        myths: [
-          {
-            myth: "We Only Use 10% of Our Brain",
-            reality: "False: nearly every region is active, even during sleep.",
-          },
-          {
-            myth: "Left-Brained vs. Right-Brained People",
-            reality:
-              "Myth: both hemispheres collaborate on virtually all tasks.",
-          },
-          {
-            myth: "Brain Damage Is Always Permanent",
-            reality:
-              "Neuroplasticity enables rewiring and functional recovery after injury.",
-          },
-          {
-            myth: "Classical Music Makes You Smarter",
-            reality:
-              "While it can enhance focus and mood, it doesn't directly boost intelligence.",
-          },
-        ],
-      },
-      {
-        title: "How to Keep Your Brain Healthy",
-        strategies: [
-          {
-            category: "Nutrition",
-            description:
-              "Omega-3s (salmon, walnuts), antioxidants (berries, dark chocolate), leafy greens & whole grains nourish neurons.",
-          },
-          {
-            category: "Exercise",
-            description:
-              "Boosts blood flow, improves memory & lowers neurodegenerative risk.",
-          },
-          {
-            category: "Sleep",
-            description: "7–9 hours clears toxins and consolidates memories.",
-          },
-          {
-            category: "Mental Stimulation",
-            description:
-              "Reading, learning new skills or strategic games builds new neural connections.",
-          },
-          {
-            category: "Stress Management",
-            description:
-              "Mindfulness, meditation & deep-breathing protect key memory centers and regulate emotions.",
-          },
-        ],
-      },
-    ],
+
+    heart: {
+      title: "Your Heart: The Key to Your Health and Well-Being",
+      description:
+        "The heart is the powerhouse of your body—delivering oxygen, nutrients, and life to every cell. This guide helps you understand how your heart works, how it evolves with age, and what you can do every day to keep it strong and protected.",
+      tabs: [
+        {
+          title: "Right Atrium",
+          description:
+            "This chamber collects oxygen-poor blood returning from the body. It acts as the entry point for blood that needs to be sent to the lungs for oxygen.",
+        },
+        {
+          title: "Right Ventricle",
+          description:
+            "The right ventricle pumps the oxygen-poor blood it receives from the right atrium into the lungs, where it picks up fresh oxygen and releases carbon dioxide.",
+        },
+        {
+          title: "Left Atrium",
+          description:
+            "Once blood is oxygenated in the lungs, it enters the left atrium. This chamber stores the oxygen-rich blood before it moves to the heart’s main pumping chamber.",
+        },
+        {
+          title: "Left Ventricle",
+          description:
+            "The left ventricle is the heart’s powerhouse. It pumps oxygen-rich blood out through the aorta to supply the rest of the body with energy and nutrients.",
+        },
+        {
+          title: "Valves",
+          description:
+            "Valves between each chamber act like one-way doors. They keep blood flowing in the right direction and prevent any backflow during each heartbeat.",
+        },
+        {
+          title: "ValPacemaker (SA Node)",
+          description:
+            "The sinoatrial node is your heart’s natural pacemaker. It sends electrical signals that keep your heart beating in a steady and coordinated rhythm.",
+        },
+      ],
+    },
+
+    stomach: {
+      title: "",
+      description: "",
+      tabs: [
+        {
+          title: "",
+          description: "",
+          points: [],
+          conclusion: "",
+        },
+        {
+          title: "",
+          points: [],
+        },
+        {
+          title: "",
+          myths: [],
+        },
+        {
+          title: "",
+          strategies: [],
+        },
+      ],
+    },
+
+    muscleArm: {
+      title: "",
+      description: "",
+      tabs: [
+        {
+          title: "",
+          description: "",
+          points: [],
+          conclusion: "",
+        },
+        {
+          title: "",
+          points: [],
+        },
+        {
+          title: "",
+          myths: [],
+        },
+        {
+          title: "",
+          strategies: [],
+        },
+      ],
+    },
   };
+
+  const currentOverview = overviewData[type] || overviewData.brain;
+
+  console.log(currentOverview.tabs);
 
   // Define organ data similar to AnatomyCard
   const organData = {
@@ -155,13 +239,12 @@ function OrganExpanPage() {
       image: brain,
       title: "The Brain",
       structure:
-        "Your brain comprises five primary regions: the cerebrum (the largest section, handling thinking, memory & voluntary movement), the cerebellum (balance & coordination), the brainstem (automatic life-support functions like breathing, heart rate & digestion), the limbic system (emotions & motivation), and the thalamus & hypothalamus (sensory relay plus regulation of hunger, sleep & body temperature)",
+        "The brain is made up of the cerebrum, cerebellum, and brainstem. Each part has a distinct role—managing thought, balance, and automatic functions. It’s protected by the skull and bathed in cerebrospinal fluid for shock absorption.",
       function:
-        "Each region plays a distinct role: the cerebrum drives problem-solving and intentional actions; the cerebellum fine-tunes motor control; the brainstem governs vital processes on autopilot; the limbic system orchestrates emotional responses; and the thalamus/hypothalamus integrate sensory signals and maintain homeostasis",
+        "It controls your thoughts, emotions, breathing, digestion, and movement. The brain processes all sensory input and sends signals throughout the body. It also helps regulate sleep, temperature, hunger, memory, and behavior, keeping everything running smoothly.",
       importance:
-        "As your body’s command center, the brain controls everything from thoughts and emotions to movement and memory. Grasping how it operates is essential for protecting cognitive health, optimizing performance, and making lifestyle choices that support long-term wellness",
-      facts:
-        "Your brain exhibits remarkable neuroplasticity—reorganizing and forming new connections throughout life and even after injury. It processes and consolidates memories during sleep, often unlocking insights overnight, and contrary to the “10%” myth, brain scans reveal nearly every region remains active, even at rest .",
+        "As the body’s command center, the brain is essential for survival. It interprets what you see, hear, and feel—allowing you to think, speak, move, and feel emotions. Without it, no other system can properly function.",
+      facts: `Even though it weighs only about 2% of your body, the brain uses over 20% of your energy. It’s always active—even when you’re sleeping—and rewires itself constantly through learning and experiences, a phenomenon called neuroplasticity.`,
       icons: [
         {
           icon: <BrainCircuit size={24} />,
@@ -184,28 +267,28 @@ function OrganExpanPage() {
       image: heart,
       title: "The Heart",
       structure:
-        "The heart has four chambers: two atria (upper) and two ventricles (lower). It also contains valves that ensure blood flows in the correct direction.",
+        "Your heart is a strong, four-chambered muscle about the size of your fist. It includes two atria and two ventricles that coordinate to move blood. Valves and a built-in pacemaker keep blood flowing in the right direction with a steady rhythm.",
       function:
-        "The heart pumps blood through the circulatory system, delivering oxygen and nutrients to cells and removing waste products.",
+        "Each heartbeat sends blood through more than 60,000 miles of vessels. This nonstop movement delivers oxygen and nutrients to your entire body while carrying away waste. Your heart adjusts instantly based on activity, rest, or emotion.",
       importance:
-        "The cardiovascular system is essential for sustaining life, as every cell in the body requires a constant supply of oxygen and nutrients.",
+        "The heart powers your entire body—fueling every organ, muscle, and tissue. A healthy heart supports energy, stamina, and emotional stability, and plays a key role in preventing chronic diseases over your lifetime.",
       facts:
-        "Your heart beats about 100,000 times per day, pumping 2,000 gallons of oxygen-rich blood to all parts of the body.",
+        "Your heart beats about 100,000 times a day and pumps around 2,000 gallons of blood. It powers your entire circulatory system and beats faster when you’re excited or stressed. Women’s hearts typically beat 8–10 times faster than men’s.",
       icons: [
         {
           icon: <Activity size={24} />,
-          value: "70-80",
-          label: "beats per minute at rest",
+          value: "100,000",
+          label: "heartbeats per day",
         },
         {
           icon: <HeartPulse size={24} />,
-          value: "5-6",
-          label: "liters of blood pumped per minute",
+          value: "2,000",
+          label: "gallons of blood pumped daily",
         },
         {
           icon: <Activity size={24} />,
-          value: "2.5B",
-          label: "heartbeats in an average lifetime",
+          value: "60,000",
+          label: "miles of blood vessels",
         },
       ],
     },
@@ -213,13 +296,13 @@ function OrganExpanPage() {
       image: muscle,
       title: "Skeletal Muscles",
       structure:
-        "Skeletal muscles are made up of bundles of muscle fibers called fascicles. Each muscle fiber contains myofibrils composed of sarcomeres, the basic functional units of muscles.",
+        "The musculoskeletal system includes bones, muscles, joints, tendons, and ligaments. Bones provide structure, muscles create movement, and joints offer flexibility. Tendons connect muscles to bones, while ligaments connect bones to each other for stability and motion control.",
       function:
-        "Skeletal muscles are attached to bones by tendons and are used to create movement by contracting and relaxing.",
+        "It supports your body’s shape, protects internal organs, and powers all movement. Whether you’re walking, lifting, or simply standing still, your MSK system is working—keeping you balanced, stable, and in motion.",
       importance:
-        "Besides movement, skeletal muscles maintain posture, generate body heat, and protect internal organs.",
+        "Your MSK system allows you to live actively and independently. It’s essential not only for mobility but also for posture, injury prevention, and performing everyday tasks like bending, carrying, or climbing stairs.",
       facts:
-        "Skeletal muscles make up about 40% of your body weight and contain 50-75% of all proteins in your body.",
+        "206 bones in the adult human body <br/> • Over 600 skeletal muscles <br/> • ~230 movable and semi-movable joints",
       icons: [
         {
           icon: <Dumbbell size={24} />,
@@ -269,39 +352,6 @@ function OrganExpanPage() {
     },
   };
 
-  const faqItems = [
-    {
-      question: "How do I book a therapy session?",
-      answer:
-        "You can book a therapy session through our online portal or by calling our customer service. Simply select your preferred therapist, date, and time slot that works for you.",
-    },
-    {
-      question: "Are online sessions available?",
-      answer:
-        "Yes, we offer convenient online therapy sessions through our secure video platform. These sessions provide the same quality care as in-person visits from the comfort of your home.",
-    },
-    {
-      question: "What's the difference between therapy and coaching?",
-      answer:
-        "Therapy typically focuses on healing, processing emotions, and addressing mental health concerns, while coaching focuses on setting goals, personal development, and future-oriented strategies.",
-    },
-    {
-      question: "Do I need a subscription to access services?",
-      answer:
-        "We offer both subscription plans and pay-per-session options. Subscriptions provide better value if you plan on regular sessions, while individual bookings offer more flexibility.",
-    },
-    {
-      question: "Can I switch therapists if I don't feel the right connection?",
-      answer:
-        "Absolutely! We understand the importance of finding the right therapist. You can request a change at any time, and we'll help match you with someone who better fits your needs.",
-    },
-    {
-      question: "Is my information and session history kept confidential?",
-      answer:
-        "Yes, we adhere to strict confidentiality standards. Your personal information and session details are encrypted and protected according to HIPAA regulations and professional ethics standards.",
-    },
-  ];
-
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -328,222 +378,298 @@ function OrganExpanPage() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  return (
-    <div className="min-h-screen flex flex-col bg-[#E7FFC9]">
-      <motion.div
-        className="bg-[#ADFB49] flex-grow flex items-center relative"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        <img
-          src={spiral}
-          alt="Background spiral"
-          className="w-1/2 absolute z-0"
-        />
+  // Function to render the content of the currently selected tab
+  const renderTabContent = () => {
+    // Add null check for currentOverview.tabs
+    if (!currentOverview.tabs || currentOverview.tabs.length === 0) {
+      return (
+        <p className="text-gray-700">
+          No information available for this organ.
+        </p>
+      );
+    }
 
-        <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-8 w-full !p-10">
-          {/* Organ image */}
-          <motion.div
-            className="flex items-center justify-center"
-            variants={fadeInUp}
-          >
-            <img
-              src={currentOrgan.image}
-              alt={currentOrgan.title}
-              className="w-96"
-            />
-          </motion.div>
+    const currentTab = currentOverview.tabs[currentTabIndex];
+    if (!currentTab) return null;
 
-          {/* Information section - SLIGHTLY LARGER THAN PREVIOUS VERSION */}
-          <motion.div
-            className="flex flex-col gap-4 bg-white !p-5 rounded-2xl shadow-lg w-full md:w-4/5 mt-22 mx-auto"
-            variants={fadeInUp}
-          >
-            <h1 className="!text-2xl !font-bold text-blue-900">
-              {currentOrgan.title}
-            </h1>
-
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-4"
-              variants={staggerContainer}
-            >
-              {/* Structure info card */}
-              <motion.div
-                className="bg-[#022759] rounded-xl !p-4 !text-white"
-                variants={fadeInUp}
-              >
-                <h2 className="!text-md !font-bold mb-2 !text-white">
-                  Structure
-                </h2>
-                <p className="!text-sm !text-white">{currentOrgan.structure}</p>
-              </motion.div>
-
-              {/* Function info card */}
-              <motion.div
-                className="bg-[#022759] rounded-xl !p-4 !text-white"
-                variants={fadeInUp}
-              >
-                <h2 className="!text-md !font-bold mb-2 !text-white">
-                  Function
-                </h2>
-                <p className="!text-sm !text-white">{currentOrgan.function}</p>
-              </motion.div>
-
-              {/* Importance info card */}
-              <motion.div
-                className="bg-[#022759] rounded-xl !p-4 !text-white"
-                variants={fadeInUp}
-              >
-                <h2 className="!text-md !font-bold mb-2 !text-white">
-                  Importance
-                </h2>
-                <p className="!text-sm !text-white">
-                  {currentOrgan.importance}
-                </p>
-              </motion.div>
-
-              {/* Facts info card */}
-              <motion.div
-                className="bg-[#022759] rounded-xl !p-4 "
-                variants={fadeInUp}
-              >
-                <h2 className="!text-md !font-bold mb-2 !text-white">
-                  Key Facts
-                </h2>
-                <p className="!text-sm !text-white">{currentOrgan.facts}</p>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              className="flex items-center justify-center gap-4 !p-4 rounded-xl bg-[#022759]"
-              variants={fadeInUp}
-            >
-              {currentOrgan.icons.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-white !p-3 rounded-xl flex flex-col items-center justify-center w-full"
-                >
-                  <div className="mb-2 text-[#002B5B]">{item.icon}</div>
-                  <p className="!text-lg !font-bold text-[#002B5B]">
-                    {item.value}
-                  </p>
-                  <p className="!text-[10px] text-[#002B5B]">{item.label}</p>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
+    // Render content based on tab type
+    if (currentTab.points && currentTab.points[0]?.name) {
+      // How Your Brain Works tab
+      return (
+        <div className="space-y-4">
+          <p className="text-gray-700">{currentTab.description}</p>
+          <div className="space-y-3"></div>
         </div>
-      </motion.div>
+      );
+    } else if (currentTab.points && currentTab.points[0]?.ageRange) {
+      // How Your Brain Changes with Age tab
+      return <div className="space-y-3"></div>;
+    } else if (currentTab.myths) {
+      // Common Myths About the Brain tab
+      return (
+        <div className="space-y-3">
+          {currentTab.myths.map((item, idx) => (
+            <div key={idx} className="bg-[#F0F9FF] rounded-lg p-3">
+              <h3 className="font-bold text-[#022759]">{item.myth}</h3>
+              <p className="text-gray-600 text-sm">{item.reality}</p>
+            </div>
+          ))}
+        </div>
+      );
+    } else if (currentTab.strategies) {
+      // How to Keep Your Brain Healthy tab
+      return (
+        <div className="space-y-3">
+          {currentTab.strategies.map((strategy, idx) => (
+            <div key={idx} className="bg-[#F0F9FF] rounded-lg p-3">
+              <h3 className="font-bold text-[#022759]">{strategy.category}</h3>
+              <p className="text-gray-600 text-sm">{strategy.description}</p>
+            </div>
+          ))}
+        </div>
+      );
+    }
 
-      <div className="bg-white w-full !p-10">
+    return (
+      <p className="text-gray-700">
+        {currentTab.description || "Select a tab to learn more."}
+      </p>
+    );
+  };
+
+  return (
+    <div className="">
+      <div className="min-h-screen flex flex-col bg-[#E7FFC9]">
         <motion.div
-          className="flex flex-col items-center justify-center text-[#022759] gap-3"
+          className="bg-[#ADFB49] flex-grow flex items-center relative"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <h1 className="!text-4xl !font-bold">{overviewData.brain.title}</h1>
-          <p className="!font-medium !text-sm w-[58%] text-center">
-            {overviewData.brain.description}
-          </p>
-        </motion.div>
+          <img
+            src={spiral}
+            alt="Background spiral"
+            className="w-1/2 absolute z-0"
+          />
 
-        <div className="flex items-center justify-between !mt-20">
-          <div className="flex items-center justify-center relative w-1/3">
-            <img
-              src={owl}
-              alt="Owl mascot"
-              className="w-90 wwa-page-scrolling"
-            />
-            <img
-              src={currentOrgan.image}
-              alt={`${currentOrgan.title} illustration`}
-              className="absolute w-30"
-            />
-          </div>
-          <motion.div
-            className="w-1/2"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeInUp}
-          >
-            <div className="space-x-2 !mb-4 flex flex-wrap gap-2">
-              {overviewData.tabs.map((tab, index) => (
-                <button
-                  key={index}
-                  className="bg-[#C4DDFF] !px-4 !py-2 hover:bg-[#ADFB49] hover:text-white !text-xs  cursor-pointer !font-bold text-[#022759] transition rounded-lg"
-                >
-                  {tab.title}
-                </button>
-              ))}
-            </div>
-            <div className="bg-white !p-4 rounded-xl max-w-xl shadow-md">
-              <p className="!font-bold !text-lg text-[#022759]">
-                Overview of {currentOrgan.title}
-              </p>
-              <p className="text-gray-700 !mt-2">{currentOrgan.structure}</p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+          <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-8 w-full !p-10">
+            {/* Organ image */}
+            <motion.div
+              className="flex items-center justify-center"
+              variants={fadeInUp}
+            >
+              <img
+                src={currentOrgan.image}
+                alt={currentOrgan.title}
+                className="w-96"
+              />
+            </motion.div>
 
-      <motion.div
-        className="bg-[#E7FFC9] w-full !p-10"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        <div className="flex flex-col items-center justify-center text-[#022759] gap-3">
-          <h1 className="!text-4xl !font-bold">
-            Overview of {currentOrgan.title}
-          </h1>
-          <p className="!font-medium !text-sm w-1/2 text-center">
-            {currentOrgan.importance}
-          </p>
-        </div>
-        <div className="flex items-start justify-around !px-10 !mt-20">
-          <div className="">
-            <img src={humanbody} alt="" className="w-[70%]" />
-          </div>
-          <motion.div
-            className="w-full flex flex-col gap-4"
-            variants={staggerContainer}
-          >
-            {faqItems.map((item, index) => (
+            {/* Information section - SLIGHTLY LARGER THAN PREVIOUS VERSION */}
+            <motion.div
+              className="flex flex-col gap-4 bg-white !p-5 rounded-2xl shadow-lg w-full md:w-4/5 mt-22 mx-auto"
+              variants={fadeInUp}
+            >
+              <h1 className="!text-2xl !font-bold text-blue-900">
+                {currentOrgan.title}
+              </h1>
+
               <motion.div
-                key={index}
-                className="bg-white rounded-2xl !p-5"
+                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                variants={staggerContainer}
+              >
+                {/* Structure info card */}
+                <motion.div
+                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  variants={fadeInUp}
+                >
+                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                    Structure
+                  </h2>
+                  <p className="!text-sm !text-white">
+                    {currentOrgan.structure}
+                  </p>
+                </motion.div>
+
+                {/* Function info card */}
+                <motion.div
+                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  variants={fadeInUp}
+                >
+                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                    Function
+                  </h2>
+                  <p className="!text-sm !text-white">
+                    {currentOrgan.function}
+                  </p>
+                </motion.div>
+
+                {/* Importance info card */}
+                <motion.div
+                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  variants={fadeInUp}
+                >
+                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                    Importance
+                  </h2>
+                  <p className="!text-sm !text-white">
+                    {currentOrgan.importance}
+                  </p>
+                </motion.div>
+
+                {/* Facts info card */}
+                <motion.div
+                  className="bg-[#022759] rounded-xl !p-4 "
+                  variants={fadeInUp}
+                >
+                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                    Key Facts
+                  </h2>
+                  <p className="!text-sm !text-white">{currentOrgan.facts}</p>
+                </motion.div>
+              </motion.div>
+
+              <motion.div
+                className="flex items-center justify-center gap-4 !p-4 rounded-xl bg-[#022759]"
                 variants={fadeInUp}
               >
-                <button
-                  className="w-full flex items-center justify-between !p-4 text-left focus:outline-none cursor-pointer"
-                  onClick={() => handleToggle(index)}
-                >
-                  <span className="!font-medium text-gray-700">
-                    {item.question}
-                  </span>
-                  <span className="!p-1 rounded-full bg-gray-200">
-                    <Plus size={20} className="transition-transform " />
-                  </span>
-                </button>
-
-                {openIndex === index && (
-                  <div className="!px-4 !pb-4 text-gray-600">
-                    <p>{item.answer}</p>
+                {currentOrgan.icons.map((item, index) => (
+                  <div
+                    key={index}
+                    className="bg-white !p-3 rounded-xl flex flex-col items-center justify-center w-full"
+                  >
+                    <div className="mb-2 text-[#002B5B]">{item.icon}</div>
+                    <p className="!text-lg !font-bold text-[#002B5B]">
+                      {item.value}
+                    </p>
+                    <p className="!text-[10px] text-[#002B5B]">{item.label}</p>
                   </div>
-                )}
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.div>
+            </motion.div>
+          </div>
+        </motion.div>
 
-      <Testimonials image={currentOrgan.image} />
+        {/* Overview section with interactive tabs */}
+        <div className="bg-white w-full !p-10">
+          <motion.div
+            className="flex flex-col items-center justify-center text-[#022759] gap-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={fadeInUp}
+          >
+            <h1 className="!text-4xl !font-bold">{currentOverview.title}</h1>
+            <p className="!font-medium !text-sm w-[58%] text-center">
+              {currentOverview.description}
+            </p>
+          </motion.div>
+
+          <div className="flex items-center justify-between !mt-20">
+            <div className="flex items-center justify-center relative w-1/3">
+              <img
+                src={owl}
+                alt="Owl mascot"
+                className="w-90 wwa-page-scrolling"
+              />
+              <img
+                src={currentOrgan.image}
+                alt={`${currentOrgan.title} illustration`}
+                className="absolute w-30"
+              />
+            </div>
+            <motion.div
+              className="w-1/2"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <div className="space-x-2 !mb-4 flex flex-wrap gap-2">
+                {currentOverview.tabs.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentTabIndex(index)}
+                    className={`!px-4 !py-2 !text-xs cursor-pointer !font-bold text-[#022759] transition rounded-lg ${
+                      currentTabIndex === index
+                        ? "bg-[#ADFB49] text-white"
+                        : "bg-[#C4DDFF] hover:bg-[#ADFB49] hover:text-white"
+                    }`}
+                  >
+                    {tab.title}
+                  </button>
+                ))}
+              </div>
+              <div className="bg-white !p-4 rounded-xl max-w-xl shadow-md">
+                <p className="!font-bold !text-lg text-[#022759]">
+                  {currentOverview.tabs[currentTabIndex]?.title || "Overview"}
+                </p>
+                <div className="text-gray-700 !mt-2">{renderTabContent()}</div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+        {/* overview ends here */}
+
+        <motion.div
+          className="bg-[#E7FFC9] w-full !p-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <div className="flex flex-col items-center justify-center text-[#022759] gap-3">
+            <h1 className="!text-4xl !font-bold">{currentFaq.title}</h1>
+            <p className="!font-medium !text-sm w-1/2 text-center">
+              {currentFaq.description}
+            </p>
+          </div>
+          <div className="flex items-start justify-around !px-10 !mt-20">
+            <div className="">
+              <img src={humanbody} alt="" className="w-[70%]" />
+            </div>
+            <motion.div
+              className="w-full flex flex-col gap-4"
+              variants={staggerContainer}
+            >
+              {currentFaq.faqs.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl !p-5"
+                  variants={fadeInUp}
+                >
+                  <button
+                    className="w-full flex items-center justify-between !p-4 text-left focus:outline-none cursor-pointer"
+                    onClick={() => handleToggle(index)}
+                  >
+                    <span className="!font-medium text-gray-700">
+                      {item.question}
+                    </span>
+                    <span className="!p-1 rounded-full bg-gray-200">
+                      <Plus size={20} className="transition-transform " />
+                    </span>
+                  </button>
+
+                  {openIndex === index && (
+                    <div className="!px-4 !pb-4 text-gray-600">
+                      <p>{item.answer}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <Testimonials image={currentOrgan.image} type={type} />
+      </div>
+      <CallToAction
+        title="Ready to Grow With Us?"
+        description="Take the next step in your wellness journey. Dive deeper into our specialized programs, browse our expert articles, or get personal guidance tailored to your needs."
+        buttonText="Explore Insights"
+        buttonLink="/insights"
+      />
     </div>
   );
 }

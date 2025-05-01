@@ -3,79 +3,169 @@ import { MoveDown } from "lucide-react";
 import { MoveUp } from "lucide-react";
 import flowers from "../../assets/images/organexpandpage/flowers.png";
 import { motion } from "framer-motion";
+import CallToAction from "../CallToAction";
 
-function Testimonials({ image }) {
-  const testimonials = [
-    {
-      id: 1,
-      text: "Since using AIChefMate, I've rediscovered my love for cooking! The meal plans are easy and delicious. It's been a game-changer for my busy lifestyle.",
-      name: "Emily R.",
-      bgColor: "bg-blue-900 !text-white",
-      img: "https://images.unsplash.com/photo-1743090597684-8929e6b86b74?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDIzfHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+function Testimonials({ image, type }) {
+  const basicFacts = {
+    brain: {
+      sub: "Facts",
+      title: "Brain Myths vs. Facts",
+      description: `Quick insights into one of your body’s most powerful organs.`,
+      fact: [
+        {
+          title: "Myth: The brain stops growing after childhood.",
+          description: `Fact: Your brain is capable of lifelong change. Neuroplasticity allows it to adapt, grow, and rewire itself—even after injury or trauma.`,
+        },
+        {
+          title: "Myth: The brain doesn’t use much energy.",
+          description: `Fact: Your brain uses about 20% of your body’s total energy—even though it’s just 2% of your weight. It’s always working, even at rest.`,
+        },
+        {
+          title: "Myth: Sleep is just for rest—not for the brain.",
+          description: `Fact: During deep sleep, your brain consolidates memories, clears toxins, and recharges. Sleep is essential for focus and emotional balance.`,
+        },
+        {
+          title: "Myth: The brain isn’t very active.",
+          description: `Fact: Your brain generates up to 70,000 thoughts every day—guiding your decisions, memories, and feelings from moment to moment.`,
+        },
+        {
+          title: `Myth: The brain doesn’t need much blood.`,
+          description: `Fact: The brain has around 100,000 miles of blood vessels—enough to circle the Earth four times—delivering vital nutrients and oxygen.`,
+        },
+        {
+          title: "Myth: The brain only has a few nerve cells.",
+          description: `Fact: Your brain contains about 86 billion neurons, each forming thousands of connections to send signals across your entire body.`,
+        },
+      ],
     },
-    {
-      id: 2,
-      text: "I never knew healthy eating could be this simple. From grocery shopping to AIChefMate, my family enjoys diverse, nutritious meals every day.",
-      name: "Mark T.",
-      bgColor: "bg-blue-900 !text-white",
-      img: "https://images.unsplash.com/photo-1743674445265-b311b0ba8118?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDQ1fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
+    heart: {
+      sub: "Facts",
+      title: "Heart Myths vs. Facts",
+      description: `Quick insights into one of your body’s most powerful organs.`,
+      fact: [
+        {
+          title: "Myth: Only older people get heart disease.",
+          description: `Fact: Heart disease can affect people of all ages, especially with poor diet, stress, smoking, or family history.`,
+        },
+        {
+          title: "Myth: A strong heart doesn’t need exercise.",
+          description: `Fact: Even the healthiest heart benefits from regular activity—exercise strengthens your heart just like any other muscle.`,
+        },
+        {
+          title: "Myth: Chest pain is the only heart attack symptom.",
+          description: `Fact: Other signs include jaw pain, nausea, shortness of breath, and fatigue—especially in women.`,
+        },
+        {
+          title: "Myth: If I feel fine, my heart must be healthy.",
+          description: `Fact: Heart problems can build silently for years. Regular checkups are key, even without symptoms.`,
+        },
+        {
+          title: "Myth: Heart problems only come from genetics.",
+          description: `Fact: Lifestyle plays a major role—what you eat, how much you move, and how you manage stress all impact your heart health.`,
+        },
+        {
+          title: "Myth: Only cardio workouts matter for the heart.",
+          description: `Fact: Strength training, flexibility, and even walking are all heart-healthy when done consistently.`,
+        },
+      ],
     },
-    {
-      id: 3,
-      text: "The grocery delivery is been incredible! Plus, every meal feels tailored just for me. I'm eating better and feeling great. A big thumbs up!",
-      name: "Sarah J.",
-      bgColor: "bg-blue-900 !text-white",
-      img: "https://images.unsplash.com/photo-1744754460094-7b7df9e1cfcb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8dG93SlpGc2twR2d8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: 4,
-      text: "This been a revelation for my meal prep routine. The AI-generated plans are spot-on with my tastes and nutritional needs, making healthy eating effortless and enjoyable.",
-      name: "Rebecca S.",
-      bgColor: "bg-blue-900 !text-white",
-      img: "https://images.unsplash.com/photo-1734727348367-d3642d9c686c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDU3fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D",
-    },
-  ];
+  };
 
-  const faqs = [
-    {
-      id: 1,
-      question: "How does the AI create personalized meal plans?",
-      answer:
-        "Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.",
+  const currentFacts = basicFacts[type];
+
+  const benefits = {
+    brain: {
+      sub: "benefits",
+      title: "Brain Health Benefits",
+      description: `Support your brain’s health and performance with simple, science-backed habits that improve focus, memory, and long-term function.`,
+      insight: [
+        {
+          title: "Cognitive Clarity",
+          description:
+            "Improve focus and mental sharpness with habits like staying hydrated, getting enough sleep, and taking regular screen breaks.",
+        },
+        {
+          title: "Emotional Balance",
+          description:
+            "Support emotional well-being by calming stress centers in the brain through mindfulness, social connection, and gratitude.",
+        },
+        {
+          title: "Memory Boost",
+          description:
+            "Strengthen memory with quality sleep, healthy fats, and daily brain exercises like puzzles, learning, or journaling.",
+        },
+        {
+          title: "Stress Resilience",
+          description:
+            "Protect your brain from chronic stress by practicing deep breathing, movement, and rest to reduce cortisol’s impact.",
+        },
+        {
+          title: "Neuroplasticity Growth",
+          description:
+            "Keep your brain flexible by learning new skills, switching routines, or engaging in novel experiences that challenge your thinking.",
+        },
+        {
+          title: "Brain-Healthy Nutrition",
+          description:
+            "Fuel your mind with omega-3s, leafy greens, and antioxidant-rich foods that help neurons thrive and fight inflammation.",
+        },
+        {
+          title: "Better Sleep Cycles",
+          description:
+            "Give your brain 7–9 hours of restful sleep to lock in memories, clear toxins, and reset for the next day.",
+        },
+      ],
     },
-    {
-      id: 2,
-      question:
-        "Can I integrate special dietary requirements into my meal plan?",
-      answer:
-        "Absolutely! Our platform is designed to accommodate a range of dietary needs, including vegetarian, vegan, gluten-free, and more. Simply specify your requirements in your profile, and your meal plans will be adjusted accordingly.",
+    heart: {
+      sub: "benefits",
+      title: "Heart Health Benefits",
+      description: `Support your heart’s health and performance with simple, science-backed habits that improve circulation, endurance, and long-term function.`,
+      insight: [
+        {
+          title: "Stronger Circulation",
+          description:
+            "Delivers oxygen and nutrients efficiently to muscles, brain, and vital organs.",
+        },
+        {
+          title: "Steadier Energy",
+          description:
+            "Keeps you energized and focused throughout the day by fueling cells consistently.",
+        },
+        {
+          title: "Reduced Disease Risk",
+          description:
+            "Lowers chances of hypertension, heart attacks, and other cardiovascular conditions.",
+        },
+        {
+          title: "Emotional Regulation",
+          description:
+            "Improved heart health leads to better stress response and emotional balance.",
+        },
+        {
+          title: "Deeper, Restorative Sleep",
+          description:
+            "A calm, regulated heart enhances sleep quality and overnight recovery.",
+        },
+        {
+          title: "Long-Term Vitality",
+          description:
+            "Maintains stamina and supports healthy aging through improved resilience.",
+        },
+        {
+          title: "Quick Recovery from Stress",
+          description:
+            "A healthy heart helps you bounce back faster from emotional or physical challenges.",
+        },
+        {
+          title: "Better Physical Performance",
+          description:
+            "Supports strength, endurance, and overall activity levels with improved circulation.",
+        },
+      ],
     },
-    {
-      id: 3,
-      question: "How does the grocery delivery service work?",
-      answer:
-        "Our grocery delivery service partners with local stores to bring fresh ingredients directly to your door based on your meal plan. You can schedule deliveries at your convenience, with options for contactless delivery.",
-    },
-    {
-      id: 4,
-      question: "Are there options for budget-conscious users?",
-      answer:
-        "Yes! You can set budget preferences in your profile, and our AI will create affordable meal plans while maintaining nutritional value. We also highlight cost-effective ingredients and seasonal options.",
-    },
-    {
-      id: 5,
-      question:
-        "How does the platform accommodate allergies and food sensitivities?",
-      answer:
-        "Safety is our priority. When you input allergies or sensitivities in your profile, our system automatically excludes those ingredients from your meal plans. We also provide allergen information for all recipes.",
-    },
-    {
-      id: 6,
-      question: "Can I adjust my meal plans after they've been created?",
-      answer:
-        "Absolutely! You can modify any meal plan by swapping recipes, adjusting portions, or changing ingredients. The AI learns from these adjustments to better serve your preferences in the future.",
-    },
-  ];
+  };
+
+  const currentBenefits = benefits[type];
 
   // Animation variants
   const fadeInUp = {
@@ -116,7 +206,7 @@ function Testimonials({ image }) {
   };
 
   return (
-    <div>
+    <div className="">
       <div className="bg-white">
         <motion.div
           className="flex flex-col !p-20"
@@ -125,18 +215,14 @@ function Testimonials({ image }) {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <p className="!text-gray-300">Frame</p>
+          <p className="!text-gray-300">{currentFacts.sub}</p>
           <div className="flex items-center gap-5">
             <h2 className="!text-4xl !font-medium !text-gray-800">
-              Testimonials
+              {currentFacts.title}
             </h2>
             <p className="!text-8xl !font-thin !text-gray-300">/</p>
             <div className=" !text-gray-600 !mt-1">
-              <p>
-                Real stories from satisfied users: see
-                <br />
-                how our platform changes lives
-              </p>
+              <p>{currentFacts.description}</p>
             </div>
           </div>
 
@@ -144,27 +230,16 @@ function Testimonials({ image }) {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 !p-4 !mt-10"
             variants={staggerContainer}
           >
-            {testimonials.map((testimonial) => (
+            {currentFacts.fact.map((testimonial) => (
               <motion.div
                 key={testimonial.id}
-                className="flex flex-col justify-between !px-6 !py-20 cursor-pointer rounded-3xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
+                className="flex flex-col justify-between gap-3 !px-6 !py-20 cursor-pointer rounded-3xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
                 variants={fadeInUp}
               >
+                <h4 className="group-hover:!text-white">{testimonial.title}</h4>
                 <p className="!text-gray-800 group-hover:!text-white !text-lg !font-normal !mb-4 transition-colors duration-300">
-                  {testimonial.text}
+                  {testimonial.description}
                 </p>
-                <div className="flex items-center gap-4 !mt-2">
-                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                    <img
-                      src={testimonial.img}
-                      alt={`${testimonial.name}'s avatar`}
-                      className="w-full h-full object-cover rounded-full"
-                    />
-                  </div>
-                  <p className="!text-gray-600 group-hover:!text-white !text-sm !font-medium transition-colors duration-300">
-                    {testimonial.name}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -284,7 +359,7 @@ function Testimonials({ image }) {
           </motion.div>
 
           <motion.div
-            className="flex flex-col !mt-30"
+            className="flex flex-col !mt-30 !mb-40"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -297,11 +372,7 @@ function Testimonials({ image }) {
               </h2>
               <p className="!text-8xl !font-thin !text-gray-300">/</p>
               <div className=" !text-gray-600 !mt-1">
-                <p>
-                  Get meal plans tailored to your unique
-                  <br /> dietary needs, preferences, and goals,
-                  <br /> ensuring a balanced and enjoyable diet.
-                </p>
+                <p className="w-1/2">{currentBenefits.description}</p>
               </div>
             </div>
 
@@ -309,188 +380,24 @@ function Testimonials({ image }) {
               className="grid grid-cols-4 gap-4 !p-4 !mt-10"
               variants={staggerContainer}
             >
-              <motion.div
-                className="flex flex-col justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#D9EF78] hover:bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light group-hover:!text-white">
-                  Personalized Nutrition
-                </p>
-                <p className=" group-hover:!text-white !font-light">
-                  Get meal plans tailored to your unique dietary needs,
-                  preferences, and goals, ensuring a balanced and enjoyable
-                  diet.
-                </p>
-              </motion.div>
-              <motion.div
-                className="transition-all duration-300 group overflow-hidden"
-                variants={fadeInUp}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1617500603321-bcd6286973b7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHZlZ2V0YWJsZSUyMGJhZ3xlbnwwfHwwfHx8MA%3D%3D"
-                  alt=""
-                  className="object-cover w-full h-full rounded-4xl"
-                />
-              </motion.div>
-              <motion.div
-                className="flex flex-col justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light group-hover:!text-white">
-                  Time-Saving Convenience
-                </p>
-                <p className=" group-hover:!text-white !font-light">
-                  Say goodbye to meal planning stress. Our AI-driven platform
-                  simplifies your weekly meal preparation, saving you valuable
-                  time.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex flex-col justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light group-hover:!text-white">
-                  Healthier Eating Habits
-                </p>
-                <p className=" group-hover:!text-white !font-light">
-                  Easily adopt a healthier lifestyle with nutrient-rich meal
-                  plans and educational content on nutrition and wellness.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex flex-col justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light group-hover:!text-white">
-                  Cost-Effective Shopping
-                </p>
-                <p className=" group-hover:!text-white !font-light">
-                  Reduce food waste and save money with efficient grocery
-                  shopping lists that align perfectly with your meal plans.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex flex-col gap-5 justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light group-hover:!text-white">
-                  Seamless Grocery Delivery
-                </p>
-                <p className=" group-hover:!text-white !font-light">
-                  Enjoy the convenience of having all your meal ingredients
-                  delivered right to your doorstep through our local grocery
-                  store partnerships.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex flex-col justify-between !px-10 !py-24 cursor-pointer rounded-4xl bg-[#022759] transition-all duration-300 group"
-                variants={fadeInUp}
-              >
-                <p className="!text-4xl !font-light !text-[#022759]">
-                  Personalized Nutrition
-                </p>
-                <p className=" !text-[#022759] !font-light">
-                  Get meal plans tailored to your unique dietary needs,
-                  preferences, and goals, ensuring a balanced and enjoyable
-                  diet.
-                </p>
-              </motion.div>
-              <motion.div
-                className="flex items-center justify-center transition-all duration-300 group overflow-hidden"
-                variants={fadeInUp}
-              >
-                <img
-                  src={image}
-                  alt=""
-                  className="object-cover w-60 rounded-4xl"
-                />
-              </motion.div>
+              {currentBenefits.insight.map((item, index) => (
+                <motion.div
+                  className="flex flex-col justify-between gap-5 !px-10 !py-24 cursor-pointer rounded-4xl bg-gray-200 hover:bg-[#022759] transition-all duration-300 group"
+                  variants={fadeInUp}
+                  key={index}
+                >
+                  <p className="!text-4xl !font-light group-hover:!text-white">
+                    {item.title}
+                  </p>
+                  <p className=" group-hover:!text-white !font-light">
+                    {item.description}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </motion.div>
       </div>
-
-      <motion.div
-        className="bg-[#E7FFC9] w-full !p-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        <div className="grid grid-cols-2 gap-5 !p-4">
-          {/* Footer section */}
-          <motion.div
-            className="bg-white !px-6 sm:!px-10 md:!px-20 !py-10 md:!py-20 rounded-2xl shadow-md flex flex-col gap-10 w-full lg:w-auto"
-            variants={fadeInLeft}
-          >
-            <p className="!text-4xl !text-black !font-semibold">Solus</p>
-            <div className="flex items-start justify-between gap-5 sm:gap-10 w-full">
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  About
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Services
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Therapist
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Resources
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Contact
-                </p>
-              </div>
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Instagram
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Facebook
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  YouTube
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  LinkedIn
-                </p>
-              </div>
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Terms of use
-                </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Privacy Policy
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Support section */}
-          <motion.div
-            className="bg-[#022759] !pl-6 sm:!pl-10 md:!pl-20 !py-10 md:!py-20 rounded-2xl shadow-lg w-full lg:w-auto !mt-5 lg:!mt-0"
-            variants={fadeInRight}
-          >
-            <div className="!flex !flex-col md:!flex-row items-center justify-between ">
-              <p className="!text-white !text-4xl md:!text-4xl !font-semibold !mb-6 md:!mb-0 max-w-md">
-                Find Support,
-                <br /> Guidance, <br />
-                and Balance.
-              </p>
-
-              <img
-                src={flowers}
-                alt="Decorative flowers"
-                className="w-40 md:w-1/3 h-auto !right-0"
-              />
-            </div>
-            <button className="bg-white hover:bg-gray-100 !text-[#022759] !font-bold !py-3 !px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
-              Find Support Now
-            </button>
-          </motion.div>
-        </div>
-      </motion.div>
     </div>
   );
 }

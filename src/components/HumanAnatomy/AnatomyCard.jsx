@@ -5,7 +5,6 @@ import heart from "../../assets/images/human-anatomy/heart-organ.png";
 import brain from "../../assets/images/human-anatomy/brain-organ.png";
 import muscle from "../../assets/images/human-anatomy/muscle.png";
 import stomach from "../../assets/images/human-anatomy/stomach-organ.png";
-import bladder from "../../assets/images/human-anatomy/bladder-organ.png";
 
 import {
   Activity,
