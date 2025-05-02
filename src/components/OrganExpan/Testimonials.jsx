@@ -1,35 +1,81 @@
-import React from "react";
-import { MoveDown } from "lucide-react";
-import { MoveUp } from "lucide-react";
-import flowers from "../../assets/images/organexpandpage/flowers.png";
-import { motion } from "framer-motion";
-import CallToAction from "../CallToAction";
+import React, { useState } from "react";
+import { MoveDown, MoveUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Testimonials({ image, type }) {
+  // Single state to track which FAQ is expanded, -1 means none
+  const [expandedFAQ, setExpandedFAQ] = useState(null);
+
+  // Toggle function for FAQs
+  const toggleFAQ = (index) => {
+    if (expandedFAQ === index) {
+      // If clicking the already expanded FAQ, collapse it
+      setExpandedFAQ(null);
+    } else {
+      // Otherwise expand the clicked FAQ and collapse any other
+      setExpandedFAQ(index);
+    }
+  };
+
+  // Combined FAQ data
+  const allFAQs = [
+    {
+      question: "How does the AI create personalized meal plans?",
+      answer:
+        "Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.",
+    },
+    {
+      question: "How does the AI create personalized meal plans?",
+      answer:
+        "Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.",
+    },
+    {
+      question: "How does the grocery delivery service work?",
+      answer:
+        "Our grocery delivery service partners with local stores to bring ingredients directly to your door. After your meal plan is confirmed, you can schedule a delivery time that works for you.",
+    },
+    {
+      question:
+        "How does the platform accommodate allergies and food sensitivities?",
+      answer:
+        "During your initial setup, you can input any allergies or dietary restrictions. Our AI will automatically exclude these ingredients from your meal plans.",
+    },
+    {
+      question: "Are there options for budget-conscious users?",
+      answer:
+        "Absolutely! You can set your weekly grocery budget, and our system will create meal plans that fit within your financial parameters.",
+    },
+    {
+      question: "Can I adjust my meal plans after they've been created?",
+      answer:
+        "Yes, you can modify your meal plans at any time. Our system will automatically adjust your grocery list and nutritional information.",
+    },
+  ];
+
   const basicFacts = {
     brain: {
       sub: "Facts",
       title: "Brain Myths vs. Facts",
-      description: `Quick insights into one of your body’s most powerful organs.`,
+      description: `Quick insights into one of your body's most powerful organs.`,
       fact: [
         {
           title: "Myth: The brain stops growing after childhood.",
           description: `Fact: Your brain is capable of lifelong change. Neuroplasticity allows it to adapt, grow, and rewire itself—even after injury or trauma.`,
         },
         {
-          title: "Myth: The brain doesn’t use much energy.",
-          description: `Fact: Your brain uses about 20% of your body’s total energy—even though it’s just 2% of your weight. It’s always working, even at rest.`,
+          title: "Myth: The brain doesn't use much energy.",
+          description: `Fact: Your brain uses about 20% of your body's total energy—even though it's just 2% of your weight. It's always working, even at rest.`,
         },
         {
           title: "Myth: Sleep is just for rest—not for the brain.",
           description: `Fact: During deep sleep, your brain consolidates memories, clears toxins, and recharges. Sleep is essential for focus and emotional balance.`,
         },
         {
-          title: "Myth: The brain isn’t very active.",
+          title: "Myth: The brain isn't very active.",
           description: `Fact: Your brain generates up to 70,000 thoughts every day—guiding your decisions, memories, and feelings from moment to moment.`,
         },
         {
-          title: `Myth: The brain doesn’t need much blood.`,
+          title: `Myth: The brain doesn't need much blood.`,
           description: `Fact: The brain has around 100,000 miles of blood vessels—enough to circle the Earth four times—delivering vital nutrients and oxygen.`,
         },
         {
@@ -41,14 +87,14 @@ function Testimonials({ image, type }) {
     heart: {
       sub: "Facts",
       title: "Heart Myths vs. Facts",
-      description: `Quick insights into one of your body’s most powerful organs.`,
+      description: `Quick insights into one of your body's most powerful organs.`,
       fact: [
         {
           title: "Myth: Only older people get heart disease.",
           description: `Fact: Heart disease can affect people of all ages, especially with poor diet, stress, smoking, or family history.`,
         },
         {
-          title: "Myth: A strong heart doesn’t need exercise.",
+          title: "Myth: A strong heart doesn't need exercise.",
           description: `Fact: Even the healthiest heart benefits from regular activity—exercise strengthens your heart just like any other muscle.`,
         },
         {
@@ -77,7 +123,7 @@ function Testimonials({ image, type }) {
     brain: {
       sub: "benefits",
       title: "Brain Health Benefits",
-      description: `Support your brain’s health and performance with simple, science-backed habits that improve focus, memory, and long-term function.`,
+      description: `Support your brain's health and performance with simple, science-backed habits that improve focus, memory, and long-term function.`,
       insight: [
         {
           title: "Cognitive Clarity",
@@ -97,7 +143,7 @@ function Testimonials({ image, type }) {
         {
           title: "Stress Resilience",
           description:
-            "Protect your brain from chronic stress by practicing deep breathing, movement, and rest to reduce cortisol’s impact.",
+            "Protect your brain from chronic stress by practicing deep breathing, movement, and rest to reduce cortisol's impact.",
         },
         {
           title: "Neuroplasticity Growth",
@@ -119,7 +165,7 @@ function Testimonials({ image, type }) {
     heart: {
       sub: "benefits",
       title: "Heart Health Benefits",
-      description: `Support your heart’s health and performance with simple, science-backed habits that improve circulation, endurance, and long-term function.`,
+      description: `Support your heart's health and performance with simple, science-backed habits that improve circulation, endurance, and long-term function.`,
       insight: [
         {
           title: "Stronger Circulation",
@@ -167,6 +213,9 @@ function Testimonials({ image, type }) {
 
   const currentBenefits = benefits[type];
 
+  // Background colors for benefits section
+  const bgColors = ["bg-[#022759]", "bg-[#D9EF78]", "bg-[#F1F2ED]"];
+
   // Animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -202,6 +251,31 @@ function Testimonials({ image, type }) {
       opacity: 1,
       x: 0,
       transition: { duration: 0.6 },
+    },
+  };
+
+  // FAQ animation variants
+  const faqContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const faqItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 300,
+        damping: 24,
+      },
     },
   };
 
@@ -245,6 +319,7 @@ function Testimonials({ image, type }) {
           </motion.div>
         </motion.div>
 
+        {/* faq starts here */}
         <motion.div
           className="flex flex-col !p-20"
           initial="hidden"
@@ -266,97 +341,69 @@ function Testimonials({ image, type }) {
               </p>
             </div>
           </div>
-          <motion.div
-            className="grid grid-cols-2 gap-4"
-            variants={staggerContainer}
-          >
-            <motion.div
-              className="flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl !mt-10"
-              variants={fadeInLeft}
-            >
-              <div className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78]">
-                <span className="">
-                  <MoveDown className="" />
-                </span>
-              </div>
-              <div className="flex flex-col items-start gap-5">
-                <p className="!font-semibold !text-lg">
-                  How does the AI create personalized meal plans?
-                </p>
-                <p className="!font-regular">
-                  Our AI system analyzes your dietary preferences, health goals,
-                  and budget to curate meal plans that are unique to you. It
-                  continually learns from your feedback and choices to improve
-                  its suggestions over time.
-                </p>
-              </div>
-            </motion.div>
-            <motion.div
-              className="flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl !mt-10"
-              variants={fadeInRight}
-            >
-              <div className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78]">
-                <span className="">
-                  <MoveDown className="" />
-                </span>
-              </div>
-              <div className="flex flex-col items-start gap-5">
-                <p className="!font-semibold !text-lg">
-                  How does the AI create personalized meal plans?
-                </p>
-                <p className="!font-regular">
-                  Our AI system analyzes your dietary preferences, health goals,
-                  and budget to curate meal plans that are unique to you. It
-                  continually learns from your feedback and choices to improve
-                  its suggestions over time.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
 
+          {/* All FAQs use the same style now */}
           <motion.div
-            className="grid grid-cols-2 gap-4 !mt-10 !px-10"
+            className="grid grid-cols-2 gap-8 !mt-10"
+            variants={faqContainer}
             initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
+            animate="visible"
           >
-            <motion.div className="flex items-center gap-5" variants={fadeInUp}>
-              <span className="border border-black rounded-full !p-3">
-                <MoveUp className="" size={13} />
-              </span>
-              <p className="">How does the grocery delivery service work?</p>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-5 !ml-10"
-              variants={fadeInUp}
-            >
-              <span className="border border-black rounded-full !p-3">
-                <MoveUp className="" size={13} />
-              </span>
-              <p className="">
-                How does the platform accommodate allergies and food
-                sensitivities?
-              </p>
-            </motion.div>
-            <motion.div className="flex items-center gap-5" variants={fadeInUp}>
-              <span className="border border-black rounded-full !p-3">
-                <MoveUp className="" size={13} />
-              </span>
-              <p className="">Are there options for budget-conscious users?</p>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-5 !ml-10"
-              variants={fadeInUp}
-            >
-              <span className="border border-black rounded-full !p-3">
-                <MoveUp className="" size={13} />
-              </span>
-              <p className="">
-                Can I adjust my meal plans after they've been created?
-              </p>
-            </motion.div>
+            {allFAQs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className={`transition-all duration-300 ${
+                  expandedFAQ === index
+                    ? "flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl"
+                    : "flex items-center gap-5"
+                }`}
+                layout
+                variants={faqItem}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              >
+                {expandedFAQ === index ? (
+                  <>
+                    <motion.div
+                      className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78] cursor-pointer"
+                      onClick={() => toggleFAQ(index)}
+                      initial={{ rotate: 0 }}
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <MoveUp />
+                    </motion.div>
+                    <div className="flex flex-col items-start gap-5">
+                      <p className="!font-semibold !text-lg">{faq.question}</p>
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      >
+                        <p className="!font-regular">{faq.answer}</p>
+                      </motion.div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <motion.span
+                      className="border border-black rounded-full !p-3 cursor-pointer"
+                      onClick={() => toggleFAQ(index)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <MoveDown className="" size={13} />
+                    </motion.span>
+                    <div className="flex flex-col">
+                      <p className="">{faq.question}</p>
+                    </div>
+                  </>
+                )}
+              </motion.div>
+            ))}
           </motion.div>
+          {/* faq ends here */}
 
           <motion.div
             className="flex flex-col !mt-30 !mb-40"
@@ -380,20 +427,49 @@ function Testimonials({ image, type }) {
               className="grid grid-cols-4 gap-4 !p-4 !mt-10"
               variants={staggerContainer}
             >
-              {currentBenefits.insight.map((item, index) => (
+              {currentBenefits.insight.slice(0, 7).map((item, index) => (
                 <motion.div
-                  className="flex flex-col justify-between gap-5 !px-10 !py-24 cursor-pointer rounded-4xl bg-gray-200 hover:bg-[#022759] transition-all duration-300 group"
+                  className={`flex flex-col justify-between gap-5 !px-10 !py-24 cursor-pointer rounded-4xl ${
+                    bgColors[index % 3]
+                  } hover:bg-[#022759] transition-all duration-300 group`}
                   variants={fadeInUp}
                   key={index}
                 >
-                  <p className="!text-4xl !font-light group-hover:!text-white">
+                  <p
+                    className={`!text-4xl !font-light ${
+                      bgColors[index % 3] === "bg-[#022759]"
+                        ? "!text-white"
+                        : bgColors[index % 3] === "bg-[#D9EF78]"
+                        ? "!text-gray-800"
+                        : "!text-gray-800"
+                    } group-hover:!text-white`}
+                  >
                     {item.title}
                   </p>
-                  <p className=" group-hover:!text-white !font-light">
+                  <p
+                    className={`${
+                      bgColors[index % 3] === "bg-[#022759]"
+                        ? "!text-white"
+                        : bgColors[index % 3] === "bg-[#D9EF78]"
+                        ? "!text-gray-800"
+                        : "!text-gray-800"
+                    } group-hover:!text-white !font-light`}
+                  >
                     {item.description}
                   </p>
                 </motion.div>
               ))}
+
+              {/* Image in the last column */}
+              <div className="flex items-center justify-center">
+                {image && (
+                  <img
+                    src={image}
+                    alt={`${type} health visual`}
+                    className="w-[80%] "
+                  />
+                )}
+              </div>
             </motion.div>
           </motion.div>
         </motion.div>

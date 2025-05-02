@@ -55,7 +55,7 @@ const Header = () => {
     { path: "/how-we-work", label: "How We Work" },
     { path: "/why-it-matters", label: "Why It Matters" },
     { path: "/lets-talk", label: "Let's Talk" },
-    { path: "/body-basics", label: "Body Basics" },
+
     { path: "/human-anatomy", label: "Human Anatomy" },
 
     { path: "/blog-page", label: "Blog" },
