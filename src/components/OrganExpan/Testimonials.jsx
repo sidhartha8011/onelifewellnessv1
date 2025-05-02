@@ -20,35 +20,34 @@ function Testimonials({ image, type }) {
   // Combined FAQ data
   const allFAQs = [
     {
-      question: "How does the AI create personalized meal plans?",
+      question: " Your brain never turns off",
       answer:
-        "Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.",
+        "Even while you sleep, your brain is active—sorting memories, clearing waste, and regulating vital functions like breathing and heart rate.",
     },
     {
-      question: "How does the AI create personalized meal plans?",
+      question: " Stress changes your brain",
       answer:
-        "Our AI system analyzes your dietary preferences, health goals, and budget to curate meal plans that are unique to you. It continually learns from your feedback and choices to improve its suggestions over time.",
+        "Chronic stress can shrink key areas like the hippocampus (memory) and enlarge the amygdala (emotional reactivity), affecting mood and decision-making.",
     },
     {
-      question: "How does the grocery delivery service work?",
+      question: " Learning reshapes your brain",
       answer:
-        "Our grocery delivery service partners with local stores to bring ingredients directly to your door. After your meal plan is confirmed, you can schedule a delivery time that works for you.",
+        "Every time you learn something new, your brain forms and strengthens connections—this ability is called neuroplasticity and it lasts a lifetime.",
     },
     {
-      question:
-        "How does the platform accommodate allergies and food sensitivities?",
+      question: " The brain and gut are connected",
       answer:
-        "During your initial setup, you can input any allergies or dietary restrictions. Our AI will automatically exclude these ingredients from your meal plans.",
+        "Your brain communicates with your gut through the vagus nerve and shared neurotransmitters—what you eat can directly affect how you feel and think.",
     },
     {
-      question: "Are there options for budget-conscious users?",
+      question: " You use your whole brain",
       answer:
-        "Absolutely! You can set your weekly grocery budget, and our system will create meal plans that fit within your financial parameters.",
+        "The idea that we only use 10% of our brain is a myth. Nearly every region is active, even when you’re resting or daydreaming.",
     },
     {
-      question: "Can I adjust my meal plans after they've been created?",
+      question: " Brain cells talk in milliseconds",
       answer:
-        "Yes, you can modify your meal plans at any time. Our system will automatically adjust your grocery list and nutritional information.",
+        "Neurons send signals across your body in just milliseconds—faster than any computer, enabling instant reactions and decisions.",
     },
   ];
 
@@ -112,6 +111,68 @@ function Testimonials({ image, type }) {
         {
           title: "Myth: Only cardio workouts matter for the heart.",
           description: `Fact: Strength training, flexibility, and even walking are all heart-healthy when done consistently.`,
+        },
+      ],
+    },
+    stomach: {
+      sub: "Facts",
+      title: "Gut Myths vs. Facts",
+      description: `Understanding your microbiome goes beyond digestion—your gut influences everything from immunity to mood.`,
+      fact: [
+        {
+          title: "Myth: A healthy gut just means no bloating",
+          description: "Fact: Gut health includes immunity, mood, energy, and metabolism—not just digestion",
+        },
+        {
+          title: "Myth: Probiotics are all you need",
+          description: "Fact: They help, but gut health also depends on fiber, sleep, movement, and stress",
+        },
+        {
+          title: "Myth: All gut issues are food-related",
+          description: "Fact: Sleep loss, medications, and mental health can impact your gut too",
+        },
+        {
+          title: "Myth: You only need to care about your gut if you have symptoms",
+          description: "Fact: A balanced gut supports long-term wellness—even if you feel fine today",
+        },
+        {
+          title: "Myth: More fiber is always better",
+          description: "Fact: Fiber helps—but too much, too fast can cause discomfort. Gradual change is key",
+        },
+        {
+          title: "Myth: You need a “gut detox”",
+          description: "Fact: Your body detoxes naturally—daily balance is better than any cleanse",
+        },
+      ],
+    },
+    muscleArm: {
+      sub: "Facts",
+      title: "Muscle & Joint Myths vs. Facts",
+      description: `Stay strong and mobile by separating common myths from science-backed truths about movement, aging, and pain.`,
+      fact: [
+        {
+          title: "Myth: Bones stop changing after your teens",
+          description: "Fact: Bones constantly rebuild—they respond to use, nutrition, and age",
+        },
+        {
+          title: "Myth: You should avoid all activity when joints hurt",
+          description: "Fact: Gentle movement often reduces pain and helps joints stay flexible",
+        },
+        {
+          title: "Myth: Cracking joints causes arthritis",
+          description: "Fact: It doesn’t cause joint damage, though it might annoy those around you!",
+        },
+        {
+          title: "Myth: Strength training is only for athletes",
+          description: "Fact: It’s key for maintaining bone density, mobility, and injury prevention for everyone",
+        },
+        {
+          title: "Myth: Back pain always means something is wrong",
+          description: "Fact: Most back pain comes from posture or strain and improves with movement",
+        },
+        {
+          title: "Myth: Muscle loss is inevitable with age",
+          description: "Fact: Resistance training and protein intake help maintain and rebuild muscle at any age",
         },
       ],
     },
@@ -206,6 +267,91 @@ function Testimonials({ image, type }) {
           title: "Better Physical Performance",
           description:
             "Supports strength, endurance, and overall activity levels with improved circulation.",
+        },
+      ],
+    },
+
+    stomach: {
+      sub: "benefits",
+      title: "Gut Health Benefits",
+      description: `Support your gut for smoother digestion, stronger immunity, better mood, and lifelong wellness.`,
+      insight: [
+        {
+          title: "Better Digestion",
+          description:
+            "A healthy gut breaks down food efficiently and keeps you regular, reducing bloating, cramping, and discomfort.",
+        },
+        {
+          title: "Stronger Immunity",
+          description:
+            "Your gut helps defend against illness by supporting your immune system and reducing inflammation.",
+        },
+        {
+          title: "Improved Mood & Focus",
+          description:
+            "A balanced microbiome supports better mental clarity, mood stability, and emotional resilience.",
+        },
+        {
+          title: "Hormone Balance",
+          description:
+            "Your gut helps regulate hormones that affect appetite, stress, sleep, and mood—creating internal balance.",
+        },
+        {
+          title: "Clearer Skin",
+          description:
+            "Skin issues like acne and eczema can reflect gut imbalances. A healthy gut may reduce breakouts and improve glow.",
+        },
+        {
+          title: "Energy Support",
+          description:
+            "Efficient digestion means better nutrient absorption—keeping you fueled and focused throughout the day.",
+        },
+        {
+          title: "Long-Term Health Protection",
+          description:
+            "A diverse gut microbiome lowers your risk for chronic conditions like diabetes, obesity, autoimmune issues, and even Alzheimer’s.",
+        },
+      ],
+    },
+    muscleArm: {
+      sub: "benefits",
+      title: "Musculoskeletal Health Benefits",
+      description: `Support your muscles, bones, and joints to stay strong, mobile, and injury-resistant throughout life.`,
+      insight: [
+        {
+          title: "Postural Strength",
+          description:
+            "A strong MSK system helps you stand tall, sit correctly, and reduce strain on your spine, joints, and muscles.",
+        },
+        {
+          title: "Injury Prevention",
+          description:
+            "Muscle strength and joint stability protect your body from everyday injuries like falls, strains, or back pain.",
+        },
+        {
+          title: "Mobility & Flexibility",
+          description:
+            "Healthy muscles and joints allow smooth, pain-free movement—making everyday actions like climbing stairs or lifting bags easier.",
+        },
+        {
+          title: "Functional Fitness",
+          description:
+            "The MSK system powers your ability to carry, walk, balance, and stay independent—especially important with age.",
+        },
+        {
+          title: "Bone Health Support",
+          description:
+            "Weight-bearing exercise strengthens bones and slows natural bone loss, reducing the risk of fractures or osteoporosis.",
+        },
+        {
+          title: "Recovery & Repair",
+          description:
+            "With rest, movement, and nutrition, the MSK system naturally heals, rebuilds, and adapts to physical demands.",
+        },
+        {
+          title: "Long-Term Strength",
+          description:
+            "Staying active and strong in your 30s, 40s, and beyond supports energy, balance, and resilience throughout life.",
         },
       ],
     },
@@ -327,17 +473,16 @@ function Testimonials({ image, type }) {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <p className="!text-gray-300">FAQ</p>
+          <p className="!text-gray-300">DIY</p>
           <div className="flex items-center gap-5">
             <h2 className="!text-4xl !font-medium !text-gray-800">
-              Frequently Asked Questions
+            Did You Know? 
             </h2>
             <p className="!text-8xl !font-thin !text-gray-300">/</p>
             <div className=" !text-gray-600 !mt-1">
               <p>
-                Meal planning made easy: your
-                <br />
-                questions, answered
+               Brain Insights
+                
               </p>
             </div>
           </div>

@@ -65,8 +65,9 @@ function OrganExpanPage() {
     },
 
     heart: {
-      title: "",
-      description: "",
+      title: "Your Heart: The Engine That Keeps You Going",
+      description:
+        "Your heart is a powerful pump that delivers oxygen and nutrients to every part of your body. Learn how it works, how it changes with age, and how you can keep it beating strong.",
       faqs: [
         {
           question: "What does the heart do exactly?",
@@ -75,31 +76,109 @@ function OrganExpanPage() {
         },
         {
           question: "Does the heart ever rest?",
-          description:
+          answer:
             "Nope—it works nonstop, day and night. Its pace adjusts automatically based on your activity, sleep, and emotional state.",
         },
         {
           question: "What happens to my heart as I age?",
-          description:
+          answer:
             "With age, the heart muscle can thicken and arteries may stiffen, making it harder to circulate blood as efficiently as before.",
         },
         {
           question: "Can emotions really affect my heart?",
-          description:
+          answer:
             "Yes. Strong emotions like stress, fear, or joy can raise your heart rate and blood pressure—sometimes dramatically.",
         },
         {
           question: "Is heart disease preventable?",
-          description:
+          answer:
             "Mostly, yes. Healthy eating, regular exercise, good sleep, and stress management go a long way in protecting your heart.",
         },
         {
           question: "When should I get my heart checked?",
-          description:
+          answer:
             "Start in your 20s—especially if you have a family history. Keep track of your blood pressure, cholesterol, and blood sugar regularly.",
         },
       ],
     },
+
+    stomach: {
+      title: "Your Stomach: Where Digestion Begins",
+      description:
+        "Your stomach isn’t just a food processor—it plays a vital role in breaking down nutrients, supporting your immune system, and housing your microbiome. Understanding how it works can help you boost digestion, reduce discomfort, and improve your overall health.",
+      faqs: [
+        {
+          question: "What is the microbiome?",
+          answer:
+            "It’s the community of bacteria, fungi, and microbes living in your gut. These microbes help digest food, protect against illness, and influence everything from mood to metabolism.",
+        },
+        {
+          question: "How do I know if my gut is unhealthy?",
+          answer:
+            "Common signs include bloating, constipation, fatigue, frequent illness, or food sensitivities. Skin issues and brain fog can also be related to gut imbalance.",
+        },
+        {
+          question: "Can stress really affect digestion?",
+          answer:
+            "Yes—stress changes gut motility and microbiome balance. It can trigger bloating, cramps, or even disrupt nutrient absorption.",
+        },
+        {
+          question: "What foods are good for my gut?",
+          answer:
+            "Prebiotics (like garlic, onions, bananas), probiotics (like yogurt, kefir), and fiber-rich foods (like oats and vegetables) all support gut health.",
+        },
+        {
+          question: "Do I need supplements for gut health?",
+          answer:
+            "Not always. Many people can support their gut through diet. But if needed, probiotics or digestive enzymes may help—talk to a healthcare provider.",
+        },
+        {
+          question: "How long does it take to improve gut health?",
+          answer:
+            "You can feel better in as little as a few days, but lasting gut changes may take weeks of consistent, healthy habits.",
+        },
+      ],
+    },
+
+    muscleArm: {
+      title: "Your Muscles & Joints: Move Better, Feel Stronger",
+      description:
+        "Your muscles and joints are what keep you upright, moving, and pain-free. Learn how your body’s support system works, how to care for it, and what habits help you stay strong and mobile as you age.",
+      faqs: [
+        {
+          question: "What’s the difference between a tendon and a ligament?",
+          answer:
+            "Tendons connect muscles to bones, helping you move. Ligaments connect bones to each other, keeping joints stable.",
+        },
+        {
+          question: "How do I know if I have poor posture?",
+          answer:
+            "Frequent neck or lower back pain, rounded shoulders, or a forward head tilt can be signs. Try standing tall with your shoulders relaxed and aligned over your hips.",
+        },
+        {
+          question: "Can I build strength without a gym?",
+          answer:
+            "Yes! Bodyweight exercises, walking, yoga, or resistance bands at home can all build and maintain muscle and bone strength.",
+        },
+        {
+          question: "Is it normal to lose flexibility with age?",
+          answer:
+            "Yes, but stretching and mobility work help you maintain range of motion and prevent stiffness.",
+        },
+        {
+          question: "Should I exercise if I have joint pain?",
+          answer:
+            "In most cases, yes—gentle, low-impact activity helps reduce stiffness and pain. Always check with a doctor for serious or persistent issues.",
+        },
+        {
+          question: "How often should I stretch?",
+          answer:
+            "Aim to stretch major muscle groups at least 2–3 times a week—or daily if you’re sedentary or recovering from stiffness.",
+        },
+      ],
+    },
+
+
   };
 
   const currentFaq = faqData[type];
@@ -179,53 +258,79 @@ function OrganExpanPage() {
     },
 
     stomach: {
-      title: "",
-      description: "",
+      title: " Your Gut: The Core of Digestion, Immunity, and Mood",
+      description:
+        "Your gut does much more than process food. It’s a powerhouse of digestion, home to trillions of microbes that influence your immunity, energy, and even emotions. This guide breaks down how your digestive system works and how to care for it at every stage of life.",
       tabs: [
         {
-          title: "",
-          description: "",
-          points: [],
-          conclusion: "",
+          title: "Mouth",
+          description:
+            "Digestion starts here. Your teeth and saliva begin breaking down food mechanically and chemically, preparing it for the journey through your digestive system."
         },
         {
-          title: "",
-          points: [],
+          title: "Esophagus",
+          description:
+            "This muscular tube carries food from your mouth to your stomach using wave-like movements called peristalsis. It’s a fast, smooth, and automatic process."
         },
         {
-          title: "",
-          myths: [],
+          title: "Stomach",
+          description:
+            "The stomach churns and mixes food with acid and enzymes, breaking it into a semi-liquid form. It also helps kill harmful microbes before food moves on to the intestines."
         },
         {
-          title: "",
-          strategies: [],
+          title: "Small Intestine",
+          description:
+            "This is the main site for digestion and nutrient absorption. Enzymes and bile work here to extract vitamins, minerals, and energy, which are then absorbed into the bloodstream."
         },
-      ],
+        {
+          title: "Large Intestine (Colon)",
+          description:
+            "The colon reabsorbs water and processes waste. It also houses a large portion of your gut microbiome—helpful bacteria that support immunity, mood, and metabolism."
+        },
+        {
+          title: "Rectum & Anus",
+          description:
+            "These parts handle waste storage and elimination. Once digestion is complete, the body prepares to remove what’s no longer needed."
+        }
+      ]
     },
 
     muscleArm: {
-      title: "",
-      description: "",
+      title: "Your Musculoskeletal System: The Framework of Movement and Strength",
+      description:
+        "Your musculoskeletal system gives your body structure, power, and protection. It includes your bones, muscles, joints, ligaments, and tendons—all working together to help you sit, stand, move, and stay upright. This guide breaks down each part of the system and how they work as a team to support your daily life.",
       tabs: [
         {
-          title: "",
-          description: "",
-          points: [],
-          conclusion: "",
+          title: "Bones",
+          description:
+            "Bones form the rigid framework of your body. They support your weight, protect vital organs, and store minerals like calcium. Bone marrow inside certain bones also produces red blood cells."
         },
         {
-          title: "",
-          points: [],
+          title: "Muscles",
+          description:
+            "Muscles contract and relax to create movement. They help you lift, walk, breathe, and even pump blood. There are over 600 muscles in your body—working consciously and unconsciously every day."
         },
         {
-          title: "",
-          myths: [],
+          title: "Joints",
+          description:
+            "Joints are where two or more bones meet. They allow you to bend, rotate, and move with control. Different types of joints—like hinge, ball-and-socket, and pivot—offer different kinds of movement."
         },
         {
-          title: "",
-          strategies: [],
+          title: "Ligaments",
+          description:
+            "Ligaments are tough, elastic bands of tissue that connect bones to other bones. They stabilize your joints and help prevent injuries during movement."
         },
-      ],
+        {
+          title: "Tendons",
+          description:
+            "Tendons attach muscles to bones. When a muscle contracts, the tendon pulls on the bone, allowing you to move. They’re essential for strength and coordination."
+        },
+        {
+          title: "Cartilage",
+          description:
+            "Cartilage is a smooth, cushioning tissue found in joints, the nose, ears, and spine. It reduces friction and absorbs shock, protecting your bones from wear and tear."
+        }
+      ]
     },
   };
 
