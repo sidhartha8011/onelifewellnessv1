@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MoveDown, MoveUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import flowers from "../../assets/images/organexpandpage/flowers.png";
 
 function Testimonials({ image, type }) {
   // Single state to track which FAQ is expanded, -1 means none
@@ -18,38 +19,42 @@ function Testimonials({ image, type }) {
   };
 
   // Combined FAQ data
-  const allFAQs = [
-    {
-      question: " Your brain never turns off",
-      answer:
-        "Even while you sleep, your brain is active—sorting memories, clearing waste, and regulating vital functions like breathing and heart rate.",
-    },
-    {
-      question: " Stress changes your brain",
-      answer:
-        "Chronic stress can shrink key areas like the hippocampus (memory) and enlarge the amygdala (emotional reactivity), affecting mood and decision-making.",
-    },
-    {
-      question: " Learning reshapes your brain",
-      answer:
-        "Every time you learn something new, your brain forms and strengthens connections—this ability is called neuroplasticity and it lasts a lifetime.",
-    },
-    {
-      question: " The brain and gut are connected",
-      answer:
-        "Your brain communicates with your gut through the vagus nerve and shared neurotransmitters—what you eat can directly affect how you feel and think.",
-    },
-    {
-      question: " You use your whole brain",
-      answer:
-        "The idea that we only use 10% of our brain is a myth. Nearly every region is active, even when you’re resting or daydreaming.",
-    },
-    {
-      question: " Brain cells talk in milliseconds",
-      answer:
-        "Neurons send signals across your body in just milliseconds—faster than any computer, enabling instant reactions and decisions.",
-    },
-  ];
+  const allFAQs = {
+    brain: [
+      {
+        question: " Your brain never turns off",
+        answer:
+          "Even while you sleep, your brain is active—sorting memories, clearing waste, and regulating vital functions like breathing and heart rate.",
+      },
+      {
+        question: " Stress changes your brain",
+        answer:
+          "Chronic stress can shrink key areas like the hippocampus (memory) and enlarge the amygdala (emotional reactivity), affecting mood and decision-making.",
+      },
+      {
+        question: " Learning reshapes your brain",
+        answer:
+          "Every time you learn something new, your brain forms and strengthens connections—this ability is called neuroplasticity and it lasts a lifetime.",
+      },
+      {
+        question: " The brain and gut are connected",
+        answer:
+          "Your brain communicates with your gut through the vagus nerve and shared neurotransmitters—what you eat can directly affect how you feel and think.",
+      },
+      {
+        question: " You use your whole brain",
+        answer:
+          "The idea that we only use 10% of our brain is a myth. Nearly every region is active, even when you're resting or daydreaming.",
+      },
+      {
+        question: " Brain cells talk in milliseconds",
+        answer:
+          "Neurons send signals across your body in just milliseconds—faster than any computer, enabling instant reactions and decisions.",
+      },
+    ],
+  };
+
+  const currentFaq = allFAQs[type];
 
   const basicFacts = {
     brain: {
@@ -121,27 +126,34 @@ function Testimonials({ image, type }) {
       fact: [
         {
           title: "Myth: A healthy gut just means no bloating",
-          description: "Fact: Gut health includes immunity, mood, energy, and metabolism—not just digestion",
+          description:
+            "Fact: Gut health includes immunity, mood, energy, and metabolism—not just digestion",
         },
         {
           title: "Myth: Probiotics are all you need",
-          description: "Fact: They help, but gut health also depends on fiber, sleep, movement, and stress",
+          description:
+            "Fact: They help, but gut health also depends on fiber, sleep, movement, and stress",
         },
         {
           title: "Myth: All gut issues are food-related",
-          description: "Fact: Sleep loss, medications, and mental health can impact your gut too",
+          description:
+            "Fact: Sleep loss, medications, and mental health can impact your gut too",
         },
         {
-          title: "Myth: You only need to care about your gut if you have symptoms",
-          description: "Fact: A balanced gut supports long-term wellness—even if you feel fine today",
+          title:
+            "Myth: You only need to care about your gut if you have symptoms",
+          description:
+            "Fact: A balanced gut supports long-term wellness—even if you feel fine today",
         },
         {
           title: "Myth: More fiber is always better",
-          description: "Fact: Fiber helps—but too much, too fast can cause discomfort. Gradual change is key",
+          description:
+            "Fact: Fiber helps—but too much, too fast can cause discomfort. Gradual change is key",
         },
         {
-          title: "Myth: You need a “gut detox”",
-          description: "Fact: Your body detoxes naturally—daily balance is better than any cleanse",
+          title: `"Myth: You need a "gut detox""`,
+          description:
+            "Fact: Your body detoxes naturally—daily balance is better than any cleanse",
         },
       ],
     },
@@ -152,27 +164,33 @@ function Testimonials({ image, type }) {
       fact: [
         {
           title: "Myth: Bones stop changing after your teens",
-          description: "Fact: Bones constantly rebuild—they respond to use, nutrition, and age",
+          description:
+            "Fact: Bones constantly rebuild—they respond to use, nutrition, and age",
         },
         {
           title: "Myth: You should avoid all activity when joints hurt",
-          description: "Fact: Gentle movement often reduces pain and helps joints stay flexible",
+          description:
+            "Fact: Gentle movement often reduces pain and helps joints stay flexible",
         },
         {
           title: "Myth: Cracking joints causes arthritis",
-          description: "Fact: It doesn’t cause joint damage, though it might annoy those around you!",
+          description:
+            "Fact: It doesn't cause joint damage, though it might annoy those around you!",
         },
         {
           title: "Myth: Strength training is only for athletes",
-          description: "Fact: It’s key for maintaining bone density, mobility, and injury prevention for everyone",
+          description:
+            "Fact: It's key for maintaining bone density, mobility, and injury prevention for everyone",
         },
         {
           title: "Myth: Back pain always means something is wrong",
-          description: "Fact: Most back pain comes from posture or strain and improves with movement",
+          description:
+            "Fact: Most back pain comes from posture or strain and improves with movement",
         },
         {
           title: "Myth: Muscle loss is inevitable with age",
-          description: "Fact: Resistance training and protein intake help maintain and rebuild muscle at any age",
+          description:
+            "Fact: Resistance training and protein intake help maintain and rebuild muscle at any age",
         },
       ],
     },
@@ -309,7 +327,7 @@ function Testimonials({ image, type }) {
         {
           title: "Long-Term Health Protection",
           description:
-            "A diverse gut microbiome lowers your risk for chronic conditions like diabetes, obesity, autoimmune issues, and even Alzheimer’s.",
+            "A diverse gut microbiome lowers your risk for chronic conditions like diabetes, obesity, autoimmune issues, and even Alzheimer's.",
         },
       ],
     },
@@ -450,9 +468,9 @@ function Testimonials({ image, type }) {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 !p-4 !mt-10"
             variants={staggerContainer}
           >
-            {currentFacts.fact.map((testimonial) => (
+            {currentFacts.fact.map((testimonial, i) => (
               <motion.div
-                key={testimonial.id}
+                key={i}
                 className="flex flex-col justify-between gap-3 !px-6 !py-20 cursor-pointer rounded-3xl bg-[#F1F2ED] hover:bg-[#022759] transition-all duration-300 group"
                 variants={fadeInUp}
               >
@@ -473,80 +491,80 @@ function Testimonials({ image, type }) {
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <p className="!text-gray-300">DIY</p>
+          <p className="!text-gray-300">FAQ</p>
           <div className="flex items-center gap-5">
             <h2 className="!text-4xl !font-medium !text-gray-800">
-            Did You Know? 
+              Frequently Asked Questions
             </h2>
             <p className="!text-8xl !font-thin !text-gray-300">/</p>
             <div className=" !text-gray-600 !mt-1">
-              <p>
-               Brain Insights
-                
-              </p>
+              <p>Meal planning made easy: your questions, answered</p>
             </div>
           </div>
 
-          {/* All FAQs use the same style now */}
+          {/* Fixed FAQ mapping */}
           <motion.div
             className="grid grid-cols-2 gap-8 !mt-10"
             variants={faqContainer}
             initial="hidden"
             animate="visible"
           >
-            {allFAQs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className={`transition-all duration-300 ${
-                  expandedFAQ === index
-                    ? "flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl"
-                    : "flex items-center gap-5"
-                }`}
-                layout
-                variants={faqItem}
-                initial="hidden"
-                animate="visible"
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              >
-                {expandedFAQ === index ? (
-                  <>
-                    <motion.div
-                      className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78] cursor-pointer"
-                      onClick={() => toggleFAQ(index)}
-                      initial={{ rotate: 0 }}
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <MoveUp />
-                    </motion.div>
-                    <div className="flex flex-col items-start gap-5">
-                      <p className="!font-semibold !text-lg">{faq.question}</p>
+            {currentFaq &&
+              currentFaq.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  className={`transition-all duration-300 ${
+                    expandedFAQ === index
+                      ? "flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl"
+                      : "flex items-center gap-5"
+                  }`}
+                  layout
+                  variants={faqItem}
+                  initial="hidden"
+                  animate="visible"
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                >
+                  {expandedFAQ === index ? (
+                    <>
                       <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78] cursor-pointer"
+                        onClick={() => toggleFAQ(index)}
+                        initial={{ rotate: 0 }}
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
                       >
-                        <p className="!font-regular">{faq.answer}</p>
+                        <MoveUp />
                       </motion.div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <motion.span
-                      className="border border-black rounded-full !p-3 cursor-pointer"
-                      onClick={() => toggleFAQ(index)}
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <MoveDown className="" size={13} />
-                    </motion.span>
-                    <div className="flex flex-col">
-                      <p className="">{faq.question}</p>
-                    </div>
-                  </>
-                )}
-              </motion.div>
-            ))}
+                      <div className="flex flex-col items-start gap-5">
+                        <p className="!font-semibold !text-lg">
+                          {faq.question}
+                        </p>
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                        >
+                          <p className="!font-regular">{faq.answer}</p>
+                        </motion.div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <motion.span
+                        className="border border-black rounded-full !p-3 cursor-pointer"
+                        onClick={() => toggleFAQ(index)}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <MoveDown className="" size={13} />
+                      </motion.span>
+                      <div className="flex flex-col">
+                        <p className="">{faq.question}</p>
+                      </div>
+                    </>
+                  )}
+                </motion.div>
+              ))}
           </motion.div>
           {/* faq ends here */}
 
@@ -619,6 +637,88 @@ function Testimonials({ image, type }) {
           </motion.div>
         </motion.div>
       </div>
+
+      <motion.div
+        className="bg-[#E7FFC9] w-full !p-20 !mb-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
+        <div className="grid grid-cols-2 gap-5 !p-4">
+          {/* Footer section */}
+          <motion.div
+            className="bg-white !px-6 sm:!px-10 md:!px-20 !py-10 md:!py-20 rounded-2xl shadow-md flex flex-col gap-10 w-full lg:w-auto"
+            variants={fadeInLeft}
+          >
+            <p className="!text-4xl !text-black !font-semibold">Solus</p>
+            <div className="flex items-start justify-between gap-5 sm:gap-10 w-full">
+              <div className="flex flex-col gap-5">
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  About
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Services
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Therapist
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Resources
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Contact
+                </p>
+              </div>
+              <div className="flex flex-col gap-5">
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Instagram
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Facebook
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  YouTube
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  LinkedIn
+                </p>
+              </div>
+              <div className="flex flex-col gap-5">
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Terms of use
+                </p>
+                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                  Privacy Policy
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Support section */}
+          <motion.div
+            className="bg-[#022759] !pl-6 sm:!pl-10 md:!pl-20 !py-10 md:!py-20 rounded-2xl shadow-lg w-full lg:w-auto !mt-5 lg:!mt-0"
+            variants={fadeInRight}
+          >
+            <div className="!flex !flex-col md:!flex-row items-center justify-between ">
+              <p className="!text-white !text-4xl md:!text-4xl !font-semibold !mb-6 md:!mb-0 max-w-md">
+                Find Support,
+                <br /> Guidance, <br />
+                and Balance.
+              </p>
+
+              <img
+                src={flowers}
+                alt="Decorative flowers"
+                className="w-40 md:w-1/3 h-auto !right-0"
+              />
+            </div>
+            <button className="bg-white hover:bg-gray-100 !text-[#022759] !font-bold !py-3 !px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+              Find Support Now
+            </button>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }
