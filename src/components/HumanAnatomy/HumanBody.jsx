@@ -164,7 +164,7 @@ function HumanBody({ organType }) {
       <img
         src={humanbody}
         alt="Human anatomy"
-        className="w-[90%] lg:w-[35%] !-mt-19 lg:!-mt-30 !-ml-22"
+        className="w-[90%] lg:w-[43%] !-mt-19 lg:!-mt-30 !-ml-22"
       />
 
       {/* Brain */}
