@@ -522,15 +522,15 @@ function Testimonials({ image, type }) {
             }
           `}</style>
 
-          <p className="text-gray-300">{currentFacts.sub}</p>
+          <p className="!text-gray-300">{currentFacts.sub}</p>
           <div className="flex flex-wrap items-center !gap-3 md:!gap-5">
-            <h2 className="!text-2xl md:!text-3xl lg:!text-4xl font-medium !text-gray-800">
+            <h2 className="!text-2xl md:!text-3xl lg:!text-4xl !font-medium !text-[#032659]">
               {currentFacts.title}
             </h2>
             <p className="!text-4xl md:!text-6xl lg:!text-8xl !font-thin !text-gray-300">
               /
             </p>
-            <div className="text-gray-600 !mt-1">
+            <div className="!text-gray-600 !mt-1">
               <p>{currentFacts.description}</p>
             </div>
           </div>
@@ -540,7 +540,7 @@ function Testimonials({ image, type }) {
             <div className="flex items-center justify-between w-full !mb-4 md:!mb-6">
               <button
                 onClick={prevSlide}
-                className="!bg-gray-100 !hover:bg-gray-200 !p-2 md:!p-3 rounded-full shadow-md transition-all duration-300"
+                className="!bg-[#F1F2ED] !hover:bg-[#D8EE78] !p-2 md:!p-3 !rounded-full !shadow-md !transition-all !duration-300 !text-[#032659]"
                 disabled={currentSlide === 0}
               >
                 <ChevronLeft size={20} />
@@ -551,8 +551,8 @@ function Testimonials({ image, type }) {
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
-                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 !p-1 md:!p-2 ${
-                      idx === currentSlide ? "bg-[#022759]" : "bg-gray-300"
+                    className={`!w-2 !h-2 md:!w-3 md:!h-3 !rounded-full !transition-all !duration-300 !p-1 md:!p-2 ${
+                      idx === currentSlide ? "!bg-[#032659]" : "!bg-[#D8EE78]"
                     }`}
                   />
                 ))}
@@ -560,7 +560,7 @@ function Testimonials({ image, type }) {
 
               <button
                 onClick={nextSlide}
-                className="bg-gray-100 hover:bg-gray-200 rounded-full shadow-md transition-all duration-300 !p-2"
+                className="!bg-[#F1F2ED] !hover:bg-[#D8EE78] !rounded-full !shadow-md !transition-all !duration-300 !p-2 !text-[#032659]"
                 disabled={currentSlide === totalDots - 1}
               >
                 <ChevronRight size={20} />
@@ -575,19 +575,19 @@ function Testimonials({ image, type }) {
               {getVisibleItems().map((fact, i) => (
                 <div
                   key={`${currentSlide}-${i}`}
-                  className="flip-card h-64 md:h-80"
+                  className="flip-card !h-64 md:!h-80"
                 >
                   <div className="flip-card-inner">
                     {/* Front of Card */}
-                    <div className="flip-card-front rounded-3xl bg-[#F1F2ED] flex items-center justify-center !p-4 md:!p-8">
-                      <h4 className="text-center text-base md:text-xl font-medium">
+                    <div className="flip-card-front !rounded-3xl !bg-[#F1F2ED] flex items-center justify-center !p-4 md:!p-8 !border-l-4 !border-[#032659]">
+                      <h4 className="!text-center !text-base md:!text-xl !font-medium !text-[#032659]">
                         {fact.title}
                       </h4>
                     </div>
 
                     {/* Back of Card */}
-                    <div className="flip-card-back rounded-3xl bg-gray-200 !text-black flex items-center justify-center !p-4 md:!p-8 shadow-md overflow-auto">
-                      <p className="text-center text-sm md:text-base">
+                    <div className="flip-card-back !rounded-3xl !bg-[#D8EE78] !text-[#032659] flex items-center justify-center !p-4 md:!p-8 !shadow-md overflow-auto">
+                      <p className="!text-center !text-sm md:!text-base">
                         {fact.description}
                       </p>
                     </div>
@@ -748,7 +748,7 @@ function Testimonials({ image, type }) {
               ))}
 
               {/* Image in the last column */}
-              <div className="flex items-center justify-center !mt-4 md:!mt-0">
+              <div className="flex items-center justify-center !mb-10 !mt-4 md:!mt-0">
                 {image && (
                   <img
                     src={image}
@@ -761,90 +761,6 @@ function Testimonials({ image, type }) {
           </motion.div>
         </motion.div>
       </div>
-
-      <motion.div
-        className="bg-[#E7FFC9] w-full !p-4 md:!p-10 lg:!p-20 !mb-10 md:!mb-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeInUp}
-      >
-        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 !gap-5 !p-2 !mb-30 md:!p-4">
-          {/* Footer section */}
-          <motion.div
-            className="bg-white !px-4 sm:!px-6 md:!px-10 lg:!px-20 !py-6 md:!py-10 lg:!py-20 rounded-2xl shadow-md flex flex-col !gap-5 md:!gap-10 w-full"
-            variants={fadeInLeft}
-          >
-            <p className="!text-2xl md:!text-3xl lg:!text-4xl !text-black !font-semibold">
-              Solus
-            </p>
-            <div className="flex flex-wrap items-start justify-between !gap-3 sm:!gap-5 md:!gap-10 w-full">
-              <div className="flex flex-col !gap-3 md:!gap-5">
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  About
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Services
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Therapist
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Resources
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Contact
-                </p>
-              </div>
-              <div className="flex flex-col !gap-3 md:!gap-5">
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Instagram
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Facebook
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  YouTube
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  LinkedIn
-                </p>
-              </div>
-              <div className="flex flex-col !gap-3 md:!gap-5">
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Terms of use
-                </p>
-                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
-                  Privacy Policy
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Support section */}
-          <motion.div
-            className="bg-[#022759] !pl-4 sm:!pl-6 md:!pl-10 lg:!pl-20 !py-6 md:!py-10  lg:!py-20 rounded-2xl shadow-lg w-full !mt-5 lg:!mt-0"
-            variants={fadeInRight}
-          >
-            <div className="!flex !flex-col md:!flex-row items-center justify-between">
-              <p className="!text-white !text-2xl md:!text-3xl lg:!text-4xl !font-semibold !mb-4 md:!mb-0 max-w-md">
-                Find Support,
-                <br /> Guidance, <br />
-                and Balance.
-              </p>
-
-              <img
-                src={flowers}
-                alt="Decorative flowers"
-                className="w-32 md:w-40 lg:w-1/3 h-auto !right-0"
-              />
-            </div>
-            <button className="bg-white hover:bg-gray-100 !text-[#022759] !font-bold !py-2 md:!py-3 !px-5 md:!px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 !mt-4 md:!mt-0">
-              Find Support Now
-            </button>
-          </motion.div>
-        </div>
-      </motion.div>
     </div>
   );
 }

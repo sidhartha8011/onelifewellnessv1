@@ -545,7 +545,7 @@ function OrganExpanPage() {
     <div className="">
       <div className="min-h-screen flex flex-col bg-[#E7FFC9]">
         <motion.div
-          className="bg-[#ADFB49] flex-grow flex items-center relative"
+          className="bg-[#ADFB49] flex-grow flex items-center relative !p-4 md:!p-8 lg:!p-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -554,100 +554,106 @@ function OrganExpanPage() {
           <img
             src={spiral}
             alt="Background spiral"
-            className="w-1/2 absolute z-0"
+            className="w-1/3 sm:w-2/5 md:w-1/2 absolute z-0 opacity-70 md:opacity-100"
           />
 
-          <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-8 w-full !p-10">
+          <div className="z-10 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 w-full">
             {/* Organ image */}
             <motion.div
-              className="flex items-center justify-center"
+              className="flex items-center justify-center !px-4"
               variants={fadeInUp}
             >
               <img
                 src={currentOrgan.image}
                 alt={currentOrgan.title}
-                className="w-96"
+                className="w-56 sm:w-72 md:w-80 lg:w-96 max-w-full"
               />
             </motion.div>
 
             {/* Information section - SLIGHTLY LARGER THAN PREVIOUS VERSION */}
             <motion.div
-              className="flex flex-col gap-4 bg-white !p-5 rounded-2xl shadow-lg w-full md:w-4/5 mt-22 mx-auto"
+              className="flex flex-col gap-3 sm:gap-4 bg-white !p-4 md:!p-5 rounded-2xl shadow-lg w-full md:w-4/5 mx-auto"
               variants={fadeInUp}
             >
-              <h1 className="!text-2xl !font-bold text-blue-900">
+              <h1 className="text-xl md:text-2xl font-bold text-blue-900">
                 {currentOrgan.title}
               </h1>
 
               <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4"
                 variants={staggerContainer}
               >
                 {/* Structure info card */}
                 <motion.div
-                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  className="bg-[#022759] rounded-xl !p-3 md:!p-4 !text-white"
                   variants={fadeInUp}
                 >
-                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                  <h2 className="text-sm md:text-md font-bold !mb-1 md:!mb-2 !text-white">
                     Structure
                   </h2>
-                  <p className="!text-sm !text-white">
+                  <p className="text-xs md:text-sm !text-white">
                     {currentOrgan.structure}
                   </p>
                 </motion.div>
 
                 {/* Function info card */}
                 <motion.div
-                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  className="bg-[#022759] rounded-xl !p-3 md:!p-4 !text-white"
                   variants={fadeInUp}
                 >
-                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                  <h2 className="text-sm md:text-md font-bold !mb-1 md:!mb-2 !text-white">
                     Function
                   </h2>
-                  <p className="!text-sm !text-white">
+                  <p className="text-xs md:text-sm !text-white">
                     {currentOrgan.function}
                   </p>
                 </motion.div>
 
                 {/* Importance info card */}
                 <motion.div
-                  className="bg-[#022759] rounded-xl !p-4 !text-white"
+                  className="bg-[#022759] rounded-xl !p-3 md:!p-4 !text-white"
                   variants={fadeInUp}
                 >
-                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                  <h2 className="text-sm md:text-md font-bold !mb-1 md:!mb-2 !text-white">
                     Importance
                   </h2>
-                  <p className="!text-sm !text-white">
+                  <p className="text-xs md:text-sm !text-white">
                     {currentOrgan.importance}
                   </p>
                 </motion.div>
 
                 {/* Facts info card */}
                 <motion.div
-                  className="bg-[#022759] rounded-xl !p-4 "
+                  className="bg-[#022759] rounded-xl !p-3 md:!p-4 !text-white"
                   variants={fadeInUp}
                 >
-                  <h2 className="!text-md !font-bold mb-2 !text-white">
+                  <h2 className="text-sm md:text-md font-bold !mb-1 md:!mb-2 !text-white">
                     Key Facts
                   </h2>
-                  <p className="!text-sm !text-white">{currentOrgan.facts}</p>
+                  <p className="text-xs md:text-sm !text-white">
+                    {currentOrgan.facts}
+                  </p>
                 </motion.div>
               </motion.div>
 
               <motion.div
-                className="flex items-center justify-center gap-4 !p-4 rounded-xl bg-[#022759]"
+                className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4 !p-3 md:!p-4 rounded-xl bg-[#022759]"
                 variants={fadeInUp}
               >
                 {currentOrgan.icons.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-white !p-3 rounded-xl flex flex-col items-center justify-center w-full"
+                    className="bg-white !p-2 sm:!p-2 rounded-xl flex flex-col items-center justify-center flex-1 "
                   >
-                    <div className="mb-2 text-[#002B5B]">{item.icon}</div>
-                    <p className="!text-lg !font-bold text-[#002B5B]">
+                    <div className="mb-1 md:mb-2 text-[#002B5B]">
+                      {item.icon}
+                    </div>
+                    <p className="text-xs md:text-lg font-bold text-[#002B5B]">
                       {item.value}
                     </p>
-                    <p className="!text-[10px] text-[#002B5B]">{item.label}</p>
+                    <p className="text-[5px] sm:text-[10px] text-[#002B5B]">
+                      {item.label}
+                    </p>
                   </div>
                 ))}
               </motion.div>
@@ -656,46 +662,48 @@ function OrganExpanPage() {
         </motion.div>
 
         {/* Overview section with interactive tabs */}
-        <div className="bg-white w-full !p-10">
+        <div className="bg-white w-full !p-4 sm:!p-6 md:!p-8 lg:!p-10">
           <motion.div
-            className="flex flex-col items-center justify-center text-[#022759] gap-3"
+            className="flex flex-col lg:flex-row items-center justify-center text-[#022759] gap-2 sm:gap-3"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeInUp}
           >
-            <h1 className="!text-4xl !font-bold">{currentOverview.title}</h1>
-            <p className="!font-medium !text-sm w-[58%] text-center">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+              {currentOverview.title}
+            </h1>
+            <p className="font-medium !text-xs sm:text-[8px] w-full md:w-3/4 lg:w-[58%] text-center">
               {currentOverview.description}
             </p>
           </motion.div>
 
-          <div className="flex items-center justify-between !mt-20">
-            <div className="flex items-center justify-center relative w-1/3">
+          <div className="flex !flex-col lg:!flex-row items-center justify-between !mt-10 md:!mt-16 lg:!mt-20 gap-8">
+            <div className="flex items-center justify-center relative w-full md:w-2/5 lg:w-1/3 !mb-6 md:mb-0">
               <img
                 src={owl}
                 alt="Owl mascot"
-                className="w-90 wwa-page-scrolling"
+                className="w-48 sm:w-64 md:w-72 lg:w-90 max-w-full wwa-page-scrolling"
               />
               <img
                 src={currentOrgan.image}
                 alt={`${currentOrgan.title} illustration`}
-                className="absolute w-30"
+                className="absolute w-20 sm:w-24 md:w-28 lg:w-30"
               />
             </div>
             <motion.div
-              className="w-1/2"
+              className="w-full md:w-1/2"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
             >
-              <div className="space-x-2 !mb-4 flex flex-wrap gap-2">
+              <div className="space-x-0 sm:space-x-2 !mb-3 md:!mb-4 flex flex-wrap gap-2">
                 {currentOverview.tabs.map((tab, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentTabIndex(index)}
-                    className={`!px-4 !py-2 !text-xs cursor-pointer !font-bold text-[#022759] transition rounded-lg ${
+                    className={`!px-3 sm:!px-4 !py-1 sm:!py-2 text-xs cursor-pointer font-bold text-[#022759] transition rounded-lg ${
                       currentTabIndex === index
                         ? "bg-[#ADFB49] text-white"
                         : "bg-[#C4DDFF] hover:bg-[#ADFB49] hover:text-white"
@@ -705,11 +713,13 @@ function OrganExpanPage() {
                   </button>
                 ))}
               </div>
-              <div className="bg-white !p-4 rounded-xl max-w-xl shadow-md">
-                <p className="!font-bold !text-lg text-[#022759]">
+              <div className="bg-white !p-3 sm:!p-4 rounded-xl max-w-xl shadow-md">
+                <p className="font-bold text-base sm:text-lg text-[#022759]">
                   {currentOverview.tabs[currentTabIndex]?.title || "Overview"}
                 </p>
-                <div className="text-gray-700 !mt-2">{renderTabContent()}</div>
+                <div className="text-gray-700 mt-1 sm:mt-2">
+                  {renderTabContent()}
+                </div>
               </div>
             </motion.div>
           </div>
@@ -717,46 +727,50 @@ function OrganExpanPage() {
         {/* overview ends here */}
 
         <motion.div
-          className="bg-[#E7FFC9] w-full !p-10"
+          className="bg-[#E7FFC9] w-full !p-4 sm:!p-6 md:!p-8 lg:!p-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
         >
-          <div className="flex flex-col items-center justify-center text-[#022759] gap-3">
-            <h1 className="!text-4xl !font-bold">{currentFaq.title}</h1>
-            <p className="!font-medium !text-sm w-1/2 text-center">
+          <div className="flex flex-col items-center justify-center text-[#022759] gap-2 sm:gap-3">
+            <h1 className="!text-2xl sm:!text-3xl md:!text-4xl !font-bold !text-center">
+              {currentFaq.title}
+            </h1>
+            <p className="!font-medium !text-xs sm:!text-sm w-full sm:w-3/4 md:w-2/3 lg:w-1/2 !text-center">
               {currentFaq.description}
             </p>
           </div>
-          <div className="flex items-start justify-around !px-10 !mt-20">
-            <div className="">
-              <img src={humanbody} alt="" className="w-[70%]" />
+
+          <div className="flex sm:flex-col md:!flex-row lg:flex-row items-center md:items-start justify-between !px-2 sm:!px-6 md:!px-8 lg:!px-10 !mt-8 sm:!mt-12 md:!mt-16 lg:!mt-20 !gap-8">
+            <div className="hidden lg:flex lg:w-1/3 justify-center md:justify-start">
+              <img src={humanbody} alt="" className="w-[100%]" />
             </div>
+
             <motion.div
-              className="w-full flex flex-col gap-4"
+              className="w-full md:w-3/5 lg:w-3/5 flex flex-col !gap-3 sm:!gap-4"
               variants={staggerContainer}
             >
               {currentFaq.faqs.map((item, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white rounded-2xl !p-5"
+                  className="!bg-white !rounded-2xl !p-3 sm:!p-4 md:!p-5"
                   variants={fadeInUp}
                 >
                   <button
-                    className="w-full flex items-center justify-between !p-4 text-left focus:outline-none cursor-pointer"
+                    className="w-full flex items-center justify-between !p-2 sm:!p-3 md:!p-4 !text-left focus:outline-none cursor-pointer"
                     onClick={() => handleToggle(index)}
                   >
-                    <span className="!font-medium text-gray-700">
+                    <span className="!font-medium !text-gray-700 !text-sm sm:!text-base">
                       {item.question}
                     </span>
-                    <span className="!p-1 rounded-full bg-gray-200">
-                      <Plus size={20} className="transition-transform " />
+                    <span className="!p-1 !rounded-full !bg-gray-200">
+                      <Plus size={18} className="transition-transform" />
                     </span>
                   </button>
 
                   {openIndex === index && (
-                    <div className="!px-4 !pb-4 text-gray-600">
+                    <div className="!px-2 sm:!px-3 md:!px-4 !pb-2 sm:!pb-3 md:!pb-4 !text-gray-600 !text-xs sm:!text-sm">
                       <p>{item.answer}</p>
                     </div>
                   )}
