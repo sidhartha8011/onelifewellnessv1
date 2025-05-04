@@ -498,7 +498,7 @@ function Testimonials({ image, type }) {
     <div className="">
       <div className="bg-white">
         {/* facts section starts here */}
-        <div className="flex flex-col !p-20">
+        <div className="flex flex-col !p-4 md:!p-10 lg:!p-20">
           <style jsx>{`
             .flip-card:hover .flip-card-inner {
               transform: rotateY(180deg);
@@ -523,33 +523,35 @@ function Testimonials({ image, type }) {
           `}</style>
 
           <p className="text-gray-300">{currentFacts.sub}</p>
-          <div className="flex flex-wrap items-center !gap-5">
-            <h2 className="!text-4xl font-medium !text-gray-800">
+          <div className="flex flex-wrap items-center !gap-3 md:!gap-5">
+            <h2 className="!text-2xl md:!text-3xl lg:!text-4xl font-medium !text-gray-800">
               {currentFacts.title}
             </h2>
-            <p className="!text-8xl !font-thin !text-gray-300">/</p>
-            <div className="text-gray-600 mt-1">
+            <p className="!text-4xl md:!text-6xl lg:!text-8xl !font-thin !text-gray-300">
+              /
+            </p>
+            <div className="text-gray-600 !mt-1">
               <p>{currentFacts.description}</p>
             </div>
           </div>
 
           {/* Carousel Container */}
-          <div className="relative !mt-10">
-            <div className="flex items-center justify-between w-full !!mb-6">
+          <div className="relative !mt-5 md:!mt-10">
+            <div className="flex items-center justify-between w-full !mb-4 md:!mb-6">
               <button
                 onClick={prevSlide}
-                className="!bg-gray-100 !hover:bg-gray-200 !p-3 rounded-full shadow-md transition-all duration-300"
+                className="!bg-gray-100 !hover:bg-gray-200 !p-2 md:!p-3 rounded-full shadow-md transition-all duration-300"
                 disabled={currentSlide === 0}
               >
-                <ChevronLeft size={24} />
+                <ChevronLeft size={20} />
               </button>
 
-              <div className="flex space-x-2">
+              <div className="flex !space-x-2">
                 {Array.from({ length: totalDots }).map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 !p-2 ${
+                    className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 !p-1 md:!p-2 ${
                       idx === currentSlide ? "bg-[#022759]" : "bg-gray-300"
                     }`}
                   />
@@ -561,28 +563,33 @@ function Testimonials({ image, type }) {
                 className="bg-gray-100 hover:bg-gray-200 rounded-full shadow-md transition-all duration-300 !p-2"
                 disabled={currentSlide === totalDots - 1}
               >
-                <ChevronRight size={24} />
+                <ChevronRight size={20} />
               </button>
             </div>
 
             {/* Flip Cards */}
             <div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 !p-4"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 !gap-3 md:!gap-4 !p-2 md:!p-4"
               ref={carouselRef}
             >
               {getVisibleItems().map((fact, i) => (
-                <div key={`${currentSlide}-${i}`} className="flip-card h-80">
+                <div
+                  key={`${currentSlide}-${i}`}
+                  className="flip-card h-64 md:h-80"
+                >
                   <div className="flip-card-inner">
                     {/* Front of Card */}
-                    <div className="flip-card-front rounded-3xl bg-[#F1F2ED] flex items-center justify-center !p-8 ">
-                      <h4 className="text-center text-xl font-medium">
+                    <div className="flip-card-front rounded-3xl bg-[#F1F2ED] flex items-center justify-center !p-4 md:!p-8">
+                      <h4 className="text-center text-base md:text-xl font-medium">
                         {fact.title}
                       </h4>
                     </div>
 
                     {/* Back of Card */}
-                    <div className="flip-card-back rounded-3xl bg-gray-200 !text-black flex items-center justify-center !p-8 shadow-md overflow-auto">
-                      <p className="text-center">{fact.description}</p>
+                    <div className="flip-card-back rounded-3xl bg-gray-200 !text-black flex items-center justify-center !p-4 md:!p-8 shadow-md overflow-auto">
+                      <p className="text-center text-sm md:text-base">
+                        {fact.description}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -594,26 +601,28 @@ function Testimonials({ image, type }) {
 
         {/* faq starts here */}
         <motion.div
-          className="flex flex-col !p-20"
+          className="flex flex-col !p-4 md:!p-10 lg:!p-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
         >
           <p className="!text-gray-300">FAQ</p>
-          <div className="flex items-center gap-5">
-            <h2 className="!text-4xl !font-medium !text-gray-800">
+          <div className="flex flex-wrap items-center !gap-2 md:!gap-5">
+            <h2 className="!text-2xl md:!text-3xl lg:!text-4xl !font-medium !text-gray-800">
               Frequently Asked Questions
             </h2>
-            <p className="!text-8xl !font-thin !text-gray-300">/</p>
-            <div className=" !text-gray-600 !mt-1">
+            <p className="!text-4xl md:!text-6xl lg:!text-8xl !font-thin !text-gray-300">
+              /
+            </p>
+            <div className="!text-gray-600 !mt-1">
               <p>Meal planning made easy: your questions, answered</p>
             </div>
           </div>
 
           {/* Fixed FAQ mapping */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 !mt-10"
+            className="grid grid-cols-1 md:grid-cols-2 !gap-4 md:!gap-8 !mt-5 md:!mt-10"
             variants={faqContainer}
             initial="hidden"
             animate="visible"
@@ -624,8 +633,8 @@ function Testimonials({ image, type }) {
                   key={index}
                   className={`transition-all duration-300 ${
                     expandedFAQ === index
-                      ? "flex items-start justify-between gap-10 w-full bg-[#F1F2ED] !p-15 rounded-3xl"
-                      : "flex items-center gap-5"
+                      ? "flex items-start justify-between !gap-5 md:!gap-10 w-full bg-[#F1F2ED] !p-6 md:!p-15 rounded-3xl"
+                      : "flex items-center !gap-3 md:!gap-5"
                   }`}
                   layout
                   variants={faqItem}
@@ -636,16 +645,16 @@ function Testimonials({ image, type }) {
                   {expandedFAQ === index ? (
                     <>
                       <motion.div
-                        className="border border-black rounded-full !p-5 !py-8 bg-[#D9EF78] cursor-pointer"
+                        className="border border-black rounded-full !p-3 md:!p-5 !py-4 md:!py-8 bg-[#D9EF78] cursor-pointer"
                         onClick={() => toggleFAQ(index)}
                         initial={{ rotate: 0 }}
                         animate={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <MoveUp />
+                        <MoveUp size={16} />
                       </motion.div>
-                      <div className="flex flex-col items-start gap-5">
-                        <p className="!font-semibold !text-lg">
+                      <div className="flex flex-col items-start !gap-3 md:!gap-5">
+                        <p className="!font-semibold !text-base md:!text-lg">
                           {faq.question}
                         </p>
                         <motion.div
@@ -653,22 +662,24 @@ function Testimonials({ image, type }) {
                           animate={{ opacity: 1, height: "auto" }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
                         >
-                          <p className="!font-regular">{faq.answer}</p>
+                          <p className="!font-regular text-sm md:text-base">
+                            {faq.answer}
+                          </p>
                         </motion.div>
                       </div>
                     </>
                   ) : (
                     <>
                       <motion.span
-                        className="border border-black rounded-full !p-3 cursor-pointer"
+                        className="border border-black rounded-full !p-2 md:!p-3 cursor-pointer"
                         onClick={() => toggleFAQ(index)}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <MoveDown className="" size={13} />
+                        <MoveDown className="" size={12} />
                       </motion.span>
                       <div className="flex flex-col">
-                        <p className="">{faq.question}</p>
+                        <p className="text-sm md:text-base">{faq.question}</p>
                       </div>
                     </>
                   )}
@@ -678,37 +689,41 @@ function Testimonials({ image, type }) {
           {/* faq ends here */}
 
           <motion.div
-            className="flex flex-col !mt-30 !mb-40"
+            className="flex flex-col !mt-16 md:!mt-20 lg:!mt-30 !mb-20 md:!mb-30 lg:!mb-40"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeInUp}
           >
             <p className="!text-gray-300">Benefits</p>
-            <div className="flex items-center gap-5">
-              <h2 className="!text-4xl !font-medium !text-gray-800">
+            <div className="flex flex-wrap items-center !gap-2 md:!gap-5">
+              <h2 className="!text-2xl md:!text-3xl lg:!text-4xl !font-medium !text-gray-800">
                 Benefits
               </h2>
-              <p className="!text-8xl !font-thin !text-gray-300">/</p>
-              <div className=" !text-gray-600 !mt-1">
-                <p className="w-1/2">{currentBenefits.description}</p>
+              <p className="!text-4xl md:!text-6xl lg:!text-8xl !font-thin !text-gray-300">
+                /
+              </p>
+              <div className="!text-gray-600 !mt-1">
+                <p className="w-full md:w-3/4 lg:w-1/2">
+                  {currentBenefits.description}
+                </p>
               </div>
             </div>
 
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 !p-4 !mt-10"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 !gap-3 md:!gap-4 !p-2 md:!p-4 !mt-5 md:!mt-10"
               variants={staggerContainer}
             >
               {currentBenefits.insight.slice(0, 7).map((item, index) => (
                 <motion.div
-                  className={`flex flex-col justify-between gap-5 !px-10 !py-24 cursor-pointer rounded-4xl ${
+                  className={`flex flex-col justify-between !gap-3 md:!gap-5 !px-6 md:!px-10 !py-12 md:!py-24 cursor-pointer rounded-3xl md:rounded-4xl ${
                     bgColors[index % 3]
                   } hover:bg-[#022759] transition-all duration-300 group`}
                   variants={fadeInUp}
                   key={index}
                 >
                   <p
-                    className={`!text-4xl !font-light ${
+                    className={`!text-2xl md:!text-3xl lg:!text-4xl !font-light ${
                       bgColors[index % 3] === "bg-[#022759]"
                         ? "!text-white"
                         : bgColors[index % 3] === "bg-[#D9EF78]"
@@ -725,7 +740,7 @@ function Testimonials({ image, type }) {
                         : bgColors[index % 3] === "bg-[#D9EF78]"
                         ? "!text-gray-800"
                         : "!text-gray-800"
-                    } group-hover:!text-white !font-light`}
+                    } group-hover:!text-white !font-light text-sm md:text-base`}
                   >
                     {item.description}
                   </p>
@@ -733,7 +748,7 @@ function Testimonials({ image, type }) {
               ))}
 
               {/* Image in the last column */}
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center !mt-4 md:!mt-0">
                 {image && (
                   <img
                     src={image}
@@ -748,57 +763,58 @@ function Testimonials({ image, type }) {
       </div>
 
       <motion.div
-        className="bg-[#E7FFC9] w-full !p-20 !mb-20"
+        className="bg-[#E7FFC9] w-full !p-4 md:!p-10 lg:!p-20 !mb-10 md:!mb-20"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={fadeInUp}
       >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 !p-4">
+        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-2 !gap-5 !p-2 !mb-30 md:!p-4">
           {/* Footer section */}
           <motion.div
-            className="bg-white !px-6 sm:!px-10 md:!px-20 !py-10 md:!py-20 rounded-2xl shadow-md flex flex-col gap-10 w-full"
+            className="bg-white !px-4 sm:!px-6 md:!px-10 lg:!px-20 !py-6 md:!py-10 lg:!py-20 rounded-2xl shadow-md flex flex-col !gap-5 md:!gap-10 w-full"
             variants={fadeInLeft}
           >
-            <p className="!text-4xl !text-black !font-semibold">Solus</p>
-            <div className="flex items-start justify-between gap-5 sm:gap-10 w-full">
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+            <p className="!text-2xl md:!text-3xl lg:!text-4xl !text-black !font-semibold">
+              Solus
+            </p>
+            <div className="flex flex-wrap items-start justify-between !gap-3 sm:!gap-5 md:!gap-10 w-full">
+              <div className="flex flex-col !gap-3 md:!gap-5">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   About
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Services
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Therapist
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Resources
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Contact
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+              <div className="flex flex-col !gap-3 md:!gap-5">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Instagram
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Facebook
                 </p>
-
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   YouTube
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   LinkedIn
                 </p>
               </div>
-              <div className="flex flex-col gap-5">
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+              <div className="flex flex-col !gap-3 md:!gap-5">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Terms of use
                 </p>
-                <p className="!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
+                <p className="!text-xs md:!text-sm !text-gray-400 hover:!text-gray-700 cursor-pointer">
                   Privacy Policy
                 </p>
               </div>
@@ -807,11 +823,11 @@ function Testimonials({ image, type }) {
 
           {/* Support section */}
           <motion.div
-            className="bg-[#022759] !pl-6 sm:!pl-10 md:!pl-20 !py-10 md:!py-20 rounded-2xl shadow-lg w-full lg:w-auto !mt-5 lg:!mt-0"
+            className="bg-[#022759] !pl-4 sm:!pl-6 md:!pl-10 lg:!pl-20 !py-6 md:!py-10  lg:!py-20 rounded-2xl shadow-lg w-full !mt-5 lg:!mt-0"
             variants={fadeInRight}
           >
-            <div className="!flex !flex-col md:!flex-row items-center justify-between ">
-              <p className="!text-white !text-4xl md:!text-4xl !font-semibold !mb-6 md:!mb-0 max-w-md">
+            <div className="!flex !flex-col md:!flex-row items-center justify-between">
+              <p className="!text-white !text-2xl md:!text-3xl lg:!text-4xl !font-semibold !mb-4 md:!mb-0 max-w-md">
                 Find Support,
                 <br /> Guidance, <br />
                 and Balance.
@@ -820,10 +836,10 @@ function Testimonials({ image, type }) {
               <img
                 src={flowers}
                 alt="Decorative flowers"
-                className="w-40 md:w-1/3 h-auto !right-0"
+                className="w-32 md:w-40 lg:w-1/3 h-auto !right-0"
               />
             </div>
-            <button className="bg-white hover:bg-gray-100 !text-[#022759] !font-bold !py-3 !px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">
+            <button className="bg-white hover:bg-gray-100 !text-[#022759] !font-bold !py-2 md:!py-3 !px-5 md:!px-8 rounded-full transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1 !mt-4 md:!mt-0">
               Find Support Now
             </button>
           </motion.div>

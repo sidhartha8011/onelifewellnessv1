@@ -18,6 +18,11 @@ import HumanAnatomy from "../pages/HumanAnatomy";
 import OrganExpanPage from "../pages/OrganExpanPage";
 import BlogPage from "../pages/BlogPage";
 import BlogDetail from "../pages/BlogDetail";
+import AdminPage from "../pages/AdminPage";
+import Blogs from "../components/Admin/Blogs";
+import BlogFormPage from "../components/Admin/BlogFormPage";
+import AdminLoginForm from "../components/Admin/AdminLoginForm";
+import ProtectedRoute from "../components/Admin/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -80,6 +85,25 @@ const router = createBrowserRouter([
       {
         path: "/blog-detail/:id",
         element: <BlogDetail />,
+      },
+      {
+        path: "admin", // Admin login route
+        element: <AdminLoginForm />,
+      },
+      {
+        path: "admin--dashboard",
+        element: <ProtectedRoute />, // Protecting the admin routes
+        children: [
+          {
+            path: "",
+            element: <AdminPage />,
+            children: [
+              { path: "blogs", element: <Blogs /> },
+              { path: "blogs/add", element: <BlogFormPage /> },
+              { path: "blogs/edit/:id", element: <BlogFormPage /> },
+            ],
+          },
+        ],
       },
     ],
   },

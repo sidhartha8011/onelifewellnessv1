@@ -177,8 +177,6 @@ function OrganExpanPage() {
         },
       ],
     },
-
-
   };
 
   const currentFaq = faqData[type];
@@ -265,72 +263,73 @@ function OrganExpanPage() {
         {
           title: "Mouth",
           description:
-            "Digestion starts here. Your teeth and saliva begin breaking down food mechanically and chemically, preparing it for the journey through your digestive system."
+            "Digestion starts here. Your teeth and saliva begin breaking down food mechanically and chemically, preparing it for the journey through your digestive system.",
         },
         {
           title: "Esophagus",
           description:
-            "This muscular tube carries food from your mouth to your stomach using wave-like movements called peristalsis. It’s a fast, smooth, and automatic process."
+            "This muscular tube carries food from your mouth to your stomach using wave-like movements called peristalsis. It’s a fast, smooth, and automatic process.",
         },
         {
           title: "Stomach",
           description:
-            "The stomach churns and mixes food with acid and enzymes, breaking it into a semi-liquid form. It also helps kill harmful microbes before food moves on to the intestines."
+            "The stomach churns and mixes food with acid and enzymes, breaking it into a semi-liquid form. It also helps kill harmful microbes before food moves on to the intestines.",
         },
         {
           title: "Small Intestine",
           description:
-            "This is the main site for digestion and nutrient absorption. Enzymes and bile work here to extract vitamins, minerals, and energy, which are then absorbed into the bloodstream."
+            "This is the main site for digestion and nutrient absorption. Enzymes and bile work here to extract vitamins, minerals, and energy, which are then absorbed into the bloodstream.",
         },
         {
           title: "Large Intestine (Colon)",
           description:
-            "The colon reabsorbs water and processes waste. It also houses a large portion of your gut microbiome—helpful bacteria that support immunity, mood, and metabolism."
+            "The colon reabsorbs water and processes waste. It also houses a large portion of your gut microbiome—helpful bacteria that support immunity, mood, and metabolism.",
         },
         {
           title: "Rectum & Anus",
           description:
-            "These parts handle waste storage and elimination. Once digestion is complete, the body prepares to remove what’s no longer needed."
-        }
-      ]
+            "These parts handle waste storage and elimination. Once digestion is complete, the body prepares to remove what’s no longer needed.",
+        },
+      ],
     },
 
     muscleArm: {
-      title: "Your Musculoskeletal System: The Framework of Movement and Strength",
+      title:
+        "Your Musculoskeletal System: The Framework of Movement and Strength",
       description:
         "Your musculoskeletal system gives your body structure, power, and protection. It includes your bones, muscles, joints, ligaments, and tendons—all working together to help you sit, stand, move, and stay upright. This guide breaks down each part of the system and how they work as a team to support your daily life.",
       tabs: [
         {
           title: "Bones",
           description:
-            "Bones form the rigid framework of your body. They support your weight, protect vital organs, and store minerals like calcium. Bone marrow inside certain bones also produces red blood cells."
+            "Bones form the rigid framework of your body. They support your weight, protect vital organs, and store minerals like calcium. Bone marrow inside certain bones also produces red blood cells.",
         },
         {
           title: "Muscles",
           description:
-            "Muscles contract and relax to create movement. They help you lift, walk, breathe, and even pump blood. There are over 600 muscles in your body—working consciously and unconsciously every day."
+            "Muscles contract and relax to create movement. They help you lift, walk, breathe, and even pump blood. There are over 600 muscles in your body—working consciously and unconsciously every day.",
         },
         {
           title: "Joints",
           description:
-            "Joints are where two or more bones meet. They allow you to bend, rotate, and move with control. Different types of joints—like hinge, ball-and-socket, and pivot—offer different kinds of movement."
+            "Joints are where two or more bones meet. They allow you to bend, rotate, and move with control. Different types of joints—like hinge, ball-and-socket, and pivot—offer different kinds of movement.",
         },
         {
           title: "Ligaments",
           description:
-            "Ligaments are tough, elastic bands of tissue that connect bones to other bones. They stabilize your joints and help prevent injuries during movement."
+            "Ligaments are tough, elastic bands of tissue that connect bones to other bones. They stabilize your joints and help prevent injuries during movement.",
         },
         {
           title: "Tendons",
           description:
-            "Tendons attach muscles to bones. When a muscle contracts, the tendon pulls on the bone, allowing you to move. They’re essential for strength and coordination."
+            "Tendons attach muscles to bones. When a muscle contracts, the tendon pulls on the bone, allowing you to move. They’re essential for strength and coordination.",
         },
         {
           title: "Cartilage",
           description:
-            "Cartilage is a smooth, cushioning tissue found in joints, the nose, ears, and spine. It reduces friction and absorbs shock, protecting your bones from wear and tear."
-        }
-      ]
+            "Cartilage is a smooth, cushioning tissue found in joints, the nose, ears, and spine. It reduces friction and absorbs shock, protecting your bones from wear and tear.",
+        },
+      ],
     },
   };
 

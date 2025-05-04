@@ -30,7 +30,7 @@ function AnatomyCard({ organType }) {
         <Activity size={28} key="brain2" />,
         <HeartPulse size={28} key="brain3" />,
       ],
-      cardClass: "absolute z-10 right-[8.8%] top-[5%]",
+      cardClass: "md:absolute md:z-10 md:right-[8.8%] md:top-[5%]",
     },
     heart: {
       image: heart,
@@ -43,7 +43,7 @@ function AnatomyCard({ organType }) {
         <HeartPulse size={28} key="heart2" />,
         <Activity size={28} key="heart3" />,
       ],
-      cardClass: "absolute z-10 right-[8.8%] top-[10%]",
+      cardClass: "md:absolute md:z-10 md:right-[8.8%] md:top-[10%]",
     },
     "muscle-arm": {
       image: muscle,
@@ -56,7 +56,7 @@ function AnatomyCard({ organType }) {
         <Activity size={28} key="muscle2" />,
         <HeartPulse size={28} key="muscle3" />,
       ],
-      cardClass: "absolute z-10 right-[5%] top-[30%]",
+      cardClass: "md:absolute md:z-10 md:right-[5%] md:top-[30%] top-[50%]",
     },
     stomach: {
       image: stomach,
@@ -70,7 +70,7 @@ function AnatomyCard({ organType }) {
         <Activity size={28} key="stomach2" />,
         <HeartPulse size={28} key="stomach3" />,
       ],
-      cardClass: "absolute z-10 right-[8.8%] top-[40%]",
+      cardClass: "md:absolute md:z-10 md:right-[8.8%] md:top-[40%]",
     },
   };
 
@@ -94,7 +94,7 @@ function AnatomyCard({ organType }) {
 
   return (
     <motion.div
-      className="bg-white w-[30%] h-[57%] rounded-4xl !mt-10 z-20 !ml-10 !p-5 flex flex-col gap-5"
+      className="bg-white w-full md:w-[30%] h-[365px] md:h-[57%] rounded-xl md:rounded-4xl !mt-4 md:!mt-10 z-20 !mx-4 md:!ml-10 !p-3 md:!p-5 flex flex-col gap-3 md:gap-5"
       initial={{ opacity: 0 }}
       animate={{ opacity: 2 }}
       transition={{ duration: 0.3 }}
@@ -102,14 +102,14 @@ function AnatomyCard({ organType }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={`header-${organType}`}
-          className="bg-[#022759] w-full rounded-4xl !p-5 flex items-center gap-5"
+          className="bg-[#022759] w-full rounded-xl md:rounded-4xl !p-3 md:!p-5 flex items-center gap-3 md:gap-5"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
           <motion.div
-            className="bg-white rounded-full !p-3"
+            className="bg-white rounded-full !p-2 md:!p-3"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -117,7 +117,7 @@ function AnatomyCard({ organType }) {
               <motion.img
                 src={currentOrgan.image}
                 alt=""
-                className="w-16"
+                className="w-10 md:w-16"
                 initial={{ rotate: -10 }}
                 animate={{ rotate: 0 }}
                 transition={{ type: "spring", stiffness: 200 }}
@@ -126,7 +126,7 @@ function AnatomyCard({ organType }) {
           </motion.div>
           <div className="flex flex-col">
             <motion.h4
-              className="!text-white"
+              className="!text-white !text-sm md:!text-base"
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2, duration: 0.3 }}
@@ -139,7 +139,7 @@ function AnatomyCard({ organType }) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.3 }}
             >
-              {currentOrgan.shortDesc}
+              {currentOrgan.shortDesc}!
             </motion.p>
           </div>
         </motion.div>
@@ -148,14 +148,14 @@ function AnatomyCard({ organType }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={`description-${organType}`}
-          className="bg-[#022759] w-full rounded-4xl !p-5"
+          className="bg-[#022759] w-full rounded-xl md:rounded-4xl !p-3 md:!p-5"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
           exit="exit"
         >
           <motion.h4
-            className="!text-white"
+            className="!text-white text-sm md:text-base"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.1 }}
@@ -176,7 +176,7 @@ function AnatomyCard({ organType }) {
       <AnimatePresence mode="wait">
         <motion.div
           key={`icons-${organType}`}
-          className="bg-[#022759] w-full rounded-4xl !p-5 flex items-center gap-5 justify-center"
+          className="bg-[#022759] w-full rounded-xl md:rounded-4xl !p-3 md:!p-5 flex items-center gap-2 md:gap-5 justify-center flex-wrap md:flex-nowrap"
           variants={cardVariants}
           initial="hidden"
           animate="visible"
@@ -185,7 +185,7 @@ function AnatomyCard({ organType }) {
           {currentOrgan.icons.map((icon, index) => (
             <motion.div
               key={index}
-              className="bg-white !p-8 rounded-2xl"
+              className="bg-white !p-2 md:!p-8 rounded-lg md:rounded-2xl"
               variants={iconVariants}
               initial="hidden"
               animate="visible"

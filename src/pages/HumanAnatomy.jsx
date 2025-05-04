@@ -14,9 +14,9 @@ function HumanAnatomy() {
   return (
     <div className="w-full overflow-hidden">
       <AnatomyTitle />
-      <div className="!px-10 relative w-full !py-16 !mb-40">
+      <div className="lg:!px-10 !p-5 relative w-full !py-16 !mb-40">
         <div
-          className="w-full rounded-2xl !px-8 flex justify-between h-[800px]"
+          className="w-full rounded-2xl !px-8 flex justify-between h-[400px] lg:h-[800px]"
           style={{
             backgroundImage: "linear-gradient(to right, #E7ECF1, #ADFB49)",
           }}
