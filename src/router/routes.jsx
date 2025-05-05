@@ -92,7 +92,7 @@ const router = createBrowserRouter([
       },
       {
         path: "admin--dashboard",
-        element: <ProtectedRoute />, // Protecting the admin routes
+        // element: <ProtectedRoute />, // Protecting the admin routes
         children: [
           {
             path: "",

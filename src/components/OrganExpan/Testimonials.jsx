@@ -58,6 +58,104 @@ function Testimonials({ image, type }) {
           "Neurons send signals across your body in just milliseconds—faster than any computer, enabling instant reactions and decisions.",
       },
     ],
+    heart: [
+      {
+        question: " Your heart powers your body nonstop",
+        answer:
+          "It beats about 100,000 times a day—pumping blood to deliver oxygen and nutrients to every cell, even while you sleep.",
+      },
+      {
+        question: " Emotions affect your heartbeat",
+        answer:
+          "Joy, anxiety, and fear all trigger changes in heart rate and rhythm, showing the deep link between emotional and physical health.",
+      },
+      {
+        question: " Women may feel heart attacks differently",
+        answer:
+          "While chest pain is common, women often feel fatigue, shortness of breath, nausea, or jaw pain instead—making it harder to detect.",
+      },
+      {
+        question: " Exercise builds a stronger heart",
+        answer:
+          "Aerobic activity strengthens your heart muscle, helping it pump more efficiently and reduce long-term risk for disease.",
+      },
+      {
+        question: " Your heart has its own pacemaker",
+        answer:
+          "The sinoatrial (SA) node creates electrical impulses that set your heartbeat—like a built-in rhythm generator.",
+      },
+      {
+        question: " Heart disease can begin early",
+        answer:
+          "Plaque can start forming in arteries during your 20s or 30s—long before symptoms appear, which is why prevention matters early.",
+      },
+    ],
+
+    stomach: [
+      {
+        question: " Your gut houses 100 trillion microbes",
+        answer:
+          "These bacteria, viruses, and fungi help digest food, regulate immunity, and even influence your mood and focus.",
+      },
+      {
+        question: " You produce 90% of serotonin in your gut",
+        answer:
+          "This “feel-good” neurotransmitter isn’t just made in the brain—your gut plays a major role in emotional health.",
+      },
+      {
+        question: " Digestion starts in your mouth",
+        answer:
+          "Enzymes in your saliva begin breaking down food before it even reaches your stomach.",
+      },
+      {
+        question: " Your gut is part of your immune system",
+        answer:
+          "More than 70% of your immune cells live in your gut, helping to fight off infection and regulate inflammation.",
+      },
+      {
+        question: " Fiber feeds your good bacteria",
+        answer:
+          "Prebiotic fibers from fruits, vegetables, and whole grains fuel the healthy microbes that protect your gut lining.",
+      },
+      {
+        question: " Your gut-brain connection is real",
+        answer:
+          "The vagus nerve links your digestive system to your brain—so what you eat can impact how you feel mentally and emotionally.",
+      },
+    ],
+
+    "muscle-arm": [
+      {
+        question: " You have over 600 muscles",
+        answer:
+          "Muscles make up nearly 40% of your body weight and are responsible for every movement—from blinking to lifting.",
+      },
+      {
+        question: " Bones are living tissue",
+        answer:
+          "They’re constantly breaking down and rebuilding through a process called remodeling, which helps maintain strength and flexibility.",
+      },
+      {
+        question: " Posture affects more than your spine",
+        answer:
+          "Poor posture can strain joints, cause headaches, and even affect breathing—while good alignment supports long-term mobility.",
+      },
+      {
+        question: " Muscle loss begins in your 30s",
+        answer:
+          "Without regular exercise, adults can lose up to 8% of muscle mass per decade, affecting balance and strength.",
+      },
+      {
+        question: " Stretching improves circulation",
+        answer:
+          "Gentle stretching keeps muscles flexible, reduces tension, and boosts blood flow—especially helpful after long periods of sitting.",
+      },
+      {
+        question: " Strength training protects your bones",
+        answer:
+          "Lifting weights or using resistance bands stimulates bone growth and helps prevent osteoporosis as you age.",
+      },
+    ],
   };
 
   const currentFaq = allFAQs[type];
@@ -66,69 +164,84 @@ function Testimonials({ image, type }) {
     brain: {
       sub: "Facts",
       title: "Brain Myths vs. Facts",
-      description: `Quick insights into one of your body's most powerful organs.`,
+      description:
+        "Quick insights into one of your body's most powerful organs.",
       fact: [
         {
           title: "Myth: The brain stops growing after childhood.",
-          description: `Fact: Your brain is capable of lifelong change. Neuroplasticity allows it to adapt, grow, and rewire itself—even after injury or trauma.`,
+          description:
+            "Fact: Your brain is capable of lifelong change. Neuroplasticity allows it to adapt, grow, and rewire itself—even after injury or trauma.",
         },
         {
           title: "Myth: The brain doesn't use much energy.",
-          description: `Fact: Your brain uses about 20% of your body's total energy—even though it's just 2% of your weight. It's always working, even at rest.`,
+          description:
+            "Fact: Your brain uses about 20% of your body's total energy—even though it's just 2% of your weight. It's always working, even at rest.",
         },
         {
           title: "Myth: Sleep is just for rest—not for the brain.",
-          description: `Fact: During deep sleep, your brain consolidates memories, clears toxins, and recharges. Sleep is essential for focus and emotional balance.`,
+          description:
+            "Fact: During deep sleep, your brain consolidates memories, clears toxins, and recharges. Sleep is essential for focus and emotional balance.",
         },
         {
           title: "Myth: The brain isn't very active.",
-          description: `Fact: Your brain generates up to 70,000 thoughts every day—guiding your decisions, memories, and feelings from moment to moment.`,
+          description:
+            "Fact: Your brain generates up to 70,000 thoughts every day—guiding your decisions, memories, and feelings from moment to moment.",
         },
         {
-          title: `Myth: The brain doesn't need much blood.`,
-          description: `Fact: The brain has around 100,000 miles of blood vessels—enough to circle the Earth four times—delivering vital nutrients and oxygen.`,
+          title: "Myth: The brain doesn't need much blood.",
+          description:
+            "Fact: The brain has around 100,000 miles of blood vessels—enough to circle the Earth four times—delivering vital nutrients and oxygen.",
         },
         {
           title: "Myth: The brain only has a few nerve cells.",
-          description: `Fact: Your brain contains about 86 billion neurons, each forming thousands of connections to send signals across your entire body.`,
+          description:
+            "Fact: Your brain contains about 86 billion neurons, each forming thousands of connections to send signals across your entire body.",
         },
       ],
     },
     heart: {
       sub: "Facts",
       title: "Heart Myths vs. Facts",
-      description: `Quick insights into one of your body's most powerful organs.`,
+      description:
+        "Quick insights into one of your body's most powerful organs.",
       fact: [
         {
           title: "Myth: Only older people get heart disease.",
-          description: `Fact: Heart disease can affect people of all ages, especially with poor diet, stress, smoking, or family history.`,
+          description:
+            "Fact: Heart disease can affect people of all ages, especially with poor diet, stress, smoking, or family history.",
         },
         {
           title: "Myth: A strong heart doesn't need exercise.",
-          description: `Fact: Even the healthiest heart benefits from regular activity—exercise strengthens your heart just like any other muscle.`,
+          description:
+            "Fact: Even the healthiest heart benefits from regular activity—exercise strengthens your heart just like any other muscle.",
         },
         {
           title: "Myth: Chest pain is the only heart attack symptom.",
-          description: `Fact: Other signs include jaw pain, nausea, shortness of breath, and fatigue—especially in women.`,
+          description:
+            "Fact: Other signs include jaw pain, nausea, shortness of breath, and fatigue—especially in women.",
         },
         {
           title: "Myth: If I feel fine, my heart must be healthy.",
-          description: `Fact: Heart problems can build silently for years. Regular checkups are key, even without symptoms.`,
+          description:
+            "Fact: Heart problems can build silently for years. Regular checkups are key, even without symptoms.",
         },
         {
           title: "Myth: Heart problems only come from genetics.",
-          description: `Fact: Lifestyle plays a major role—what you eat, how much you move, and how you manage stress all impact your heart health.`,
+          description:
+            "Fact: Lifestyle plays a major role—what you eat, how much you move, and how you manage stress all impact your heart health.",
         },
         {
           title: "Myth: Only cardio workouts matter for the heart.",
-          description: `Fact: Strength training, flexibility, and even walking are all heart-healthy when done consistently.`,
+          description:
+            "Fact: Strength training, flexibility, and even walking are all heart-healthy when done consistently.",
         },
       ],
     },
     stomach: {
       sub: "Facts",
       title: "Gut Myths vs. Facts",
-      description: `Understanding your microbiome goes beyond digestion—your gut influences everything from immunity to mood.`,
+      description:
+        "Understanding your microbiome goes beyond digestion—your gut influences everything from immunity to mood.",
       fact: [
         {
           title: "Myth: A healthy gut just means no bloating",
@@ -163,10 +276,11 @@ function Testimonials({ image, type }) {
         },
       ],
     },
-    muscleArm: {
+    "muscle-arm": {
       sub: "Facts",
       title: "Muscle & Joint Myths vs. Facts",
-      description: `Stay strong and mobile by separating common myths from science-backed truths about movement, aging, and pain.`,
+      description:
+        "Stay strong and mobile by separating common myths from science-backed truths about movement, aging, and pain.",
       fact: [
         {
           title: "Myth: Bones stop changing after your teens",
@@ -208,7 +322,8 @@ function Testimonials({ image, type }) {
     brain: {
       sub: "benefits",
       title: "Brain Health Benefits",
-      description: `Support your brain's health and performance with simple, science-backed habits that improve focus, memory, and long-term function.`,
+      description:
+        "Support your brain's health and performance with simple, science-backed habits that improve focus, memory, and long-term function.",
       insight: [
         {
           title: "Cognitive Clarity",
@@ -250,7 +365,8 @@ function Testimonials({ image, type }) {
     heart: {
       sub: "benefits",
       title: "Heart Health Benefits",
-      description: `Support your heart's health and performance with simple, science-backed habits that improve circulation, endurance, and long-term function.`,
+      description:
+        "Support your heart's health and performance with simple, science-backed habits that improve circulation, endurance, and long-term function.",
       insight: [
         {
           title: "Stronger Circulation",
@@ -294,11 +410,11 @@ function Testimonials({ image, type }) {
         },
       ],
     },
-
     stomach: {
       sub: "benefits",
       title: "Gut Health Benefits",
-      description: `Support your gut for smoother digestion, stronger immunity, better mood, and lifelong wellness.`,
+      description:
+        "Support your gut for smoother digestion, stronger immunity, better mood, and lifelong wellness.",
       insight: [
         {
           title: "Better Digestion",
@@ -337,10 +453,11 @@ function Testimonials({ image, type }) {
         },
       ],
     },
-    muscleArm: {
+    "muscle-arm": {
       sub: "benefits",
       title: "Musculoskeletal Health Benefits",
-      description: `Support your muscles, bones, and joints to stay strong, mobile, and injury-resistant throughout life.`,
+      description:
+        "Support your muscles, bones, and joints to stay strong, mobile, and injury-resistant throughout life.",
       insight: [
         {
           title: "Postural Strength",

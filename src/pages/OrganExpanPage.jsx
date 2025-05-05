@@ -44,7 +44,8 @@ function OrganExpanPage() {
         },
         {
           question: "What are common myths about the brain?",
-          answer: `You use more than 10% of your brain—almost all areas are active. And “left- or right-brained” thinking is a myth. Your whole brain works together.`,
+          answer:
+            'You use more than 10% of your brain—almost all areas are active. And "left- or right-brained" thinking is a myth. Your whole brain works together.',
         },
         {
           question: "How does my brain rewire itself?",
@@ -54,7 +55,7 @@ function OrganExpanPage() {
         {
           question: "What happens in my brain while I sleep?",
           answer:
-            "While you sleep, your brain clears waste, stores memories, and resets for the next day. It’s one of the most important times for brain recovery.",
+            "While you sleep, your brain clears waste, stores memories, and resets for the next day. It's one of the most important times for brain recovery.",
         },
         {
           question: "How can I keep my brain healthy?",
@@ -63,7 +64,6 @@ function OrganExpanPage() {
         },
       ],
     },
-
     heart: {
       title: "Your Heart: The Engine That Keeps You Going",
       description:
@@ -101,16 +101,15 @@ function OrganExpanPage() {
         },
       ],
     },
-
     stomach: {
       title: "Your Stomach: Where Digestion Begins",
       description:
-        "Your stomach isn’t just a food processor—it plays a vital role in breaking down nutrients, supporting your immune system, and housing your microbiome. Understanding how it works can help you boost digestion, reduce discomfort, and improve your overall health.",
+        "Your stomach isn't just a food processor—it plays a vital role in breaking down nutrients, supporting your immune system, and housing your microbiome. Understanding how it works can help you boost digestion, reduce discomfort, and improve your overall health.",
       faqs: [
         {
           question: "What is the microbiome?",
           answer:
-            "It’s the community of bacteria, fungi, and microbes living in your gut. These microbes help digest food, protect against illness, and influence everything from mood to metabolism.",
+            "It's the community of bacteria, fungi, and microbes living in your gut. These microbes help digest food, protect against illness, and influence everything from mood to metabolism.",
         },
         {
           question: "How do I know if my gut is unhealthy?",
@@ -139,14 +138,13 @@ function OrganExpanPage() {
         },
       ],
     },
-
-    muscleArm: {
+    "muscle-arm": {
       title: "Your Muscles & Joints: Move Better, Feel Stronger",
       description:
-        "Your muscles and joints are what keep you upright, moving, and pain-free. Learn how your body’s support system works, how to care for it, and what habits help you stay strong and mobile as you age.",
+        "Your muscles and joints are what keep you upright, moving, and pain-free. Learn how your body's support system works, how to care for it, and what habits help you stay strong and mobile as you age.",
       faqs: [
         {
-          question: "What’s the difference between a tendon and a ligament?",
+          question: "What's the difference between a tendon and a ligament?",
           answer:
             "Tendons connect muscles to bones, helping you move. Ligaments connect bones to each other, keeping joints stable.",
         },
@@ -173,7 +171,7 @@ function OrganExpanPage() {
         {
           question: "How often should I stretch?",
           answer:
-            "Aim to stretch major muscle groups at least 2–3 times a week—or daily if you’re sedentary or recovering from stiffness.",
+            "Aim to stretch major muscle groups at least 2–3 times a week—or daily if you're sedentary or recovering from stiffness.",
         },
       ],
     },
@@ -189,8 +187,8 @@ function OrganExpanPage() {
       tabs: [
         {
           title: "Cerebrum",
-          description: `This is the largest part of your brain. It helps you think, remember, speak, and make decisions. It also controls movement and receives messages from your senses—like touch, sight, and sound—so you can understand the world around you.`,
-
+          description:
+            "This is the largest part of your brain. It helps you think, remember, speak, and make decisions. It also controls movement and receives messages from your senses—like touch, sight, and sound—so you can understand the world around you.",
           conclusion:
             "All these regions communicate constantly to let you move, think and feel—without you even realizing it.",
         },
@@ -212,11 +210,10 @@ function OrganExpanPage() {
         {
           title: "Thalamus & Hypothalamus",
           description:
-            "These small parts are like your brain’s control room. They manage hunger, sleep, body temperature, and hormones. They also relay messages between different areas of the brain and your body, helping everything stay in sync.",
+            "These small parts are like your brain's control room. They manage hunger, sleep, body temperature, and hormones. They also relay messages between different areas of the brain and your body, helping everything stay in sync.",
         },
       ],
     },
-
     heart: {
       title: "Your Heart: The Key to Your Health and Well-Being",
       description:
@@ -235,12 +232,12 @@ function OrganExpanPage() {
         {
           title: "Left Atrium",
           description:
-            "Once blood is oxygenated in the lungs, it enters the left atrium. This chamber stores the oxygen-rich blood before it moves to the heart’s main pumping chamber.",
+            "Once blood is oxygenated in the lungs, it enters the left atrium. This chamber stores the oxygen-rich blood before it moves to the heart's main pumping chamber.",
         },
         {
           title: "Left Ventricle",
           description:
-            "The left ventricle is the heart’s powerhouse. It pumps oxygen-rich blood out through the aorta to supply the rest of the body with energy and nutrients.",
+            "The left ventricle is the heart's powerhouse. It pumps oxygen-rich blood out through the aorta to supply the rest of the body with energy and nutrients.",
         },
         {
           title: "Valves",
@@ -248,17 +245,16 @@ function OrganExpanPage() {
             "Valves between each chamber act like one-way doors. They keep blood flowing in the right direction and prevent any backflow during each heartbeat.",
         },
         {
-          title: "ValPacemaker (SA Node)",
+          title: "Pacemaker (SA Node)",
           description:
-            "The sinoatrial node is your heart’s natural pacemaker. It sends electrical signals that keep your heart beating in a steady and coordinated rhythm.",
+            "The sinoatrial node is your heart's natural pacemaker. It sends electrical signals that keep your heart beating in a steady and coordinated rhythm.",
         },
       ],
     },
-
     stomach: {
-      title: " Your Gut: The Core of Digestion, Immunity, and Mood",
+      title: "Your Gut: The Core of Digestion, Immunity, and Mood",
       description:
-        "Your gut does much more than process food. It’s a powerhouse of digestion, home to trillions of microbes that influence your immunity, energy, and even emotions. This guide breaks down how your digestive system works and how to care for it at every stage of life.",
+        "Your gut does much more than process food. It's a powerhouse of digestion, home to trillions of microbes that influence your immunity, energy, and even emotions. This guide breaks down how your digestive system works and how to care for it at every stage of life.",
       tabs: [
         {
           title: "Mouth",
@@ -268,7 +264,7 @@ function OrganExpanPage() {
         {
           title: "Esophagus",
           description:
-            "This muscular tube carries food from your mouth to your stomach using wave-like movements called peristalsis. It’s a fast, smooth, and automatic process.",
+            "This muscular tube carries food from your mouth to your stomach using wave-like movements called peristalsis. It's a fast, smooth, and automatic process.",
         },
         {
           title: "Stomach",
@@ -288,12 +284,11 @@ function OrganExpanPage() {
         {
           title: "Rectum & Anus",
           description:
-            "These parts handle waste storage and elimination. Once digestion is complete, the body prepares to remove what’s no longer needed.",
+            "These parts handle waste storage and elimination. Once digestion is complete, the body prepares to remove what's no longer needed.",
         },
       ],
     },
-
-    muscleArm: {
+    "muscle-arm": {
       title:
         "Your Musculoskeletal System: The Framework of Movement and Strength",
       description:
@@ -322,7 +317,7 @@ function OrganExpanPage() {
         {
           title: "Tendons",
           description:
-            "Tendons attach muscles to bones. When a muscle contracts, the tendon pulls on the bone, allowing you to move. They’re essential for strength and coordination.",
+            "Tendons attach muscles to bones. When a muscle contracts, the tendon pulls on the bone, allowing you to move. They're essential for strength and coordination.",
         },
         {
           title: "Cartilage",
@@ -396,7 +391,7 @@ function OrganExpanPage() {
         },
       ],
     },
-    muscle: {
+    "muscle-arm": {
       image: muscle,
       title: "Skeletal Muscles",
       structure:
